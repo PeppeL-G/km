@@ -79,9 +79,6 @@ export default defineConfig({
       prev: 'Tillbaka till',
       next: false,
     },
-    lastUpdated: {
-      text: 'Senast uppdaterad'
-    },
     darkModeSwitchLabel: 'Mörkt läge',
     sidebarMenuLabel: 'Meny',
     returnToTopLabel: 'Tillbaka till toppen',
