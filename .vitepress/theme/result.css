@@ -1,0 +1,35 @@
+div[class^='language-']:has(+ .result){
+	margin-bottom: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+.result{
+	border-top: 3px dashed var(--vp-c-text-1);
+	background-color: var(--vp-code-block-bg);
+	border-radius: 0;
+	padding: 1em;
+	box-sizing: content-box;
+	margin: 16px -24px;
+	margin-top: 0;
+}
+
+.result.no-top-border{
+	border-top: none;
+	border-radius: 8px;
+	margin: 0;
+}
+
+@media (min-width: 640px){
+	.result {
+		margin: 0;
+		border-radius: 0 0 8px 8px;
+	}
+}
+
+.result iframe{
+	border: none;
+	display: block;
+	width: 100%;
+	background-color: transparent;
+}

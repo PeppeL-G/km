@@ -1,0 +1,4 @@
+/* Undo VitePress CSS in Mermaid. */
+div.mermaid p{
+	line-height: 24px;
+}

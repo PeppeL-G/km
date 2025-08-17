@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Result</title>
+	<script>
+		
+		const methods = ['log', 'error', 'warn', 'info']
+		
+		methods.forEach(method => {
+			
+			const original = console[method]
+			
+			console[method] = function(...values){
+				
+				original.apply(console, values)
+				
+				const outputTableBody = document.querySelector(
+					`#output tbody`,
+				)
+				
+				const tr = document.createElement(`tr`)
+				outputTableBody.appendChild(tr)
+				
+				const methodTd = document.createElement(`td`)
+				tr.append(methodTd)
+				methodTd.innerText = method
+				
+				const valuesTd = document.createElement(`td`)
+				tr.append(valuesTd)
+				
+				if (1 <= values.length) {
+					valuesTd.innerText = JSON.stringify(
+						values[0],
+					)
+				}
+				
+				for(const v of values.slice(1)){
+					
+					const tr = document.createElement(`tr`)
+					outputTableBody.appendChild(tr)
+					
+					const methodTd = document.createElement(`td`)
+					tr.append(methodTd)
+					
+					const valuesTd = document.createElement(`td`)
+					tr.append(valuesTd)
+					valuesTd.innerText = JSON.stringify(
+						v,
+					)
+					
+				}
+				
+			}
+			
+		})
+		
+		document.addEventListener(`DOMContentLoaded`, () => {
+			
+			try{
+				
+				eval(`{{{JS}}}\n//# sourceURL=din-kod.js`)
+				
+			}catch(error){
+				
+				const outputTableBody = document.querySelector(
+					`#output tbody`,
+				)
+				
+				const tr = document.createElement(`tr`)
+				outputTableBody.appendChild(tr)
+				
+				const methodTd = document.createElement(`td`)
+				tr.append(methodTd)
+				methodTd.innerText = `ERROR`
+				
+				const valuesTd = document.createElement(`td`)
+				tr.append(valuesTd)
+				valuesTd.innerText = error.message + `\n\n` + error.stack.replace(`(about:srcdoc:63:5)`, ``).replace(`@about:srcdoc:63:5`, ``).replace(`EventListener.handleEvent*@about:srcdoc:59:12`, ``).replace(`at HTMLDocument.<anonymous>`, ``).trim()
+				
+				throw error
+				
+			}
+			
+		})
+		
+	</script>
+	<style>
+		
+		table{
+			font-family: 'Courier New', Courier, monospace;
+			width: 100%;
+			white-space: pre;
+		}
+		
+		table td{
+			padding: 0.2em;
+		}
+		
+		table td:first-child{
+			width: 3em;
+			text-align: center;
+		}
+		
+	</style>
+</head>
+<body>
+	<table id="output" border="1">
+		<tbody>
+			
+		</tbody>
+	</table>
+</body>
+</html>

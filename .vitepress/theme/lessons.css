@@ -1,0 +1,11 @@
+table.lessons td{
+	vertical-align: top;
+}
+
+table.lessons td.content ul{
+	margin: 0;
+}
+
+table.lessons td.content li{
+	margin: 0;
+}

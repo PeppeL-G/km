@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Resultat</title>
+	<script>
+		
+		document.addEventListener(`DOMContentLoaded`, () => {
+			
+			// Tell the parent document to set the correct
+			// height on the <iframe> showing this document.
+			document.getElementById(`result`).innerHTML = decodeURIComponent(
+				window.location.hash.substring(1),
+			)
+			
+			window.frameElement.height = document.body.scrollHeight
+			
+			// Set the correct mode on this document.
+			updateMode()
+			
+			const observer = new MutationObserver(updateMode)
+			
+			observer.observe(
+				window.parent.document.documentElement,
+				{ attributes: true, attributeFilter: ['class'] },
+			)
+			
+			function updateMode(){
+				
+				const isDark = window.parent.document.documentElement.classList.contains('dark')
+				
+				if (isDark) {
+					document.documentElement.classList.add('dark')
+				} else {
+					document.documentElement.classList.remove('dark')
+				}
+				
+			}
+			
+			if(new URLSearchParams(window.location.search).has(`remove-result-header`)){
+				document.querySelector(`h2`).remove()
+			}
+			
+		})
+		
+	</script>
+	<style>
+		
+		body{
+			margin: 0;
+			background-color: transparent;
+		}
+		
+		#result-title{
+			margin: 0;
+			text-align: center;
+		}
+		
+		html.dark{
+			color-scheme: dark;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<h2 id="result-title">Resultat</h2>
+	
+	<div id="result">
+		
+	</div>
+	
+</body>
+</html>
