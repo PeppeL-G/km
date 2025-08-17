@@ -84,8 +84,7 @@ export default defineConfig({
     returnToTopLabel: 'Tillbaka till toppen',
     
     footer: {
-      message: 'Kursmaterial för Peter L-Gs kurser',
-      copyright: 'Copyright © 2025-nutid Peter Larsson-Green'
+      copyright: 'Copyright © 2025-nu Peter Larsson-Green'
     },
     
   },
