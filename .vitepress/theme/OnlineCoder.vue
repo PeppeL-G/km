@@ -114,7 +114,7 @@
 		if(mode == `js`){
 			code = jsResultPage.replace(
 				`{{{JS}}}`,
-				code.replace(/`/g, '\\`'),
+				code.replace(/`/g, '\\`').replaceAll(`\$`, `\\$`),
 			)
 		}
 		
@@ -189,7 +189,7 @@
 	
 </template>
 
-<style>
+<style scoped>
 	
 	.onlineCoder{
 		

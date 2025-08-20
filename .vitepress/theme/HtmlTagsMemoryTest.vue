@@ -121,7 +121,7 @@
 	
 </template>
 
-<style>
+<style scoped>
 	
 	fieldset{
 		padding: 1em;
