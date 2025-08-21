@@ -12,7 +12,6 @@
 
 ## Lektion 1
 * Introduktion till vad ni kommer lära er i kursen
-* HTML taggtest
 * CSS-repetition
 * CSS-övning
 
@@ -72,12 +71,12 @@ Så att den ser ut som följande:
 	<li>Harry Potter och dödsrelikerna</li>
 </ol>
 
-<h2>Huvudpersoner</h2>
+<h2 style="font-weight: normal;">Huvudpersoner</h2>
 <ul style="border: 1px solid black; padding: 1em;">
 	<li>Harry Potter</li>
 	<li>Ron Weasley</li>
 	<li>Hermione <del>Ganger</del> Granger</li>
-	<li>Lord Voldemort</li>
+	<li style="padding-left: 3em;">Lord Voldemort</li>
 	<li>Albus Dumbledore</li>
 </ul>
 
@@ -93,6 +92,6 @@ Så att den ser ut som följande:
 </dl>
 ```
 
-Skriv CSS-koden i en extern CSS-fil som du laddar in på hemsidan.
+Skriv CSS-koden i en extern CSS-fil som du laddar in på hemsidan. Det är OK att lägga till id- och class-attribut i HTML-koden om du vill.
 
 :::

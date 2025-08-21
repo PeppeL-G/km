@@ -11,17 +11,27 @@
 
 
 ## Lektion 1
-::: exercise 1.1
-För respektive fråga nedan, besvara dem med information från åtminstone en pålitlig källa på webben. Använd inte någon AI/chattmodell/Wikipedia, och var noga med att ange sidkällan (URL).
+* Introduktion till kursen
+* Introduktion till Internet & Webben
+* VS Code
+* Grunderna i HTML
+* Övning
 
-1. Vad är det för skillnad på webben och Internet?
-2. Namnge tre olika protokoll man kan använda på Internet, och förklara vad dem används till.
-3. Hur ser IP4- respektive IP6-adresser ut?
-4. Vad är de tre språken HTML, CSS och JS förkortningar på? Och vad används respektive språk till i webbläsaren?
+::: exercise 1.1
+Ladda ner och installera [Visual Studio Code](https://code.visualstudio.com/) (VS Code). Det är en texteditor som är designad för att skriva kod i.
+
+**TIPS**\
+Under installationsprocessen, bocka för följande två alternativ:
+
+* `Add "Open with Code" action to Windows Explorer file context menu`
+* `Add "Open with Code" action to Windows Explorer directory context menu`
+
+Genom att göra detta så kan du högerklicka på filer och mappar och sedan välja att öppna dem i Visual Studio Code.
+
 :::
 
 ::: exercise 1.2
-Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar en sida som ser ut som följande:
+Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar en sida som ser ut som följande (använd ett `<h1>`-element för rubriken, och ett `<p>`-element för respektive paragraf):
 
 ```html result no-code
 <h1>En vacker hemsida</h1>
@@ -55,7 +65,7 @@ Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar 
 <ul>
 	<li>Harry Potter</li>
 	<li>Ron Weasley</li>
-	<li>Hermione <del>Ganger</del> Granger</li>
+	<li>Hermione Granger</li>
 	<li>Lord Voldemort</li>
 	<li>Albus Dumbledore</li>
 </ul>
@@ -71,20 +81,254 @@ Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar 
 	
 </dl>
 ```
+
+Om du är osäker på vilka HTML-element du bör använda så rekommenderas du att läsa på om:
+
+* [&lt;h1&gt; - &lt;h6&gt;](https://www.w3schools.com/tags/tag_hn.asp)
+* [&lt;p&gt;](https://www.w3schools.com/tags/tag_p.asp)
+* [&lt;ul&gt;](https://www.w3schools.com/tags/tag_ul.asp)
+* [&lt;ol&gt;](https://www.w3schools.com/tags/tag_ol.asp)
+* [&lt;dl&gt;](https://www.w3schools.com/tags/tag_dl.asp)
+
 :::
 
 ::: exercise 1.4
+
+Klicka runt bland de olika HTML-elementen som nämns på W3Schools sida [HTML Element Reference](https://www.w3schools.com/tags/) och utforska vad som finns. Du kan bland annat kolla upp följande HTML-element: `<strong>`, `<em>`, `<kbd>`, `<del>`, `<sup>`, `<sub>`, `<q>`, `<cite>`.
+
+:::
+
+
+
+## Lektion 2
+* Snabb repetition av HTML hittills
+* Nästlade element
+* Block-element VS inline-element
+* HTML-attribut
+* Teckenkoder
+* Tabeller
+
+::: exercise 2.1
+Skapa en ny `.html`-fil med olika nästlade list-relaterade element så att de visar en sida som den nedan
+
+```html result no-code
+<h1>Att göra</h1>
+<ul>
+	<li>Träna</li>
+	<li>
+		Städa:
+		<ul>
+			<li>Badrummet</li>
+			<li>Hallen</li>
+			<li>Köket</li>
+		</ul>
+	</li>
+	<li>Yoga</li>
+	<li>
+		Baka kaka
+		<ol>
+			<li>Hitta recept</li>
+			<li>
+				Köp ingridienser
+				<ol>
+					<li>Skriv ner ingridienserna på en lapp</li>
+					<li>Åk till affären</li>
+					<li>Samla ihop ingridienserna</li>
+					<li>Betala för ingridienserna</li>
+					<li>Åk tillbaka hem (med ingridienserna)</li>
+				</ol>
+			</li>
+			<li>Vispa ihop ingridienserna till en smet</li>
+			<li>Häll smeten i en form</li>
+			<li>Ät smeten (godare så!)</li>
+		</ol>
+	</li>
+</ul>
+```
+:::
+
+::: exercise 2.2
+För var och ett av följande element, ange ifall de är block-element eller inline-element:
+
+* `<h1>`
+* `<h2>`
+* `<p>`
+* `<strong>`
+* `<q>`
+* `<blockquote>`
+
+**TIPS**\
+Om du sätter två element av samma typ intill varandra (t.ex. `<p>abc</p><p>def</p>`) så kommer texten visas på samma rad om elementen är inline, och på två olika rader om elementen är block element.
+:::
+
+::: exercise 2.3
+Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar en sida som ser ut som följande:
+
+```html result no-code
+<h1>Några olika element</h1>
+<p><strong>Viktig information</strong>: Alla måste använda paraply när det regnar.</p>
+<p>Jag tycker att du presterade <em>väldigt</em> mycket bättre idag än igår.</p>
+<p>Bamse sa en gång att <q cite="https://www.skaparportalen.se/post/60-bamse-citat">Ingen är så stark att han inte behöver någon vän</q>, och jag håller med.</p>
+```
+
+Använd bland annat följande element på din sida: `<em>`, `<strong>` och `<q>`.
+:::
+
+::: exercise 2.4
 Nu får du träna på att göra fel! 😃
 
 Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar tecknen `å`, `ä` och `ö` fel. Du ska alltså i din text editor (t.ex. Visual Studio Code) spara filen i ett teckenformat, och i HTML-koden ska du skriva att den har sparats i ett annat teckenformat. Använd t.ex. teckenformaten `UTF-8` och `ISO-8859-1`.
 :::
 
-::: exercise 1.5
-Validera HTML-koden som du skapade i Övning 1.2 och 1.3 med hjälp av [Markup Validation Service](https://validator.w3.org/). Om några fel finns, rätta till dem.
+::: exercise 2.5
+Skapa en ny `.html`-fil som visar en tabell som den nedan.
 
-Testa även att avsiktligt skriva några fel i din kod (du kan t.ex. nästla taggar fel, ta bort en start eller en sluttagg, etc.) och verifiera att validatorn klagar på din kod.
+```html result no-code
+<h1>Karaktärer</h1>
+
+<table border="1">
+	<tr>
+		<td>Förnamn</td>
+		<td>Efternamn</td>
+		<td>Kön</td>
+	</tr>
+	<tr>
+		<td>Mario</td>
+		<td>Mario</td>
+		<td>Man</td>
+	</tr>
+	<tr>
+		<td>Peach</td>
+		<td>Toadstool</td>
+		<td>Kvinna</td>
+	</tr>
+	<tr>
+		<td>Luigi</td>
+		<td>Mario</td>
+		<td>Man</td>
+	</tr>
+</table>
+```
 :::
 
+::: exercise 2.6
+Skapa en ny `.html`-fil som visar en tabell som den nedan.
+
+```html result no-code
+<h1>Bilar</h1>
+
+<table border="1">
+	<tr>
+		<th><abbr title="Registreringsnummer">Reg.nr</abbr></th>
+		<th>Färg</th>
+		<th>Ägare</th>
+	</tr>
+	<tr>
+		<td>313</td>
+		<td>Röd</td>
+		<td>Kalle Anka</td>
+	</tr>
+	<tr>
+		<td>SLW 287R</td>
+		<td>Lime</td>
+		<td>Mr. Bean</td>
+	</tr>
+</table>
+```
+:::
+
+::: exercise 2.7
+Skapa en ny `.html`-fil som visar en tabell som den nedan.
+
+```html result no-code
+<table border="1">
+	
+	<tr>
+		<td>a</td>
+		<td>b</td>
+		<td>c</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2">x</td>
+		
+		<td>c</td>
+	</tr>
+	
+	<tr>
+		<td>a</td>
+		<td colspan="2">y</td>
+		
+	</tr>
+	
+</table>
+```
+:::
+
+::: exercise 2.8
+Skapa en ny `.html`-fil som visar en tabell som den nedan.
+
+```html result no-code
+<table border="1">
+	
+	<tr>
+		<td>a</td>
+		<td>b</td>
+	</tr>
+	
+	<tr>
+		<td rowspan="2">x</td>
+		<td>b</td>
+	</tr>
+	
+	<tr>
+		
+		<td>b</td>
+	</tr>
+	
+</table>
+```
+:::
+
+::: exercise 2.9
+Skapa en ny `.html`-fil som visar en tabell som den nedan.
+
+```html result no-code
+<table border="1">
+	
+	<tr>
+		<td>a</td>
+		<td>b</td>
+		<td>c</td>
+		<td rowspan="3">d</td>
+	</tr>
+	
+	<tr>
+		<td>a</td>
+		<td colspan="2" rowspan="2">b</td>
+		
+		
+	</tr>
+	
+	<tr>
+		<td>a</td>
+		
+		
+		
+	</tr>
+	
+	<tr>
+		<td colspan="2">a</td>
+		
+		<td colspan="2">c</td>
+		
+	</tr>
+	
+</table>
+```
+:::
+
+<!--
 ## Kommande
 
 * Webben
@@ -124,3 +368,4 @@ Testa även att avsiktligt skriva några fel i din kod (du kan t.ex. nästla tag
 * Mappstruktur, relativa sökvägar
 * CSS
 * Etc.
+-->

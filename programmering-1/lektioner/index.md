@@ -3,11 +3,17 @@
 
 
 ## Snabblänkar
-
+* [W3Schools C# Pages](https://www.w3schools.com/cs/index.php)
 
 
 
 ## Lektion 1
+* Kursintroduktion
+* Installera nödvändiga program
+* Hello, World!
+* Övningar
+
+
 ::: exercise 1.1
 Ladda ner och installera [.NET 9.0 SDK](https://dotnet.microsoft.com/en-us/download). Det innehåller dels:
 
@@ -85,7 +91,24 @@ I hope you are feeling fine.
 ```
 :::
 
+::: exercise 1.6
+Skapa ett nytt C#-program i samma mapp som du har öppet i Visual Studio Code. Upprepa helt enkelt stegen i Övning 1.4, men ge ditt program ett annat namn.
+
+Ändra sedan koden i din nya `Program.cs`-fil så att den skriver ut följande när den körs:
+
+```
+Howdy!
+How are you feeling today?
+I hope you are feeling fine.
+```
+
+Träna på att hoppa mellan att köra ditt nya program och ditt gamla program (det är filen som för stunden är öppen i VS Code som körs när du trycker på `▷`-knappen).
+:::
 
 
+<!--
 
 ## Kommande
+
+
+-->
