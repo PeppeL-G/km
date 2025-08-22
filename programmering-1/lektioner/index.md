@@ -91,19 +91,51 @@ I hope you are feeling fine.
 ```
 :::
 
-::: exercise 1.6
+::: exercise 1.7
 Skapa ett nytt C#-program i samma mapp som du har öppet i Visual Studio Code. Upprepa helt enkelt stegen i Övning 1.4, men ge ditt program ett annat namn.
 
-Ändra sedan koden i din nya `Program.cs`-fil så att den skriver ut följande när den körs:
+Ändra sedan koden i din nya `Program.cs`-fil så att den skriver ut följande när den kör (notera den blanka raden (rad 3), den ska finnas där):
 
 ```
-Howdy!
-How are you feeling today?
-I hope you are feeling fine.
+Hejsan!
+Hur mår du idag?
+
+Jag hoppas du mår bra.
 ```
 
 Träna på att hoppa mellan att köra ditt nya program och ditt gamla program (det är filen som för stunden är öppen i VS Code som körs när du trycker på `▷`-knappen).
 :::
+
+:::: exercise 1.8
+Börja läs på om C# på [W3Schools C# Pages](https://www.w3schools.com/cs/index.php).
+
+::: tip
+Följande kod på W3Schools C# Pages:
+
+```cs
+using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Hello World!");
+    }
+  }
+}
+```
+
+Är samma som:
+
+```cs
+Console.WriteLine("Hello World!");
+```
+
+Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krånlgligare sättet.
+
+::::
 
 
 <!--
