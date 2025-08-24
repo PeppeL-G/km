@@ -10,7 +10,7 @@
 
 
 
-## Lektion 1
+## 1. HTML-repetition
 * Introduktion till vad ni kommer lära er i kursen
 * HTML taggtest
 * HTML-repetition
@@ -58,182 +58,89 @@ Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar 
 
 
 
-<!--
 
-## Kommande...
-* Webben (server, webbläsare, HTTP, HTML, URI)
-* Request, Response
-* Node.js & npm
+## 2. Webbapp-grunder
+* [Node.js](https://nodejs.org/en/download)
+* npm
+* HTTP
+* `node:http`-modulen
+
+::: exercise 1
+
+Skapa ett nytt **private** repository på GitHub, ge `PeppeL-G` tillgång till det, klona det till din egen dator, och spara sedan allt ditt framtida arbete i den här kursen där. Skapa en ny commit och pusha den till GitHub vid slutet av varje lektion.
+
+:::
+
+::: exercise 2
+
+Skapa ett nytt projekt för att implementera en Node.js webbapp:
+
+1. Skapa en ny mapp
+2. Öppna mappen i Visual Studio Code
+3. I mappen, skapa:
+	* `package.json` innehållande `{"type": "module"}`
+	* `main.js` innehållande:
+	```js
+	import http from 'node:http'
+	
+	const webApp = http.createServer(function(request, response){
+		
+		response.statusCode = 200
+		
+		response.setHeader(`Content-Type`, `text/plain`)
+		
+		response.write(`Hello!`)
+		
+		response.end()
+		
+	})
+	
+	webApp.listen(3000)
+	```
+4. Starta appen med Node.js ifrån Visual Studio Code-fösntret
+5. Öppan [localhost:3000](http://localhost:3000/) i en webbläsare.
+
+Testa att skicka några request till din webbapp och verifiera att den skickar tillbaka ett response.
+
+:::
+
+::: exercise 3
+
+Läs ut lite information från den inkommande requesten, så som `request.method` och `request.url`. Lägg sedan till några villkorssatser som skickar tillbaka HTML-kod för några olika sidor som du själv väljer att ha. Du kan t.ex. ha:
+
+* En sida för GET request till `/` (startsidan)
+* En sida för GET request till `/about`
+* En sida för GET request till `/contact`
+* Etc.
+
+:::
+
+::: exercise 4
+
+Om du tar emot en request för en sida som inte finns, skicka tillbaka statuskoden `404` tillsammans med HTML-kod som förklarar att den efterfrågade resursen inte finns.
+
+:::
+
+::: exercise 5
+
+Istället för att skriva HTML-koden direkt i strängar i JS-filen, skriv HTML-koden i sina egna `.html`-filer (i samma mapp), och använd funktionen `readFileSync()` från `node:fs`-modulen för att läsa in HTML-koden som en sträng, och skicka den sedan till `response.write()`.
 
 ```js
-// Variabler skapas med "let".
-// Strängar skapas med `-tecknet.
-let cityName = `Jönköping`
+import fs from 'node:fs'
 
-// let-variabler kan tilldelas nya värden efter att de skapats.
-cityName = `Mullsjö`
-
-// Variabler skapade med "const" istället för "let"
-// kan inte tilldelas nya värden efter att de skapats.
-const year = 1990
-
-year = 2000 // Denna rad kommer krascha programmet, eftersom "year"-variabel är en const variabel.
-
-// Använd console.log()-funktionen för att be programmet skriva ut värden.
-console.log(`Hallå, världen!`)
-
-// Använd if-satser för alternativ exekvering.
-if(year == 2025){
-	console.log(`Det är detta året nu!`)
-}else if(2025 < year){
-	console.log(`Det är framtiden!`)
-}else{
-	console.log(`Det är i det förgångna!`)
-}
-
-// Använd for-loopen för upprepad exekvering.
-for(let i=0; i<10; i++){
-	
-	// Använd ${...} i strängar skapade med `-tecknet för att sätta in värden.
-	console.log(`Nu har i-variabeln värdet ${i}.`)
-	
-}
-
-// Använd while-loopen för upprepad exekvering.
-let i = 0
-while(i < 10){
-	
-	console.log(`Nu har i-variabeln värdet ${i}.`)
-	
-	i++
-	
-}
-
-// Använd function NAMN(){ ... } för att skapa en funktion.
-function getAGoodYear(){
-	
-	// Använd return för att returnera ett värde från en funktion.
-	return 1990
-	
-}
-
-// Anropa funktionen.
-console.log(`Ett bra år var år ${getAGoodYear()}.`)
-
-// Funktioner kan ha parametrar.
-function getSum(firstNumber, secondNumber){
-	
-	// Variabler kan skapas lokalt (finns bara i den här funktionen).
-	const theSum = firstNumber + secondNumber
-	
-	return theSum
-	
-}
-
-// Anrop till funktioner kan skicka med argument.
-const total = getSum(5, 7)
-
-console.log(`Summan av 5 och 7 är ${getSum(5, 7)}.`)
+const htmlCodeForAboutPage = fs.readFileSync(`./about.html`, `utf8`)
 ```
-
-::: exercise 1.1
-Skapa en ny fil med filändelsen `.js` i Visual Studio Code med följande innehåll:
-
-```js
-console.log(`Hello, World!`)
-```
-
-Kör sedan filen med hjälp av Run-knappen i Visual Studio Code, och försök sedan köra filen med hjälp av `node`-kommandot i *Windows Terminal*.
 
 :::
 
-::: exercise 1.2
-Skapa ett JavaScript-program som skriver ut vad summan av 123 och 789 är. När man kör programmet ska den skriva ut följande på skärmen:
+::: exercise 6
 
-```
-123 + 789 är 912.
-```
-:::
-
-::: exercise 1.3
-Skapa ett JavaScript-program som skriver ut vad medelvärdet av 7382 och 5428 är. I ditt program måste du även skapa och använda en funktion som beräknar medelvärdet av två tal som man skickar till det, t.ex.:
-
-```js
-getAverage(5, 7) // Detta borde evalueras till 6.
-```
-
-Outputen i ditt program ska vara följande:
-
-```
-Medelvärdet av 7382 och 5428 är 6405.
-```
-:::
-
-::: exercise 1.4
-Skapa ett JavaScript-program som skriver ut femmans multiplikationstabell:
-
-```
-0 * 5 = 0
-1 * 5 = 5
-2 * 5 = 10
-3 * 5 = 15
-4 * 5 = 20
-5 * 5 = 25
-6 * 5 = 30
-7 * 5 = 35
-8 * 5 = 40
-9 * 5 = 45
-10 * 5 = 50
-```
-
-Skapa två olika implementationer:
-
-* Ett program som använder en `for`-loop
-* Ett program som använder en `while`-loop
+Använd `try{ ... }catch(error){ ... }` för att hantera fel (exceptions) som kan uppstå när du anropar `readFileSync()`. Om filen som ska öppnas t.ex. inte finns (om du t.ex. råkat ta bort den av misstag) så kommer `readFileSync()` kasta ett exception. Fånga det med `try{ ... }catch(error){ ... }`, och skicka vid sådana fel tillbaka statuskoden `500` med HTML-kod som förklarar för användaren att ett oväntat fel inträffade, och att requesten inte kunde utföras.
 
 :::
 
-::: exercise 1.5
-Skapa ett JavaScript-program som skriver ut ettan till treans multiplikationstabell:
+::: exercise 7
 
-```
-0 * 1 = 0
-1 * 1 = 1
-2 * 1 = 2
-3 * 1 = 3
-4 * 1 = 4
-5 * 1 = 5
-6 * 1 = 6
-7 * 1 = 7
-8 * 1 = 8
-9 * 1 = 9
-10 * 1 = 10
+Skapa en `.css`-fil med lite CSS-kod som stylar dina sidor. Lägg sedan till `<link>`-elementet i din HTML-kod för att få webbläsaren att skicka en GET request för att hämta innehållet i CSS-filen. Ändra din JS-kod så att du skickar tillbaka innehållet i CSS-filen när du tar emot en sådan request.
 
-0 * 2 = 0
-1 * 2 = 2
-2 * 2 = 4
-3 * 2 = 6
-4 * 2 = 8
-5 * 2 = 10
-6 * 2 = 12
-7 * 2 = 14
-8 * 2 = 16
-9 * 2 = 18
-10 * 2 = 20
-
-0 * 3 = 0
-1 * 3 = 3
-2 * 3 = 6
-3 * 3 = 9
-4 * 3 = 12
-5 * 3 = 15
-6 * 3 = 18
-7 * 3 = 21
-8 * 3 = 24
-9 * 3 = 27
-10 * 3 = 30
-```
 :::
-
-
--->
