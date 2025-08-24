@@ -98,7 +98,7 @@ Skapa ett nytt projekt för att implementera en Node.js webbapp:
 	webApp.listen(3000)
 	```
 4. Starta appen med Node.js ifrån Visual Studio Code-fösntret
-5. Öppan [localhost:3000](http://localhost:3000/) i en webbläsare.
+5. Öppna localhost:3000 i en webbläsare.
 
 Testa att skicka några request till din webbapp och verifiera att den skickar tillbaka ett response.
 
