@@ -7,7 +7,7 @@
 
 
 
-## Lektion 1
+## Lektion 1, Installera program
 * Kursintroduktion
 * Installera nödvändiga program
 * Hello, World!
@@ -138,9 +138,214 @@ Den senare är ett enklare sätt att skriva på och som introducerades i C# vers
 ::::
 
 
-<!--
 
-## Kommande
+## Lektion 2, Output, Variabler, Input, Villkorssatser
+```cs
+// Två slash-tecken gör allt till höger
+// om det på samma rad en kommentar.
 
+// Använd Console.Write() för att skriva ut strängar
+// i konsollen.
+Console.Write("Hej");
+Console.Write("På");
+Console.Write("Dig!");
 
--->
+// Ofta använder man Console.WriteLine() istället,
+// vilket även skriver ut ett radbyte i slutet.
+Console.WriteLine("Hej");
+Console.WriteLine("På");
+Console.WriteLine("Dig!");
+
+// Använd Console.WriteLine() utan någon
+// sträng om du bara vill ha ett radbyte.
+Console.WriteLine();
+```
+
+::: exercise 2.1
+Ändra koden i `Program.cs` så att den skriver ut följande text istället:
+
+```
+Hej på dig!
+
+Är det soligt idag?
+```
+:::
+
+```cs
+// En variabel som innehåller en sträng skapas på detta vis.
+string myName = "Alice";
+
+// I strängar med $-tecknet framför så kan du använda
+// {variabelnamn} för att sätta in värdet från en
+// variabel i strängen.
+Console.WriteLine($"Jag heter {myName}, och jag tycker att {myName} är ett vacker namn.");
+
+// Du kan också skicka variabler direkt till funktioner
+// så som Console.WriteLine().
+Console.WriteLine(myName);
+```
+
+::: exercise 2.2
+Ändra koden i `Program.cs` så att den skriver ut följande text istället:
+
+```
+A
+A A
+A A A
+A A A A
+```
+
+Använd en variabel på ett smart sätt. Genom att ändra värdet i variabeln till något annat så ska man enkelt kunna få t.ex. följande text:
+
+```
+B
+B B
+B B B
+B B B B
+```
+:::
+
+```cs
+// Funktionen Console.ReadLine() kan användas för
+// att be användaren mata in en text. Returvärdet
+// blir den inmatade texten som en sträng.
+Console.Write("Skriv ditt namn: ");
+
+string enteredName = Console.ReadLine();
+
+Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
+```
+
+::: exercise 2.3
+Ändra koden i `Program.cs` så att den först ber användaren skriva in sin favoritfärg, och sedan skriver den ut den inmatade färgen på följande sätt (med `röd` som exempel):
+
+```
+röd röd-röd röd-röd-röd
+```
+:::
+
+::: exercise 2.4
+Ändra koden i `Program.cs` så att den först ber användaren mata in sitt förnamn, och sedan ber användaren mata in sitt efternamn, och slutligen tar programmet och skrivet ut följande (med `Axel` `Axelsson` som exempel):
+
+```
+Hej Axel, vilket fint förnamn du har!
+
+Du är den ende Axel Axelsson jag känner.
+```
+:::
+
+```cs
+// En villkorssats kan användas för att köra kod
+// endast när ett visst villkor är uppfyllt.
+Console.Write("Skriv ditt namn: ");
+
+string enteredName = Console.ReadLine();
+
+// Två likamedtecken betyder att vi testar
+// ifall de två har samma värde.
+if(enteredName == "Alice")
+{
+  Consle.WriteLine("Alice är ett mycket fint namn!");
+}
+
+Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
+```
+
+```cs
+Console.Write("Skriv ditt namn: ")
+
+string enteredName = Console.ReadLine();
+
+// Ett utropstecken följt av ett likamedtecken betyder
+// att vi testar ifall de två har olika värden.
+if(enteredName != "Alice")
+{
+  Consle.WriteLine("Du heter inte Alice? Synd...");
+}
+
+Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
+```
+
+```cs
+// En villkorssats kan följas upp med en else{ ... }
+// som körs ifall villkoret inte är uppfyllt.
+Console.Write("Skriv ditt namn: ")
+
+string enteredName = Console.ReadLine();
+
+if(enteredName == "Bob")
+{
+  Consle.WriteLine("Bob är ett mycket fint namn!");
+}
+else
+{
+  Console.WriteLine("Du heter inte Bob? Stackars dig...");
+}
+
+Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
+```
+
+```cs
+// En villkorssats kan följas upp med en eller flera
+// else if(VILLKOR){ ... }
+// Man kan alltid avsluta med en else{ ... } om man vill.
+Console.Write("Skriv ditt namn: ")
+
+string enteredName = Console.ReadLine();
+
+if(enteredName == "Alice")
+{
+  Consle.WriteLine("Alice är ett mycket fint namn!");
+}
+else if(enteredName == "Bob")
+{
+  Console.WriteLine("Bob är ett vacker namn.");
+}
+else if(enteredName == "Claire")
+{
+  Console.WriteLine("Claire är ett snyggt namn.");
+}
+else
+{
+  Console.WriteLine("Du har ett normalt namn.");
+}
+```
+
+::: exercise 2.5
+Ändra koden i `Program.cs` så att den först ber användaren mata in ett lösenord. Du (programmeraren) får själv välja vad det korrekta lösenordet ska vara. Om användaren matar in det korrekta lösenordet så ska du visa ett hemligt meddelande för användaren (du får själv välja vilket). Om användaren matar in det inkorrekta lösenordet så ska du visa ett felmeddelande för användaren. Därefter ska programmet vara slut.
+:::
+
+::: exercise 2.6
+Ändra koden i `Program.cs` så att ditt program innehåller 3 olika hemliga meddelanden, varje skyddat av ett eget lösenord. Om användaren skriver in lösenordet ett meddelande så ska det meddelandet visas, annars ska du visa ett meddelande som förklarar att ingen hemligt meddelande finns med det lösenordet.
+:::
+
+:::: exercise 2.7
+Börja läs på om C# på [W3Schools C# Pages](https://www.w3schools.com/cs/index.php). Du kan läsa på till och med `C# Variables`.
+
+::: tip
+Följande kod på W3Schools C# Pages:
+
+```cs
+using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Hello World!");
+    }
+  }
+}
+```
+
+Är samma som:
+
+```cs
+Console.WriteLine("Hello World!");
+```
+
+Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krånlgligare sättet.
+
+::::
