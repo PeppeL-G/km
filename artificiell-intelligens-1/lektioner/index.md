@@ -52,7 +52,7 @@ Den här övningen går ut på att se ifall människor alltid kan avgöra vad so
 
 Metoden vi kommer använda är något i stil med:
 
-1. Du väljer vilken chatmodell du vill använda (t.ex. ChatGPT, Perplexity, Google Gemini, etc.)
+1. Du väljer vilken chatmodell du vill använda (t.ex. ChatGPT, Google Gemini, Claude, etc.)
 2. Försök komma på instruktioner du kan ge till chatmodellen innan du börjar chatta med den som gör den lite mer mänsklig. Det kan t.ex. vara:
 
 > Du kommer vara med i ett experiment där du chattar med en människa, och vi vill att du ska bete dig så mänskligt som möjligt. Du ska låtsas vara en riktig människa. Svara gärna med färre än 50 ord, och det är OK om du gör stavfel ibland då och då, och dylikt. Du behöver inte alltid ställa frågor tillbaka.
