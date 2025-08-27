@@ -7,7 +7,7 @@
 
 
 
-## Lektion 1, Installera program
+## Lektion 1. Installera program
 * Kursintroduktion
 * Installera nödvändiga program
 * Hello, World!
@@ -139,7 +139,7 @@ Den senare är ett enklare sätt att skriva på och som introducerades i C# vers
 
 
 
-## Lektion 2, Output, Variabler, Input, Villkorssatser
+## Lektion 2. Output, Variabler, Input, Villkorssatser
 ```cs
 // Två slash-tecken gör allt till höger
 // om det på samma rad en kommentar.
@@ -167,7 +167,7 @@ Console.WriteLine();
 ```
 Hej på dig!
 
-Är det soligt idag?
+Jag hoppas du är sugen på att lära dig mer programmering nu!
 ```
 :::
 
@@ -195,7 +195,7 @@ A A A
 A A A A
 ```
 
-Använd en variabel på ett smart sätt. Genom att ändra värdet i variabeln till något annat så ska man enkelt kunna få t.ex. följande text:
+Använd en variabel på ett smart sätt. Genom att ändra värdet i variabeln till något annat så ska man enkelt kunna få t.ex. följande utskrift istället:
 
 ```
 B
@@ -220,14 +220,19 @@ Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
 Ändra koden i `Program.cs` så att den först ber användaren skriva in sin favoritfärg, och sedan skriver den ut den inmatade färgen på följande sätt (med `röd` som exempel):
 
 ```
+Skriv in din favorifärg: röd
+
 röd röd-röd röd-röd-röd
 ```
 :::
 
 ::: exercise 2.4
-Ändra koden i `Program.cs` så att den först ber användaren mata in sitt förnamn, och sedan ber användaren mata in sitt efternamn, och slutligen tar programmet och skrivet ut följande (med `Axel` `Axelsson` som exempel):
+Ändra koden i `Program.cs` så att den först ber användaren mata in sitt förnamn, och sedan ber användaren mata in sitt efternamn, och slutligen tar programmet och skriver ut följande (med `Axel` `Axelsson` som exempel):
 
 ```
+Ditt förnamn: Axel
+Ditt efternamn: Axelsson
+
 Hej Axel, vilket fint förnamn du har!
 
 Du är den ende Axel Axelsson jag känner.
@@ -260,7 +265,7 @@ string enteredName = Console.ReadLine();
 // att vi testar ifall de två har olika värden.
 if(enteredName != "Alice")
 {
-  Consle.WriteLine("Du heter inte Alice? Synd...");
+  Consle.WriteLine("Ah, du heter inte Alice? Synd...");
 }
 
 Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
@@ -279,7 +284,7 @@ if(enteredName == "Bob")
 }
 else
 {
-  Console.WriteLine("Du heter inte Bob? Stackars dig...");
+  Console.WriteLine("Bob är alltså inte ditt namn. Stackare...");
 }
 
 Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
@@ -312,7 +317,7 @@ else
 ```
 
 ::: exercise 2.5
-Ändra koden i `Program.cs` så att den först ber användaren mata in ett lösenord. Du (programmeraren) får själv välja vad det korrekta lösenordet ska vara. Om användaren matar in det korrekta lösenordet så ska du visa ett hemligt meddelande för användaren (du får själv välja vilket). Om användaren matar in det inkorrekta lösenordet så ska du visa ett felmeddelande för användaren. Därefter ska programmet vara slut.
+Ändra koden i `Program.cs` så att den först ber användaren mata in ett lösenord. Du (programmeraren) får själv välja vad det korrekta lösenordet ska vara. Om användaren matar in det korrekta lösenordet så ska du visa ett hemligt meddelande för användaren (du får själv välja vilket). Om användaren matar in ett inkorrekta lösenord så ska du visa ett felmeddelande för användaren. Därefter ska programmet vara slut.
 :::
 
 ::: exercise 2.6

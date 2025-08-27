@@ -7,7 +7,7 @@
 
 
 
-## Lektion 1
+## Lektion 1. Intro + Rep.
 * Introduktion till kursens innehåll
 * (sätt upp en C#-utvecklingsmiljö)
 * Repetition (output, input, variabler, datatypkonvertering, funktioner)
@@ -69,12 +69,12 @@ while(j < 5){
 }
 
 // Skapa funktion.
-void WriteName(){
+void writeName(){
 	Console.WriteLine("James");
 }
 
 // Anropa funktion.
-WriteName();
+writeName();
 
 // Skapa funktion med parametrar och returvärde.
 int getPlus2(int theNumber){
@@ -312,16 +312,22 @@ Ange den sista multiplikationstabellen du vill se: 4
 ```
 :::
 
-<!--
-## Kommande
+
+
+
+## Lektion 2. Rep. arrayer + listor
+* Array VS Listor
+* Referenser VS värden
+* Repetition
+* Övningar
 
 ```cs
 // Skapa array.
 string[] names = { "Alice", "Bob", "Claire" };
 
 // Hämta värden från array.
-var firstName = names[0];
-var secondName = names[1];
+var firstName = names[0]; // "Alice"
+var secondName = names[1]; // "Bob"
 
 // Ändra värden i array.
 names[2] = "Klara";
@@ -333,6 +339,168 @@ foreach(var name in names){
 
 // Skapa lista.
 var numbers = new List<int>{ 4, 7, 10 };
+
+// Kolla om värde finns i listan
+if(numbers.Contains(7))
+{
+	Console.WriteLine("Sju finns i listan!");
+}
+
+// Kolla hur många värden som finns i listan.
+Console.WriteLine($"Det finns {numbers.Count} värden i listan.");
+
+// Lägg till värde i slutet av listan.
+numbers.Add(23); // 4, 7, 10, 23
+
+// Ta bort första i listan med det givna värdet.
+numbers.Remove(7); // 4, 10, 23
+
+// Ta bort värdet vid det givna indexet.
+numbers.RemoveAt(1); // 4, 23
+
+// Loopa igenom alla värden i en lista.
+foreach(var number in numbers){
+	Console.WriteLine(number);
+}
 ```
+
+::: exercise 2.1
+De här övningarna kommer tillsammans hjälpa dig skapa ett program som i slutändan kan administrera en lista med namn.
+
+Skapa ett program som ber användaren mata in ett kommando. Programmet ska fortsätta be användaren mata in ett kommando så länge användaren inte matar in kommandot `quit`. När användaren matar in kommandot `quit` så ska loopen/programmet avslutas.
+
+Du kommer lägga till fler kommandon för programmet i kommande övningar, men nu är kommandot `quit` det enda kommandot som ska finnas. Om användaren skriver in ett kommando som inte finns så ska ett felmeddelande visas.
+
+Körexempel:
+
+```
+Mata in kommando: hallå
+Kommandot hallå finns inte.
+Mata in kommando: va?
+Kommandot va? finns inte.
+Mata in kommando: quit
+```
+:::
+
+::: exercise 2.2
+I ditt program, skapa en lista med namnen `Bosse` och `Nisse`. Lägg sedan till kommandot `count`, som visar hur många namn som finns i listan.
+
+Körexempel:
+
+```
+Mata in kommando: count
+2
+Mata in kommando: quit
+```
+:::
+
+::: exercise 2.3
+Lägg till kommandot `show`, som visar alla namnen i listan.
+
+Körexempel:
+
+```
+Mata in kommando: show
+ - Bosse
+ - Nisse
+Mata in kommando: quit
+```
+:::
+
+::: exercise 2.4
+Lägg till kommandot `add`. När det kommandot körs så ska du be användaren mata in ett nytt namn, och sedan spara det namnet i slutet på din lista, men bara om namnet inte redan finns i listan. Om namnet redan finns i listan så ska du visa ett felmeddelande.
+
+Körexempel:
+
+```
+Mata in kommando: show
+ - Bosse
+ - Nisse
+Mata in kommando: add
+Mata in namn: Nisse
+Namnet Nisse finns redan i listan.
+Mata in kommando: add
+Mata in namn: Alice
+Mata in kommando: show
+ - Bosse
+ - Nisse
+ - Alice
+Mata in kommando: quit
+```
+:::
+
+::: exercise 2.5
+Lägg till kommandot `remove`. När det kommandot körs så ska du be användaren mata in ett namn, och sedan ta bort det namnet från listan, men bara om namnet finns i listan. Om namnet inte finns i listan så ska du visa ett felmeddelande.
+
+Körexempel:
+
+```
+Mata in kommando: show
+ - Bosse
+ - Nisse
+Mata in kommando: remove
+Mata in namn: Alice
+Namnet Alice finns inte i listan.
+Mata in kommando: remove
+Mata in namn: Bosse
+Mata in kommando: show
+ - Nisse
+Mata in kommando: quit
+```
+:::
+
+::: exercise 2.6
+Ändra ditt program så du inte bara sparar personers namn, utan även sparar ner annan information, så som deras email, telefonnummer, hemort, ålder, etc. Välj själv vad för information du vill att ditt program ska spara.
+
+För detta ändamål behöver du även skapa en struct- eller en klassdefinition som representerar en person (med namn, email, etc.). Instanserna av denna definition är vad du sedan kommer spara i listan.
+:::
+
+::: exercise 2.7
+Om du lyckas komma ända hit innan lektionens slut så kan läsa på om objektorienterad programmering på [W3Schools C# Pages](https://www.w3schools.com/cs/cs_oop.php).
+:::
+
+<!--
+
+## Lektion X, OOP-grunder
+
+::: exercise x.1
+
+Skapa en klass som representerar en bil. En bil ska ha följande attribut:
+
+* `regNumber` (t.ex."abc123")
+* `color` (t.ex. "röd")
+* `tankSize` (i liter, t.ex. 60)
+* `currentTankSize` (i liter, t.ex. 50)
+
+I ditt huvudprogram, skapa sedan 2 olika bil-instanser. Du får själv välja värde på attributen för dina bilar. Skriv sedan ut namnet på dina bilar.
+
+:::
+
+::: exercise x.2
+
+I din bilklass, lägg till en metod som heter `WriteInfo()`. I den metoden ska du skriva ut all information om bilen på skärmen.
+
+I ditt huvudprogram, anropa `WriteInfo()` på dina två bil-objekt.
+
+:::
+
+::: exercise x.3
+
+I din bilklass, lägg till en metod som heter `isOutOfGas()`. Den ska returnera:
+
+* `true`, om `currentTankSize` är `0`.
+* `false`, annars.
+
+I ditt huvudprogram, använd `isOutOfGas()` på en av dina bil-instanser som villkor i en villkorssats, och skriv antingen ut meddelandet `Vi kan åka!` eller `Soppatorsk!`
+
+:::
+
+::: exercise x.4
+
+Det kan även vara bra att ha en metod man kan anropa för att tanka bilen full. Lägg därför till en metod som heter `refuel()`. Den ska göra bilen fulltankad. Efter att den här metoden har körts så ska alltså bilens `currentTankSize` ha samma värde som bilens `tankSize`.
+
+I ditt huvudprogram, använd `refuel()` på en av dina bil-instanser för att tanka den full. Anropa sedan `WriteInfo()` och verifiera att bilen har blivit fulltankad.
+
+:::
 
 -->

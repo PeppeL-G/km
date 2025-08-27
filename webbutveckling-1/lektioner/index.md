@@ -10,7 +10,7 @@
 
 
 
-## Lektion 1
+## Lektion 1. Intro + HTML-grunder
 * Introduktion till kursen
 * Introduktion till Internet & Webben
 * VS Code
@@ -100,7 +100,7 @@ Klicka runt bland de olika HTML-elementen som nämns på W3Schools sida [HTML El
 
 
 
-## Lektion 2
+## Lektion 2, HTML-grunder
 * Snabb repetition av HTML hittills
 * Nästlade element
 * Block-element VS inline-element

@@ -1,6 +1,6 @@
 # Artificiell Intelligens 1 - Lektioner
 
-## Lektion 1
+## Lektion 1. Intro + AI definition
 * Kursintro
 	* Lagar och regler kring AI
 	* Etik kring AI
@@ -41,7 +41,7 @@ Vi skippar dokumentering av det första experimentet.
 
 
 
-## Lektion 2, Turing-testet
+## Lektion 2. Turing-testet
 ::: exercise 2.1
 
 På Google Drive, skapa ett nytt Google Dokument, som kommer bli din `Min AI-rapport`. Skapa ett nytt kapitel i den med rubiken `Turing-testet`.

@@ -10,7 +10,7 @@
 
 
 
-## 1. HTML-repetition
+## Lektion 1. HTML-repetition
 * Introduktion till vad ni kommer lära er i kursen
 * HTML taggtest
 * HTML-repetition
@@ -59,7 +59,12 @@ Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar 
 
 
 
-## 2. Webbapp-grunder
+## Lektion 2. JS-grunder
+* Samma JS-grunder som i [Webbuteckling 2](../../webbutveckling-2/lektioner/).
+
+
+
+## Lektion 3. Webbapp-grunder
 * [Node.js](https://nodejs.org/en/download)
 * npm
 * HTTP
@@ -73,10 +78,35 @@ Skapa ett nytt **private** repository på GitHub, ge `PeppeL-G` tillgång till d
 
 ::: exercise 2
 
+Skapa ett nytt projekt för att testa köra en Node.js app:
+
+1. Skapa en ny mapp med namnet `hello-world`.
+2. Öppna mappen i Visual Studio Code.
+3. I mappen, skapa:
+	* `package.json` innehållande `{"type": "module"}`
+	* `main.js` innehållande:
+	```js
+	console.log(`Hello, world!`)
+	```
+4. Starta appen med Node.js ifrån Visual Studio Code-fönstret.
+
+Ändra sedan koden i `main.js`-filen så att den skriver ut följande när man kör programmet:
+
+```
+Hello, world 1!
+Hello, world 2!
+Hello, world 3!
+Hello, world 4!
+```
+
+:::
+
+::: exercise 3
+
 Skapa ett nytt projekt för att implementera en Node.js webbapp:
 
-1. Skapa en ny mapp
-2. Öppna mappen i Visual Studio Code
+1. Skapa en ny mapp.
+2. Öppna mappen i Visual Studio Code.
 3. I mappen, skapa:
 	* `package.json` innehållande `{"type": "module"}`
 	* `main.js` innehållande:
@@ -97,14 +127,14 @@ Skapa ett nytt projekt för att implementera en Node.js webbapp:
 	
 	webApp.listen(3000)
 	```
-4. Starta appen med Node.js ifrån Visual Studio Code-fösntret
+4. Starta appen med Node.js ifrån Visual Studio Code-fönstret
 5. Öppna localhost:3000 i en webbläsare.
 
 Testa att skicka några request till din webbapp och verifiera att den skickar tillbaka ett response.
 
 :::
 
-::: exercise 3
+::: exercise 4
 
 Läs ut lite information från den inkommande requesten, så som `request.method` och `request.url`. Lägg sedan till några villkorssatser som skickar tillbaka HTML-kod för några olika sidor som du själv väljer att ha. Du kan t.ex. ha:
 
@@ -115,13 +145,13 @@ Läs ut lite information från den inkommande requesten, så som `request.method
 
 :::
 
-::: exercise 4
+::: exercise 5
 
 Om du tar emot en request för en sida som inte finns, skicka tillbaka statuskoden `404` tillsammans med HTML-kod som förklarar att den efterfrågade resursen inte finns.
 
 :::
 
-::: exercise 5
+::: exercise 6
 
 Istället för att skriva HTML-koden direkt i strängar i JS-filen, skriv HTML-koden i sina egna `.html`-filer (i samma mapp), och använd funktionen `readFileSync()` från `node:fs`-modulen för att läsa in HTML-koden som en sträng, och skicka den sedan till `response.write()`.
 
@@ -133,13 +163,13 @@ const htmlCodeForAboutPage = fs.readFileSync(`./about.html`, `utf8`)
 
 :::
 
-::: exercise 6
+::: exercise 7
 
 Använd `try{ ... }catch(error){ ... }` för att hantera fel (exceptions) som kan uppstå när du anropar `readFileSync()`. Om filen som ska öppnas t.ex. inte finns (om du t.ex. råkat ta bort den av misstag) så kommer `readFileSync()` kasta ett exception. Fånga det med `try{ ... }catch(error){ ... }`, och skicka vid sådana fel tillbaka statuskoden `500` med HTML-kod som förklarar för användaren att ett oväntat fel inträffade, och att requesten inte kunde utföras.
 
 :::
 
-::: exercise 7
+::: exercise 8
 
 Skapa en `.css`-fil med lite CSS-kod som stylar dina sidor. Lägg sedan till `<link>`-elementet i din HTML-kod för att få webbläsaren att skicka en GET request för att hämta innehållet i CSS-filen. Ändra din JS-kod så att du skickar tillbaka innehållet i CSS-filen när du tar emot en sådan request.
 

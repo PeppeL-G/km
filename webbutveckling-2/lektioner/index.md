@@ -11,7 +11,7 @@
 
 
 
-## 1. CSS-repetition
+## Lektion 1. CSS-repetition
 * Introduktion till vad ni kommer lära er i kursen
 * CSS-repetition
 * CSS-övning
@@ -100,7 +100,7 @@ Skriv CSS-koden i en extern CSS-fil som du laddar in på hemsidan. Det är OK at
 
 
 
-## 2. JS-grunder
+## Lektion 2. JS-grunder
 * Grunderna i JS
 * Exempel
 * Övningar
@@ -285,4 +285,176 @@ Om användaren misslyckas med att mata in ett korrekt tal så ska användaren f�
 
 Du får återanvända och modifiera de funktioner du har skapat i de tidigare uppgifterna. Du bör även skapa en ny funktion som utför själva "upphöjt till"-uträkningen med en loop.
 
+:::
+
+
+
+
+## Lektion 3. DOM Intro
+* `document.addEventListener(EVENT, EVENT_LISTENER)`
+* `DOMContentLoaded` event
+* `click` event
+* `document.querySelectorAll(SELECTOR)` -> `nodeList`
+* `nodeList.length`
+* `document.querySelector(SELECTOR)`-> `node`
+* `document.createElement(TAG_NAME)` -> `node`
+* `node.innerText`
+* `node.appendChild(NODE)`
+* `node.addEventListener(EVENT, EVENT_LISTENER)`
+* Övningar
+
+::: exercise 3.1
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 3.1</title>
+	<script>
+		
+		// Skriv din JS-kod här.
+		
+	</script>
+</head>
+<body>
+	
+	<p>Det är <span id="weather">regnigt</span> idag.</p>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som ändrar vädret från `regnigt` till `solsken` så snart sidan har laddats in. Du kommer behöva använda:
+
+* `document.addEventListener(EVENT, EVENT_LISTENER)`
+* `DOMContentLoaded` eventet
+* `document.querySelector(SELECTOR)` -> `node`
+* `node.innerText`
+:::
+
+::: exercise 3.2
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 3.2</title>
+	<script>
+		
+		// Skriv din JS-kod här.
+		
+	</script>
+</head>
+<body>
+	
+	<p>Här är en lista med några frukter:</p>
+	
+	<ul>
+		<li>Äpple</li>
+		<li>Päron</li>
+		<li>Apelsin</li>
+		<li>Banan</li>
+	</ul>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som så snart sidan har laddats in ändrar texten `Här är en lista med några frukter:` till `Här är en lista med X frukter:`. `X` ska beräknas utifrån hur många frukter listan faktiskt innehåller, och vara `4` i exemplet ovan.
+
+Du kommer behöva använda:
+
+* `document.addEventListener(EVENT, EVENT_LISTENER)`
+* `DOMContentLoaded` eventet
+* `document.querySelector(SELECTOR)` -> `node`
+* `document.querySelectorAll(SELECTOR)` -> `nodeList`
+* `node.innerText`
+:::
+
+::: exercise 3.3
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 3.3</title>
+	<script>
+		
+		// Skriv din JS-kod här.
+		
+	</script>
+</head>
+<body>
+	
+	<button id="addFruitButton">Lägg till frukt</button>
+	
+	<ul id="fruitsList">
+	</ul>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som så snart sidan har laddats in lägger till en `click`-lyssnare på knappen. När knappen klickas/i din klicklyssnare ska du:
+
+1. Be användaren mata in namnet på en frukt med hjälp av `prompt()`-funktionen.
+2. Skapa ett nytt `<li>`-element.
+3. Få `<li>`-elementet innehålla det nya fruktnamnet användaren skrev in.
+4. Lägga till `<li>`-elementet i slutet på fruktlistan (`<ul id="fruitsList">`)
+
+Du kommer behöva använda:
+
+* `document.addEventListener()`
+* `DOMContentLoaded` eventet
+* `document.querySelector()` -> `node`
+* `node.addEventListener()`
+* `prompt()`
+* `node.innerText`
+* `node.appendChild()`
+:::
+
+::: exercise 3.4
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 3.4</title>
+	<script>
+		
+		// Skriv din JS-kod här.
+		
+	</script>
+</head>
+<body>
+	
+	<div id="number">0</div>
+	
+	<button id="addOneButton">+1</button>
+	<button id="addFiveButton">+5</button>
+	<button id="addTenButton">+10</button>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som ser till att:
+
+* När första knappen klickas så ska numret i `<div>`-elementet öka med 1.
+* När andra knappen klickas så ska numret i `<div>`-elementet öka med 5.
+* När tredje knappen klickas så ska numret i `<div>`-elementet öka med 10.
+
+Lista själv ut vilka funktioner du behöver använda. Kom även ihåg att du kan använda `parseInt()` för att konvertera en sträng till ett heltal.
 :::
