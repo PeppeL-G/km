@@ -290,18 +290,30 @@ Du får återanvända och modifiera de funktioner du har skapat i de tidigare up
 
 
 
-## Lektion 3. DOM Intro
-* `document.addEventListener(EVENT, EVENT_LISTENER)`
-* `DOMContentLoaded` event
-* `click` event
-* `document.querySelectorAll(SELECTOR)` -> `nodeList`
-* `nodeList.length`
-* `document.querySelector(SELECTOR)`-> `node`
-* `document.createElement(TAG_NAME)` -> `node`
-* `node.innerText`
-* `node.appendChild(NODE)`
-* `node.addEventListener(EVENT, EVENT_LISTENER)`
-* Övningar
+## Lektion 3. DOM-intro
+Gör så långt ni hinner.
+
+1. Läs på om grunderna i Document Object Model (DOM):
+	1. [DOM Intro](https://www.w3schools.com/js/js_htmldom.asp)\
+	Jag tror att det räcker att läsa den sidan + sidorna nedan som visar förklaringar och exempel på hur man anävnder olika DOM-funktioner.
+	2. [document.addEventListener()](https://www.w3schools.com/jsref/met_document_addeventlistener.asp)
+	3. [document.createElement()](https://www.w3schools.com/jsref/met_document_createelement.asp)
+	4. [document.querySelectorAll()](https://www.w3schools.com/jsref/met_document_queryselectorall.asp)
+	5. [document.querySelector()](https://www.w3schools.com/jsref/met_document_queryselector.asp)
+	6. [nodeList.length](https://www.w3schools.com/jsref/prop_nodelist_length.asp)
+	7. [htmlElement.innerText](https://www.w3schools.com/jsref/met_node_appendchild.asp)
+	8. [htmlElement.addEventListener()](https://www.w3schools.com/jsref/met_element_addeventlistener.asp)
+	9. [htmlElement.appendChild()](https://www.w3schools.com/jsref/met_node_appendchild.asp)
+2. Gör övningarna
+3. Commit och Push!
+
+Lycka till, så ses vi förhoppningsvis på måndag!
+
+::: tip
+
+Lägg alltid din JS-kod inne i en funktion som anropas när `DOMContentLoaded`-eventet har inträffat, så som visas i övningarna nedan. Detta säkerställer att webbläsaren har läst igenom all HTML-kod och skapat hela DOM-strukturen på sidan innan du börjar arbeta med den via din JS-kod.
+
+:::
 
 ::: exercise 3.1
 Skapa en ny HTML-fil med följande innehåll:
@@ -315,7 +327,9 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 3.1</title>
 	<script>
 		
-		// Skriv din JS-kod här.
+		document.addEventListenet(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
 		
 	</script>
 </head>
@@ -329,8 +343,6 @@ Skapa en ny HTML-fil med följande innehåll:
 
 Skriv JS-kod som ändrar vädret från `regnigt` till `solsken` så snart sidan har laddats in. Du kommer behöva använda:
 
-* `document.addEventListener(EVENT, EVENT_LISTENER)`
-* `DOMContentLoaded` eventet
 * `document.querySelector(SELECTOR)` -> `node`
 * `node.innerText`
 :::
@@ -347,7 +359,9 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 3.2</title>
 	<script>
 		
-		// Skriv din JS-kod här.
+		document.addEventListenet(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
 		
 	</script>
 </head>
@@ -370,11 +384,10 @@ Skriv JS-kod som så snart sidan har laddats in ändrar texten `Här är en list
 
 Du kommer behöva använda:
 
-* `document.addEventListener(EVENT, EVENT_LISTENER)`
-* `DOMContentLoaded` eventet
 * `document.querySelector(SELECTOR)` -> `node`
-* `document.querySelectorAll(SELECTOR)` -> `nodeList`
 * `node.innerText`
+* `document.querySelectorAll(SELECTOR)` -> `nodeList`
+* `nodeList.length`
 :::
 
 ::: exercise 3.3
@@ -389,7 +402,9 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 3.3</title>
 	<script>
 		
-		// Skriv din JS-kod här.
+		document.addEventListenet(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
 		
 	</script>
 </head>
@@ -413,13 +428,12 @@ Skriv JS-kod som så snart sidan har laddats in lägger till en `click`-lyssnare
 
 Du kommer behöva använda:
 
-* `document.addEventListener()`
-* `DOMContentLoaded` eventet
-* `document.querySelector()` -> `node`
-* `node.addEventListener()`
-* `prompt()`
+* `document.querySelector(SELECTOR)` -> `node`
+* `node.addEventListener(EVENT_NAME, EVENT_HANDLER)`
+* `prompt(MESSAGE, DEFAULT_VALUE)`
+* `document.createElement(TAG_NAME)` -> `node`
 * `node.innerText`
-* `node.appendChild()`
+* `node.appendChild(CHILD_NODE)`
 :::
 
 ::: exercise 3.4
@@ -434,7 +448,9 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 3.4</title>
 	<script>
 		
-		// Skriv din JS-kod här.
+		document.addEventListenet(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
 		
 	</script>
 </head>
@@ -442,9 +458,9 @@ Skapa en ny HTML-fil med följande innehåll:
 	
 	<div id="number">0</div>
 	
-	<button id="addOneButton">+1</button>
-	<button id="addFiveButton">+5</button>
-	<button id="addTenButton">+10</button>
+	<button id="addOneButton">1</button>
+	<button id="addFiveButton">5</button>
+	<button id="addTenButton">10</button>
 	
 </body>
 </html>

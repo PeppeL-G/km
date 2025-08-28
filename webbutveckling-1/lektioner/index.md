@@ -101,12 +101,18 @@ Klicka runt bland de olika HTML-elementen som nämns på W3Schools sida [HTML El
 
 
 ## Lektion 2, HTML-grunder
-* Snabb repetition av HTML hittills
+Dagen lektion innehåller följande:
+
 * Nästlade element
 * Block-element VS inline-element
-* HTML-attribut
-* Teckenkoder
 * Tabeller
+* Teckenkoder
+
+Om ni finner något för svårt att förstå så tar vi och går igenom det nästa lektion. Lycka till!
+
+---
+
+Läs på om [Numrerade och onumrerade listor](https://www.kiltedviking.net/se/www/html/del4.html#listor). Gör sedan övningen nedan.
 
 ::: exercise 2.1
 Skapa en ny `.html`-fil med olika nästlade list-relaterade element så att de visar en sida som den nedan
@@ -147,6 +153,8 @@ Skapa en ny `.html`-fil med olika nästlade list-relaterade element så att de v
 ```
 :::
 
+Läs på om skillnaden mellan [HTML Block and Inline Elements](https://www.w3schools.com/html/html_blocks.asp). Gör sedan övningen nedan.
+
 ::: exercise 2.2
 För var och ett av följande element, ange ifall de är block-element eller inline-element:
 
@@ -174,13 +182,13 @@ Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar 
 Använd bland annat följande element på din sida: `<em>`, `<strong>` och `<q>`.
 :::
 
-::: exercise 2.4
-Nu får du träna på att göra fel! 😃
+Läs på om [HTML-tabeller](https://www.w3schools.com/html/html_tables.asp). Gör sedan övningarna nedan.
 
-Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar tecknen `å`, `ä` och `ö` fel. Du ska alltså i din text editor (t.ex. Visual Studio Code) spara filen i ett teckenformat, och i HTML-koden ska du skriva att den har sparats i ett annat teckenformat. Använd t.ex. teckenformaten `UTF-8` och `ISO-8859-1`.
+::: tip
+Under utveckling kan du använda `<table border="1">` för att din tabell ska få kanter och bli lättare se. Kanter bör man egentligen lägga till med hjälp av CSS, men under utveckling så är det ok att använda det där `border`-attributet.
 :::
 
-::: exercise 2.5
+::: exercise 2.4
 Skapa en ny `.html`-fil som visar en tabell som den nedan.
 
 ```html result no-code
@@ -211,7 +219,7 @@ Skapa en ny `.html`-fil som visar en tabell som den nedan.
 ```
 :::
 
-::: exercise 2.6
+::: exercise 2.5
 Skapa en ny `.html`-fil som visar en tabell som den nedan.
 
 ```html result no-code
@@ -237,7 +245,9 @@ Skapa en ny `.html`-fil som visar en tabell som den nedan.
 ```
 :::
 
-::: exercise 2.7
+Läs på om `colspan`- och `rowspan`-attributen som `<td>`-elementet kan ha. Gör sedan övningarna nedan.
+
+::: exercise 2.6
 Skapa en ny `.html`-fil som visar en tabell som den nedan.
 
 ```html result no-code
@@ -265,7 +275,7 @@ Skapa en ny `.html`-fil som visar en tabell som den nedan.
 ```
 :::
 
-::: exercise 2.8
+::: exercise 2.7
 Skapa en ny `.html`-fil som visar en tabell som den nedan.
 
 ```html result no-code
@@ -290,7 +300,7 @@ Skapa en ny `.html`-fil som visar en tabell som den nedan.
 ```
 :::
 
-::: exercise 2.9
+::: exercise 2.8
 Skapa en ny `.html`-fil som visar en tabell som den nedan.
 
 ```html result no-code
@@ -328,44 +338,15 @@ Skapa en ny `.html`-fil som visar en tabell som den nedan.
 ```
 :::
 
-<!--
-## Kommande
 
-* Webben
-	* Internet
-	* Webben/HTTP (server, klient, http, html)
-		* Webpage VS Website VS Web Application
-		* Olika klienter (webbläsare, spindlar, etc.)
-		* [Vem uppfann egentligen Internet?](https://internetstiftelsen.se/podd/dumma-fragor-om-internet/vem-uppfann-egentligen-internet/)
-	*	Exempel på protokoll utöver HTTP:
-		* [File Protocol](https://kinsta.com/se/kunskapsbas/vad-ar-ftp/)
-		* [DNS](https://internetstiftelsen.se/domaner/domannamn-vad-ar-det/om-domannamnssystemet-dns/)
-	* Webbspråk/Klientspråk
-		* HTML (skapa GUI-element)
-		* CSS (styla GUI-element)
-		* JS (beräkningar, agera vid händelser (så som knapptryckningar), ändra GUI-element)
-* [VS Code](https://code.visualstudio.com/)
-* [HTML5 Specifikation](https://html.spec.whatwg.org/multipage/)
-	* [W3Schools HTML Elements Reference](https://www.w3schools.com/tags/)
-	* [Mozilla HTML Elements Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
-* [W3Schools' HTML Tutorials](https://www.w3schools.com/html/)
-* HTML
-	* Grundläggande element (doctype, `<html>`, `<head>`, `<body>`, `<h1>`, `<p>`)
-	* Indentering
-	* Kommentarer
-	* Attribut
-	* `<time>`, `<strong>`, `<em>`, `<abbr>`, `<h2>`, `<h3>`, `<kbd>`, `<del>`, `<sup>`, `<sub>`, `<q>`, `<cite>`
-	* Block-element VS Inline-element
-	* Nästlade element
-	* `<time>`, `<ul>`, `<ol>`, `<li>`, `<dl>`, `<dt>`, `<dd>`
-	* Teckenkodning, `<meta>`
-	* Validering av HTML-kod
-	* Tabeller (`<table>`, `border` attribut, `<tr>`, `<td>`, `<th>`, `<thead>`, `<tbody>`, `<tfoot>`, `<caption>`, `colspan` attribut, `rowspan` attribut)
-	* Semantic layout (`<main>`, `<header>`, `<footer>`, `<aside>`)
-	* `<a>`
-	* `<img>`
-	* Favicon
-* Mappstruktur, relativa sökvägar
-* CSS
-* Etc.
--->
+
+
+Läs på om [Character Sets](https://www.w3schools.com/html/html_charset.asp), och gör sedan övningen nedan.
+
+::: exercise 2.9
+Nu får du träna på att göra fel! 😃
+
+Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar tecknen `å`, `ä` och `ö` fel. Du ska alltså i din text editor (t.ex. Visual Studio Code) spara filen i ett teckenformat (du kan ändra teckenformat längst ner långt åt höger i Visual Studio Code där det står `UTF-8`), och i HTML-koden ska du skriva att den har sparats i ett annat teckenformat (med hjälp av `<meta charset="...">`). Spara t.ex. filen med teckenformatet `UTF-8` i VS Code, och skriv i HTML-koden att den har blivit sparad med teckenformatet `ISO-8859-1`.
+
+Verfiera att din webbläsare visar tecknen `å`, `ä` och `ö` fel. Ändra sedan så att du använder `UTF-8` på båda ställena, så att `å`, `ä` och `ö` visas som dem ska.
+:::

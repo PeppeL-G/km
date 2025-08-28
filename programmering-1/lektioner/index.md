@@ -133,7 +133,7 @@ namespace HelloWorld
 Console.WriteLine("Hello World!");
 ```
 
-Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krånlgligare sättet.
+Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krångligare sättet.
 
 ::::
 
@@ -266,14 +266,21 @@ namespace HelloWorld
 Console.WriteLine("Hello World!");
 ```
 
-Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krånlgligare sättet.
+Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krångligare sättet.
 
 ::::
 
 
-<!--
 
 ## Lektion 3. Villkor, Villkorssatser
+Dagens lektion handlar om att använda villkorssatser. Gör så gott ni kan, så tittar vi på det lite snabbt igen när jag har tillfrisknat.
+
+---
+
+Läs på om [villkorssatser i C#](https://www.geeksforgeeks.org/c-sharp/c-sharp-decision-making-else-else-ladder-nested-switch-nested-switch/) (till och med kapitlet `1. If Statement`).
+
+Exempel:
+
 ```cs
 // En villkorssats kan användas för att köra kod
 // endast när ett visst villkor är uppfyllt.
@@ -309,6 +316,8 @@ Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
 ::: exercise 3.1
 Ändra koden i `Program.cs` så att den först ber användaren mata in ett lösenord. Du (programmeraren) får själv välja vad det korrekta lösenordet ska vara. Om användaren matar in det korrekta lösenordet så ska du visa ett hemligt meddelande för användaren (du får själv komma på ett hemligt meddelande). Om användaren matar in ett felaktigt lösenord så ska du visa ett felmeddelande för användaren. Därefter ska programmet vara slut.
 :::
+
+Läs kapitlet [2. If-else Statement](https://www.geeksforgeeks.org/c-sharp/c-sharp-decision-making-else-else-ladder-nested-switch-nested-switch/#:~:text=2.%20If-else%20Statement) och `3. If-else-if ladder Statement`.
 
 ```cs
 // En villkorssats kan följas upp med en else{ ... }
@@ -358,6 +367,8 @@ else
 ::: exercise 3.2
 Ändra koden i `Program.cs` så att ditt program innehåller 3 olika hemliga meddelanden, varje skyddat av ett eget lösenord. Om användaren skriver in lösenordet för ett meddelande så ska det meddelandet visas, annars ska du visa ett meddelande som förklarar att ingen hemligt meddelande finns med det lösenordet.
 :::
+
+Läs på om [4. Nested - If Statement](https://www.geeksforgeeks.org/c-sharp/c-sharp-decision-making-else-else-ladder-nested-switch-nested-switch/#:~:text=4.%20Nested%20-%20If%20Statement).
 
 ```cs
 // En kan använda en nästlad villkorssats för att testa två villkor.
@@ -429,27 +440,20 @@ Gör ett program där användaren får skriva in sin favoritfärg. Om färgen ä
 ::: exercise 3.7
 **OBS, Extra svår övning!**
 
-Gör ett sten-sax-påse-spel för två spelare (som ett konsollprogram), där den första spelaren får mata in sitt val först, och den andra spelaren får mata in sitt svar efter det (ja, det blir lätt att fuska för den andra spelaren).
+Gör ett sten-sax-påse-spel för två spelare (som ett konsollprogram), där den första spelaren får skriva in sitt val (`sten`, `sax` eller `påse`) först, och den andra spelaren får skriva in sitt svar efter det (ja, det blir lätt att fuska för den andra spelaren).
 
-Efter detta ska det skrivas ut vad de två olika spelarna valde och vem som vann, eller om det blev oavgjort. Alltså, en av följande texter ska visas:
+Efter detta ska det skrivas ut vad de två olika spelarna valde och vem som vann, eller om det blev oavgjort. Alltså något i stil med en av följande texter ska visas:
 
 * sten vinner över sax
 * sax vinner över påse
 * påse vinner över sten
 * Det är oavgjort
+
+Men du får ha vilken output du vill, bara man kan tyda vem som vann.
 :::
 
-
-
-
-
-
-
-
-
-
 :::: exercise 3.8
-Börja läs på om C# på [W3Schools C# Pages](https://www.w3schools.com/cs/index.php). Du kan läsa på till och med `C# Variables`.
+Läs på om C# på [W3Schools C# Pages](https://www.w3schools.com/cs/index.php). Du kan börja med [C# Output](https://www.w3schools.com/cs/cs_output.php) och fortsätta så långt du kommer.
 
 ::: tip
 Följande kod på W3Schools C# Pages:
@@ -475,8 +479,7 @@ namespace HelloWorld
 Console.WriteLine("Hello World!");
 ```
 
-Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krånlgligare sättet.
+Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krångligare sättet.
 
 ::::
 
--->

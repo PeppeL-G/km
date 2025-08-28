@@ -460,36 +460,67 @@ Om du lyckas komma ända hit innan lektionens slut så kan läsa på om objektor
 :::
 
 
-
-<!--
-
 ## Lektion 3. Klass-grunder
+Ingen panik om ni inte blir klara med alla övningar den här lektionen. Det viktigaste är att ni lär er grunderna i objektorienterad programmering (klasser, object, attribut och metoder).
+
+---
+
+Många värden kan representeras som en vanlig datatyp. Exempel:
+
+```cs
+string cityName = "Jönköping";
+int aliceAge = 26;
+```
+
+Men en del saker som vi vill representera i datorprogram består av flera olika värden. Ska man t.ex. representera en hel person så består den av flera olika egenskaper, så som:
+
+* Namn
+* Ålder
+* Hudfärg
+* Ögonfärg
+* Emailaddress
+* Telefonnummer
+* Etc.
+
+Då räcker inte en vanlig datatyp till, utan vi behöver samla ihop ett gäng av dem. Och det är just det som en klass i grunden är: en samling variabler och datatyper som hör ihop för att representera någonting större tillsammans:
+
 ```cs
 class Person{
 	public int age;
 	public string name;
+	// Etc.
 }
+```
 
+En klass innerhåller bara variabelnamn och dess datatyper; den innehåller inte några värden på variablerna. Klassen är endast en beskrivning av ett objekt som kan innehålla värdena på variablerna. För att skapa sådana nya objekt (även kallade *instanser*) så används `new`-operatorn:
+
+```cs
 Person teacher = new Person{ age=50, name="Hagrid"};
 Person student1 = new Person{ age=14, name="Harry"};
 Person student2 = new Person{ age=14, name="Ron"};
 Person student3 = new Person{ age=14, name="Hermione"};
 
-Console.WriteLine($"Läraren heter {teacher.name}.");
+// Här har vi alltså skapat 4 olika Person-objekt.
+
+// Exempel på hur man kommer åt värdena i objekten
+// genom variabelnamnen vi definierade i klassen.
+Console.WriteLine($"Läraren heter {teacher.name}, och han är ${teacher.age} år gammal.");
 ```
 
-::: exercise x.1
+::: exercise 3.1
 
-Skapa en klass som representerar en bil. En bil ska ha följande attribut:
+Skapa en klass som representerar en bil. En bil ska ha följande egenskaper:
 
-* `regNumber` (t.ex."abc123")
-* `color` (t.ex. "röd")
-* `tankSize` (i liter, t.ex. 60)
-* `currentTankSize` (i liter, t.ex. 50)
+* `regNumber` (t.ex. `"abc123"`)
+* `color` (t.ex. `"röd"`)
+* `tankSize` (i liter, t.ex. `60`)
+* `currentTank` (i liter, t.ex. `50`)
 
-I ditt huvudprogram, skapa sedan 2 olika bil-instanser. Du får själv välja värde på attributen för dina bilar. Skriv sedan ut namnet på dina bilar.
+I ditt huvudprogram, skapa 2 olika bil-instanser. Du får själv välja värde på attributen för dina bilar. Skriv sedan ut namnen på dina bilar.
 
 :::
+
+I en klass kan man även lägga in metoder. Metoderna i klassen kan komma åt variablerna/egenskaperna i klassen genom deras namn.
 
 ```cs
 class Person{
@@ -498,45 +529,125 @@ class Person{
 	public string name;
 	
 	// En metod som kan anropas på objekten.
-	public void WriteInfo(){
-		Console.WriteLine($"{name} är ${age} år gamal.")
+	public void WriteToConsole(){
+		Console.WriteLine($"{name} är ${age} år gammal.")
 	}
 	
 }
+```
 
+Metoderna kan sedan anropas på objekten.
+
+```cs
 Person teacher = new Person{ age=50, name="Hagrid"};
 Person student1 = new Person{ age=14, name="Harry"};
 Person student2 = new Person{ age=14, name="Ron"};
 Person student3 = new Person{ age=14, name="Hermione"};
 
-Console.WriteLine($"Läraren heter {teacher.name}.");
+teacher.WriteToConsole();
+student2.WriteToConsole();
 ```
 
-::: exercise x.2
+::: exercise 3.2
 
-I din bilklass, lägg till en metod som heter `WriteInfo()`. I den metoden ska du skriva ut all information om bilen på skärmen.
+I din bilklass, lägg till en metod som heter `WriteToConsole()`. I den metoden ska du skriva ut all information om bilen på skärmen.
 
 I ditt huvudprogram, anropa `WriteInfo()` på dina två bil-objekt.
 
 :::
 
-::: exercise x.3
+::: exercise 3.3
 
-I din bilklass, lägg till en metod som heter `isOutOfGas()`. Den ska returnera:
+I din bilklass, lägg till en metod som heter `IsOutOfGas()`. Den ska returnera:
 
-* `true`, om `currentTankSize` är `0`.
-* `false`, annars.
+* `true`, om `tankSize` är `0`
+* `false`, annars
 
-I ditt huvudprogram, använd `isOutOfGas()` på en av dina bil-instanser som villkor i en villkorssats, och skriv antingen ut meddelandet `Vi kan åka!` eller `Soppatorsk!`
-
-:::
-
-::: exercise x.4
-
-Det kan även vara bra att ha en metod man kan anropa för att tanka bilen full. Lägg därför till en metod som heter `refuel()`. Den ska göra bilen fulltankad. Efter att den här metoden har körts så ska alltså bilens `currentTankSize` ha samma värde som bilens `tankSize`.
-
-I ditt huvudprogram, använd `refuel()` på en av dina bil-instanser för att tanka den full. Anropa sedan `WriteInfo()` och verifiera att bilen har blivit fulltankad.
+I ditt huvudprogram, använd `IsOutOfGas()` på en av dina bil-instanser som villkor i en villkorssats, och skriv antingen ut meddelandet `Vi kan åka!` eller `Soppatorsk!`
 
 :::
 
--->
+::: exercise 3.4
+
+Det kan även vara bra att ha en metod man kan anropa för att tanka bilen full. Lägg därför till en metod som heter `Refuel()`. Den ska göra bilen fulltankad. Efter att den här metoden har körts så ska alltså bilens `currentTank` ha samma värde som bilens `tankSize`.
+
+I ditt huvudprogram, använd `Refuel()` på en av dina bil-instanser för att tanka den full. Anropa sedan `WriteToConsole()` och verifiera att bilen har blivit fulltankad.
+
+:::
+
+Nu har du lärt dig grunderna om:
+
+* Klasser
+* Egenskaper/Variabler i klasser
+* Metoder i klasser
+* Object
+
+Låt oss träna på att använda en klass för att lösa ett lite större och svårare problem.
+
+::: exercise 3.5
+
+Skapa en klass som representerar ett datum. Du behöver alltså hålla koll på datumets:
+
+* År
+* Månad
+* Dag i månaden
+
+Lägg till metoden `WriteToConsole()`, som skriver ut datumet i formatet `YYYY-MM-DD`
+
+Skapa sedan ett datum-objekt och anropa `WriteToConsole()`-metoden på det.
+
+:::
+
+::: exercise 3.6
+Lägg till metoden `GetDaysInMonth()`, som returnerar antalet dagar som finns i månaden som datumet representerar. För enkelhetens skull, bry dig inte om skottår, utan utgå ifrån att februari alltid har `28` dagar.
+
+I ditt huvudprogram, anropa `GetDaysInMonth()` på ett datu-objekt och skriv ut dess returvärde för att verifiera att den fungerar som den ska.
+:::
+
+::: exercise 3.7
+Lägg till metoden `AddOneDay()`, som ändrar datumet en dag framåt i tiden. Tänk på att när du gör detta så kanske du behöver byta månad, och sätta dagen i månaden till `1`. Och likaså kanske året behöver öka med `1`. Det kan bli en del villkorssatser!
+
+I ditt huvudprogram, anropa `AddOneDay()` några gånger på ett datum och verifiera att den fungerar som den ska.
+:::
+
+::: exercise 3.8
+Lägg till metoden `RemoveOneDay()`, som ändrar datumet en dag bakåt i tiden. Tänk på att när du gör detta så kanske du behöver byta månad, och sätta dagen i månaden till slutet på föregående månad. Och likaså kanske året behöver minska med `1`. Det kan bli en del villkorssatser!
+
+I ditt huvudprogram, anropa `RemoveOneDay()` några gånger på ett datum och verifiera att den fungerar som den ska.
+:::
+
+::: exercise 3.9
+Lägg till metoden `ChangeDays(int amountOfDays)`, som ändrar datumet framåt/bakåt i tiden det givna antalet dagar. Var smart och återanvänd metoder du har implemterat tidigare. I en metod kan du anropa andra metoder i klassen.
+
+I ditt huvudprogram, anropa `ChangeDays(int amountOfDays)` några gånger på ett datum och verifiera att den fungerar som den ska.
+:::
+
+::: exercise 3.9
+Lägg till metoden `IsSameAs()`, som ska ta emot ett annat datum-objekt som argument/parameter, och returnera `true` om datum-objektet du tar emot representerar samma datum som det metoden anropades på.
+
+I ditt huvudprogram, anropa din `IsSameAs()`-metod verifiera att den fungerar som den ska.
+:::
+
+::: exercise 3.10
+Lägg till metoden `IsSameAs()`, som ska ta emot ett annat datum-objekt som argument/parameter, och returnera `true` om datum-objektet du tar emot representerar samma datum som det metoden anropades på, annars `false`.
+
+I ditt huvudprogram, anropa din `IsSameAs()`-metod för att verifiera att den fungerar som den ska.
+:::
+
+::: exercise 3.11
+Lägg till metoden `isBefore()`, som ska ta emot ett annat datum-objekt som argument/parameter, och returnera `true` om datum-objektet som du anropar metoden på är före datum-objektet som du tar emot som argument.
+
+I ditt huvudprogram, anropa din `isBefore()`-metod för att verifiera att den fungerar som den ska.
+:::
+
+Låt oss reflektera över vad den här klassen vi har skapat har har gett oss:
+
+* Vi har en väldefinerad och tydligt avgränsad komponent (klass) som löser ett specifikt problem (att arbeta med datum).
+* Vi kan lätt använda den här komponenten (klassen) på många andra ställen i ett program för att arbeta med just datum.
+* Det är lätt att förstå att allting som har med datumuträkningar att göra hör hemma just i den här klassen.
+
+Vi har kort och gott lyckats skapa en återanvändbar komponent med ett specifikt syfte. Det är just så klasser ska användas. Om ett program enbart består av klasser lika tydlig och elegant som den du just nu skapade så kommer hela ditt program att ha en enkel struktur och vara lättförstålig för andra programmerare.
+
+::: exercise 3.12
+Om du lyckas komma ända hit innan lektionens slut så kan läsa på om objektorienterad programmering på [W3Schools C# Pages](https://www.w3schools.com/cs/cs_oop.php).
+:::
