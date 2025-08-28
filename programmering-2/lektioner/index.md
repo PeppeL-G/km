@@ -459,9 +459,24 @@ För detta ändamål behöver du även skapa en struct- eller en klassdefinition
 Om du lyckas komma ända hit innan lektionens slut så kan läsa på om objektorienterad programmering på [W3Schools C# Pages](https://www.w3schools.com/cs/cs_oop.php).
 :::
 
+
+
 <!--
 
-## Lektion X, OOP-grunder
+## Lektion 3. Klass-grunder
+```cs
+class Person{
+	public int age;
+	public string name;
+}
+
+Person teacher = new Person{ age=50, name="Hagrid"};
+Person student1 = new Person{ age=14, name="Harry"};
+Person student2 = new Person{ age=14, name="Ron"};
+Person student3 = new Person{ age=14, name="Hermione"};
+
+Console.WriteLine($"Läraren heter {teacher.name}.");
+```
 
 ::: exercise x.1
 
@@ -475,6 +490,27 @@ Skapa en klass som representerar en bil. En bil ska ha följande attribut:
 I ditt huvudprogram, skapa sedan 2 olika bil-instanser. Du får själv välja värde på attributen för dina bilar. Skriv sedan ut namnet på dina bilar.
 
 :::
+
+```cs
+class Person{
+	
+	public int age;
+	public string name;
+	
+	// En metod som kan anropas på objekten.
+	public void WriteInfo(){
+		Console.WriteLine($"{name} är ${age} år gamal.")
+	}
+	
+}
+
+Person teacher = new Person{ age=50, name="Hagrid"};
+Person student1 = new Person{ age=14, name="Harry"};
+Person student2 = new Person{ age=14, name="Ron"};
+Person student3 = new Person{ age=14, name="Hermione"};
+
+Console.WriteLine($"Läraren heter {teacher.name}.");
+```
 
 ::: exercise x.2
 

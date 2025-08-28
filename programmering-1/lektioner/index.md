@@ -139,7 +139,7 @@ Den senare är ett enklare sätt att skriva på och som introducerades i C# vers
 
 
 
-## Lektion 2. Output, Variabler, Input, Villkorssatser
+## Lektion 2. Output, Variabler, Input
 ```cs
 // Två slash-tecken gör allt till höger
 // om det på samma rad en kommentar.
@@ -239,92 +239,7 @@ Du är den ende Axel Axelsson jag känner.
 ```
 :::
 
-```cs
-// En villkorssats kan användas för att köra kod
-// endast när ett visst villkor är uppfyllt.
-Console.Write("Skriv ditt namn: ");
-
-string enteredName = Console.ReadLine();
-
-// Två likamedtecken betyder att vi testar
-// ifall de två har samma värde.
-if(enteredName == "Alice")
-{
-  Consle.WriteLine("Alice är ett mycket fint namn!");
-}
-
-Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
-```
-
-```cs
-Console.Write("Skriv ditt namn: ")
-
-string enteredName = Console.ReadLine();
-
-// Ett utropstecken följt av ett likamedtecken betyder
-// att vi testar ifall de två har olika värden.
-if(enteredName != "Alice")
-{
-  Consle.WriteLine("Ah, du heter inte Alice? Synd...");
-}
-
-Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
-```
-
-```cs
-// En villkorssats kan följas upp med en else{ ... }
-// som körs ifall villkoret inte är uppfyllt.
-Console.Write("Skriv ditt namn: ")
-
-string enteredName = Console.ReadLine();
-
-if(enteredName == "Bob")
-{
-  Consle.WriteLine("Bob är ett mycket fint namn!");
-}
-else
-{
-  Console.WriteLine("Bob är alltså inte ditt namn. Stackare...");
-}
-
-Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
-```
-
-```cs
-// En villkorssats kan följas upp med en eller flera
-// else if(VILLKOR){ ... }
-// Man kan alltid avsluta med en else{ ... } om man vill.
-Console.Write("Skriv ditt namn: ")
-
-string enteredName = Console.ReadLine();
-
-if(enteredName == "Alice")
-{
-  Consle.WriteLine("Alice är ett mycket fint namn!");
-}
-else if(enteredName == "Bob")
-{
-  Console.WriteLine("Bob är ett vacker namn.");
-}
-else if(enteredName == "Claire")
-{
-  Console.WriteLine("Claire är ett snyggt namn.");
-}
-else
-{
-  Console.WriteLine("Du har ett normalt namn.");
-}
-```
-
-::: exercise 2.5
-Ändra koden i `Program.cs` så att den först ber användaren mata in ett lösenord. Du (programmeraren) får själv välja vad det korrekta lösenordet ska vara. Om användaren matar in det korrekta lösenordet så ska du visa ett hemligt meddelande för användaren (du får själv välja vilket). Om användaren matar in ett inkorrekta lösenord så ska du visa ett felmeddelande för användaren. Därefter ska programmet vara slut.
-:::
-
-::: exercise 2.6
-Ändra koden i `Program.cs` så att ditt program innehåller 3 olika hemliga meddelanden, varje skyddat av ett eget lösenord. Om användaren skriver in lösenordet ett meddelande så ska det meddelandet visas, annars ska du visa ett meddelande som förklarar att ingen hemligt meddelande finns med det lösenordet.
-:::
-
-:::: exercise 2.7
+:::: exercise 2.5
 Börja läs på om C# på [W3Schools C# Pages](https://www.w3schools.com/cs/index.php). Du kan läsa på till och med `C# Variables`.
 
 ::: tip
@@ -354,3 +269,214 @@ Console.WriteLine("Hello World!");
 Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krånlgligare sättet.
 
 ::::
+
+
+<!--
+
+## Lektion 3. Villkor, Villkorssatser
+```cs
+// En villkorssats kan användas för att köra kod
+// endast när ett visst villkor är uppfyllt.
+Console.Write("Skriv ditt namn: ");
+
+string enteredName = Console.ReadLine();
+
+// Två likamedtecken betyder att vi testar
+// ifall de två har samma värde.
+if(enteredName == "Alice")
+{
+  Consle.WriteLine("Alice är ett mycket fint namn!");
+}
+
+Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
+```
+
+```cs
+Console.Write("Skriv ditt namn: ");
+
+string enteredName = Console.ReadLine();
+
+// Ett utropstecken följt av ett likamedtecken betyder
+// att vi testar ifall de två har olika värden.
+if(enteredName != "Alice")
+{
+  Consle.WriteLine("Ah, du heter alltså inte Alice. Synd...");
+}
+
+Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
+```
+
+::: exercise 3.1
+Ändra koden i `Program.cs` så att den först ber användaren mata in ett lösenord. Du (programmeraren) får själv välja vad det korrekta lösenordet ska vara. Om användaren matar in det korrekta lösenordet så ska du visa ett hemligt meddelande för användaren (du får själv komma på ett hemligt meddelande). Om användaren matar in ett felaktigt lösenord så ska du visa ett felmeddelande för användaren. Därefter ska programmet vara slut.
+:::
+
+```cs
+// En villkorssats kan följas upp med en else{ ... }
+// som körs ifall villkoret inte är uppfyllt.
+Console.Write("Skriv ditt namn: ");
+
+string enteredName = Console.ReadLine();
+
+if(enteredName == "Bob")
+{
+  Consle.WriteLine("Bob är ett mycket fint namn!");
+}
+else
+{
+  Console.WriteLine("Bob är alltså inte ditt namn. Stackare...");
+}
+
+Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
+```
+
+```cs
+// En villkorssats kan följas upp med en eller flera
+// else if(VILLKOR){ ... }
+// Man kan alltid avsluta med en else{ ... } om man vill.
+Console.Write("Skriv ditt namn: ");
+
+string enteredName = Console.ReadLine();
+
+if(enteredName == "Alice")
+{
+  Consle.WriteLine("Alice är ett mycket fint namn!");
+}
+else if(enteredName == "Bob")
+{
+  Console.WriteLine("Bob är ett vacker namn.");
+}
+else if(enteredName == "Claire")
+{
+  Console.WriteLine("Claire är ett snyggt namn.");
+}
+else
+{
+  Console.WriteLine("Du har ett normalt namn.");
+}
+```
+
+::: exercise 3.2
+Ändra koden i `Program.cs` så att ditt program innehåller 3 olika hemliga meddelanden, varje skyddat av ett eget lösenord. Om användaren skriver in lösenordet för ett meddelande så ska det meddelandet visas, annars ska du visa ett meddelande som förklarar att ingen hemligt meddelande finns med det lösenordet.
+:::
+
+```cs
+// En kan använda en nästlad villkorssats för att testa två villkor.
+Console.Write("Skriv ditt förnamn: ");
+string firstName = Console.ReadLine();
+
+Console.Write("Skriv in ditt efternamn: ");
+string lastNamn = Console.ReadLine();
+
+if(firstName == "Alice")
+{
+  if(lastName == "Bengtsson")
+  {
+    Consle.WriteLine("Hej Alice Bengtsson, trevligt att träffas!");
+  }
+}
+```
+
+```cs
+// Eller så använder man &&-operatorn för att testa två villkor.
+Console.Write("Skriv ditt förnamn: ");
+string firstName = Console.ReadLine();
+
+Console.Write("Skriv in ditt efternamn: ");
+string lastNamn = Console.ReadLine();
+
+if(firstName == "Alice" && lastName == "Bengtsson")
+{
+  Consle.WriteLine("Hej Alice Bengtsson, trevligt att träffas!");
+}
+```
+
+::: exercise 3.3
+Skapa ett nytt program som ber användaren mata in ett användarnamn och lösenord. Om användaren matar in `Alice` och `abc123` så ska ett hemligt meddelande visas för användaren. Annars ska texten `Fel inloggningsuppgifter!` visas för användaren.
+:::
+
+::: exercise 3.4
+Ändra ditt program så att ett annat hemligt meddelande visas för användaren som loggar in med `Bob` och `pa55word`.
+:::
+
+::: exercise 3.5
+Skapa ett program som frågar användaren ifall denne föredrar sommar eller vinter.
+
+Ifall användaren skriver att hen föredrar sommar ska programmet fråga ifall användaren gillar att bada. Programmet ska sedan ge olika svar beroende på vad användaren svarar.
+
+Ifall användaren föredrar vinter ska programmet fråga ifall användaren gillar att åka skidor. Programmet ska sedan ge olika svar beroende på vad användaren svarar.
+:::
+
+```cs
+// Man kan använda || operatorn för att testa ifall
+// åtminstone ett av två olika villkor stämmer.
+Console.Write("Skriv en bokstav: ");
+string letter = Console.ReadLine();
+
+if(letter == "A" || letter == "P")
+{
+  Consle.WriteLine($"{letter} är en extra fin bokstav!");
+}
+else
+{
+  Console.WriteLine($"{letter} är en vanlig bokstav.");
+}
+```
+
+::: exercise 3.6
+Gör ett program där användaren får skriva in sin favoritfärg. Om färgen är antingen `röd` eller `grön` så ska du visa meddelandet `Det är en vacker färg!`. Annars ska du visa meddelandet `Den färgen är OK.`.
+:::
+
+::: exercise 3.7
+**OBS, Extra svår övning!**
+
+Gör ett sten-sax-påse-spel för två spelare (som ett konsollprogram), där den första spelaren får mata in sitt val först, och den andra spelaren får mata in sitt svar efter det (ja, det blir lätt att fuska för den andra spelaren).
+
+Efter detta ska det skrivas ut vad de två olika spelarna valde och vem som vann, eller om det blev oavgjort. Alltså, en av följande texter ska visas:
+
+* sten vinner över sax
+* sax vinner över påse
+* påse vinner över sten
+* Det är oavgjort
+:::
+
+
+
+
+
+
+
+
+
+
+:::: exercise 3.8
+Börja läs på om C# på [W3Schools C# Pages](https://www.w3schools.com/cs/index.php). Du kan läsa på till och med `C# Variables`.
+
+::: tip
+Följande kod på W3Schools C# Pages:
+
+```cs
+using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Hello World!");
+    }
+  }
+}
+```
+
+Är samma som:
+
+```cs
+Console.WriteLine("Hello World!");
+```
+
+Den senare är ett enklare sätt att skriva på och som introducerades i C# version 9, och W3Schools C# Pages skrevs tyvärr för en tidigare C#-version, så deras kod gör på det krånlgligare sättet.
+
+::::
+
+-->

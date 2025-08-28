@@ -4,11 +4,10 @@
 * Kursintro
 * Diskussion om vad vi ska tillämpa programmering på (BagaWork?)
 * Bagawork
-	* `Text`
-	* `Button`
-	* Byta sida
+	* `Text.text().backgroundColor().left().right().top().bottom()`
+	* `Button.text().page()`
 	* `Space`
-	* `Row`
+	* `Rows.children()`
 
 
 
