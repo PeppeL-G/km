@@ -156,7 +156,7 @@ Skapa ett nytt projekt för att implementera en Node.js webbapp:
 4. Starta appen med Node.js ifrån Visual Studio Code-fönstret
 5. Öppna localhost:3000 i en webbläsare.
 
-Testa att skicka några request till din webbapp och verifiera att den skickar tillbaka ett response.
+Testa att skicka några request till din webbapp och verifiera att den skickar tillbaka ett response. Om du gör ändringar i koden så behöver du stoppa och sedan starta din Node.js-app igen för att ändringarna ska gälla.
 
 :::
 
