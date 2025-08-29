@@ -552,7 +552,7 @@ student2.WriteToConsole();
 
 I din bilklass, lägg till en metod som heter `WriteToConsole()`. I den metoden ska du skriva ut all information om bilen på skärmen.
 
-I ditt huvudprogram, anropa `WriteInfo()` på dina två bil-objekt.
+I ditt huvudprogram, anropa `WriteToConsole()` på dina två bil-objekt.
 
 :::
 
@@ -560,7 +560,7 @@ I ditt huvudprogram, anropa `WriteInfo()` på dina två bil-objekt.
 
 I din bilklass, lägg till en metod som heter `IsOutOfGas()`. Den ska returnera:
 
-* `true`, om `tankSize` är `0`
+* `true`, om `currentTank` är `0`
 * `false`, annars
 
 I ditt huvudprogram, använd `IsOutOfGas()` på en av dina bil-instanser som villkor i en villkorssats, och skriv antingen ut meddelandet `Vi kan åka!` eller `Soppatorsk!`
@@ -592,7 +592,7 @@ Skapa en klass som representerar ett datum. Du behöver alltså hålla koll på 
 * Månad
 * Dag i månaden
 
-Lägg till metoden `WriteToConsole()`, som skriver ut datumet i formatet `YYYY-MM-DD`
+Lägg till metoden `WriteToConsole()`, som skriver ut datumet i formatet `YYYY-MM-DD`.
 
 Skapa sedan ett datum-objekt och anropa `WriteToConsole()`-metoden på det.
 
@@ -601,7 +601,7 @@ Skapa sedan ett datum-objekt och anropa `WriteToConsole()`-metoden på det.
 ::: exercise 3.6
 Lägg till metoden `GetDaysInMonth()`, som returnerar antalet dagar som finns i månaden som datumet representerar. För enkelhetens skull, bry dig inte om skottår, utan utgå ifrån att februari alltid har `28` dagar.
 
-I ditt huvudprogram, anropa `GetDaysInMonth()` på ett datu-objekt och skriv ut dess returvärde för att verifiera att den fungerar som den ska.
+I ditt huvudprogram, anropa `GetDaysInMonth()` på ett datum-objekt och skriv ut dess returvärde för att verifiera att den fungerar som den ska.
 :::
 
 ::: exercise 3.7
