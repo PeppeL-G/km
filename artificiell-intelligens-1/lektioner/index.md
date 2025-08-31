@@ -75,6 +75,19 @@ I diskussion får du reflektera över ditt arbete. Var metoden ett bra sätt att
 :::
 
 
+
+## Lektion 3, Bildgenerering
+Se klassuppgiften Bildgenerering på Google Classroom.
+
+
+
+
+## Lektion 4, Bildgenerering 2
+Se klassuppgiften Bildgenerering 2 på Google Classroom.
+
+
+
+
 <!--
 ## Kommande
 

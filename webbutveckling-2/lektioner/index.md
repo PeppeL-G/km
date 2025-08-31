@@ -474,3 +474,195 @@ Skriv JS-kod som ser till att:
 
 Lista själv ut vilka funktioner du behöver använda. Kom även ihåg att du kan använda `parseInt()` för att konvertera en sträng till ett heltal.
 :::
+
+
+
+
+
+## Lektion 4. DOM-intro
+Gör så långt ni hinner. Vi fortsätter med DOM, och tittar på några andra HTML-element och events.
+
+Lycka till!
+
+::: tip
+
+Lägg alltid din JS-kod inne i en funktion som anropas när `DOMContentLoaded`-eventet har inträffat, så som visas i övningarna nedan. Detta säkerställer att webbläsaren har läst igenom all HTML-kod och skapat hela DOM-strukturen på sidan innan du börjar arbeta med den via din JS-kod.
+
+:::
+
+::: exercise 4.1
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 4.1</title>
+	<script>
+		
+		document.addEventListenet(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
+		
+	</script>
+</head>
+<body>
+	
+	<p>
+		Lägg till punkt på listan:
+		<input type="text" id="newItemInput">
+		<button>Lägg till</button>
+	</p>
+	
+	<ul>
+	</ul>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som så snart sidan har laddats in lägger till en `click`-lyssnare på knappen. När användaren klickar på knappen så ska du läsa ut vad användaren har skrivit in i `<input>`-elementet och lägga till det i ett nytt `<li>`-element i slutet av `<ul>`-elementet.
+
+Du kommer behöva använda:
+
+* `document.querySelector(SELECTOR)` -> `htmlElement`
+* `htmlElement.addEventListener(EVENT_NAME, EVENT_HANDLER)` (för att lyssna på klick på knappen)
+* `inputElement.value` (för att läsa ut vad användaren har skrivit i `<input>`-elementet, använd `document.querySelector()` för att få en referens till `<input>`-elementet)
+* `document.createElement(TAG_NAME)` -> `htmlElement` (för att skapa ett nytt HTML-element)
+* `htmlElement.innerText` (för att tilldela ett HTML-element dess innehåll)
+* `htmlElement.appendChild(CHILD_ELEMENT)` (för att lägga till ett HTML-elementet i ett annat)
+:::
+
+::: exercise 4.2
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 4.2</title>
+	<script>
+		
+		document.addEventListenet(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
+		
+	</script>
+</head>
+<body>
+	
+	<div>
+		Välj multiplikationstabell:
+		<input type="number" value="0">
+	</div>
+	
+	<ul id="multiplications">
+	</ul>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som så snart sidan har laddats in lägger till en `input`-lyssnare på `<input>`-elementet. `input`-eventet inträffar varje gång användaren ändrar det som står skrivet i `<input>`-elementet. När detta inträffar ska du visa mutliplikationstabellen i `<ul>`-elementet.
+
+Om användaren t.ex. ändrar `<input>`-elementet till `5`, så ska `<ul>`-elementet visa:
+
+```html result no-code
+<ul>
+	<li>0 * 5 = 0</li>
+	<li>1 * 5 = 5</li>
+	<li>2 * 5 = 10</li>
+	<li>3 * 5 = 15</li>
+	<li>4 * 5 = 20</li>
+	<li>5 * 5 = 25</li>
+	<li>6 * 5 = 30</li>
+	<li>7 * 5 = 35</li>
+	<li>8 * 5 = 40</li>
+	<li>9 * 5 = 45</li>
+	<li>10 * 5 = 50</li>
+</ul
+```
+
+Om du vill ta bort innehållet från ett HTML-element så kan du sätta `htmlElement.innerText` till en tom sträng.
+
+:::
+
+
+
+::: exercise 4.3
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 4.3</title>
+	<script>
+		
+		document.addEventListenet(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
+		
+	</script>
+</head>
+<body>
+	
+	<input id="firstNumber" type="number" value="0"> +
+	<input id="secondNumber" type="number" value="0"> =
+	<span id="result"></span>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som visar summan av numren i de båda `<input>`-elementen i `<span>`-elementet så snart användaren ändrar numren. Använd:
+
+1. `document.querySelector(SELECTOR)` -> `htmlElement` för att greppa referenser till HTML-elementen.
+2. ``inputElement.addEventListener(`input`, function(){ ... })`` (använd returvärdet från `document.querySelector(SELECTOR)`) för att lyssna på när användaren ändrar värdet som står i ett `<input>`-element
+3. `inputElement.valueAsNumber` för att läsa ut vilket nummer användaren har skrivit in i `<input>`-elementen.
+4. Beräkna summan.
+5. `spanElement.innerText` för att tilldela `<span>`-elementet summan den ska visa.
+:::
+
+::: exercise 4.4
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 4.4</title>
+	<script>
+		
+		document.addEventListenet(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
+		
+	</script>
+</head>
+<body>
+	
+	<input id="firstNumber" type="number" value="0">
+	<select id="operation">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input id="secondNumber" type="number" value="0"> =
+	<span id="result"></span>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som ser till att `<span>`-elementet visar resultatet av de valda numren och operationen. `<select>`-elementet stödjer `input`-eventet på samma sätt som `<input>`-elementet gör. Använd `selectElement.value` för att läsa ut värdet i `value`-attributet för det `<option>`-element användaren har valt.
+:::

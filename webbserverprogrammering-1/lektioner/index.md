@@ -166,7 +166,13 @@ Testa att skicka några request till din webbapp och verifiera att den skickar t
 
 :::
 
-::: exercise 3.5
+
+
+
+## Lektion 4. Webbapp-grunder
+Vi fortsätter med grunderna i hur en webbapplikation fungerar. Se till att du är klar med övningarna från Lektion 3 innan du börjar med dessa övningar.
+
+::: exercise 4.1
 
 Läs ut lite information från den inkommande requesten, så som `request.method` och `request.url`. Lägg sedan till några villkorssatser som skickar tillbaka HTML-kod för några olika sidor som du själv väljer att ha. Du kan t.ex. ha:
 
@@ -175,28 +181,19 @@ Läs ut lite information från den inkommande requesten, så som `request.method
 * En sida för GET request till `/contact`
 * Etc.
 
-:::
-
-::: exercise 3.6
-
-Läs ut lite information från den inkommande requesten, så som `request.method` och `request.url`. Lägg sedan till några villkorssatser som skickar tillbaka HTML-kod för några olika sidor som du själv väljer att ha. Du kan t.ex. ha:
-
-* En sida för GET request till `/` (startsidan)
-* En sida för GET request till `/about`
-* En sida för GET request till `/contact`
-* Etc.
+I HTML-koden du skickar tillbaka, se till att även inludera länkar (`<a>`-element) till de andra sidorna. På detta vis borde användaren kunna klicka på länkarna för att ladda in de andra sidorna istället för att manuellt ändra URL:en i adressfältet i webbläsaren.
 
 :::
 
-::: exercise 3.7
+::: exercise 4.2
 
 Om du tar emot en request för en sida som inte finns, skicka tillbaka statuskoden `404` tillsammans med HTML-kod som förklarar att den efterfrågade resursen inte finns.
 
 :::
 
-::: exercise 3.8
+::: exercise 4.3
 
-Istället för att skriva HTML-koden direkt i strängar i JS-filen, skriv HTML-koden i sina egna `.html`-filer (i samma mapp), och använd funktionen `readFileSync()` från `node:fs`-modulen för att läsa in HTML-koden som en sträng, och skicka den sedan till `response.write()`.
+Istället för att skriva HTML-koden direkt i strängar i JS-filen, skriv HTML-koden i separata `.html`-filer (i samma mapp), och använd funktionen `readFileSync()` från `node:fs`-modulen för att läsa in HTML-koden som en sträng, och skicka den sedan till `response.write()`.
 
 ```js
 import fs from 'node:fs'
@@ -206,14 +203,14 @@ const htmlCodeForAboutPage = fs.readFileSync(`./about.html`, `utf8`)
 
 :::
 
-::: exercise 3.9
+::: exercise 4.4
 
-Använd `try{ ... }catch(error){ ... }` för att hantera fel (exceptions) som kan uppstå när du anropar `readFileSync()`. Om filen som ska öppnas t.ex. inte finns (om du t.ex. råkat ta bort den av misstag) så kommer `readFileSync()` kasta ett exception. Fånga det med `try{ ... }catch(error){ ... }`, och skicka vid sådana fel tillbaka statuskoden `500` med HTML-kod som förklarar för användaren att ett oväntat fel inträffade, och att requesten inte kunde utföras.
+Använd `try{ ... }catch(error){ ... }` för att hantera fel (exceptions) som kan uppstå när du anropar `readFileSync()`. Om HTML-filen som ska öppnas t.ex. inte finns (om du t.ex. råkat ta bort den av misstag) så kommer `readFileSync()` kasta ett exception. Fånga det med `try{ ... }catch(error){ ... }`, och skicka vid sådana fel tillbaka statuskoden `500` med HTML-kod för att förklara för användaren att ett oväntat fel inträffade, och att requesten inte kunde utföras.
 
 :::
 
-::: exercise 3.10
+::: exercise 4.5
 
-Skapa en `.css`-fil med lite CSS-kod som stylar dina sidor. Lägg sedan till `<link>`-elementet i din HTML-kod för att få webbläsaren att skicka en GET request för att hämta innehållet i CSS-filen. Ändra din JS-kod så att du skickar tillbaka innehållet i CSS-filen när du tar emot en sådan request.
+Skapa en `.css`-fil med lite CSS-kod som stylar dina sidor. Lägg sedan till `<link>`-elementet i din HTML-kod för att få webbläsaren att skicka en GET request för att hämta innehållet i CSS-filen. Ändra din JS-kod så att du skickar tillbaka innehållet i CSS-filen när du tar emot en sådan request. Se även till att du sätter `Content-Type`-headern till värdet `text/css`, så webbläsaren kan vara säker på att den får tillbaka CSS-kod.
 
 :::

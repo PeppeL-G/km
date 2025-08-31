@@ -12,8 +12,14 @@
 
 
 
-## Lektion 2, BagaWork-layout
+## Lektion 2. BagaWork-layout
 * Repetition
 * GUI består av rader och kolumner
 * `Columns`
 * Övningar
+
+
+
+
+## Lektion 3. En bok-app
+Se klassuppgiften `Bok-app` på Google Classroom.
