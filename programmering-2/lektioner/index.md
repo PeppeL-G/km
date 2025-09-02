@@ -651,3 +651,157 @@ Vi har kort och gott lyckats skapa en återanvändbar komponent med ett specifik
 ::: exercise 3.12
 Om du lyckas komma ända hit innan lektionens slut så kan läsa på om objektorienterad programmering på [W3Schools C# Pages](https://www.w3schools.com/cs/cs_oop.php).
 :::
+
+
+
+
+## Lektion 4. Klass-grunder
+I den här lektionen kommer vi fortsätta att arbeta med att implementera klasser. Nu kommer vi börja titta på hur en klass kan använda en annan klass i sin beståndsdel.
+
+::: exercise 4.1
+Implementera klassen `Room`, som representerar ett fyrkantigt rum. Varje rum ska ha ett namn (t.ex. `Köket`), en bredd i meter, och ett djup i meter.
+
+Lägg sedan till metoden `GetArea()` i klassen, som returnerar rummets area (dess bredd * dess djup).
+
+Skapa sedan några rum i ditt huvudprogram och verifiera att klassen fungerar som den ska, t.ex.:
+
+```cs
+Room kitchen = new Room{Name="Köket", Width=6, Depth=5};
+Room bathroom = new Room{Name="Badrum", Width=3, Depth=3};
+
+Console.WriteLine($"{kitchen.Name} har ytan ${kitchen.GetArea()}.");
+```
+:::
+
+::: exercise 4.2
+Alla rum som finns ligger på ett visst våningsplan. Ett våningsplan innehåller alltså flera rum, och den ska även innehålla sitt namn (t.ex. `entreplanet`, `källaren`, `övervåning`, etc.). Implementera klassen `FloorPlan`. Använd en lista för att komma ihåg alla rummen som finns på våningsplanet. Listan ska vara tom till en början.
+
+Lägg sedan till metoden `AddRoom(Room)` i klassen, som lägger till rummet den tar emot i listan.
+
+Lägg sedan till metoden `GetArea()` i klassen, som beräknar och returnerar summan av arean av alla rum i våningsplanet.
+
+Skapa sedan ett nytt våningsplan i ditt huvudprogram och verifiera att klassen fungerar som den ska, t.ex.:
+
+```cs
+FloorPlan groundFloor = new FloorPlan{Name="Entreplan"};
+
+groundFloor.AddRoom(new Room{Name="Köket", Width=6, Depth=5});
+groundFloor.AddRoom(new Room{Name="Badrum", Width=3, Depth=3});
+
+Console.WriteLine($"{groundFloor.Name} har ytan ${groundFloor.GetArea()}.");
+```
+:::
+
+::: exercise 4.3
+Precis som ett våningsplan består av flera rum, så består ett hus av ett eller flera våningsplan. Skapa klassen `House`, som representerar ett hus med våningsplan (potentiellt flera). Spara ner våningsplanen i en lista i huset som är tom till en början.
+
+Lägg sedan till metoden `AddFloorPlan(FloorPlan)`, som lägger till det mottagna våningsplanet i listan.
+
+Lägg sedan till metoden `GetArea()` i klassen `House`, som beräknar och returnerar summan av alla våningsplans area.
+:::
+
+::: exercise 4.4
+Nu har vi skapat en bra modell över strukturen på ett hus:
+
+```
+Hus --"består av flera"--> Våning --"består av flera"--> Rum
+```
+
+Vi har även sett hur vi kan lägga till metoder i klasserna för att göra beräkningar med vår modell. Låt oss nu lägga till några fler metoder för att göra fler beräkningar, och se hur vi bäst kan implementera dem.
+
+Lägg till metoden `House.WriteAllRoomNamesToConsole()`, som ska skriva ut namnet på alla rum i huset i konsollen. MEN, all denna funktionalitet bör inte implementeras direkt i den här metoden. `House`-klassen bör istället be alla sina `FloorPlan` att de i sin tur ska skriva ut namnet på alla deras rum, så du bör lägga till en metod i `FloorPlan`-klassen som gör just det, och som `House`-klassen kan anropa.
+
+På liknande vis kan man tänka sig att `Room`-klassen har en metod som heter `WriteNameToConsole()`, och som anropas av `FloorPlan`-klassen.
+
+Vi vill alltså att varje klass bara arbetar med de objekt den har på sin "egna nivå", och inte går och arbetar med dess objekts sub-objekt.
+:::
+
+::: exercise 4.5
+Lägg till metoden `House.ContainsRoom(roomName)`, som kollar ifall huset innehåller ett rum med det givna namnet. Metoden ska alltså returnera `true` eller `false`. I denna metod bör du anropa en ny metod du implementerar i `FloorPlan`-klassen och som kollar ifall våningsplanet innehåller ett rum med ett sådant namn. 
+
+På liknande vis kan man även tänka sig att `Room`-klassen har en metod som heter `HasName(name)`, och som returnerar `true` eller `false`.
+:::
+
+::: exercise 4.6
+Om man ska bjuda hem många gäster så vill man nog sitta och prata med dem i det största rummet i huset. Implementera därförmetoden `House.GetBiggestRoom()`, som returnerar det `Room`-objekt som har störst area, så man lätt kan ta reda på vilket rum det är.
+
+Och, precis som förut, så borde du nog lägga till någon mer lämplig metod i en annan klass för att lägga till denna funktionalitet på bästa sätt.
+:::
+
+
+
+<!--
+
+Ni kommer ihåg första lektionen? Där jag visade att en bil kan modelleras som att den består av olika komponenter, så som hjul, ratt, gaspedal, bromspedal, tank, bromsklossar, etc.? När vi bygger våra egna datorprogram så ska vi försöka modellera dem med komponenter som använder sig av varandra på något liknande sätt. Och varje komponent implmententerar vi som en klass.
+
+För små program är det svårt att finna så många olika komponenter. Fördelarna med objektorienterad programmering blir uppenbar först när programmen blir större, och det blir lättare att identifiera olika komponenter. Men för enkla konsollprogram så kan man alltid försöka använda följande komponenter:
+
+* En komponent som är ansvarig för programmets input.
+* En komponent som är ansvarig för programmets output.
+* En komponent som är själva huvudprogrammet, och som använder sig av output- och input-komponenterna för att kommunicera med användaren.
+
+::: exercise 4.1
+
+De här övningarna kommer vägleda dig i hur man kan implementera ett enkelt program som består av de nämnda komponenterna. Programmet går ut på att användaren ska mata in två tal, och sedan ska programmet visa summan av talen för användaren. När man kör programmet så kan det se ut såhär:
+
+```
+Det här programmet beräknar vad summan av två heltal är.
+Mata in det första heltalet: 4
+Mata in det andra heltalet: 3
+Summan av 4 och 3 är 7.
+```
+
+Börja med att skapa de tre olika klasserna:
+
+* `OutputManager`
+* `InputManager`
+* `SumProgram` (huvudprogrammet)
+
+:::
+
+::: exercise 4.2
+
+`SumProgram` kommer behöva använda sig av `OutputManager` och `InputManager` för att kommunicera med användaren. Så `SumProgram` 
+
+:::
+
+```cs
+class OutputManager{
+	
+	public void PrintInstructions(){
+		Console.WriteLine("Det här programmet beräknar vad summan av två heltal är.");
+	}
+	
+	public void PrintResult(){
+		Console.WriteLine()
+	}
+	
+}
+
+class InputManager{
+	
+	public int ReadFirstTerm(){
+		
+		
+		
+	}
+	
+	public int ReadSecondTerm(){
+		
+	}
+	
+}
+
+class ProgramLogic{
+	
+	public int Term1;
+	public int Term2;
+	
+	public int GetSum(){
+		return Term1 + Term2;
+	}
+	
+}
+```
+
+-->

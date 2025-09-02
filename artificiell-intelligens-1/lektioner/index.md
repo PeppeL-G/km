@@ -81,6 +81,7 @@ Se klassuppgiften Bildgenerering på Google Classroom.
 
 
 
+<!--
 
 ## Lektion 4, Bildgenerering 2
 Se klassuppgiften Bildgenerering 2 på Google Classroom.
@@ -88,7 +89,6 @@ Se klassuppgiften Bildgenerering 2 på Google Classroom.
 
 
 
-<!--
 ## Kommande
 
 
@@ -98,9 +98,16 @@ Se klassuppgiften Bildgenerering 2 på Google Classroom.
 * Chattmodellers svagheter
 	* Vi spenderar merdelen av en lektion till att ställa olika frågor till en chattmodell och ser om vi kan få den att skriva fel svar till oss. Vi reflekterar sedan över vilka frågor vi får fel svar på, och om de har något gemensamt.
 
+# Lektion X. Vibe Coding
+Måste man kunna programmering för att skapa hemsidor/appar? Nej, inte om man har en chattmodell till sin hjälp! Vibe Coding kallas den utveckling av hemsidor/appar där personer som inte kan programmera ber en chattmodell att skriva koden åt dem. Utvecklaren skriver alltså ingen kod själv, utan utvecklaren ber bara chattmodellen att skriva koden som gör att hemsidan/appen fungerar på ett visst sätt.
 
-* Vibe coding
-	* Under ~6 lektioner, använd en chattmodell för att skapa något program/hemsida. Använda bara kod som du får från chattmodellen (gör inga ändringar i den). Du får ställa vilka frågor du vill till chattmodellen.
+## Övning 1
+
+
+
+
+# Lektion X. Projekt
+Under ~6 lektioner, använd en chattmodell för att skapa något program/hemsida. Använda bara kod som du får från chattmodellen (gör inga ändringar i den). Du får ställa vilka frågor du vill till chattmodellen.
 
 
 

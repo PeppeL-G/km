@@ -483,3 +483,120 @@ Den senare är ett enklare sätt att skriva på och som introducerades i C# vers
 
 ::::
 
+
+
+
+## Lektion 4. Matematik
+Dagens lektion handlar om att lära sig grunderna i hur tal-datatyper fungerar, och vilka operationer vi kan göra med dem.
+
+---
+
+Det finns huvudsakligen fyra olika tal-datatyper:
+
+| Datatyp  | Storlek i datorn | Kommentar |
+|----------|------------------|-----------|
+| `int`    | 4 bytes          | Heltal. Minsta är -2 147 483 648, högsta är 2 147 483 647. |
+| `long`   | 8 bytes          | Heltal. Minsta är -9 223 372 036 854 775 808, högsta är 9 223 372 036 854 775 807. |
+| `float`  | 4 bytes          | Decimaltal med ~6 decimaler. |
+| `double` | 8 bytes          | Decimaltal med ~15 decimaler. |
+
+I praktiken, använd för det mesta `int` och `double`. Använd `long` om `int` är för liten, och använd `float` istället för `double` om du vill spara minne.
+
+```cs
+int myAge = 12;
+long yourAge = 45;
+float averageSpeed = 15.52f; // Måste skriva f i slutet för att indikera flyttal.
+double topSpeed = 425.651;
+
+int myAgeInAYear = myAge + 1;
+int sumAge = myAge + yourAge;
+int ageDifference = yourAge - myAge;
+
+int aProduct = 3 * 4;
+
+// Notera: division med int ger en int!
+int half = 13 / 2; // 6.
+
+// Man kan kasta om en int till en double för att få en double.
+double realHalf = (double) 13 / 2; // 6.5
+```
+
+::: exercise 4.1
+Skriv ett program som beräknar och visar vad summan av `123456` och `9876` är.
+:::
+
+::: exercise 4.2
+Skriv ett program som beräknar och visar vad produkten av `123456` och `9876` är.
+:::
+
+::: exercise 4.3
+Skriv ett program som beräknar och visar vad produkten av `123.456` och `9.876` är.
+:::
+
+::: exercise 4.4
+Skriv ett program som beräknar och visar vad summan av `123` och `9.876` är.
+:::
+
+När man använder `Console.ReadLine()` och använder man in `123` så kommer vi få tillbaka strängen `"123"`. En sträng kan vi inte använda amtematiska operationer på, så om vi vill beräkna saker med det inmatade numret så behöver vi omvandla det till en matematisk datatyp först. Det kan vi göra med funktionerna `Convert.ToDouble()`, `Convert.ToInt()`, etc.
+
+```cs
+string aNumberAsString = "123";
+
+int anInteger = Convert.ToInt32(aNumberAsString);
+double aDouble = Convert.ToDouble("432.532")
+```
+
+::: exercise 4.5
+Skriv ett program som ber användaren mata in två heltal. Beräkna sedan summan av heltalen, och visa den för användaren.
+:::
+
+::: exercise 4.6
+Skriv ett program som ber användaren mata in två decimaltal. Beräkna sedan summan av decimaltalen, och visa den för användaren.
+:::
+
+Man kan även jämföra tal med varandra som villkor i en villkorssats, och göra olika saker beroende på jämförelsen stämmer eller ej.
+
+| Jämförelseoperator | Testar           | Exempel |
+|--------------------|------------------|---------|
+| `==` | Ifall två värden är lika.                        | <code style="white-space: nowrap;">123 == 456</code> |
+| `!=` | Ifall två värden är olika.                       | `123 != 456` |
+| `<`  | Ifall det vänstra värdet är mindre än det högra. | `123 < 456` |
+| `>`  | Ifall det vänstra värdet är större än det högra. | `123 > 456` |
+| `<=`  | Ifall det vänstra värdet är mindre än eller lika med det högra. | `123 <= 456` |
+| `>=`  | Ifall det vänstra värdet är större än eller lika med det högra. | `123 >= 456` |
+
+```cs
+int myNumber = 123;
+
+if(myNumber == 123)
+{
+  Console.WriteLine("Numret är 123!");
+}
+
+if(myNumber != 123)
+{
+  Console.WriteLine("Numret är inte 123!");
+}
+
+if(myNumber < 123)
+{
+  Console.WriteLine("Numret är mindre än 123!");
+}
+
+if(myNumber > 123)
+{
+  Console.WriteLine("Numret är större än 123!");
+}
+```
+
+::: exercise 4.7
+Skapa ett program som skriver ut vilket av `14 * 54` och `37 * 40` som är störst.
+:::
+
+::: exercise 4.8
+Skapa ett program som ber användaren att mata in hur många år gammal hen är. Ditt program ska sedan skriva ut:
+
+* `Du är ett barn.`, om användaren är under 18 år.
+* `Du är vuxen.`, om användaren är mellan 18 och 67 år.
+* `Du är en pensionär.`, om användaren är över 67 år.
+:::
