@@ -504,7 +504,7 @@ Person student3 = new Person{ age=14, name="Hermione"};
 
 // Exempel på hur man kommer åt värdena i objekten
 // genom variabelnamnen vi definierade i klassen.
-Console.WriteLine($"Läraren heter {teacher.name}, och han är ${teacher.age} år gammal.");
+Console.WriteLine($"Läraren heter {teacher.name}, och han är {teacher.age} år gammal.");
 ```
 
 ::: exercise 3.1
@@ -530,7 +530,7 @@ class Person{
 	
 	// En metod som kan anropas på objekten.
 	public void WriteToConsole(){
-		Console.WriteLine($"{name} är ${age} år gammal.")
+		Console.WriteLine($"{name} är {age} år gammal.")
 	}
 	
 }
