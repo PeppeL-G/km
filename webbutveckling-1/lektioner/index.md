@@ -100,7 +100,7 @@ Klicka runt bland de olika HTML-elementen som nämns på W3Schools sida [HTML El
 
 
 
-## Lektion 2, HTML-grunder
+## Lektion 2. HTML-grunder
 Dagen lektion innehåller följande:
 
 * Nästlade element
@@ -338,9 +338,6 @@ Skapa en ny `.html`-fil som visar en tabell som den nedan.
 ```
 :::
 
-
-
-
 Läs på om [Character Sets](https://www.w3schools.com/html/html_charset.asp), och gör sedan övningen nedan.
 
 ::: exercise 2.9
@@ -350,3 +347,227 @@ Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar 
 
 Verfiera att din webbläsare visar tecknen `å`, `ä` och `ö` fel. Ändra sedan så att du använder `UTF-8` på båda ställena, så att `å`, `ä` och `ö` visas som dem ska.
 :::
+
+
+
+
+## Lektion 3. HTML-grunder
+Dagens lektion innehåller:
+
+* Repetition (speciellt block-element VS inline-element och teckenkoder)
+* Meta-information
+	* `lang="en"` och `lang="sv"`
+	* `<meta charset="UTF-8">`
+	* `<meta name="description" content="En beskrivning av sidans innehåll...">`
+	* `<meta name="keywords" content="HTML, tutorial, exercises">`
+	* `<meta name="author" value="Your Real Name">`
+	* `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+* Semantisk HTML
+	* `<header>`, `<main>`, `<nav>`, `<footer>`
+	* `<thead>`, `<tbody>`, `<tfoot>`
+* Favicon
+	* `<link rel="icon" type="image/png" href="favicon.png">`
+	* Favicon generators
+* Länkar och bilder (`<a>` och `<img>`)
+
+::: exercise 3.1
+Skapa en ny HTML-sida och lägg till lite meta information i din HTML-fil.
+:::
+
+::: exercise 3.2
+Lägg till lite innehåll på din HTML-sida och använd semantiska element för att tydliggöra vad som är vad i den utsträckning du kan.
+:::
+
+::: exercise 3.3
+Lägg till till en favicon på din HTML-sida.
+:::
+
+::: exercise 3.4
+Lägg till en bild på din hemsida.
+:::
+
+::: exercise 3.5
+Skapa flera olika HTML-sidor och länka till dem från varandra. Försök att skapa:
+
+* En startsida (namnges oftast `index.html`)
+* En kontaktsida
+* En omsida
+
+Och vad mer du nu vill ha. Du kan t.ex. skapa en sida som heter `tabeller.html` där du tränar på att skapa tabeller i HTML.
+:::
+
+
+<!--
+
+
+## Lektion 4. CSS-grunder
+Dagens lektion innehåller följande:
+
+* Applicera CSS på element:
+	* `style="CSS"`, `<style>CSS</style>`, `<link rel="stylesheet" href="the-css-file.css">`
+* Styla text:
+	* `color`
+	* `font-size`
+	* `font-weight`
+	* `font-style`
+	* `font-family`
+	* `text-align`
+	* `text-decoration`
+* CSS Selectors:
+	* `*`
+	* `tagName`
+	* `#theId` (`id="theId"`, måste vara unikt)
+	* `.theClass` (`class="theClass"`, olika element kan ha samma)
+	* Kombinera selectors:
+		* `selectorselector` (element som matchar båda)
+		* `parentSelector selector` (alla barn, barnbarn, etc. som matchar)
+		* `parentSelector > selector` (bara barnen som matchar)
+* Box-modellen:
+	* (margin (border (padding (content))))
+	* `background-color`
+	* `padding`
+	* `border`
+	* `border-radius`
+	* `margin`
+
+
+::: exercise 4.1
+Styla följande HTML-kod (använd `style=""`-attributet):
+
+```html
+<h1>Harry Potter-världen</h1>
+<p>Harry Potter är en välkänd bokserie skriven av J. K. Rowling. Här kommer vi ta en liten snabbtitt på vad den innehåller.</p>
+
+<h2>Böcker</h2>
+<ol>
+	<li>Harry Potter och de vises sten</li>
+	<li>Harry Potter och hemligheternas kammare</li>
+	<li>Harry Potter och fången från Azkaban</li>
+	<li>Harry Potter och den flammande bägaren</li>
+	<li>Harry Potter och Fenixorden</li>
+	<li>Harry Potter och halvblodsprinsen</li>
+	<li>Harry Potter och dödsrelikerna</li>
+</ol>
+
+<h2>Huvudpersoner</h2>
+<ul>
+	<li>Harry Potter</li>
+	<li>Ron Weasley</li>
+	<li>Hermione Granger</li>
+	<li>Lord Voldemort</li>
+	<li>Albus Dumbledore</li>
+</ul>
+
+<h2>Ordförklaringar</h2>
+<dl>
+	
+	<dt>Mugglare</dt>
+	<dd>En person utan magiska krafter.</dd>
+	
+	<dt>Dödsätare</dt>
+	<dd>En anhängare till Lord Voldemort.</dd>
+	
+</dl>
+```
+
+Så att den ser ut som följande:
+
+```html result no-code
+<h1 style="color: green;">Harry Potter-världen</h1>
+<p style="font-style: italic;">Harry Potter är en välkänd bokserie skriven av J. K. Rowling. Här kommer vi ta en liten snabbtitt på vad den innehåller.</p>
+
+<h2 style="color: red;">Böcker</h2>
+<ol style="color: blue">
+	<li>Harry Potter och de vises sten</li>
+	<li>Harry Potter och hemligheternas kammare</li>
+	<li style="color: red;">Harry Potter och fången från Azkaban</li>
+	<li>Harry Potter och den flammande bägaren</li>
+	<li>Harry Potter och Fenixorden</li>
+	<li>Harry Potter och halvblodsprinsen</li>
+	<li>Harry Potter och dödsrelikerna</li>
+</ol>
+
+<h2 style="font-weight: normal;">Huvudpersoner</h2>
+<ul>
+	<li style="text-decoration: underline;">Harry Potter</li>
+	<li>Ron Weasley</li>
+	<li>Hermione Granger</li>
+	<li>Lord Voldemort</li>
+	<li>Albus Dumbledore</li>
+</ul>
+
+<h2 style="text-decoration: underline;">Ordförklaringar</h2>
+<dl>
+	
+	<dt style="font-weight: bold;">Mugglare</dt>
+	<dd style="font-family: 'Courier New';">En person utan magiska krafter.</dd>
+	
+	<dt style="font-weight: bold;">Dödsätare</dt>
+	<dd style="font-family: 'Courier New';">En anhängare till Lord Voldemort.</dd>
+	
+</dl>
+```
+:::
+
+
+
+
+::: exercise 4.2
+Nu ska vi träna på att anävnda CSS selektors!
+
+Skriv CSS-kod i HTML-filen som stylar texten i elementen enligt den text som står i elementen.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Övning 4.2</title>
+	<style>
+		
+		/* Skriv din CSS-kod här. */
+		
+		/* (i CSS så är allt mellan slash-star
+		    och start-slash en kommentar.) */
+		
+	</style>
+</head>
+<body>
+	
+	<h1>Alla h1-element ska ha röd text</h1>
+	
+	<p>Alla paragrafer ska ha blå text.</p>
+	
+	<ul id="books">
+		<li>There and back again (alla dessa ska vara fetstilta)</li>
+		<li>Ett tusen löften</li>
+		<li>En gång är ingen gång</li>
+	</ul>
+	
+	<ul id="movies">
+		<li>A big mistake (alla dessa ska vara kursiva)</li>
+		<li>Never again</li>
+		<li>Semesterresan</li>
+	</ul>
+	
+	<h2>Jag ska ha vanlig text</h2>
+	
+	<h2 class="positive">Jag ska ha grön text</h2>
+	
+	<p class="positive">
+		Här är lite text, och <span>denna texten ska vara röd</span>,
+		men denna ska vara blå.
+	</p>
+	
+	<p>
+		Här är lite text, och <span>denna texten ska vara röd och
+		<span>denna text ska vara grön</span></span>, men denna
+		ska vara blå.
+	</p>
+	
+</body>
+</html>
+```
+:::
+
+-->

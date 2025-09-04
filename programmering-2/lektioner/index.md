@@ -460,7 +460,7 @@ Om du lyckas komma ända hit innan lektionens slut så kan läsa på om objektor
 :::
 
 
-## Lektion 3. Klass-grunder
+## Lektion 3. Klasser (variabler & metoder)
 Ingen panik om ni inte blir klara med alla övningar den här lektionen. Det viktigaste är att ni lär er grunderna i objektorienterad programmering (klasser, object, attribut och metoder).
 
 ---
@@ -655,7 +655,7 @@ Om du lyckas komma ända hit innan lektionens slut så kan läsa på om objektor
 
 
 
-## Lektion 4. Klass-grunder
+## Lektion 4. Klasser (komposition)
 I den här lektionen kommer vi fortsätta att arbeta med att implementera klasser. Nu kommer vi börja titta på hur en klass kan använda en annan klass i sin beståndsdel.
 
 ::: exercise 4.1
@@ -669,7 +669,7 @@ Skapa sedan några rum i ditt huvudprogram och verifiera att klassen fungerar so
 Room kitchen = new Room{Name="Köket", Width=6, Depth=5};
 Room bathroom = new Room{Name="Badrum", Width=3, Depth=3};
 
-Console.WriteLine($"{kitchen.Name} har ytan ${kitchen.GetArea()}.");
+Console.WriteLine($"{kitchen.Name} har ytan {kitchen.GetArea()}.");
 ```
 :::
 
@@ -688,7 +688,7 @@ FloorPlan groundFloor = new FloorPlan{Name="Entreplan"};
 groundFloor.AddRoom(new Room{Name="Köket", Width=6, Depth=5});
 groundFloor.AddRoom(new Room{Name="Badrum", Width=3, Depth=3});
 
-Console.WriteLine($"{groundFloor.Name} har ytan ${groundFloor.GetArea()}.");
+Console.WriteLine($"{groundFloor.Name} har ytan {groundFloor.GetArea()}.");
 ```
 :::
 
@@ -729,8 +729,484 @@ Och, precis som förut, så borde du nog lägga till någon mer lämplig metod i
 :::
 
 
+## Lektion 5. Klasser (konstruktör)
+Återigen ska vi öva på att implementera en klass. Men innan dess så ska vi gå igenom vad en konstruktör är.
+
+---
+
+När man skapar en ny instans av en klass så kan man ofta tilldela variablerna i klassen sina värden direkt. Exempel:
+
+```cs
+// Person.cs
+class Person{
+	public string FirstName;
+	public int Age;
+}
+```
+```cs
+// Program.cs
+Person kalle = new Person{FirstName="Kalle", Age=12};
+```
+
+Men ibland vill man initiera någon variabel utifrån en beräkning som behöver göras. Man kanske t.ex. vill att användaren ska ange personens för- och efternamn separat, men vi vill även spara ner dem båda tillsammans i en och samma strängvariabel i klassen som vi kallar för `FullName`.
+
+```cs
+// Person.cs
+class Person{
+	public string FirstName;
+	public string LastName;
+	public string FullName;
+}
+```
+```cs
+// Program.cs
+Person kalle = new Person{FirstName="Kalle", LastName="Andersson"};
+// Vi vill FullName beräknas automatiskt.
+```
+
+För att åstadkomma detta så kan vi lägga till en speciell metod i klassen som heter konstruktör (constructor). Det är en metod som har samma namn som klassen (och inget returvärde). Den anropas automatiskt åt oss så snart vi skapar en ny instans av klassen, och då kan vi även lägga till parenteser efter klassnamnet och skicka med argument till konstruktören.
+
+```cs
+// Person.cs
+class Person{
+	
+	public string FirstName;
+	public string LastName;
+	public string FullName;
+	
+	public Person(string firstName, string lastName){
+		FirstName = firstName;
+		LastName = lastName;
+		FullName = $"{firstName} {lastName}";
+	}
+	
+}
+```
+```cs
+// Program.cs
+Person kalle = new Person("Kalle", "Andersson");
+
+Console.WriteLine(kalle.FullName); // Kalle Andersson
+```
+
+---
+
+::: exercise 5.1
+
+Klassen ni ska skapa den här lekitonen ska representera ett "Gissa numret"-spel. När man spelar spelet i konsollen så kan det se ut så här:
+
+```
+Jag tänker på ett heltal mellan 0 och 100. Gissa vilket!
+Ange gissning: 25
+Det är för lågt.
+Ange gissning: 50
+Det är för högt.
+Ange gissning: 30
+Det är för högt.
+Ange gissning: 28
+Det är rätt! Du behövde 4 gissningar.
+```
+
+Ni kommer inte få några hintar om hur ni implementerar den här klassen, men ni bör implementera den på ett sådant sätt så att den kan användas ihop med koden nedan för att spela spelet. Genom att studera koden nedan så kan ni alltså få hintar om vilka variabler och metoder er klass behöver innehålla, och hur metoderna bör fungera.
+
+```cs
+
+GuessNumberGame game = new GuessNumberGame(0, 100);
+
+Console.WriteLine($"Jag tänker på ett heltal mellan {game.Min} och {game.Max}. Gissa vilket!");
+
+while(!game.HasGuessedCorrect){
+	
+	Console.Write("Ange gissning: ");
+	int guess = Convert.ToInt32(Console.ReadLine());
+	
+	string result = game.ProcessGuess(guess);
+	
+	if(result == "correct")
+	{
+		Console.WriteLine($"Det är rätt! Du behövde {game.NumberOfGuesses} gissningar.");
+	}
+	else if(result == "too low")
+	{
+		Console.WriteLine("Det är för lågt.");
+	}
+	else
+	{
+		Console.WriteLine("Det är för högt.");
+	}
+	
+}
+```
+
+Om du behöver hjälp med hur man genererar ett slumpat heltal inom ett visst intervall, se sidan [Generate a random integer in C#](https://sentry.io/answers/generate-a-random-integer-in-csharp/).
+
+:::
+
+::: exercise 5.2
+
+Läs på om konstruktörer på [W3Schools](https://www.w3schools.com/cs/cs_constructors.php).
+
+:::
 
 <!--
+
+
+## Lektion 6. Klasser (inkapsling & properties)
+För att få så bra kod som möjligt när man använder objektorienterad programmering så vill man att en klass i så stor utsträckning som möjligt inte avslöjar sina implementationsdetaljer. Vi kommer återkomma till detta snart, men först ett litet enklare exempel som visar fördelarna med detta när det kommer till funktioner (enklare att förklara).
+
+Ponera att en programmerare har implementerat följande funktion för att beräkna summan av heltalen mellan 0 och ett annat tal:
+
+```cs
+// Beräknar 0 + 1 + 2 + ... + lastInt.
+int getSum(int lastInt)
+{
+	
+	int sum = 0
+	
+	for(int i=0; i<=lastInt; i++)
+	{
+		sum += i;
+	}
+	
+	return sum;
+	
+}
+```
+
+Andra programmerare som vill använda den här funktionen behöver inte förstå hur den har blivit implementerad, utan de behöver bara lära sig hur man anropar funktionen, t.ex.:
+
+```cs
+Console.WriteLine($"Summan av heltalen mellan 0 och 5 är {getSum(5)}.")
+```
+
+Så även om funktionen är svår att implementera (med loop och allt det) så är den väldigt enkelt att använda. Det här är något vi vill ska gälla för våra klasser också; de ska vara enkla att använda, även när de är lite svårare att implementera.
+
+Om vi tar funktionen `getSum()` som exempel igen så vill vi även kunna ändra implementationen av funktionen i framtiden utan att de som nu använder funktionen behöver ändra sitt anrop till den i framtiden. I framtiden kanske vi upptäcker att summan mellan heltalen mellan 0 och ett annat tal kan beräknas på ett mycket effektivare sätt, t.ex.:
+
+```cs
+int getSum(int lastInt)
+{
+	return lastInt * (lastInt + 1) / 2;
+}
+```
+
+Så länge vi inte ändrar:
+
+* Namnet på funktionen
+* Returtypen på funktionen
+* Parametrarna (antal och typ)
+
+Så kan vi göra den här typen av optimeringar i funktioner utan att resten av kodbasen påverkas. Perfekt! Och detta är något vi vill eftersträva när det kommer till klasser också.
+
+För att uppnå detta när det kommer till klasser så brukar man tillämpa följande regler:
+
+* Alla variabler i klassen markerar vi som `private` istället för `public`. `private` gör att kompilatorn bara tillåter konstruktören/metoder i klassen att använda dem; de som använder vår klass kan inte komma åt dem utifrån.
+* De som använder klassen kan bara skapa nya instanser av den genom konstruktören.
+* De som använder klassen kan bara arbeta med klassen genom att anropa de metoder som är `public`.
+
+Här är ett enkelt exempel:
+
+```cs
+// Person.cs
+class Person
+{
+	
+	// Dessa variabler är private, så vi kan bara
+	// komma åt dem i konstruktören och metoder
+	// i den här klassen.
+	private string firstName;
+	private string lastName;
+	
+	// Här har vi en public konstruktör som kan
+	// användas av andra för att skapa nya
+	// instanser av klassen.
+	public Person(string fName, string lName)
+	{
+		firstName = fName;
+		lastName = lName;
+	}
+	
+	// Här har vi public metoder som andra kan
+	// anropa för att arbeta med instanserna av
+	// klassen.
+	public string GetFirstName()
+	{
+		return firstName;
+	}
+	
+	public string GetLastName()
+	{
+		return lastName;
+	}
+	
+	public string GetFullName()
+	{
+		return $"{firstName} {lastName}";
+	}
+	
+}
+```
+```cs
+Person kalle = new Person("Kalle", "Andersson");
+
+// Det här skulle kompilatorn klaga på:
+// kallen.firstName
+
+// Det här är inga problem:
+Console.WriteLine($"Hans fullständiga namn är {kalle.GetFullName()}.")
+```
+
+::: exercise 6.1
+Skapa en klass som representerar en film. Du får själv välja vad för information som ska sparas ner om filmen (titel, längd, category, etc.). Använd `private` variabler i klassen för att representera den här informationen. Lägg sedan till en `public` konstruktör som kan användas för att skapa nya instanser av klassen, och några `public` metoder för att arbeta med instanser av klassen (t.ex. `WriteIntoToConsole()`).
+
+Skapa sedan några nya instanser av klassen och anropa någon `public` metod på dem för att verifiera att klassen fungerar som den ska.
+:::
+
+::: exercise 6.2
+Här är en klass som kan användas för att arbeta med några heltal:
+
+```cs
+// IntGroup.cs
+class IntGroup
+{
+	
+	private List<int> ints;
+	
+	public IntGroup(){
+		ints = new List<int>();
+	}
+	
+	public void Add(int intToAdd)
+	{
+		ints.Add(intToAdd);
+	}
+	
+	public int GetSum(){
+		
+		int sum = 0;
+		
+		foreach(int i in ints)
+		{
+			sum += i;
+		}
+		
+		return sum;
+		
+	}
+	
+	public int GetCount()
+	{
+		return ints.Count;
+	}
+	
+}
+```
+```cs
+// Program.cs
+IntGroup intGroup = new IntGroup();
+intGroup.Add(4);
+intGroup.Add(2);
+intGroup.Add(6);
+Console.WriteLine($"Summan är {intGroup.GetSum()}, antalet är {intGroup.GetCount()}.");
+Console.WriteLine($"Summan är {intGroup.GetSum()}, antalet är {intGroup.GetCount()}.");
+Console.WriteLine($"Summan är {intGroup.GetSum()}, antalet är {intGroup.GetCount()}.");
+```
+
+Ett litet problem är att varje gång `GetSum()` anropas så beräknas hela summan ut på nytt. Innehåller `IntGroup` miljontals tal så blir detta väldigt ineffektivt.
+
+Istället för att använda en `List<int>` i klassen för att hålla kolla på vilka nummer som ingår så kan man istället använda en `sum`- och `count`-variabel som ändras direkt när `Add()` anropas. Tack vare att den som använder klassen aldrig använder den där `ints`-variabeln i klassen (för den är `private`) så kan vi göra en sån här ändring i klassens implementation nu i efterhand, och den kod som redan finns och som använder sig av klassen kommer fortsätta fungera på samma sätt som förut (men nu lite bättre, efter vår optimering av klassen).
+
+Ändra implementationen av klassen enligt beskrivningen ovan så att den optimeras lite.
+
+:::
+
+I en klass är det alltså väldigt vanligt att man göra något i stil med detta:
+
+```cs
+class Person
+{
+	
+	private string firstName;
+	
+	public Person(string fName)
+	{
+		firstName = fName;
+	}
+	
+	public string GetName()
+	{
+		return firstName;
+	}
+	
+	public void setName(fName)
+	{
+		firstName = fName;
+	}
+	
+}
+```
+
+Det är väldigt mycket kod att skriva bara för att behålla möjligheten att kunna ändra implementationen av klassen i framtiden. För att råda bot på detta så har C# något som de kallar för properties vi kan använda istället, som gör vår kod mycket kortare:
+
+```cs
+class Person
+{
+	
+	public string FirstName { get; set; }
+	
+}
+```
+
+Det ser nu ut som att vi har en variabel i klassen som heter `FirstName`, och den kan användas som en vanlig variabel, men internt har C# faktiskt skapat en `private` variabel med tillhörande `public set()-` och `public get()`-metoder, och dessa metoder anropas varje gång som man försöker komma åt variabeln eller tilldela den ett nytt värde:
+
+```cs
+// Vad C# typ skriver om vår klass till.
+class Person
+{
+	
+	private string firstName;
+	
+	// Denna anropas när man skriver aPersonObject.FirstName
+	public void GetFirstName()
+	{
+		return firstName;
+	}
+	
+	// Denna anropas när man skriver aPersonObject.FirstName = "Alice"
+	public void SetFirstName(string fName)
+	{
+		firstName = fName;
+	}
+	
+}
+```
+
+Så genom att använda properties så behöver vi inte skriva så mycket kod själva, och vi har fortfarande möjlighet att i framtiden ändra implementationen av de `get()` och `set()`-metoder som kompilatorn generar åt oss om vi vill.
+
+::: exercise 6.2
+
+Läs på om OOP på W3Schools:
+
+* [Access Modifiers](https://www.w3schools.com/cs/cs_access_modifiers.php)
+* [Properties](https://www.w3schools.com/cs/cs_properties.php)
+
+:::
+
+
+::: exercise 6.3
+Den här övningen är lite svårare än dem andra.
+
+Byt ut implementationen på samma sätt som du gjorde innan för att snabba upp uträkningen av summan och antal nummer som lagts till i klassen nedan, men den här gången används properties istället för metoder för summan och antal.
+
+```cs
+// IntGroup.cs
+class IntGroup
+{
+	
+	private List<int> ints;
+	
+	public int Sum
+	{
+		get {
+			
+			int sum = 0;
+			
+			foreach(int i in ints)
+			{
+				sum += i;
+			}
+			
+			return sum;
+			
+		}
+	}
+	
+	public int Count
+	{
+		get {
+			return ints.Count;
+		}
+	}
+	
+	public IntGroup(){
+		ints = new List<int>();
+	}
+	
+	public void Add(int intToAdd)
+	{
+		ints.Add(intToAdd);
+	}
+	
+}
+```
+```cs
+// Program.cs
+IntGroup intGroup = new IntGroup();
+intGroup.Add(4);
+intGroup.Add(2);
+intGroup.Add(6);
+Console.WriteLine($"Summan är {intGroup.Sum}, antalet är {intGroup.Count}.");
+Console.WriteLine($"Summan är {intGroup.Sum}, antalet är {intGroup.Count}.");
+Console.WriteLine($"Summan är {intGroup.Sum}, antalet är {intGroup.Count}.");
+```
+
+:::
+
+
+
+
+
+## Lektion 7. Klasser (tärningsövningar)
+Den här lektionen tillägnas åt repetition och övningar.
+
+::: exercise 7.1
+Skapa en klass som representerar en tärning. Den som skapar tärningen ska få bestämma hur många sidor den ska ha. Den behöver ha åtminstone två metoder:
+
+* En metod för att kasta tärningen
+* En metod för att ta reda på hur många prickar (vilket värde) tärningen för stunden visar.
+
+Använd sedan tärningen och verifiera att den fungerar som den ska.
+
+Om du behöver hjälp med hur man genererar ett slumpat heltal inom ett visst intervall, se sidan [Generate a random integer in C#](https://sentry.io/answers/generate-a-random-integer-in-csharp/).
+:::
+
+::: exercise 7.2
+Yatzy är ett roligt spel. Om man ska spela Yatzy så behöver man ha en samling med tärningar. Låt oss representera en sådan samling med en klass! Den som skapar en ny instans av klassen ska kunna indikera hur många tärningar som ska finnas i klass-instansen. Man ska även kunna slå alla tärningar i klassen. Och kanske är det bra om man även kan slå några av dem? Så man kan indikera vilka tärningar man vill kunna kasta om?
+
+Försök att tänka igenom olika sätt man skulle kunna implementera detta på, och försök sedan implementera ett av sätten. När du är klar så bör man "enkelt" kunna skapa en ny samling tärningar och slå om dem som man vill.
+:::
+
+::: exercise 7.3
+Använd dina klasser för att försöka implementera ett litet spel. Spelet går ut på att användaren ska kunna kasta 5 tärningar, och spelaren ska försöka få alla sexor på så få slag som möjligt. Vid varje slag så ska spelaren själv få välja vilka tärningar den vill behålla. Det behöver även finnas en räknare som håller koll på hur många kast spelaren har gjort. Och på någonstans behöver vi ha kod som kollar ifall alla tärningar har värdet 6, så vi vet när spelaren har vunnit.
+:::
+
+
+
+
+
+## Lektion 8. Klasser (tärningsövningar)
+Är du inte klar med övningarna från förra lektionen så fortsätt gärna med dem. Här kommer annars ett par till övningar du kan göra.
+
+::: exercise 8.1
+Den här övningen är rätt så svår.
+
+Ett spel där man bara kan få alla sexor på så få slag som möjligt är lite för enkelt för att vara roligt. Låt oss därför försöka implementera ett riktigt Yatzy-spel istället. I alla fall första halvan av det, där man ska försöka få så många ettor, tvåor, treor, fyror, femmor och sexor som möjligt på 3 slag respektive.
+
+Nu behöver du eventuellt skapa en ny klass som repsenterar hela Yatzy-spelet, där du håller koll på vilka av ettorna, tvåorna, treorna, fyrorna, femmorna och sexorna spelaren har fått hittills, och hur många av varje, och hur många kast spelaren har gjort, etc.
+
+Försök att själv lista ut hur den här klassen ska se ut. Den kan implementeras på många olika sätt! Enda garanterade sättet att misslyckas är att inte försöka, så släng dig ut där och försök :)
+:::
+
+::: exercise 8.2
+Den här övningen är rätt så svår.
+
+Att spela Yatzy själv är OK, men det är ännu roligare att spela det ihop med någon annan! Lägg därför till stöd för att spela fler spelare. Antingen hårdkoda in ett visst antal spelare som kan spela spelet, eller var lite mer dynamiskt genom att fråga användaren i början hur många som vill spela spelet.
+
+Du kan behöva introducera en klass för att hålla koll på hur många poäng respektive spelare har. I verkligheten har man vanligtvis en poängtabell/scoreboard när man spelar Yatzy, så det kan vara bra att ha en klass som representerar det.
+:::
+
+
+
 
 Ni kommer ihåg första lektionen? Där jag visade att en bil kan modelleras som att den består av olika komponenter, så som hjul, ratt, gaspedal, bromspedal, tank, bromsklossar, etc.? När vi bygger våra egna datorprogram så ska vi försöka modellera dem med komponenter som använder sig av varandra på något liknande sätt. Och varje komponent implmententerar vi som en klass.
 

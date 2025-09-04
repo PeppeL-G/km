@@ -505,7 +505,7 @@ I praktiken, använd för det mesta `int` och `double`. Använd `long` om `int` 
 ```cs
 int myAge = 12;
 long yourAge = 45;
-float averageSpeed = 15.52f; // Måste skriva f i slutet för att indikera flyttal.
+float averageSpeed = 15.52f; // Måste skriva f i slutet för att indikera ett float-tal, annars blir det ett double-tal!
 double topSpeed = 425.651;
 
 int myAgeInAYear = myAge + 1;
@@ -537,7 +537,7 @@ Skriv ett program som beräknar och visar vad produkten av `123.456` och `9.876`
 Skriv ett program som beräknar och visar vad summan av `123` och `9.876` är.
 :::
 
-När man använder `Console.ReadLine()` och använder man in `123` så kommer vi få tillbaka strängen `"123"`. En sträng kan vi inte använda amtematiska operationer på, så om vi vill beräkna saker med det inmatade numret så behöver vi omvandla det till en matematisk datatyp först. Det kan vi göra med funktionerna `Convert.ToDouble()`, `Convert.ToInt()`, etc.
+När man använder `Console.ReadLine()` och använder man in `123` så kommer vi få tillbaka strängen `"123"`. En sträng kan vi inte använda matematiska operationer på, så om vi vill beräkna saker med det inmatade numret så behöver vi omvandla det till en matematisk datatyp först. Det kan vi göra med funktionerna `Convert.ToDouble()`, `Convert.ToInt32()`, etc.
 
 ```cs
 string aNumberAsString = "123";
@@ -594,9 +594,513 @@ Skapa ett program som skriver ut vilket av `14 * 54` och `37 * 40` som är stör
 :::
 
 ::: exercise 4.8
+Skapa ett program som ber användaren att mata in två tal. Ditt program ska sedan tala om för användaren vilket av talen som är lägst.
+:::
+
+::: exercise 4.9
 Skapa ett program som ber användaren att mata in hur många år gammal hen är. Ditt program ska sedan skriva ut:
 
 * `Du är ett barn.`, om användaren är under 18 år.
 * `Du är vuxen.`, om användaren är mellan 18 och 67 år.
 * `Du är en pensionär.`, om användaren är över 67 år.
 :::
+
+
+
+
+## Lektion 5. Beräkningar
+Nu ska vi repetera och öva på att använda det vi har lärt oss hittills för att försöka beräkna lite mer riktiga saker.
+
+---
+
+::: exercise 5.1
+Skapa ett program som ber användaren mata in 2 tal. Ditt program ska sedan skriva ut vilket av talen som är störst respektive minst.
+:::
+
+
+
+::: exercise 5.2
+Skapa ett program som ber användaren mata in 4 tal. Ditt program ska sedan skriva ut vad summan och medelvärdet av talen är. Medelvärdet är summan delat med antal nummer (4 i detta fallet).
+:::
+
+
+
+::: exercise 5.3
+Skapa ett program som ber användaren mata in två sidlängder på en fyrkant. Ditt program ska sedan fråga om användaren vill se fyrkantens omkrets eller area. När användaren har gjort sitt val så ska du beräkna och visa det som användaren valde.
+
+En fyrkants omkrets är `kortsida + kortsida + långsida + långsida`.
+
+En fyrkants area är `kortsida * långsida`.
+:::
+
+
+
+::: exercise 5.4
+Skapa ett program som ber användaren att mata in ett antal minuter, och sedan ett antal sekunder. Ditt program ska sedan beräkna och tala om för användaren hur många sekunder det är totalt.
+
+Kom ihåg: 1 minut = 60 sekunder
+
+Ändra sedan programmet så att användaren även får mata in ett antal timmar, och du ska sedan lägga sekunderna i timmarna till din uträkning också.
+
+Kom ihåg: 1 timme = 60 minuter
+:::
+
+
+
+::: exercise 5.5
+Skapa ett program som ber användaren mata in två tal, och sedan en matematisk operatorsymbol (`+`, `-`, `*` eller `/`). Utför sedan den matematiska operationen på talen och visa resultatet för användaren.
+:::
+
+
+
+::: exercise 5.6
+Amerikanerna är konstiga: de mäter temperaturer i Fahrenheit, och inte Celcius! Skriv ett program som hjälper dem att konvertera en temperatur i Fahrenheit till en temperatur i Celcius.
+
+Här är en formel för att konvertera en given Fahrenheit temperatur (`°F`) till en Celcius temperatur (`°C`): `°C = (°F - 32) * 5/9`.
+:::
+
+
+
+::: exercise 5.7
+BMI är en formel som försöker uppskatta ifall en person är underviktig, normalviktig eller överviktig. Den beräknar ett BMI-värde utifrån en persons vikt (mäts i kg) och längd (mäts i m): `BMI = vikt / (längden * längden)`.
+
+BMI-värdet ska sedan tolkas på följande sätt:
+
+* Under 18,5: Underviktig
+* Mellan 18,5 och 24,9: Normalviktig
+* Över 25: Överviktig
+
+Skapa ett program som ber användaren att mata in sin vikt och längd, och som sedan beräknar personens BMI-värde och talar om ifall personen är underviktig, normalviktig eller överviktig.
+
+**Notera**\
+BMI är inte ett tillförligt sätt att avögra ifall en person faktiskt är underviktig, normalviktig eller överviktig. Använd det aldrig i praktiken.
+:::
+
+
+<!--
+
+
+## Lektion 6. Bool, While-loopen
+Den här lektionen kommer vi titta närmare på boolska värde och hur while-loopen fungerar, och se exempel på vad vi kan använda dem till.
+
+---
+
+Datatypen `bool` kan bara spara ner två olika värden: `true` och `false`. Den används för att representera ifall något är korrekt eller ej:
+
+```cs
+bool isSwedenACountry = true;
+bool isFireCold = false;
+```
+
+Alla matematiska jämförelseoperatorer kommer evalueras till antingen `true` eller `false`:
+
+```cs
+bool isFiveLowerThanThree = 5 < 3; // false
+bool isFourEqualToEight = 4 == 8; // false
+bool isOneLowerThanSix = 1 < 6; // true
+```
+
+Och varje villkor som vi använder i en villkorssats (`if(...){...}`) måste evalueras till `true` eller `false`.
+
+```cs
+bool amIRich = false;
+
+if(amIRich)
+{
+  Console.WriteLine("Jag är rik! :D");
+}
+else
+{
+  Console.WriteLine("Jag är inte rik :(");
+}
+```
+
+Det finns inte mycket mer än så att säga om `bool`-datatypen, så låt oss fortsätta med loopar.
+
+---
+
+Ibland vill vi att datorn ska utföra samma sak om och om igen ett visst antal gånger. För att få det att hända så kan vi använda oss av en loop. Den enklaste typen av loop i C# är `while(...){...}`-loopen. Den är liknande `if(...){...}` i sin struktur, men `while`-loopen kommer köras om igen så länge villkoret i den är sann.
+
+::: example
+
+Exempel på en loop som aldrig kommer köras.
+
+```cs
+Console.WriteLine("Före loopen.");
+
+while(false)
+{
+  
+  Console.WriteLine("Inne i loopen.");
+  
+}
+
+Console.WriteLine("Efter loopen.");
+```
+
+Output:
+
+```
+Före loopen.
+Efter loopen.
+```
+
+:::
+
+::: example
+
+Exempel på en loop som alltid kommer köras.
+
+```cs
+Console.WriteLine("Före loopen.");
+
+while(true)
+{
+  
+  Console.WriteLine("Inne i loopen.");
+  
+}
+
+// Eftersom loopen aldrig slutar loopa så kommer
+// "Efter loopen" aldrig att skrivas ut.
+Console.WriteLine("Efter loopen.");
+```
+
+Output:
+
+```
+Före loopen.
+Inne i loopen.
+Inne i loopen.
+Inne i loopen.
+Inne i loopen.
+Inne i loopen.
+...
+```
+:::
+
+Att hårdkoda in `true`/`false` som villkor i loopen är sällan vettigt. Vanligtvis har man en variabel som på något vis används som del av villkoret, och när den variabeln ändrar värde så bryts loopen när villkoret blir `false`.
+
+::: example
+Exempel på en loop som kommer köras 1 gång.
+
+```cs
+Console.WriteLine("Före loopen.");
+
+bool shouldRunLoop = true;
+
+while(shouldRunLoop)
+{
+  
+  Console.WriteLine("Inne i loopen.");
+  
+  shouldRunLoop = false;
+  
+}
+
+Console.WriteLine("Efter loopen.");
+```
+
+Output:
+
+```
+Före loopen.
+Inne i loopen.
+Efter loopen.
+```
+:::
+
+Vill man köra loopen flera gånger så får man använda en `int`-variabel som räknar (vi ökar variabeln med 1 varje gång loopen körs).
+
+::: example
+
+Exempel på en loop som kommer köras 3 gånger.
+
+```cs
+Console.WriteLine("Före loopen.");
+
+int i = 1;
+
+while(i <= 3)
+{
+  
+  Console.WriteLine($"Inne i loopen (i={i}).");
+  
+  i = i + 1;
+  
+}
+
+Console.WriteLine("Efter loopen.");
+```
+
+Outout:
+
+```
+Före loopen.
+Inne i loopen (i=1).
+Inne i loopen (i=2).
+Inne i loopen (i=3).
+Efter loopen.
+```
+:::
+
+::: exercise 6.1
+Skapa ett program som skriver ut följande på skärmen:
+
+```
+Rad 1.
+Rad 2.
+Rad 3.
+Rad 4.
+```
+
+Använd en `while`-loop.
+:::
+
+::: exercise 6.2
+Skapa ett program som skriver ut följande på skärmen:
+
+```
+Rad 7.
+Rad 8.
+Rad 9.
+Rad 10.
+```
+
+Använd en `while`-loop.
+:::
+
+::: exercise 6.3
+Skapa ett program som skriver ut följande på skärmen:
+
+```
+5
+4
+3
+2
+1
+Takeoff!
+```
+
+Använd en `while`-loop.
+:::
+
+::: exercise 6.4
+Skapa ett program som ber användaren skriva in ett positivt heltal. Ditt program ska sedan skriva ut heltalen mellan 0 och det heltal som användaren skrev in.
+
+Exempel:
+
+```
+Skriv in ett positivt heltal: 4
+0 1 2 3 4
+```
+:::
+
+::: exercise 6.5
+Ändra ditt föregående program så att om användaren skriver in ett negativt heltal så visas ett felmeddelande.
+
+Exempel:
+
+```
+Skriv in ett positivt heltal: -5
+FEL: Det är inte ett positivt heltal.
+```
+:::
+
+Om vi ber användaren mata in ett värde, låt oss säga ett positivt heltal, men användaren matar in något annat, låt oss säga ett negativt heltal, då kan det vara bra att be användaren att mata in värdet en gång till, om och om igen, ända tills användaren har matat in ett korrekt värde. För att uppnå detta kan man använda en `while`-loop.
+
+::: example
+
+Exempel på hur man kan be användaren mata in ett värde igen ifall användaren matat in ett felatigt värde.
+
+```cs
+bool hasEnteredNameCorrect = false;
+string enteredName = "";
+
+while(hasEnteredNameCorrect == false)
+{
+  
+  Console.Write("Skriv in ditt namn: ");
+  enteredName = Console.ReadLine();
+  
+  if(enteredName == "")
+  {
+    Console.WriteLine("Du måste ange ditt namn!");
+  }
+  else
+  {
+    hasEnteredNameCorrect = true;
+  }
+  
+}
+
+Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
+
+```
+:::
+
+::: exercise 6.6
+
+Skapa ett program där användaren ska mata in ett visst lösenord (du får bestämma vilket det rätta lösenordet ska vara). Om användaren matar in fel lösenord så ska du be användaren mata in lösenordet igen, ända tills det rätta lösenordet är inmatat. Efter det så ska ett hemligt meddelande visas för användaren (du får bestämma vad det hemliga meddelandet ska vara).
+
+:::
+
+::: exercise 6.7
+
+Skapa ett program där användaren ska mata in ett positivt heltal. Om användaren matar in ett negativt heltal så ska du be användaren mata in ett positivt heltal igen, ända tills användaren har gjort detta. Därefter ska du skriva ut meddelandet `Hej på dig!` så många gånger som det positiva heltalet indikerar (skriver användaren t.ex. in `3`, så ska meddelandet visas tre gånger).
+
+:::
+
+
+## Lektion 7. Mer `while`!
+Att använda loopar är knepigt. Därför ska vi träna lite mer på att använda dem.
+
+::: exercise 7.1
+Skapa ett program som skriver ut följande på skärmen:
+
+```
+1
+3
+5
+7
+9
+```
+
+Använd en `while`-loop.
+:::
+
+
+::: exercise 7.2
+Skapa ett program som ber användaren mata in två positiva heltal. Det första mindre än det andra. Ditt program ska sedan skriva ut var tredje tal från det första talet till det andra talet.
+
+Körexempel:
+
+```
+Mata in ett positivt heltal: 5
+Mata in ett större positivt heltal: 16
+5
+8
+11
+14
+```
+
+Använd en `while`-loop.
+:::
+
+::: exercise 7.3
+Skapa ett program som ber användaren mata in ett användarnamn och lösenord. Det korrekta användarnamnet och lösenordet ska vara `Alice` och `abc123`. Så länge användaren inte matar in det korrekta användarnamnet och lösenordet så ska ditt program fortsätta att be om det korrekta användamnet och lösenordet. När de väl har matats in så ska användaren få se ett hemligt meddelande.
+
+Körexempel:
+
+```
+Mata in användarnamn: Bengt
+Mata in lösenord: lossen
+Fel användarnamn/lösenord, försök igen.
+Mata in användarnamn: Alice
+Mata in lösenord: pa55w0rd
+Fel användarnamn/lösenord, försök igen.
+Mata in användarnamn: Alice
+Mata in lösenord: abc123
+Välkommen, Alice! Här är ditt hemliga meddelande: ...
+```
+:::
+
+::: exercise 7.4
+Den här övningen är nog ganska svår.
+
+Skapa ett program som ber användaren mata in ett positivt heltal. Ditt program ska sedan skriva ut en fyrkant med den sidlängden med hjälp av `*`-symbolen.
+
+Körexempel:
+
+```
+Mata in ett positivt heltal: 5
+*****
+*****
+*****
+*****
+*****
+```
+
+\
+
+```
+Mata in ett positivt heltal: 7
+*******
+*******
+*******
+*******
+*******
+*******
+*******
+```
+
+:::
+
+::: exercise 7.5
+Den här övningen är nog ännu svåre.
+
+Skapa samma program som innan, men skriv endast ut kanten på fyrkanten.
+
+Körexempel:
+
+```
+Mata in ett positivt heltal: 5
+*****
+*   *
+*   *
+*   *
+*****
+```
+
+\
+
+```
+Mata in ett positivt heltal: 7
+*******
+*     *
+*     *
+*     *
+*     *
+*     *
+*******
+```
+
+:::
+
+-->
+
+
+<!--
+
+## Raylib
+1. Öppna din projektmapp i Visual Studio Code.
+2. I `EXPLORER`-panelen, högerklicka på mappen som innehåller `Program.cs`-filen, och välj `Open in Integrated Terminal`.
+3. I terminalen, skriv in följande kommando och tryck enter:
+```
+dotnet add package Raylib-cs
+```
+4. Vänta på att paketet ska laddas ner klart. Det kan ta några minuter.
+5. I `Program.cs`-filen, använd följande kod:
+```cs
+using Raylib_cs;
+
+Raylib.InitWindow(800, 600, "Min Raylib App!");
+Raylib.SetTargetFPS(30);
+
+while (!Raylib.WindowShouldClose())
+{
+	
+	Raylib.BeginDrawing();
+	Raylib.ClearBackground(Color.White);
+	
+	Raylib.DrawText("Hello, raylib-cs!", 300, 280, 20, Color.DarkGray);
+	
+	Raylib.EndDrawing();
+	
+}
+
+Raylib.CloseWindow();
+```
+6. Kör `Program.cs`-filen, och du borde se ett litet fönster med texten `Hello, raylib-cs!` utmålad.
+
+-->

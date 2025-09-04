@@ -64,7 +64,7 @@ Skapa en ny `.html`-fil i Visual Studio Code och skriv HTML-kod i den som visar 
 
 
 
-## Lektion 3. Webbapp-grunder
+## Lektion 3. Webbapp (Node.js)
 * [Node.js](https://nodejs.org/en/download)
 * npm
 * HTTP
@@ -169,7 +169,7 @@ Testa att skicka några request till din webbapp och verifiera att den skickar t
 
 
 
-## Lektion 4. Webbapp-grunder
+## Lektion 4. Webbapp (Node.js)
 Vi fortsätter med grunderna i hur en webbapplikation fungerar. Se till att du är klar med övningarna från Lektion 3 innan du börjar med dessa övningar.
 
 ::: exercise 4.1
@@ -214,3 +214,130 @@ Använd `try{ ... }catch(error){ ... }` för att hantera fel (exceptions) som ka
 Skapa en `.css`-fil med lite CSS-kod som stylar dina sidor. Lägg sedan till `<link>`-elementet i din HTML-kod för att få webbläsaren att skicka en GET request för att hämta innehållet i CSS-filen. Ändra din JS-kod så att du skickar tillbaka innehållet i CSS-filen när du tar emot en sådan request. Se även till att du sätter `Content-Type`-headern till värdet `text/css`, så webbläsaren kan vara säker på att den får tillbaka CSS-kod.
 
 :::
+
+
+<!--
+
+
+## Lektion 5 Webbapp (Express)
+::: exercise 5.1
+
+En frivillig elev presenterar sin webbapp i Node.js och förklarar hur den fungerar.
+
+:::
+
+Att implementera en webapp direkt i Node.js fungerar, men genom att använda ett ramverk som Express så får vi bättre stöd för att:
+
+* Dynamiskt generera HTML-kod vi skickar tillbaka (rendering engine).
+* Återanvända funktionalitet i olika HTTP-requests (middlewares).
+* Enkelt lägga till funktionalitet som de flesta webbappar använder (skicka tillbaka statiska filer, hantera sessioner, använda cookies, etc.).
+
+Så låt oss skapa en ny hemsida som använder sig av Express:
+
+1. Skapa en ny mapp för din hemsida, t.ex. `min-hemsida`.
+2. Öppna den mappen i terminalen/Windows Powershell och kör kommandot `npm install express` (`npm`-kommandot fick du på datorn när du installerade Node.js).
+3. I den skapade `package.json`-filen, lägg till `"type": "module"` efter den första måsvingen (på egen rad). Detta gör så att vi kan använda den officiella `import`-syntaxen istället för `require()` för att importa funktionalitet från andra JS-filer.
+4. Skapa `min-hemsida/app.js` med följande innehåll:
+```js
+import express from 'express'
+
+const app = express()
+
+app.get(`/`, function(request, response){
+	response.send(`Hello, World!`)
+})
+
+app.get(`/about`, function(request, response){
+	response.send(`About page!`)
+})
+
+app.listen(3000)
+```
+5. Kör `min-hemsida/app.js` i Node.js.
+6. Öppna `http://localhost:3000` i en webbläsaren.
+
+---
+
+Låt oss lägga till en renderingsmotor, så vi enklare kan generera och skicka tillbaka dynamisk HTML-kod.
+
+1. Öppna `min-hemsida` i terminalen/Windows Powershell och kör kommandot `npm install express-handlebars`.
+2. Ändra `min-hemsida/app.js`:
+
+```js
+// I toppen, lägg till:
+import { engine } from 'express-handlebars'
+
+// ...
+
+// Efter att du skapat app-variabeln, lägg till:
+app.engine(`hbs`, engine({
+	defaultLayout: null,
+}))
+
+// Och använd sedan response.render():
+app.get(`/`, function(request, response){
+	
+	// Filen `min-hemsida/views/start.hbs` är en
+	// fil du kommer skapa snart.
+	response.render(`start.hbs`)
+	
+})
+```
+3. Skapa filen `min-hemsida/views/start.hbs`, och skriv lite HTML-kod i den:
+```hbs
+<h1>Startsidan!</h1>
+<p>Det här är startsidan...</p>
+```
+4. Gör mostsvarande för about-sidan.
+
+::: exercise 5.2
+
+Verifiera att du har två olika sidor som fungerar:
+
+* En GET request för `/` ska skicka tillbaka HTML-koden i `start.hbs`-filen.
+* En GET request för `/about` (eller vad du nu väljer att använda) ska skicka tillbaka HTML-koden i `about.hbs`-filen (eller vad du nu väljer att döpa den till).
+
+:::
+
+Olika sidor på en hemsida brukar använda samma layout. Istället för att hårdkoda den i alla `.hbs`-filer så stödjer Express att man kan skriva den på ett ställe: i en extern `.hbs`-fil. Låt oss lägga till det.
+
+1. Ändra `min-hemsida/app.js` så vi konfiguerar Handlebars enligt följande:
+```js
+app.engine(`hbs`, engine({
+	defaultLayout: `main.hbs`, // Ändra från null till `main.hbs`.
+}))
+```
+2. Skapa filen `min-hemsida/views/layouts/main.hbs`:
+```hbs
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Min Hemsida</title>
+</head>
+<body>
+	
+	<ul>
+		<li><a href="/">Start</a></li>
+		<li><a href="/about">Om</a></li>
+	</ul>
+	
+	{{{body}}}
+	
+</body>
+</html>
+```
+
+Vi har nu konfigurerat Handlebars till att alltid använda sig av layouten i `main.hbs`. När du kör JS-koden ``response.render(`start.hbs`)`` så kommer den HTML-koden att sättas in där `{{{body}}}` står i `main.hbs`-filen, och resultatet efter det kommer sedan skickas tillbaka i responsen.
+
+::: exercise 5.3
+
+Skapa 3 olika sidor användaren kan gå emellan (med länkar, `<a>`-elementet):
+
+* URL:en `/` ska mappas till startsidan (ska rendera `start.hbs`-filen).
+* URL:en `/about` ska mappas till about-sidan (ska rendera `about.hbs`-filen).
+* URL:en `/contact-us` ska mappas till kontaktsidan (ska rendera `contact-us.hbs`-filen).
+
+:::
+
+-->

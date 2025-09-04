@@ -327,7 +327,7 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 3.1</title>
 	<script>
 		
-		document.addEventListenet(`DOMContentLoaded`, function(){
+		document.addEventListener(`DOMContentLoaded`, function(){
 			// Skriv din JS-kod här.
 		})
 		
@@ -359,7 +359,7 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 3.2</title>
 	<script>
 		
-		document.addEventListenet(`DOMContentLoaded`, function(){
+		document.addEventListener(`DOMContentLoaded`, function(){
 			// Skriv din JS-kod här.
 		})
 		
@@ -402,7 +402,7 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 3.3</title>
 	<script>
 		
-		document.addEventListenet(`DOMContentLoaded`, function(){
+		document.addEventListener(`DOMContentLoaded`, function(){
 			// Skriv din JS-kod här.
 		})
 		
@@ -448,7 +448,7 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 3.4</title>
 	<script>
 		
-		document.addEventListenet(`DOMContentLoaded`, function(){
+		document.addEventListener(`DOMContentLoaded`, function(){
 			// Skriv din JS-kod här.
 		})
 		
@@ -502,7 +502,7 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 4.1</title>
 	<script>
 		
-		document.addEventListenet(`DOMContentLoaded`, function(){
+		document.addEventListener(`DOMContentLoaded`, function(){
 			// Skriv din JS-kod här.
 		})
 		
@@ -547,7 +547,7 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 4.2</title>
 	<script>
 		
-		document.addEventListenet(`DOMContentLoaded`, function(){
+		document.addEventListener(`DOMContentLoaded`, function(){
 			// Skriv din JS-kod här.
 		})
 		
@@ -605,7 +605,7 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 4.3</title>
 	<script>
 		
-		document.addEventListenet(`DOMContentLoaded`, function(){
+		document.addEventListener(`DOMContentLoaded`, function(){
 			// Skriv din JS-kod här.
 		})
 		
@@ -642,7 +642,7 @@ Skapa en ny HTML-fil med följande innehåll:
 	<title>Övning 4.4</title>
 	<script>
 		
-		document.addEventListenet(`DOMContentLoaded`, function(){
+		document.addEventListener(`DOMContentLoaded`, function(){
 			// Skriv din JS-kod här.
 		})
 		
@@ -666,3 +666,106 @@ Skapa en ny HTML-fil med följande innehåll:
 
 Skriv JS-kod som ser till att `<span>`-elementet visar resultatet av de valda numren och operationen. `<select>`-elementet stödjer `input`-eventet på samma sätt som `<input>`-elementet gör. Använd `selectElement.value` för att läsa ut värdet i `value`-attributet för det `<option>`-element användaren har valt.
 :::
+
+
+
+
+<!--
+
+
+## Lektion 5. DOM
+Gör så långt ni hinner. Vi fortsätter med några olika DOM-övningar.
+
+::: tip
+
+Lägg alltid din JS-kod inne i en funktion som anropas när `DOMContentLoaded`-eventet har inträffat, så som visas i övningarna nedan. Detta säkerställer att webbläsaren har läst igenom all HTML-kod och skapat hela DOM-strukturen på sidan innan du börjar arbeta med den via din JS-kod.
+
+:::
+
+::: exercise 5.1
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 5.1</title>
+	<script>
+		
+		document.addEventListener(`DOMContentLoaded`, function(){
+			// Skriv din JS-kod här.
+		})
+		
+	</script>
+</head>
+<body>
+	
+	<h2>Bra saker</h2>
+	<ul id="goodList">
+		<li><button>Godis</button></li>
+		<li><button>Jobb</button></li>
+		<li><button>Orkaner</button></li>
+	</ul>
+	
+	<h2>Dåliga saker</h2>
+	<ul id="badList">
+		<li><button>Lön</button></li>
+		<li><button>Skatt</button></li>
+		<li><button>Spel</button></li>
+	</ul>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som lyssnar på när användaren klickar på knapparna, och när användaren klickar på knappen så ska den flyttas över till den andra listan.
+
+Du kommer behöva använda:
+
+* `document.querySelector(SELECTOR)` -> `htmlElement`
+* `document.querySelectorAll(SELECTOR)` -> `NodeList`
+* `htmlElement.addEventListener(EVENT_NAME, EVENT_HANDLER)` (för att lyssna på klick på en knapp)
+* `htmlElement.parentNode` för att få en referens till ett elements föräldraelement (kan användas upprepade gånger)
+* `htmlElement.appendChild(CHILD_ELEMENT)` (för att lägga till ett HTML-elementet i ett annat)
+:::
+
+::: exercise 5.2
+Skapa en ny HTML-fil som visar knappar utlagda så dem ser ut som ett tangenbord. En knapp ska alltså ha tecknet `A` på sig, en annan ska ha tecknet `B` på sig, etc.
+
+När användaren klickar på en av dessa knappar så ska den skriva ut det tecknet någonstans på skärmen, t.ex. i en paragraf ovanför tangenbordet.
+
+Försök att själv lista ut vilka DOM-funkitonaliteter du kommer behöva använda. Troligtvis har vi redan gått igenom allt som ni kommer behöva använda för att lösa den här uppgiften.
+
+När du är klar, försök även lägga till en "backspace"-knapp. När man klickar på den så ska det sista tecknet man skrivit tas bort.
+:::
+
+
+## Lektion 6. DOM
+Den här lektionen blir ett litet mini-projekt som kanske sträcker sig över flera lektioner.
+
+::: exercise 6.1
+Din uppgift är att bygga ett litet memory-spel som spelaren kan spela själv (1 player). Börja med att skapa en HTML-sida som positionerar ut 12 knappar över 3 rader och 4 kolumner, vardera visande ett `?`.
+
+Skriv sedan JS-kod som slumpar ut vilken symbol varje knapp döljer. Du kan använda t.ex. `A`, `B`, `C`, etc. För att komma ihåg vilken symbol varje knapp döljer så kan du lägga till ett eget-skapat `data-`-attribut på knappen. Det kan du göra med t.ex. ``theButton.dataset.theSymbol = `A` ``.
+
+Sedan får du lyssna på när användaren klickar på knapparna. När användaren klickar på en knapp förstå gången så ska du ju visa vad för symbol som gömmer sig under den. Ändra då helt enkelt knappens `?` till det som finns nedsparat i `theButton.dataset.theSymbol`. Du behöver även komma ihåg att det är denna knapp som användaren har klickat på. Det kan du göra genom att använda en `selectedButton1`-variabel. Låt den ha värdet `null` till en början, och ändra den till knappen som användaren klickar på när användaren gör detta den första gången.
+
+När användaren klickar på en av knapparna den andra gången så kan du spara ner den i en `selectedButton2`-variabel. Här ska du ju även visa användaren vad som döljer sig under knappen, så ändra knappens `?` till det som finns i knappens `.dataset.theSymbol`. Nu behöver du ju även jämföra ifall de två `selectedButton` dööljer samma symbol eller ej.
+
+Om det är samma symbol så kan du sätta `theButton.disabled` till `true`. Då kan användaren inte klicka på knappen igen. Och sätt även `selectedButton1`-variabeln och `selectedButton2`-variabeln tillbaka till `null`, så det blir som att användaren inte har klickat på någon knapp.
+
+Om det inte är samma symbol så måste vi dölja symbolen i knappen igen efter ett litet tag (sätta dess text tillbaka till `?`). Funktionen [setTimeout()](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout2) i JavaScript kan användas för att utföra något en liten stund senare. Använd det för att dölja symbolen i knappen efter 500 millisekunder, och sätt även `selectedButton1`-variabeln och `selectedButton2`-variabeln tillbaka till `null`, så användaren kan köra igen.
+
+När du är klar, försök lägg till mer funktionalitet, som t.ex.:
+
+* En räknare som räknar hur många gånger man har klickat på knapparna.
+* En "Starta om"-knapp som visas när spelet är slut.
+* En highscore-lista (baserat på räknaren).
+* Etc.
+
+:::
+
+
+-->
