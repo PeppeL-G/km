@@ -843,6 +843,10 @@ Om du behöver hjälp med hur man genererar ett slumpat heltal inom ett visst in
 :::
 
 ::: exercise 5.2
+Ändra koden så att när spelet är slut så får spelaren välja om denne vill spela igen eller ej. Ta även och skapa en ny klass som representerar en highscore-tavla i spelet, och lägg till spelarens resultat (antal gissningar) i den efter varje spelomgång, och visa hela highscore-tavlan i slutet av varje spelomgång.
+:::
+
+::: exercise 5.3
 
 Läs på om konstruktörer på [W3Schools](https://www.w3schools.com/cs/cs_constructors.php).
 
