@@ -360,7 +360,7 @@ Dagens lektion innehåller:
 	* `<meta charset="UTF-8">`
 	* `<meta name="description" content="En beskrivning av sidans innehåll...">`
 	* `<meta name="keywords" content="HTML, tutorial, exercises">`
-	* `<meta name="author" value="Your Real Name">`
+	* `<meta name="author" content="Your Real Name">`
 	* `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 * Semantisk HTML
 	* `<header>`, `<main>`, `<nav>`, `<footer>`
