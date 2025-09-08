@@ -216,11 +216,26 @@ Skapa en `.css`-fil med lite CSS-kod som stylar dina sidor. Lägg sedan till `<l
 :::
 
 
+
+## Lektion 5. Catch-up
+Vi fortsätter att arbeta med övningarna ifrån Lektion 3 och Lektion 4.
+
+::: exercise 5.1
+En student som är klar med övningarna ifrån Lektion 3 och Lektion 4 presenterar sin lösning för öriga klassen och förklarar hur det fungerar.
+:::
+
+::: exercise 5.2
+De elever som är klara med Lektioner 3 och Lektion 4 kan få försöka börja arbeta med Express-ramverket på egen hand. Vi kommer gå igenom det tillsammans nästa lektion.
+
+Tutorialn [Node.js Express.js](https://www.w3schools.com/nodejs/nodejs_express.asp) kan vara en bra startpunkt. Försök i första hand att läsa och förstå, så skriver vi kod nästa lektion. Men om du vill så får du förståss gärna försöka skriva kod själv redan nu.
+:::
+
+
 <!--
 
 
-## Lektion 5 Webbapp (Express)
-::: exercise 5.1
+## Lektion 6 Webbapp (Express)
+::: exercise 6.1
 
 En frivillig elev presenterar sin webbapp i Node.js och förklarar hur den fungerar.
 
@@ -290,7 +305,7 @@ app.get(`/`, function(request, response){
 ```
 4. Gör mostsvarande för about-sidan.
 
-::: exercise 5.2
+::: exercise 6.2
 
 Verifiera att du har två olika sidor som fungerar:
 
@@ -330,7 +345,7 @@ app.engine(`hbs`, engine({
 
 Vi har nu konfigurerat Handlebars till att alltid använda sig av layouten i `main.hbs`. När du kör JS-koden ``response.render(`start.hbs`)`` så kommer den HTML-koden att sättas in där `{{{body}}}` står i `main.hbs`-filen, och resultatet efter det kommer sedan skickas tillbaka i responsen.
 
-::: exercise 5.3
+::: exercise 6.3
 
 Skapa 3 olika sidor användaren kan gå emellan (med länkar, `<a>`-elementet):
 

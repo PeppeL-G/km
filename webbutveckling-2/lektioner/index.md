@@ -670,10 +670,16 @@ Skriv JS-kod som ser till att `<span>`-elementet visar resultatet av de valda nu
 
 
 
+
+## Lektion 5. Catch-up
+Vi fortsätter att arbeta med övningarna ifrån Lektion 3 och Lektion 4.
+
+
+
 <!--
 
 
-## Lektion 5. DOM
+## Lektion 6. DOM
 Gör så långt ni hinner. Vi fortsätter med några olika DOM-övningar.
 
 ::: tip
@@ -742,7 +748,7 @@ När du är klar, försök även lägga till en "backspace"-knapp. När man klic
 :::
 
 
-## Lektion 6. DOM
+## Lektion 7. DOM
 Den här lektionen blir ett litet mini-projekt som kanske sträcker sig över flera lektioner.
 
 ::: exercise 6.1
