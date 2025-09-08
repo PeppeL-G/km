@@ -76,14 +76,24 @@ I diskussion får du reflektera över ditt arbete. Var metoden ett bra sätt att
 
 
 
-## Lektion 3, Bildgenerering
+## Lektion 3. Bildgenerering
 Se klassuppgiften Bildgenerering på Google Classroom.
 
 
 
 
-## Lektion 4, Bildgenerering 2
+## Lektion 4. Bildgenerering 2
 Se klassuppgiften Bildgenerering 2 på Google Classroom.
+
+::: tip
+De som vill kan testa att ladda ner och köra en AI-modell på sin egna dator. Ett “enkelt” alternativ är att använda [Fooocus](https://github.com/lllyasviel/Fooocus?tab=readme-ov-file#download):
+
+1. Klicka på nedladdningslänken där.
+2. Packa upp den nedladdade 7z-filen.
+3. I den uppackade mappen, dubbelklicka på `run.bat`-filen.
+4. När programmet har startat klart så borde en sida öppnas i webbläsaren där du kan skriva in vad för bilder du vill att den ska skapa åt dig.
+:::
+
 
 
 <!--
