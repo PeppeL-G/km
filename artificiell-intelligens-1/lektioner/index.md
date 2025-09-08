@@ -81,12 +81,12 @@ Se klassuppgiften Bildgenerering på Google Classroom.
 
 
 
-<!--
 
 ## Lektion 4, Bildgenerering 2
 Se klassuppgiften Bildgenerering 2 på Google Classroom.
 
 
+<!--
 
 
 ## Kommande
