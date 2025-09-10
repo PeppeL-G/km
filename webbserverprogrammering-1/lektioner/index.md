@@ -231,16 +231,11 @@ Tutorialn [Node.js Express.js](https://www.w3schools.com/nodejs/nodejs_express.a
 :::
 
 
+
 <!--
 
 
 ## Lektion 6 Webbapp (Express)
-::: exercise 6.1
-
-En frivillig elev presenterar sin webbapp i Node.js och förklarar hur den fungerar.
-
-:::
-
 Att implementera en webapp direkt i Node.js fungerar, men genom att använda ett ramverk som Express så får vi bättre stöd för att:
 
 * Dynamiskt generera HTML-kod vi skickar tillbaka (rendering engine).
@@ -254,55 +249,60 @@ Så låt oss skapa en ny hemsida som använder sig av Express:
 3. I den skapade `package.json`-filen, lägg till `"type": "module"` efter den första måsvingen (på egen rad). Detta gör så att vi kan använda den officiella `import`-syntaxen istället för `require()` för att importa funktionalitet från andra JS-filer.
 4. Skapa `min-hemsida/app.js` med följande innehåll:
 ```js
-import express from 'express'
-
-const app = express()
-
-app.get(`/`, function(request, response){
-	response.send(`Hello, World!`)
-})
-
-app.get(`/about`, function(request, response){
-	response.send(`About page!`)
-})
-
-app.listen(3000)
+	import express from 'express'
+	
+	const app = express()
+	
+	app.get(`/`, function(request, response){
+		response.send(`Hello, World!`)
+	})
+	
+	app.get(`/about`, function(request, response){
+		response.send(`About page!`)
+	})
+	
+	app.listen(3000)
 ```
 5. Kör `min-hemsida/app.js` i Node.js.
-6. Öppna `http://localhost:3000` i en webbläsaren.
 
----
+::: exercise 6.1
+Efter att du startat din webbapp enligt stegen ovan, öppna `http://localhost:3000` i en webbläsaren och verifiera att:
+
+* En GET request för `/` skickar tillbaka texten `Hello, World!`.
+* En GET request för `/about` skickar tillbaka texten `About page!`.
+
+:::
 
 Låt oss lägga till en renderingsmotor, så vi enklare kan generera och skicka tillbaka dynamisk HTML-kod.
 
 1. Öppna `min-hemsida` i terminalen/Windows Powershell och kör kommandot `npm install express-handlebars`.
 2. Ändra `min-hemsida/app.js`:
-
-```js
-// I toppen, lägg till:
-import { engine } from 'express-handlebars'
-
-// ...
-
-// Efter att du skapat app-variabeln, lägg till:
-app.engine(`hbs`, engine({
-	defaultLayout: null,
-}))
-
-// Och använd sedan response.render():
-app.get(`/`, function(request, response){
+	```js
+	// I toppen, lägg till:
+	import { engine } from 'express-handlebars'
 	
-	// Filen `min-hemsida/views/start.hbs` är en
-	// fil du kommer skapa snart.
-	response.render(`start.hbs`)
+	// ...
 	
-})
-```
+	// Efter att du skapat app-variabeln, lägg till:
+	app.engine(`hbs`, engine({
+		defaultLayout: null,
+	}))
+	
+	// Och använd sedan response.render()
+	// istället för response.send():
+	app.get(`/`, function(request, response){
+		
+		// Filen min-hemsida/views/start.hbs är en
+		// fil du kommer skapa snart.
+		response.render(`start.hbs`)
+		
+	})
+	```
 3. Skapa filen `min-hemsida/views/start.hbs`, och skriv lite HTML-kod i den:
-```hbs
-<h1>Startsidan!</h1>
-<p>Det här är startsidan...</p>
-```
+	```hbs
+	<h1>Startsidan!</h1>
+	<p>Det här är startsidan...</p>
+	```
 4. Gör mostsvarande för about-sidan.
 
 ::: exercise 6.2
@@ -310,49 +310,61 @@ app.get(`/`, function(request, response){
 Verifiera att du har två olika sidor som fungerar:
 
 * En GET request för `/` ska skicka tillbaka HTML-koden i `start.hbs`-filen.
-* En GET request för `/about` (eller vad du nu väljer att använda) ska skicka tillbaka HTML-koden i `about.hbs`-filen (eller vad du nu väljer att döpa den till).
+* En GET request för `/about` ska skicka tillbaka HTML-koden i `about.hbs`-filen.
 
 :::
 
-Olika sidor på en hemsida brukar använda samma layout. Istället för att hårdkoda den i alla `.hbs`-filer så stödjer Express att man kan skriva den på ett ställe: i en extern `.hbs`-fil. Låt oss lägga till det.
+Låt oss lägga till en layout som renderingsmotorn använder, så vi bara behöver skriva layout-koden på ett ställe, istället för i varje `.hbs`-fil.
 
-1. Ändra `min-hemsida/app.js` så vi konfiguerar Handlebars enligt följande:
-```js
-app.engine(`hbs`, engine({
-	defaultLayout: `main.hbs`, // Ändra från null till `main.hbs`.
-}))
-```
+1. Ändra `min-hemsida/app.js`:
+	```js
+	// ...
+	
+	app.engine(`hbs`, engine({
+		defaultLayout: `main.hbs`, // Ändra här från null till `main.hbs`
+	}))
+	
+	// ...
+	```
 2. Skapa filen `min-hemsida/views/layouts/main.hbs`:
-```hbs
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Min Hemsida</title>
-</head>
-<body>
-	
-	<ul>
-		<li><a href="/">Start</a></li>
-		<li><a href="/about">Om</a></li>
-	</ul>
-	
-	{{{body}}}
-	
-</body>
-</html>
-```
-
-Vi har nu konfigurerat Handlebars till att alltid använda sig av layouten i `main.hbs`. När du kör JS-koden ``response.render(`start.hbs`)`` så kommer den HTML-koden att sättas in där `{{{body}}}` står i `main.hbs`-filen, och resultatet efter det kommer sedan skickas tillbaka i responsen.
+	```js
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Min hemsida</title>
+	</head>
+	<body>
+		
+		<nav>
+			<a href="/">Start</a>
+			<a href="/about">Om</a>
+		</nav>
+		
+		<main>
+			{{{body}}}
+		</main>
+		
+	</body>
+	</html>
+	```
 
 ::: exercise 6.3
+Låt oss nu träna på att lägga till fler sidor.
 
-Skapa 3 olika sidor användaren kan gå emellan (med länkar, `<a>`-elementet):
+Lägg till en "Kontakta oss"-sida. Du kommer behöva:
 
-* URL:en `/` ska mappas till startsidan (ska rendera `start.hbs`-filen).
-* URL:en `/about` ska mappas till about-sidan (ska rendera `about.hbs`-filen).
-* URL:en `/contact-us` ska mappas till kontaktsidan (ska rendera `contact-us.hbs`-filen).
+1. Bestämma vilken URL sidan ska ha.
+2. Skapa en ny `.hbs`-fil i `views`-mappen som innehåller sidans innehåll.
+3. I `app.js`-filen lägga till ett `app.get()`-anrop för att rendera sidan när en request med den bestämda URL:en tas emot.
+4. I `views/layouts/main.hbs`-filen lägga till en länk till den nya sidan.
 
+Gör sedan det samma för en till sida, t.ex. en FAQ-sida.
+:::
+
+::: exercise 6.4
+Gör generella förbättringar på sidan. Använd bättre HTML-kod, lägg till CSS-kod som stylar och gör sidan snyggare, etc. För stunden kan du skriva CSS-koden i `<style>`-elementet i layout-filen, men optimalt så ska ju den skrivas i en separat CSS-fil (vi kommer titta närmare på det senare).
 :::
 
 -->

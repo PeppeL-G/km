@@ -28,11 +28,12 @@ Se klassuppgiften `Bok-app` på Google Classroom.
 
 
 ## Lektion 4. Variabler & Klicklyssnare
-* App-variabler
 * Page-variabler
-* App-metoder
 * Page-metoder
 * `Button.onClick()`
+* `App.createStartPage()`
+* App-variabler
+* App-metoder
 
 ::: exercise 4.1
 Skapa en sida som kommer ihåg ett namn i en Page-variabel. Namnet ska till en början vara `Alice`. Sidan ska visa namnet i en `Text`-komponent. Sidan ska även innehålla tre knappar, och när användaren klickar på en knapp så ska namnet i Page-variabeln ändras till `Bob`, `Claire` och `David` för respektive knapp.
@@ -81,9 +82,15 @@ När spelaren har plockat upp alla saker så ska spelaren ta sig tillbaka till s
 :::
 
 
+
+## Lektion 5. Catch-up
+Vi fortsätter att arbeta med övningarna ifrån föregående lektion.
+
+
+
 <!--
 
-## Lektion 5. Nummer & Matematik
+## Lektion 6. Nummer & Matematik
 * Skapa nummer
 * `+`, `-`, `*`, `/`
 

@@ -677,10 +677,22 @@ BMI är inte ett tillförligt sätt att avögra ifall en person faktiskt är und
 :::
 
 
+
+## Lektion 6. Catch-up
+Vi repeterar det vi har gått igenom hittills och gör de övningar vi inte är klara med.
+
+::: tip
+De som har lätt för det som vi har gått igenom hittills och som vill lära sig något nytt/svårare kan läsa på om [Booleans](https://www.w3schools.com/cs/cs_booleans.php) och [`while`-loopen](https://www.w3schools.com/cs/cs_while_loop.php) på W3Schools.
+
+Skapa sedan ett program som slumpar fram ett nummer mellan 0 och 100 ([läs hur](https://sentry.io/answers/generate-a-random-integer-in-csharp/)). Användaren ska sedan få skriva in och gissa vilket detta nummer är om och om igen tills användaren gissat rätt nummer. Varje gång användaren gissar fel nummer så ska programmet tala om ifall gisningen var för låg eller för hög.
+
+Blir du klar med detta program innan lektionens slut så får du börja arbeta på ett eget spelprojekt som gör vad du vill :)
+:::
+
 <!--
 
 
-## Lektion 6. Bool, While-loopen
+## Lektion 7. Bool, While-loopen
 Den här lektionen kommer vi titta närmare på boolska värde och hur while-loopen fungerar, och se exempel på vad vi kan använda dem till.
 
 ---
@@ -952,7 +964,7 @@ Skapa ett program där användaren ska mata in ett positivt heltal. Om användar
 :::
 
 
-## Lektion 7. Mer `while`!
+## Lektion 8. Mer `while`!
 Att använda loopar är knepigt. Därför ska vi träna lite mer på att använda dem.
 
 ::: exercise 7.1
@@ -1068,6 +1080,9 @@ Mata in ett positivt heltal: 7
 :::
 
 -->
+
+
+
 
 
 <!--

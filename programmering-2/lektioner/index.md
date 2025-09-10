@@ -852,10 +852,19 @@ Läs på om konstruktörer på [W3Schools](https://www.w3schools.com/cs/cs_const
 
 :::
 
+
+
+## Lektion 6. Catch-up
+Vi repeterar och går igenom några exempellösningar, och eleverna har chans att göra klart övningar de inte är klara med.
+
+::: tip
+De elever som är klara med alla övningar hittills får börja jobba på ett eget programmeringsprojekt av vilket slag de vill.
+:::
+
 <!--
 
 
-## Lektion 6. Klasser (inkapsling & properties)
+## Lektion 7. Klasser (inkapsling & properties)
 För att få så bra kod som möjligt när man använder objektorienterad programmering så vill man att en klass i så stor utsträckning som möjligt inte avslöjar sina implementationsdetaljer. Vi kommer återkomma till detta snart, men först ett litet enklare exempel som visar fördelarna med detta när det kommer till funktioner (enklare att förklara).
 
 Ponera att en programmerare har implementerat följande funktion för att beräkna summan av heltalen mellan 0 och ett annat tal:
@@ -960,13 +969,13 @@ Person kalle = new Person("Kalle", "Andersson");
 Console.WriteLine($"Hans fullständiga namn är {kalle.GetFullName()}.")
 ```
 
-::: exercise 6.1
+::: exercise 7.1
 Skapa en klass som representerar en film. Du får själv välja vad för information som ska sparas ner om filmen (titel, längd, category, etc.). Använd `private` variabler i klassen för att representera den här informationen. Lägg sedan till en `public` konstruktör som kan användas för att skapa nya instanser av klassen, och några `public` metoder för att arbeta med instanser av klassen (t.ex. `WriteIntoToConsole()`).
 
 Skapa sedan några nya instanser av klassen och anropa någon `public` metod på dem för att verifiera att klassen fungerar som den ska.
 :::
 
-::: exercise 6.2
+::: exercise 7.2
 Här är en klass som kan användas för att arbeta med några heltal:
 
 ```cs
@@ -1087,7 +1096,7 @@ class Person
 
 Så genom att använda properties så behöver vi inte skriva så mycket kod själva, och vi har fortfarande möjlighet att i framtiden ändra implementationen av de `get()` och `set()`-metoder som kompilatorn generar åt oss om vi vill.
 
-::: exercise 6.2
+::: exercise 7.3
 
 Läs på om OOP på W3Schools:
 
@@ -1097,7 +1106,7 @@ Läs på om OOP på W3Schools:
 :::
 
 
-::: exercise 6.3
+::: exercise 7.4
 Den här övningen är lite svårare än dem andra.
 
 Byt ut implementationen på samma sätt som du gjorde innan för att snabba upp uträkningen av summan och antal nummer som lagts till i klassen nedan, men den här gången används properties istället för metoder för summan och antal.
@@ -1160,10 +1169,10 @@ Console.WriteLine($"Summan är {intGroup.Sum}, antalet är {intGroup.Count}.");
 
 
 
-## Lektion 7. Klasser (tärningsövningar)
+## Lektion 8. Klasser (tärningsövningar)
 Den här lektionen tillägnas åt repetition och övningar.
 
-::: exercise 7.1
+::: exercise 8.1
 Skapa en klass som representerar en tärning. Den som skapar tärningen ska få bestämma hur många sidor den ska ha. Den behöver ha åtminstone två metoder:
 
 * En metod för att kasta tärningen
@@ -1174,13 +1183,13 @@ Använd sedan tärningen och verifiera att den fungerar som den ska.
 Om du behöver hjälp med hur man genererar ett slumpat heltal inom ett visst intervall, se sidan [Generate a random integer in C#](https://sentry.io/answers/generate-a-random-integer-in-csharp/).
 :::
 
-::: exercise 7.2
+::: exercise 8.2
 Yatzy är ett roligt spel. Om man ska spela Yatzy så behöver man ha en samling med tärningar. Låt oss representera en sådan samling med en klass! Den som skapar en ny instans av klassen ska kunna indikera hur många tärningar som ska finnas i klass-instansen. Man ska även kunna slå alla tärningar i klassen. Och kanske är det bra om man även kan slå några av dem? Så man kan indikera vilka tärningar man vill kunna kasta om?
 
 Försök att tänka igenom olika sätt man skulle kunna implementera detta på, och försök sedan implementera ett av sätten. När du är klar så bör man "enkelt" kunna skapa en ny samling tärningar och slå om dem som man vill.
 :::
 
-::: exercise 7.3
+::: exercise 8.3
 Använd dina klasser för att försöka implementera ett litet spel. Spelet går ut på att användaren ska kunna kasta 5 tärningar, och spelaren ska försöka få alla sexor på så få slag som möjligt. Vid varje slag så ska spelaren själv få välja vilka tärningar den vill behålla. Det behöver även finnas en räknare som håller koll på hur många kast spelaren har gjort. Och på någonstans behöver vi ha kod som kollar ifall alla tärningar har värdet 6, så vi vet när spelaren har vunnit.
 :::
 
@@ -1188,10 +1197,10 @@ Använd dina klasser för att försöka implementera ett litet spel. Spelet går
 
 
 
-## Lektion 8. Klasser (tärningsövningar)
+## Lektion 9. Klasser (tärningsövningar)
 Är du inte klar med övningarna från förra lektionen så fortsätt gärna med dem. Här kommer annars ett par till övningar du kan göra.
 
-::: exercise 8.1
+::: exercise 9.1
 Den här övningen är rätt så svår.
 
 Ett spel där man bara kan få alla sexor på så få slag som möjligt är lite för enkelt för att vara roligt. Låt oss därför försöka implementera ett riktigt Yatzy-spel istället. I alla fall första halvan av det, där man ska försöka få så många ettor, tvåor, treor, fyror, femmor och sexor som möjligt på 3 slag respektive.
@@ -1201,7 +1210,7 @@ Nu behöver du eventuellt skapa en ny klass som repsenterar hela Yatzy-spelet, d
 Försök att själv lista ut hur den här klassen ska se ut. Den kan implementeras på många olika sätt! Enda garanterade sättet att misslyckas är att inte försöka, så släng dig ut där och försök :)
 :::
 
-::: exercise 8.2
+::: exercise 9.2
 Den här övningen är rätt så svår.
 
 Att spela Yatzy själv är OK, men det är ännu roligare att spela det ihop med någon annan! Lägg därför till stöd för att spela fler spelare. Antingen hårdkoda in ett visst antal spelare som kan spela spelet, eller var lite mer dynamiskt genom att fråga användaren i början hur många som vill spela spelet.

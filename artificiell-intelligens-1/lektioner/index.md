@@ -96,7 +96,23 @@ De som vill kan testa att ladda ner och köra en AI-modell på sin egna dator. E
 
 
 
+
 <!--
+
+## Lektion 5. Google Teachable Machine
+Den här lektionen kommer vi testa på maskininlärning på ett väldigt enkelt sätt med [Google Teachable Machine](https://teachablemachine.withgoogle.com/).
+
+* Demo av hur man använder programmet.
+* Övningar.
+
+
+
+
+
+## Lektion 6. Maskinginlärning (K-nearest neighbours)
+* Dataset
+* Exempel: Prediktera barn/vuxen/pensionär utifrån ålder.
+* Exempel: Prediktera poäng på pilkastningstavla.
 
 
 ## Kommande

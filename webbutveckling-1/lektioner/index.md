@@ -404,7 +404,9 @@ Och vad mer du nu vill ha. Du kan t.ex. skapa en sida som heter `tabeller.html` 
 Dagens lektion innehåller följande:
 
 * Applicera CSS på element:
-	* `style="CSS"`, `<style>CSS</style>`, `<link rel="stylesheet" href="the-css-file.css">`
+	* `style="CSS"`
+	* `<style>CSS</style>`
+	* `<link rel="stylesheet" href="the-css-file.css">`
 * Styla text:
 	* `color`
 	* `font-size`
@@ -422,6 +424,7 @@ Dagens lektion innehåller följande:
 		* `selectorselector` (element som matchar båda)
 		* `parentSelector selector` (alla barn, barnbarn, etc. som matchar)
 		* `parentSelector > selector` (bara barnen som matchar)
+* `display` (`block` / `inline`)
 * Box-modellen:
 	* (margin (border (padding (content))))
 	* `background-color`
@@ -513,7 +516,7 @@ Så att den ser ut som följande:
 
 
 ::: exercise 4.2
-Nu ska vi träna på att anävnda CSS selektors!
+Nu ska vi träna på att använda CSS selektorer :)
 
 Skriv CSS-kod i HTML-filen som stylar texten i elementen enligt den text som står i elementen.
 
@@ -569,5 +572,83 @@ Skriv CSS-kod i HTML-filen som stylar texten i elementen enligt den text som st�
 </html>
 ```
 :::
+
+::: exercise 4.3
+
+Skapa en ny HTML-fil med HTML- och CSS-kod som visar en sida så som den nedan. Försök även använda semantisk HTML så korrekt som möjligt.
+
+```html no-code result
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Min hemsida</title>
+	<style>
+		
+		header{
+			font-size: 3em;
+			text-align: center;
+			border-bottom: 3px solid black;
+		}
+		
+		nav{
+			border-bottom: 3px dotted black;
+		}
+		
+		ul{
+			padding: 0;
+			text-align: center;
+		}
+		
+		li{
+			display: inline; 
+		}
+		
+		main{
+			background-color: white;
+			padding: 1em;
+			border-radius: 1em;
+			margin: 1em;
+		}
+		
+		footer{
+			text-align: center;
+			border-top: 3px dotted black;
+			padding-top: 1em;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<header>
+		Min hemsida
+	</header>
+	
+	<nav>
+		<ul>
+			<li><a href="index.html">Start</a></li>
+			<li><a href="about.html">Om</a></li>
+			<li><a href="contact.html">Kontakt</a></li>
+		</ul>
+	</nav>
+	
+	<main>
+		<h1>Välkommen!</h1>
+		<p>Välkommen till min hemsida! Jag hoppas du ska trivas här :)</p>
+	</main>
+	
+	<footer>
+		Copyright Mitt Namn 2025
+	</footer>
+	
+</body>
+</html>
+```
+
+:::
+
+
 
 -->

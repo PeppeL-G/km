@@ -343,8 +343,8 @@ Skapa en ny HTML-fil med följande innehåll:
 
 Skriv JS-kod som ändrar vädret från `regnigt` till `solsken` så snart sidan har laddats in. Du kommer behöva använda:
 
-* `document.querySelector(SELECTOR)` -> `node`
-* `node.innerText`
+* `document.querySelector(SELECTOR)` -> `htmlElement`
+* `htmlElement.innerText`
 :::
 
 ::: exercise 3.2
@@ -384,8 +384,8 @@ Skriv JS-kod som så snart sidan har laddats in ändrar texten `Här är en list
 
 Du kommer behöva använda:
 
-* `document.querySelector(SELECTOR)` -> `node`
-* `node.innerText`
+* `document.querySelector(SELECTOR)` -> `htmlElement`
+* `htmlElement.innerText`
 * `document.querySelectorAll(SELECTOR)` -> `nodeList`
 * `nodeList.length`
 :::
@@ -428,12 +428,12 @@ Skriv JS-kod som så snart sidan har laddats in lägger till en `click`-lyssnare
 
 Du kommer behöva använda:
 
-* `document.querySelector(SELECTOR)` -> `node`
-* `node.addEventListener(EVENT_NAME, EVENT_HANDLER)`
+* `document.querySelector(SELECTOR)` -> `htmlElement`
+* `htmlElement.addEventListener(EVENT_NAME, EVENT_HANDLER)`
 * `prompt(MESSAGE, DEFAULT_VALUE)`
-* `document.createElement(TAG_NAME)` -> `node`
-* `node.innerText`
-* `node.appendChild(CHILD_NODE)`
+* `document.createElement(TAG_NAME)` -> `htmlElement`
+* `htmlElement.innerText`
+* `htmlElement.appendChild(CHILD_ELEMENT)`
 :::
 
 ::: exercise 3.4
@@ -676,6 +676,12 @@ Vi fortsätter att arbeta med övningarna ifrån Lektion 3 och Lektion 4.
 
 
 
+
+## Lektion 6. Catch-up
+Vi fortsätter att arbeta med övningarna ifrån Lektion 3 och Lektion 4.
+
+
+
 <!--
 
 
@@ -746,6 +752,8 @@ Försök att själv lista ut vilka DOM-funkitonaliteter du kommer behöva använ
 
 När du är klar, försök även lägga till en "backspace"-knapp. När man klickar på den så ska det sista tecknet man skrivit tas bort.
 :::
+
+
 
 
 ## Lektion 7. DOM
