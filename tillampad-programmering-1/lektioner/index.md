@@ -75,10 +75,12 @@ För att göra all text på den sidan röd. Ändra `` `red` `` till din App-vari
 Skapa en app som fungerar som ett äventyrsspel där varje Page är ett rum i en grotta spelaren kan vara i. Genom att trycka på knappar så ska spelaren kunna gå till andra rum i grottan. I några av rummen ska det finnas kistor som spelaren kan öppna genom att trycka på en knapp. Då ska spelaren plocka upp det som ligger i kistan och bära med sig det. Använd App-variabler (tomma strängar till en början) för att hålla koll på vad spelaren har plockat på sig. Använd t.ex.:
 
 * En App-variabel för att hålla koll på ifall spelaren har plockat upp en krona.
-* En App-variabel för att hålla koll på ifall spelaren har plockat upp en guldstav.
+* En App-variabel för att hålla koll på ifall spelaren har plockat upp en trollstav.
 * Etc.
 
 När spelaren har plockat upp alla saker så ska spelaren ta sig tillbaka till startrummet, så det rummet fungerar även som slutrum. Här ska du på skärmen visa alla de saker som spelaren har plockat upp, och (vi låtsas att) spelet slutar när spelaren kommer tilllbaka hit och har plockat upp alla saker.
+
+Om ni vill få in lite grafiska bilder i spelet så kan ni använda Unicode-symboler i `Text`-komponenten, som t.ex. följande: 👑 💎 💍 🪙 🏆 💰 💴 💵 💶 💷 📿 🪄
 :::
 
 
