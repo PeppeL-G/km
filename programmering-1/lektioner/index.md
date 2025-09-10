@@ -686,7 +686,7 @@ De som har lätt för det som vi har gått igenom hittills och som vill lära si
 
 Skapa sedan ett program som slumpar fram ett nummer mellan 0 och 100 ([läs hur](https://sentry.io/answers/generate-a-random-integer-in-csharp/)). Användaren ska sedan få skriva in och gissa vilket detta nummer är om och om igen tills användaren gissat rätt nummer. Varje gång användaren gissar fel nummer så ska programmet tala om ifall gisningen var för låg eller för hög.
 
-Blir du klar med detta program innan lektionens slut så får du börja arbeta på ett eget spelprojekt som gör vad du vill :)
+Blir du klar med detta program innan lektionens slut så får du börja arbeta på ett eget C#-projekt som gör vad du vill :)
 :::
 
 <!--
