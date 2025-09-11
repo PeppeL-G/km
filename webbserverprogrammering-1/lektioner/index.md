@@ -244,7 +244,7 @@ Så låt oss skapa en ny hemsida som använder sig av Express:
 
 1. Skapa en ny mapp för din hemsida, t.ex. `min-hemsida`.
 2. Öppna den mappen i terminalen/Windows Powershell och kör kommandot `npm install express` (`npm`-kommandot fick du på datorn när du installerade Node.js).
-3. I den skapade `package.json`-filen, lägg till `"type": "module"` efter den första måsvingen (på egen rad). Detta gör så att vi kan använda den officiella `import`-syntaxen istället för `require()` för att importa funktionalitet från andra JS-filer.
+3. I den skapade `package.json`-filen, lägg till `"type": "module",` efter den första måsvingen (på egen rad). Detta gör så att vi kan använda den officiella `import`-syntaxen istället för `require()` för att importa funktionalitet från andra JS-filer.
 4. Skapa `min-hemsida/app.js` med följande innehåll:
 	```js
 	import express from 'express'
