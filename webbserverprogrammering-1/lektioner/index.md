@@ -232,8 +232,6 @@ Tutorialn [Node.js Express.js](https://www.w3schools.com/nodejs/nodejs_express.a
 
 
 
-<!--
-
 
 ## Lektion 6 Webbapp (Express)
 Att implementera en webapp direkt i Node.js fungerar, men genom att använda ett ramverk som Express så får vi bättre stöd för att:
@@ -248,7 +246,7 @@ Så låt oss skapa en ny hemsida som använder sig av Express:
 2. Öppna den mappen i terminalen/Windows Powershell och kör kommandot `npm install express` (`npm`-kommandot fick du på datorn när du installerade Node.js).
 3. I den skapade `package.json`-filen, lägg till `"type": "module"` efter den första måsvingen (på egen rad). Detta gör så att vi kan använda den officiella `import`-syntaxen istället för `require()` för att importa funktionalitet från andra JS-filer.
 4. Skapa `min-hemsida/app.js` med följande innehåll:
-```js
+	```js
 	import express from 'express'
 	
 	const app = express()
@@ -262,8 +260,10 @@ Så låt oss skapa en ny hemsida som använder sig av Express:
 	})
 	
 	app.listen(3000)
-```
-5. Kör `min-hemsida/app.js` i Node.js.
+	```
+5. Kör `min-hemsida/app.js` i Node.js med följande kommando i terminal/Windows Powershell så kommer Node.js automatiskt köra om filen så snart den ändras:
+	* `node --watch app.js`
+	* (för att senare stoppa Node.js från att köra så kan du hålla inne `[CTRL]` och trycka på `[C]` på tangentbordet)
 
 ::: exercise 6.1
 Efter att du startat din webbapp enligt stegen ovan, öppna `http://localhost:3000` i en webbläsaren och verifiera att:
@@ -364,7 +364,10 @@ Gör sedan det samma för en till sida, t.ex. en FAQ-sida.
 :::
 
 ::: exercise 6.4
-Gör generella förbättringar på sidan. Använd bättre HTML-kod, lägg till CSS-kod som stylar och gör sidan snyggare, etc. För stunden kan du skriva CSS-koden i `<style>`-elementet i layout-filen, men optimalt så ska ju den skrivas i en separat CSS-fil (vi kommer titta närmare på det senare).
-:::
+Gör generella förbättringar på sidan:
 
--->
+* Använd bättre HTML-kod.
+* Lägg till fler sidor.
+* Lägg till CSS-kod som stylar och gör sidan snyggare (för stunden kan du skriva CSS-koden i `<style>`-elementet i layout-filen, men optimalt så ska ju den skrivas i en separat CSS-fil (vi kommer titta närmare på det senare).).
+* Etc.
+:::
