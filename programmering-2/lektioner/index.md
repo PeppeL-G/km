@@ -861,7 +861,7 @@ Vi repeterar och går igenom några exempellösningar, och eleverna har chans at
 De elever som är klara med alla övningar hittills får börja jobba på ett eget programmeringsprojekt av vilket slag de vill.
 :::
 
-<!--
+
 
 
 ## Lektion 7. Klasser (inkapsling & properties)
@@ -874,7 +874,7 @@ Ponera att en programmerare har implementerat följande funktion för att beräk
 int getSum(int lastInt)
 {
 	
-	int sum = 0
+	int sum = 0;
 	
 	for(int i=0; i<=lastInt; i++)
 	{
@@ -886,13 +886,13 @@ int getSum(int lastInt)
 }
 ```
 
-Andra programmerare som vill använda den här funktionen behöver inte förstå hur den har blivit implementerad, utan de behöver bara lära sig hur man anropar funktionen, t.ex.:
+Andra programmerare som vill använda den här funktionen behöver inte förstå hur den har blivit implementerad, utan de behöver bara lära sig hur man anropar den, t.ex.:
 
 ```cs
 Console.WriteLine($"Summan av heltalen mellan 0 och 5 är {getSum(5)}.")
 ```
 
-Så även om funktionen är svår att implementera (med loop och allt det) så är den väldigt enkelt att använda. Det här är något vi vill ska gälla för våra klasser också; de ska vara enkla att använda, även när de är lite svårare att implementera.
+Så även om funktionen är svår att implementera (med loop och allt det) så är den väldigt enkelt att använda. Det här är något vi vill ska gälla för våra klasser också; de ska vara enkla att använda även när de är svårare att implementera.
 
 Om vi tar funktionen `getSum()` som exempel igen så vill vi även kunna ändra implementationen av funktionen i framtiden utan att de som nu använder funktionen behöver ändra sitt anrop till den i framtiden. I framtiden kanske vi upptäcker att summan mellan heltalen mellan 0 och ett annat tal kan beräknas på ett mycket effektivare sätt, t.ex.:
 
@@ -913,9 +913,8 @@ Så kan vi göra den här typen av optimeringar i funktioner utan att resten av 
 
 För att uppnå detta när det kommer till klasser så brukar man tillämpa följande regler:
 
-* Alla variabler i klassen markerar vi som `private` istället för `public`. `private` gör att kompilatorn bara tillåter konstruktören/metoder i klassen att använda dem; de som använder vår klass kan inte komma åt dem utifrån.
-* De som använder klassen kan bara skapa nya instanser av den genom konstruktören.
-* De som använder klassen kan bara arbeta med klassen genom att anropa de metoder som är `public`.
+* Alla instansvariabler i klassen markerar vi som `private` istället för `public`. `private` gör att kompilatorn bara tillåter konstruktören/metoderna i klassen att använda dem; de som använder vår klass kan inte komma åt dem utifrån.
+* De som använder klassen kan bara arbeta med klassen genom att anropa de konstruktörer/metoder som är `public`.
 
 Här är ett enkelt exempel:
 
@@ -962,10 +961,12 @@ class Person
 ```cs
 Person kalle = new Person("Kalle", "Andersson");
 
-// Det här skulle kompilatorn klaga på:
-// kallen.firstName
+// Det här skulle kompilatorn klaga på (för firstName är
+// private, så vi kan inte komma åt den utifrån klassen):
+// kalle.firstName
 
-// Det här är inga problem:
+// Det här är inga problem (för GetFullName() är
+// public, så vi kan komma åt den utifrån klassen):
 Console.WriteLine($"Hans fullständiga namn är {kalle.GetFullName()}.")
 ```
 
@@ -976,7 +977,7 @@ Skapa sedan några nya instanser av klassen och anropa någon `public` metod på
 :::
 
 ::: exercise 7.2
-Här är en klass som kan användas för att arbeta med några heltal:
+Nedan är en klass används för att arbeta med en samling heltal. Den innehåller en lista som kommer ihåg alla heltal som har blivit tillagda, och sedan två metoder som beräknar summan av talen i listan respektive hur många talen i listan är.
 
 ```cs
 // IntGroup.cs
@@ -985,7 +986,8 @@ class IntGroup
 	
 	private List<int> ints;
 	
-	public IntGroup(){
+	public IntGroup()
+	{
 		ints = new List<int>();
 	}
 	
@@ -994,7 +996,8 @@ class IntGroup
 		ints.Add(intToAdd);
 	}
 	
-	public int GetSum(){
+	public int GetSum()
+	{
 		
 		int sum = 0;
 		
@@ -1014,6 +1017,9 @@ class IntGroup
 	
 }
 ```
+
+<br>
+
 ```cs
 // Program.cs
 IntGroup intGroup = new IntGroup();
@@ -1027,30 +1033,36 @@ Console.WriteLine($"Summan är {intGroup.GetSum()}, antalet är {intGroup.GetCou
 
 Ett litet problem är att varje gång `GetSum()` anropas så beräknas hela summan ut på nytt. Innehåller `IntGroup` miljontals tal så blir detta väldigt ineffektivt.
 
-Istället för att använda en `List<int>` i klassen för att hålla kolla på vilka nummer som ingår så kan man istället använda en `sum`- och `count`-variabel som ändras direkt när `Add()` anropas. Tack vare att den som använder klassen aldrig använder den där `ints`-variabeln i klassen (för den är `private`) så kan vi göra en sån här ändring i klassens implementation nu i efterhand, och den kod som redan finns och som använder sig av klassen kommer fortsätta fungera på samma sätt som förut (men nu lite bättre, efter vår optimering av klassen).
+Istället för att använda en `List<int>` i klassen för att hålla kolla på vilka nummer som ingår så kan man istället använda en `sum`- och `count`-variabel som ändras direkt när `Add()` anropas.
+
+Tack vare att de som använder klassen aldrig använder den där `ints`-variabeln i klassen direkt (för den är `private`) så kan vi göra en sån här ändring i klassens implementation nu i efterhand, och den kod som redan finns och som använder sig av klassen kommer fortsätta fungera på samma sätt som förut (men nu lite snabbare efter vår optimering av klassen).
 
 Ändra implementationen av klassen enligt beskrivningen ovan så att den optimeras lite.
 
 :::
 
-I en klass är det alltså väldigt vanligt att man göra något i stil med detta:
+I en klass är det alltså väldigt vanligt att man gör något i stil med detta:
 
 ```cs
 class Person
 {
 	
+	// Private instansvariabel.
 	private string firstName;
 	
+	// Public konstruktör som tilldelar instansvariabeln sitt värde.
 	public Person(string fName)
 	{
 		firstName = fName;
 	}
 	
+	// Public metod som returnerar värdet på instansvariabeln.
 	public string GetName()
 	{
 		return firstName;
 	}
 	
+	// Public metod som tilldelar instansvariabeln ett nytt värde.
 	public void setName(fName)
 	{
 		firstName = fName;
@@ -1059,7 +1071,7 @@ class Person
 }
 ```
 
-Det är väldigt mycket kod att skriva bara för att behålla möjligheten att kunna ändra implementationen av klassen i framtiden. För att råda bot på detta så har C# något som de kallar för properties vi kan använda istället, som gör vår kod mycket kortare:
+Detta är väldigt mycket kod att skriva bara för att behålla möjligheten att kunna ändra implementationen av klassen i framtiden. För att råda bot på detta så har C# något som de kallar för properties vi kan använda istället, som gör vår kod mycket kortare:
 
 ```cs
 class Person
@@ -1070,17 +1082,17 @@ class Person
 }
 ```
 
-Det ser nu ut som att vi har en variabel i klassen som heter `FirstName`, och den kan användas som en vanlig variabel, men internt har C# faktiskt skapat en `private` variabel med tillhörande `public set()-` och `public get()`-metoder, och dessa metoder anropas varje gång som man försöker komma åt variabeln eller tilldela den ett nytt värde:
+Det ser nu ut som att vi har en instansvariabel i klassen som heter `FirstName`, och den kan användas som en vanlig instansvariabel, men internt har C# i bakgrunden faktiskt skapat en `private` instansvariabel med tillhörande `public set()`- och `public get()`-metoder, och dessa metoder anropas varje gång som man försöker komma åt variabeln eller tilldela den ett nytt värde:
 
 ```cs
-// Vad C# typ skriver om vår klass till.
+// Vad C# TYP skriver om vår ovanstående klass till.
 class Person
 {
 	
 	private string firstName;
 	
 	// Denna anropas när man skriver aPersonObject.FirstName
-	public void GetFirstName()
+	public string GetFirstName()
 	{
 		return firstName;
 	}
@@ -1107,7 +1119,7 @@ Läs på om OOP på W3Schools:
 
 
 ::: exercise 7.4
-Den här övningen är lite svårare än dem andra.
+Den här övningen är kanske lite svårare än de andra.
 
 Byt ut implementationen på samma sätt som du gjorde innan för att snabba upp uträkningen av summan och antal nummer som lagts till i klassen nedan, men den här gången används properties istället för metoder för summan och antal.
 
@@ -1152,6 +1164,9 @@ class IntGroup
 	
 }
 ```
+
+<br>
+
 ```cs
 // Program.cs
 IntGroup intGroup = new IntGroup();
@@ -1165,8 +1180,15 @@ Console.WriteLine($"Summan är {intGroup.Sum}, antalet är {intGroup.Count}.");
 
 :::
 
+::: exercise 7.5
+
+Om du är klar med alla uppgifter och redovisat din lösning på den sista uppgiften för läraren så får du arbeta med vilket programmeringsprojekt du vill.
+
+:::
 
 
+
+<!--
 
 
 ## Lektion 8. Klasser (tärningsövningar)

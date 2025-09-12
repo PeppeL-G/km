@@ -8,6 +8,7 @@ import './edit-code.css'
 import './mermaid.css'
 import OnlineCoder from './OnlineCoder.vue'
 import HtmlTagsMemoryTest from './HtmlTagsMemoryTest.vue'
+import ShowDataset from './ShowDataset.vue'
 
 export default {
 	extends: DefaultTheme,
@@ -15,6 +16,7 @@ export default {
 		
 		ctx.app.component(`OnlineCoder`, OnlineCoder)
 		ctx.app.component(`HtmlTagsMemoryTest`, HtmlTagsMemoryTest)
+		ctx.app.component(`ShowDataset`, ShowDataset)
 		
 	},
 } satisfies Theme

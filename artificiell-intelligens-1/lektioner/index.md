@@ -96,8 +96,8 @@ De som vill kan testa att ladda ner och köra en AI-modell på sin egna dator. E
 
 
 
-
 <!--
+
 
 ## Lektion 5. Google Teachable Machine
 Den här lektionen kommer vi testa på maskininlärning på ett väldigt enkelt sätt med [Google Teachable Machine](https://teachablemachine.withgoogle.com/).
@@ -108,11 +108,18 @@ Den här lektionen kommer vi testa på maskininlärning på ett väldigt enkelt 
 
 
 
-
 ## Lektion 6. Maskinginlärning (K-nearest neighbours)
-* Dataset
+* Classification VS Regression
 * Exempel: Prediktera barn/vuxen/pensionär utifrån ålder.
 * Exempel: Prediktera poäng på pilkastningstavla.
+
+
+<ShowDataset
+	datasetName="ages"
+/>
+
+-->
+<!--
 
 
 ## Kommande

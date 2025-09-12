@@ -689,11 +689,11 @@ Skapa sedan ett program som slumpar fram ett nummer mellan 0 och 100 ([läs hur]
 Blir du klar med detta program innan lektionens slut så får du börja arbeta på ett eget C#-projekt som gör vad du vill :)
 :::
 
-<!--
+
 
 
 ## Lektion 7. Bool, While-loopen
-Den här lektionen kommer vi titta närmare på boolska värde och hur while-loopen fungerar, och se exempel på vad vi kan använda dem till.
+Den här lektionen kommer vi titta närmare på boolska värden och hur while-loopen fungerar, och se exempel på vad vi kan använda dem till.
 
 ---
 
@@ -774,7 +774,9 @@ while(true)
 }
 
 // Eftersom loopen aldrig slutar loopa så kommer
-// "Efter loopen" aldrig att skrivas ut.
+// "Efter loopen" aldrig att skrivas ut, för
+// datorn kommer aldrig komma hit ner och
+// köra koden här nere.
 Console.WriteLine("Efter loopen.");
 ```
 
@@ -791,7 +793,7 @@ Inne i loopen.
 ```
 :::
 
-Att hårdkoda in `true`/`false` som villkor i loopen är sällan vettigt. Vanligtvis har man en variabel som på något vis används som del av villkoret, och när den variabeln ändrar värde så bryts loopen när villkoret blir `false`.
+Att hårdkoda in `true`/`false` som villkor i loopen är sällan vettigt. Vanligtvis har man en variabel som används i villkoret, och när den variabeln ändrar värde inne i loopen så kommer loopen avbrytas förr eller senare (när villkoret blir `false`).
 
 ::: example
 Exempel på en loop som kommer köras 1 gång.
@@ -856,7 +858,7 @@ Efter loopen.
 ```
 :::
 
-::: exercise 6.1
+::: exercise 7.1
 Skapa ett program som skriver ut följande på skärmen:
 
 ```
@@ -869,7 +871,7 @@ Rad 4.
 Använd en `while`-loop.
 :::
 
-::: exercise 6.2
+::: exercise 7.2
 Skapa ett program som skriver ut följande på skärmen:
 
 ```
@@ -882,7 +884,7 @@ Rad 10.
 Använd en `while`-loop.
 :::
 
-::: exercise 6.3
+::: exercise 7.3
 Skapa ett program som skriver ut följande på skärmen:
 
 ```
@@ -897,7 +899,7 @@ Takeoff!
 Använd en `while`-loop.
 :::
 
-::: exercise 6.4
+::: exercise 7.4
 Skapa ett program som ber användaren skriva in ett positivt heltal. Ditt program ska sedan skriva ut heltalen mellan 0 och det heltal som användaren skrev in.
 
 Exempel:
@@ -908,7 +910,7 @@ Skriv in ett positivt heltal: 4
 ```
 :::
 
-::: exercise 6.5
+::: exercise 7.5
 Ändra ditt föregående program så att om användaren skriver in ett negativt heltal så visas ett felmeddelande.
 
 Exempel:
@@ -923,7 +925,7 @@ Om vi ber användaren mata in ett värde, låt oss säga ett positivt heltal, me
 
 ::: example
 
-Exempel på hur man kan be användaren mata in ett värde igen ifall användaren matat in ett felatigt värde.
+Exempel på hur man kan be användaren mata in ett namn igen ifall användaren matat in en tom sträng (bara tryckt på enter).
 
 ```cs
 bool hasEnteredNameCorrect = false;
@@ -951,23 +953,27 @@ Console.WriteLine($"Hej {enteredName}, trevligt att träffas!");
 ```
 :::
 
-::: exercise 6.6
+::: exercise 7.6
 
 Skapa ett program där användaren ska mata in ett visst lösenord (du får bestämma vilket det rätta lösenordet ska vara). Om användaren matar in fel lösenord så ska du be användaren mata in lösenordet igen, ända tills det rätta lösenordet är inmatat. Efter det så ska ett hemligt meddelande visas för användaren (du får bestämma vad det hemliga meddelandet ska vara).
 
 :::
 
-::: exercise 6.7
+::: exercise 7.7
 
 Skapa ett program där användaren ska mata in ett positivt heltal. Om användaren matar in ett negativt heltal så ska du be användaren mata in ett positivt heltal igen, ända tills användaren har gjort detta. Därefter ska du skriva ut meddelandet `Hej på dig!` så många gånger som det positiva heltalet indikerar (skriver användaren t.ex. in `3`, så ska meddelandet visas tre gånger).
 
 :::
 
 
+
+<!--
+
+
 ## Lektion 8. Mer `while`!
 Att använda loopar är knepigt. Därför ska vi träna lite mer på att använda dem.
 
-::: exercise 7.1
+::: exercise 8.1
 Skapa ett program som skriver ut följande på skärmen:
 
 ```
@@ -982,7 +988,7 @@ Använd en `while`-loop.
 :::
 
 
-::: exercise 7.2
+::: exercise 8.2
 Skapa ett program som ber användaren mata in två positiva heltal. Det första mindre än det andra. Ditt program ska sedan skriva ut var tredje tal från det första talet till det andra talet.
 
 Körexempel:
@@ -999,7 +1005,7 @@ Mata in ett större positivt heltal: 16
 Använd en `while`-loop.
 :::
 
-::: exercise 7.3
+::: exercise 8.3
 Skapa ett program som ber användaren mata in ett användarnamn och lösenord. Det korrekta användarnamnet och lösenordet ska vara `Alice` och `abc123`. Så länge användaren inte matar in det korrekta användarnamnet och lösenordet så ska ditt program fortsätta att be om det korrekta användamnet och lösenordet. När de väl har matats in så ska användaren få se ett hemligt meddelande.
 
 Körexempel:
@@ -1017,7 +1023,7 @@ Välkommen, Alice! Här är ditt hemliga meddelande: ...
 ```
 :::
 
-::: exercise 7.4
+::: exercise 8.4
 Den här övningen är nog ganska svår.
 
 Skapa ett program som ber användaren mata in ett positivt heltal. Ditt program ska sedan skriva ut en fyrkant med den sidlängden med hjälp av `*`-symbolen.
@@ -1048,7 +1054,7 @@ Mata in ett positivt heltal: 7
 
 :::
 
-::: exercise 7.5
+::: exercise 8.5
 Den här övningen är nog ännu svåre.
 
 Skapa samma program som innan, men skriv endast ut kanten på fyrkanten.

@@ -397,7 +397,7 @@ Och vad mer du nu vill ha. Du kan t.ex. skapa en sida som heter `tabeller.html` 
 :::
 
 
-<!--
+
 
 
 ## Lektion 4. CSS-grunder
@@ -647,8 +647,17 @@ Skapa en ny HTML-fil med HTML- och CSS-kod som visar en sida så som den nedan. 
 </html>
 ```
 
+När du fått detta att fungera, försök då att lägga till fler HTML-sidor med samma layout-kod men annat huvudinnehåll. Du borde kunna återanvända CSS-koden för layouten på alla olika HTML-sidor (använd en extern CSS-fil).
+
 :::
 
+::: exercise 4.3
+Läs på om olika CSS-egenskaper på [W3Schools](https://www.w3schools.com/css/).
+:::
+
+
+
+<!--
 
 
 -->

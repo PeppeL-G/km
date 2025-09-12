@@ -233,7 +233,7 @@ Tutorialn [Node.js Express.js](https://www.w3schools.com/nodejs/nodejs_express.a
 
 
 
-## Lektion 6 Webbapp (Express)
+## Lektion 6. Webbapp (Express)
 Att implementera en webapp direkt i Node.js fungerar, men genom att använda ett ramverk som Express så får vi bättre stöd för att:
 
 * Dynamiskt generera HTML-kod vi skickar tillbaka (rendering engine).
@@ -370,4 +370,155 @@ Gör generella förbättringar på sidan:
 * Lägg till fler sidor.
 * Lägg till CSS-kod som stylar och gör sidan snyggare (för stunden kan du skriva CSS-koden i `<style>`-elementet i layout-filen, men optimalt så ska ju den skrivas i en separat CSS-fil (vi kommer titta närmare på det senare).).
 * Etc.
+:::
+
+
+
+## Lektion 7. Webbapp (Express)
+Ni som inte är klara med övningarna ifrån föregående lektion gör bäst i att först gör klart dem.
+
+---
+
+En webbapplikation behöver ofta skicka tillbaka statiska filer, så som bildfiler, client-side JS-filer, CSS-filer, etc. Express har en enkel *middleware* man kan lägga till för att skicka tillbaka alla sådana filer som ligger i en mapp: [express.static()](https://expressjs.com/en/starter/static-files.html).
+
+::: exercise 7.1
+Skapa en ny mapp i din hemside-mapp och lägg några statiska filer i den, så som bilder och CSS-filer. Försöka sedan att ladda in bilderna och CSS-filerna på din hemsida så användaren kan se bilderna på en sida, och HTML-koden stylas enligt den CSS-kod du skrivit i CSS-filerna.
+:::
+
+---
+
+Styrkan med Handlebars är att den enkelt kan sätta in data i HTML-koden. Så låt oss gå igenom ett exempel på det genom att skapa en ny sida med information om dig, med den faktiska informationen i `.js`-filen och som vi sedan skickar till `.hbs`-filen:
+
+1. Bestäm vilken URL som ska användas för sidan med information om dig.
+2. Lägg till en request handler (`app.get()`) i `app.js`-filen för den filen. I din request handler-funktion så kan du skapa ett `model`-objekt som innehåller informationen om dig, och som du sedan skickar till `.hbs`-filen:
+	```js
+	// ...
+	
+	app.get(`/info-about-me`, function(request, response){
+		
+		const model = {
+			name: `Alice`,
+			age: 25,
+		}
+		
+		response.render(`info-about-me.hbs`, model)
+		
+	})
+	
+	// ...
+	```
+3. Skapa sedan `views/info-about-me.hbs`-filen och visa informationen du tar emot ifrån `model`-objektet:
+	```handlebars
+	<h1>{{name}}</h1>
+	<p>{{name}} är {{age}} år gammal.</p>
+	```
+	4. Testa sidan i en webbläsare och verifiera att det fungerar.
+
+::: exercise 7.2
+Låt oss träna lite mer på att använda `model`-objektet och <code>&#123;&#123;...&#125;&#125;</code>-syntaxen i handlebars.
+
+Skapa en ny sida som visar summan av två slumpade heltal, t.ex. `5 + 8 = 13`. Varje gång man går in på sidan så ska alltså två nya tal slumpas fram, och dem och deras summa ska visas för användaren.
+
+För att slumpa fram ett heltal mellan 0 och 99 så kan du använda `Math.floor(Math.random()*100)`.
+:::
+
+::: exercise 7.3
+Det här är samma övning som den föregående, men nu ska du skapa en ny sida där tre olika slumptal visas, och deras produkt (multiplicera ihop dem).
+:::
+
+---
+
+En webbapp innehåller vanligtvis data av något slag. Finns det t.ex. en blog på en hemsida så finns informationen om bloggposterna nedsparad någonstans. I en Express-app så kan man i det enklaste fallet lägga sådan information i en array i JavaScript-koden:
+
+```js
+const blogposts = [
+	{id: 1, title: `Min första blogpost`, content: `Innehållet i ettan...`},
+	{id: 2, title: `Min andra blogpost`, content: `Innehållet i två...`},
+	{id: 3, title: `Min tredje blogpost`, content: `Innehållet i trean...`},
+	// ...
+]
+```
+
+Ofta vill man att varje blogpost ska ha ett unikt värde man kan använda för att identifiera just den blogposten. Det är bra att ha om man vill visa ett specifict blogpost, eller ta bort ett specifikt blogpost, etc.
+
+I Handlebars så kan man sedan använda <code>&#123;&#123;#each&#125;&#125;</code> för att skapa HTML-kod för varje värde i en array.
+
+::: example
+Om ditt `model`-objekt innehåller följande:
+
+```js
+const model = {
+	blogposts: [
+		{id: 1, title: `Första`},
+		{id: 2, title: `Andra`},
+	]
+}
+```
+
+Och din Handlebars-kod är följande:
+
+```handlebars
+{{#each blogposts as |post|}}
+	<p>Blogposten med id {{post.id}} har titeln {{post.title}}.</p>
+{{/each}}
+```
+
+Så skulle följande HTML-kod genereras:
+
+```html
+<p>Blogposten med id 1 har titeln Första.</p>
+<p>Blogposten med id 2 har titeln Andra.</p>
+```
+:::
+
+::: exercise 7.4
+I din webbapp, lägg till en array med några objekt av något slag. De kan t.ex. representera blogposter, eller nyhetsartiklar, eller produkter, etc. Skapa sedan en sida som visar namnet/titeln på dem alla i en HTML-lista.
+:::
+
+---
+
+En sida som listar alla data-objekt på det viset visar vanligtvis väldigt lite information om data-objektet. Kanske endast dess titel, och eventuellt en tillhörande bild. Men vanligtvis kan man klicka på dessa för att se mer information om data-objektet. Då kommer man till en sida som visar all information om det data-objekt som man klickade på. URL:erna för dessa sidor är ofta:
+
+* `/blogposts` visar alla blogposts med lite info, vardera med en länk till en av nedanstående sidor:
+* `/blogposts/1` visar all info om blogposten med id `1`
+* `/blogposts/2` visar all info om blogposten med id `2`
+* Etc.
+
+I Express så vill vi inte hårdkoda in alla olika `` app.get(`/blogposts/1`, ...) ``, för det skulle göra vår kod väldigt stor. Men Express har stöd för placeholders som vi kan använda i URL:en i vår request handler:
+
+```js
+// Den här request handlern kommer köras för:
+// /blogposts/1
+// /blogposts/2
+// Etc.
+app.get(`/blogposts/:id`, function(request, response){
+	
+	// Här kan vi läsa ut vilket nummer
+	// som faktiskt används i URL:en.
+	const id = request.params.id
+	
+})
+```
+
+Genom att läsa ut `id`, så kan vi sedan hämta blogpost-objektet med just det id:et:
+
+```js
+const blogpostWithId4 = blogposts.find(b => b.id == 4)
+
+const id = 5
+const blogpostWithId5 = blogposts.find(b => b.id == id)
+```
+
+Sedan kan vi lägga in det här blogpost-objektet i en model och skicka den till en Handlebars-fil som visar all info om det blogpost-objektet.
+
+::: tip Tips
+Placeholdern i Express-URL:er behöver inte heta `id`, utan du kan kalla den något annat om du vill.
+:::
+
+::: exercise 7.5
+På din sida som visar alla dina data-objekt, lägg till länkar som leder till en ny sida som visar all information om det data-objekt/länk som man klickade på.
+:::
+
+::: exercise 7.6
+På sidan som listar alla din data-objekt, använd gärna en flexbox-container, och visa varje data-objekt som ett stort klickbart element.
 :::

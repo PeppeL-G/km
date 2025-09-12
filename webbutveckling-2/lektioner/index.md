@@ -682,19 +682,11 @@ Vi fortsätter att arbeta med övningarna ifrån Lektion 3 och Lektion 4.
 
 
 
-<!--
-
 
 ## Lektion 6. DOM
 Gör så långt ni hinner. Vi fortsätter med några olika DOM-övningar.
 
-::: tip
-
-Lägg alltid din JS-kod inne i en funktion som anropas när `DOMContentLoaded`-eventet har inträffat, så som visas i övningarna nedan. Detta säkerställer att webbläsaren har läst igenom all HTML-kod och skapat hela DOM-strukturen på sidan innan du börjar arbeta med den via din JS-kod.
-
-:::
-
-::: exercise 5.1
+::: exercise 6.1
 Skapa en ny HTML-fil med följande innehåll:
 
 ```html
@@ -703,7 +695,7 @@ Skapa en ny HTML-fil med följande innehåll:
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Övning 5.1</title>
+	<title>Övning 6.1</title>
 	<script>
 		
 		document.addEventListener(`DOMContentLoaded`, function(){
@@ -732,7 +724,7 @@ Skapa en ny HTML-fil med följande innehåll:
 </html>
 ```
 
-Skriv JS-kod som lyssnar på när användaren klickar på knapparna, och när användaren klickar på knappen så ska den flyttas över till den andra listan.
+Skriv JS-kod som lyssnar på när användaren klickar på knapparna, och när användaren klickar på knappen så ska den (hela `<li>`-elementet) flyttas över till den andra listan.
 
 Du kommer behöva använda:
 
@@ -743,17 +735,19 @@ Du kommer behöva använda:
 * `htmlElement.appendChild(CHILD_ELEMENT)` (för att lägga till ett HTML-elementet i ett annat)
 :::
 
-::: exercise 5.2
+::: exercise 6.2
 Skapa en ny HTML-fil som visar knappar utlagda så dem ser ut som ett tangenbord. En knapp ska alltså ha tecknet `A` på sig, en annan ska ha tecknet `B` på sig, etc.
 
 När användaren klickar på en av dessa knappar så ska den skriva ut det tecknet någonstans på skärmen, t.ex. i en paragraf ovanför tangenbordet.
 
 Försök att själv lista ut vilka DOM-funkitonaliteter du kommer behöva använda. Troligtvis har vi redan gått igenom allt som ni kommer behöva använda för att lösa den här uppgiften.
 
-När du är klar, försök även lägga till en "backspace"-knapp. När man klickar på den så ska det sista tecknet man skrivit tas bort.
+När du är klar, försök även lägga till en "backspace"-knapp. När man klickar på den så ska det sista tecknet man skrivit tas bort. När du är klar med det, lägg då till en CAPSLOCK-knapp, och varje gång man klickar på den så ska texten i knapparna växla mellan små och stora bokstäver.
 :::
 
 
+
+<!--
 
 
 ## Lektion 7. DOM
