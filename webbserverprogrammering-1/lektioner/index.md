@@ -390,7 +390,7 @@ Skapa en ny mapp i din hemside-mapp och lägg några statiska filer i den, så s
 Styrkan med Handlebars är att den enkelt kan sätta in data i HTML-koden. Så låt oss gå igenom ett exempel på det genom att skapa en ny sida med information om dig, med den faktiska informationen i `.js`-filen och som vi sedan skickar till `.hbs`-filen:
 
 1. Bestäm vilken URL som ska användas för sidan med information om dig.
-2. Lägg till en request handler (`app.get()`) i `app.js`-filen för den filen. I din request handler-funktion så kan du skapa ett `model`-objekt som innehåller informationen om dig, och som du sedan skickar till `.hbs`-filen:
+2. Lägg till en request handler (`app.get()`) i `app.js`-filen för den URL:en. I din request handler-funktion så kan du skapa ett `model`-objekt som innehåller informationen om dig, och som du sedan skickar till `.hbs`-filen:
 	```js
 	// ...
 	
@@ -419,7 +419,7 @@ Låt oss träna lite mer på att använda `model`-objektet och <code>&#123;&#123
 
 Skapa en ny sida som visar summan av två slumpade heltal, t.ex. `5 + 8 = 13`. Varje gång man går in på sidan så ska alltså två nya tal slumpas fram, och dem och deras summa ska visas för användaren.
 
-För att slumpa fram ett heltal mellan 0 och 99 så kan du använda `Math.floor(Math.random()*100)`.
+För att slumpa fram ett heltal mellan 0 och 99 kan du använda `Math.floor(Math.random()*100)`.
 :::
 
 ::: exercise 7.3
@@ -439,7 +439,7 @@ const blogposts = [
 ]
 ```
 
-Ofta vill man att varje blogpost ska ha ett unikt värde man kan använda för att identifiera just den blogposten. Det är bra att ha om man vill visa ett specifict blogpost, eller ta bort ett specifikt blogpost, etc.
+Ofta vill man att varje blogpost ska ha ett unikt värde man kan använda för att identifiera just den blogposten. Det är bra att ha om man t.ex. vill visa en specifik blogpost, eller ta bort ett specifikt blogpost, etc.
 
 I Handlebars så kan man sedan använda <code>&#123;&#123;#each&#125;&#125;</code> för att skapa HTML-kod för varje värde i en array.
 
@@ -477,7 +477,7 @@ I din webbapp, lägg till en array med några objekt av något slag. De kan t.ex
 
 ---
 
-En sida som listar alla data-objekt på det viset visar vanligtvis väldigt lite information om data-objektet. Kanske endast dess titel, och eventuellt en tillhörande bild. Men vanligtvis kan man klicka på dessa för att se mer information om data-objektet. Då kommer man till en sida som visar all information om det data-objekt som man klickade på. URL:erna för dessa sidor är ofta:
+En sida som listar alla data-objekt på det viset visar vanligtvis väldigt lite information om data-objektet. Kanske endast dess titel, och eventuellt en tillhörande bild. Men vanligtvis kan man klicka på dessa för att se mer information om data-objektet. Då kommer man till en sida som visar all information om det data-objektet. URL:erna för dessa sidor är ofta (med bloggposter som expempel):
 
 * `/blogposts` visar alla blogposts med lite info, vardera med en länk till en av nedanstående sidor:
 * `/blogposts/1` visar all info om blogposten med id `1`
@@ -491,6 +491,7 @@ I Express så vill vi inte hårdkoda in alla olika `` app.get(`/blogposts/1`, ..
 // /blogposts/1
 // /blogposts/2
 // Etc.
+// Delen som börjar på : indikerar en placeholder.
 app.get(`/blogposts/:id`, function(request, response){
 	
 	// Här kan vi läsa ut vilket nummer

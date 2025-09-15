@@ -747,20 +747,24 @@ När du är klar, försök även lägga till en "backspace"-knapp. När man klic
 
 
 
-<!--
 
-
-## Lektion 7. DOM
+## Lektion 8. DOM
 Den här lektionen blir ett litet mini-projekt som kanske sträcker sig över flera lektioner.
 
-::: exercise 6.1
-Din uppgift är att bygga ett litet memory-spel som spelaren kan spela själv (1 player). Börja med att skapa en HTML-sida som positionerar ut 12 knappar över 3 rader och 4 kolumner, vardera visande ett `?`.
+::: exercise 8.1
+Din uppgift är att bygga ett litet memory-spel som spelaren kan spela själv (1 player). Börja med att skapa en HTML-sida som positionerar ut 12 knappar över 3 rader och 4 kolumner, vardera visande ett `?`. Använd gärna CSS grid, och gör knapparna lite större än standard.
 
-Skriv sedan JS-kod som slumpar ut vilken symbol varje knapp döljer. Du kan använda t.ex. `A`, `B`, `C`, etc. För att komma ihåg vilken symbol varje knapp döljer så kan du lägga till ett eget-skapat `data-`-attribut på knappen. Det kan du göra med t.ex. ``theButton.dataset.theSymbol = `A` ``.
+Skriv sedan JS-kod som slumpar ut vilken symbol varje knapp döljer. Du kan t.ex. använda `A`, `B`, `C`, etc. Om du vill göra det lite festligare så kan du använda [emojis](https://emojipedia.org/unicode-8.0). För att komma ihåg vilken symbol varje knapp döljer så kan du lägga till ett eget-skapat `data-`-attribut på knappen. Det kan du göra med t.ex. ``theButton.dataset.theSymbol = `A` ``.
 
-Sedan får du lyssna på när användaren klickar på knapparna. När användaren klickar på en knapp förstå gången så ska du ju visa vad för symbol som gömmer sig under den. Ändra då helt enkelt knappens `?` till det som finns nedsparat i `theButton.dataset.theSymbol`. Du behöver även komma ihåg att det är denna knapp som användaren har klickat på. Det kan du göra genom att använda en `selectedButton1`-variabel. Låt den ha värdet `null` till en början, och ändra den till knappen som användaren klickar på när användaren gör detta den första gången.
+---
 
-När användaren klickar på en av knapparna den andra gången så kan du spara ner den i en `selectedButton2`-variabel. Här ska du ju även visa användaren vad som döljer sig under knappen, så ändra knappens `?` till det som finns i knappens `.dataset.theSymbol`. Nu behöver du ju även jämföra ifall de två `selectedButton` dööljer samma symbol eller ej.
+Försök gärna att lösa resten av uppgiften på egen hand. Om du vill ha tips så kan du läsa resten av texten i övningen.
+
+---
+
+Sedan får du lyssna på när användaren klickar på knapparna. När användaren klickar på en knapp första gången så ska du visa vad för symbol som gömmer sig under den. Ändra då helt enkelt texten i knappen (`?`) till det som finns nedsparat i `theButton.dataset.theSymbol`. Du behöver även komma ihåg att det är denna knapp som användaren har klickat på. Det kan du göra genom att använda en `selectedButton1`-variabel. Låt den ha värdet `null` till en början, och ändra den till knappen som användaren klickar på när användaren klickar på en knapp första gången.
+
+När användaren klickar på en av knapparna den andra gången så kan du spara ner den i en `selectedButton2`-variabel. Här ska du även visa användaren vad som döljer sig under knappen, så ändra knappen text (`?`) till det som finns i knappens `.dataset.theSymbol`. Nu behöver du ju även jämföra ifall de två `selectedButton` döljer samma symbol eller ej.
 
 Om det är samma symbol så kan du sätta `theButton.disabled` till `true`. Då kan användaren inte klicka på knappen igen. Och sätt även `selectedButton1`-variabeln och `selectedButton2`-variabeln tillbaka till `null`, så det blir som att användaren inte har klickat på någon knapp.
 
@@ -768,12 +772,10 @@ Om det inte är samma symbol så måste vi dölja symbolen i knappen igen efter 
 
 När du är klar, försök lägg till mer funktionalitet, som t.ex.:
 
-* En räknare som räknar hur många gånger man har klickat på knapparna.
+* En räknare som räknar hur många gånger man behöver för att klara spelet.
 * En "Starta om"-knapp som visas när spelet är slut.
-* En highscore-lista (baserat på räknaren).
+* En highscore-lista (baserat på hur många omgånger man behövde innan man klarade spelet).
 * Etc.
 
 :::
 
-
--->

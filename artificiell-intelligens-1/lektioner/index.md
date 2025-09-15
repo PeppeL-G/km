@@ -96,16 +96,62 @@ De som vill kan testa att ladda ner och köra en AI-modell på sin egna dator. E
 
 
 
-<!--
-
 
 ## Lektion 5. Google Teachable Machine
 Den här lektionen kommer vi testa på maskininlärning på ett väldigt enkelt sätt med [Google Teachable Machine](https://teachablemachine.withgoogle.com/).
 
 * Demo av hur man använder programmet.
 * Övningar.
+* Diskussion.
+
+::: exercise 5.1
+Skapa ett nytt [Google Teachable Machine](https://teachablemachine.withgoogle.com/train) Image Project och försök träna modellen på att känna igen åtminstone 2 olika klasser (kom själv på vad).
+
+Att redovisa vid diskussion i slutet av lektionen:
+
+* Vilka klasser använde du?
+* Hur lätt var det för modellen att lära sig känna igen dem?
+* Hur påverkade sample-storleken hur bra modellen var? Hur stor sample-storlek (hur många bilder) behövdes för att den skulle vara "tillräckligt bra"?
+* Hur generaliserbar är modellen? Om du försöker använda något som liknar det som du tränade modellen på, fungerar det? Om du t.ex. försöker få den att känna igen en människa och du tränar på dig själv, har den även lärt sig att känna igen andra människor, eller känner den bara igen dig?
+:::
+
+::: exercise 5.2
+Vill man träna modellen på att känna igen en röd fyrkant respektive en grön fyrkant så blir modellen väldigt bra på att känna igen dem. Men om man visar den en blå fyrkant, så predikterar modellen fortfarande antingen en grön eller röd fyrkant!
+
+Det går att få modellen att prediktera "inte en röd/grön" fyrkant. Kan du komma på hur? Försök i så fall att lära modellen det. Be annars om hjälp.
+
+Att diskutera vid lektionens slut:
+
+* Hur lär man modellen att känna igen "allt annat" (som inte är det man vill träna den på att känna igen)?
+* Hur mycket träning behövs för att lära modellen det här på ett bra sätt?
+:::
+
+::: exercise 5.3
+En intressant fråga att ställa sig är vad modellen tittar på i bilden när den bestämmer sig för vilken klass den tillhör. När vi t.ex. tränar den på att känna igen en grön fyrkant, är det verkligen den gröna fyrkanten den har lärt sig känna igen, eller är det något annat den har lärt sig att känna igen av en slump, som t.ex. en arm som håller upp ett grönt fyrkantigt papper?
+
+Kan du komma på ett test man kan göra för att för att testa vilket område på en bild modellen använder sig mycket av för att göra sin klassificering?
+:::
+
+::: exercise 5.4
+Skapa ett nytt [Google Teachable Machine](https://teachablemachine.withgoogle.com/train) Pose Project och försök träna modellen på att känna igen åtminstone 2 olika klasser (kom själv på vad).
+
+Att diskutera vid lektionens slut:
+
+* Vilka klasser använde du?
+* Hur bra blev modellen på att känna igen dem?
+:::
+
+::: exercise 5.5
+Om du vill, testa att skapa ett nytt [Google Teachable Machine](https://teachablemachine.withgoogle.com/train) Audio Project, och utforska dess potential.
+:::
+
+::: exercise 5.6
+Att träna modeller att känna igen bilder/poser är lite kul, men finns det någon praktiskt användning för detta? Försök att komma på praktiska användningsområden man skulle kunna använda de här verktygen till. Kan vi utveckla helt nya typer av appar som vi inte kunde utveckla innan vi hade de här verktygen? Kan du komma på nästa "million dollar idea"? 😀
+:::
 
 
+
+<!--
 
 
 ## Lektion 6. Maskinginlärning (K-nearest neighbours)
