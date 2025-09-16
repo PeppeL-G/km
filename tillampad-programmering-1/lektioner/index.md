@@ -89,12 +89,76 @@ Om ni vill få in lite grafiska bilder i spelet så kan ni använda Unicode-symb
 Vi fortsätter att arbeta med övningarna ifrån föregående lektion.
 
 
-
-<!--
-
 ## Lektion 6. Nummer & Matematik
 * Skapa nummer
 * `+`, `-`, `*`, `/`
+* Skapa strängar med nummer i (`` `... ${...} ...` ``)
 
+::: exercise 6.1
+Skapa en sida som innehåller en Page-variabel med värdet 0. Sidans grafiska gränssnitt ska innehålla en `Row`-komponent med en `Text`-komponent och en `Button`-komponent. `Text`-komponenten ska visa numret som finns i Page-variabeln. När knappen klickas ska en Page-metod anropas (som du behöver skapa). Den Page-metoden ska öka numret i Page-variabeln med 1.
+:::
 
--->
+::: exercise 6.2
+Ändra sidan som du skapade i föregående övning så att det även finns en "minska med 1"-knapp.
+:::
+
+::: exercise 6.3
+Lägg till en till Page-variabel på sidan som även den innehåller numret 0. Lägg sedan till en `Text`-komponent som visar numret i denna Page-variabel. Lägg sedan till två nya knappar som man kan klicka på för att öka/minska denna Page-variabel med 1.
+
+När du är klar så ska du alltså ha två olika nummer i appen som du kan öka/minska med 1 genom att klicka på knappar.
+:::
+
+::: exercise 6.4
+Lägg till fyra nya `Text`-komponenter på sidan. Den första ska visa `nummer1 + nummer2 = summan`, fast det ska in de riktiga värdena från Page-variablerna istället. De andra `Text`-komponenterna ska vara motsvarande för differensen, produkten och kvoten.
+:::
+
+::: exercise 6.5
+Skapa en sida som visar en multiplikationstabell. Sidan ska visa (med tvåans multiplikationstabell som exempel):
+
+```
+2 * 0 = 0
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+```
+
+Men användaren ska även kunna ändra vilken multiplikationstabell som visas. Du kommer alltså behöva ha en Page-variabel för att hålla koll på numret för den multiplikationstabell som visas, och du behöver även lägga till knappar användaren kan klicka på för att ändra multiplikationstabell. 
+:::
+
+::: exercise 6.6
+Den här övningen går ut på att skapa en sida som innehåller knappar för siffrorna 0-9. Om du kan, positionera gärna knapparna så att det grafiska gränssnittet ser ut så här:
+
+```
+[1] [2] [3]
+[4] [5] [6]
+[7] [8] [9]
+    [0]
+```
+
+När man klickar på knapparna så ska den intryckta sekvensen visas i en `Text`-komponent ovanför knapparna. Har man t.ex. tryckt på `[3]`, `[5]` och `[2]` så ska det se ut så här:
+
+```
+        352
+[1] [2] [3]
+[4] [5] [6]
+[7] [8] [9]
+    [0]
+```
+
+Du kan använda en Page-variabel som startar på nummer 0 för att hålla koll på vilka knappar användaren har tryckt på. Varje gång användaren trycker på en knapp så multiplicerar du Page-variabeln med 10 och lägger sedan till numret på knappen som användaren klickade på. Exempel:
+
+```
+nummer = 0
+Användaren klickar på 3: nummer = 0*10 + 3 = 3
+Användaren klickar på 5: nummer = 3*10 + 5 = 35
+Användaren klickar på 2: nummer = 35*10 + 2 = 352
+```
+
+:::

@@ -151,20 +151,72 @@ Att träna modeller att känna igen bilder/poser är lite kul, men finns det nå
 
 
 
-<!--
 
 
 ## Lektion 6. Maskinginlärning (K-nearest neighbours)
 * Classification VS Regression
-* Exempel: Prediktera barn/vuxen/pensionär utifrån ålder.
-* Exempel: Prediktera poäng på pilkastningstavla.
-
+* Problem för AI respektive människor
+* Visualisera data (scatter-plot)
+* [K-Nearest Neighbours Interactive Demo](http://vision.stanford.edu/teaching/cs231n-demos/knn/)
 
 <ShowDataset
 	datasetName="ages"
 />
 
--->
+<br>
+<br>
+
+<ShowDataset
+	datasetName="iris"
+/>
+
+::: exercise 6.1
+Den här övningen går ut på att rita en scatter-plot du sedan kan använda för att klassificera okända instancer. Din scatter-plot kommer alltå fungera som din maskinlärda modell.
+
+Ladda in datasetet iris ovan. Det är ett dataset där man ska använda den tillgängliga datan för att försöka förutsäga ifall en ny instans med känd `sepalWidth`, `sepalLength`, `petalLength` och `petalWidth` är en `setosa`, `versicolor`, eller `virginica` (alltså ett klassificeringsproblem).
+
+Slumpa ordningen på instanserna genom att klicka på `Random` i tabellhuvudet några gånger. Rita sedan en scatter-plot med två av de numreriska attributen/kolumnerna instanserna har (bestäm själv vilka du vill använda). En scatter-plot är en tvådimensionell graf där instansernas ena attribut visas på en axel, och det andra attributet visas på den andra axeln. Rita ut åtminstone 10 av vardera klass (i bästa fall skulle man rita ut alla instancer, men det är för mycket arbete). Om du har pennor med olika färger, ge då gärna varje blomtyp en egen färg, t.ex.:
+
+* `setosa`: röd
+* `versicolor`: blå
+* `virginica`: grön
+
+Har du inte pennor med olika färger så kan du använda symboler istället, t.ex.:
+
+* `setosa`: x
+* `versicolor`: y
+* `virginica`: z
+:::
+
+::: exercise 6.2
+Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter-plot. Klassificera dessa enligt 1-Nearest Neigbour-algoritmen. Dokumentera ditt resultat.
+:::
+
+::: exercise 6.3
+Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter-plot. Klassificera dessa enligt 2-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
+:::
+
+::: exercise 6.4
+Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter-plot. Klassificera dessa enligt 3-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
+:::
+
+::: exercise 6.5
+Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter-plot. Klassificera dessa enligt 4-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
+:::
+
+::: exercise 6.6
+Reflektera över ditt resultat, bland annat:
+
+* Vilken K-version av K-Nearest Neighbours fungerade bäst?
+* Var någon klass lättare att identifiera än de andra?
+:::
+
+::: exercise 6.7
+Om du tittar på datasetet, kan du identifiera vilken kolumn/attribut som bäst verkar kunna skilja instanserna åt? Då är det ett bra attribut att ha i din scatter-plot. Kan du även se vilket det näst bästa attributet kan vara?
+:::
+
+
+
 <!--
 
 

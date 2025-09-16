@@ -1206,13 +1206,17 @@ Om du behöver hjälp med hur man genererar ett slumpat heltal inom ett visst in
 :::
 
 ::: exercise 8.2
-Yatzy är ett roligt spel. Om man ska spela Yatzy så behöver man ha en samling med tärningar. Låt oss representera en sådan samling med en klass! Den som skapar en ny instans av klassen ska kunna indikera hur många tärningar som ska finnas i klass-instansen. Man ska även kunna slå alla tärningar i klassen. Och kanske är det bra om man även kan slå några av dem? Så man kan indikera vilka tärningar man vill kunna kasta om?
+Yatzy är ett roligt spel. Om man ska spela Yatzy så behöver man ha en samling tärningar. Låt oss representera en sådan samling med en klass! Den som skapar en ny instans av klassen ska kunna indikera hur många tärningar som ska finnas i klass-instansen. Man ska även kunna slå alla tärningar i klassen. Och kanske är det bra om man även kan slå några av dem? Så man kan indikera vilka tärningar man vill kunna kasta om?
 
 Försök att tänka igenom olika sätt man skulle kunna implementera detta på, och försök sedan implementera ett av sätten. När du är klar så bör man "enkelt" kunna skapa en ny samling tärningar och slå om dem som man vill.
 :::
 
 ::: exercise 8.3
-Använd dina klasser för att försöka implementera ett litet spel. Spelet går ut på att användaren ska kunna kasta 5 tärningar, och spelaren ska försöka få alla sexor på så få slag som möjligt. Vid varje slag så ska spelaren själv få välja vilka tärningar den vill behålla. Det behöver även finnas en räknare som håller koll på hur många kast spelaren har gjort. Och på någonstans behöver vi ha kod som kollar ifall alla tärningar har värdet 6, så vi vet när spelaren har vunnit.
+Använd dina klasser för att försöka implementera ett litet spel. Spelet går ut på att användaren ska kunna kasta 5 tärningar, och spelaren ska försöka få alla sexor på så få kast som möjligt. Vid varje kast så ska spelaren själv få välja vilka tärningar den vill behålla. Det behöver även finnas en räknare som håller koll på hur många kast spelaren har gjort. Och någonstans behöver vi ha kod som kollar ifall alla tärningar har värdet 6, så vi vet när spelaren har vunnit.
+:::
+
+::: exercise 8.4
+F
 :::
 
 
@@ -1223,9 +1227,9 @@ Använd dina klasser för att försöka implementera ett litet spel. Spelet går
 Är du inte klar med övningarna från förra lektionen så fortsätt gärna med dem. Här kommer annars ett par till övningar du kan göra.
 
 ::: exercise 9.1
-Den här övningen är rätt så svår.
+Den här övningen är troligtvis rätt så svår.
 
-Ett spel där man bara kan få alla sexor på så få slag som möjligt är lite för enkelt för att vara roligt. Låt oss därför försöka implementera ett riktigt Yatzy-spel istället. I alla fall första halvan av det, där man ska försöka få så många ettor, tvåor, treor, fyror, femmor och sexor som möjligt på 3 slag respektive.
+Ett spel där man bara kan få alla sexor på så få kast som möjligt är lite för enkelt för att vara roligt. Låt oss därför försöka implementera ett riktigt Yatzy-spel istället. I alla fall första halvan av det, där man ska försöka få så många ettor, tvåor, treor, fyror, femmor och sexor som möjligt på 3 kast respektive.
 
 Nu behöver du eventuellt skapa en ny klass som repsenterar hela Yatzy-spelet, där du håller koll på vilka av ettorna, tvåorna, treorna, fyrorna, femmorna och sexorna spelaren har fått hittills, och hur många av varje, och hur många kast spelaren har gjort, etc.
 
@@ -1233,86 +1237,12 @@ Försök att själv lista ut hur den här klassen ska se ut. Den kan implementer
 :::
 
 ::: exercise 9.2
-Den här övningen är rätt så svår.
+Den här övningen är troligtvis rätt så svår.
 
-Att spela Yatzy själv är OK, men det är ännu roligare att spela det ihop med någon annan! Lägg därför till stöd för att spela fler spelare. Antingen hårdkoda in ett visst antal spelare som kan spela spelet, eller var lite mer dynamiskt genom att fråga användaren i början hur många som vill spela spelet.
+Att spela Yatzy själv är OK, men det är ännu roligare att spela det ihop med någon annan! Lägg därför till stöd för att spela fler spelare. Antingen hårdkoda in ett visst antal spelare som kan spela spelet, eller var lite mer dynamiskt genom att fråga användaren i början hur många som vill spela spelet (och eventuellt deras namn också).
 
-Du kan behöva introducera en klass för att hålla koll på hur många poäng respektive spelare har. I verkligheten har man vanligtvis en poängtabell/scoreboard när man spelar Yatzy, så det kan vara bra att ha en klass som representerar det.
+Du kan behöva introducera en klass för att hålla koll på hur många poäng respektive spelare har. I verkligheten har man vanligtvis en poängtabell/scoreboard när man spelar Yatzy, så det kan vara bra att ha en klass som representerar detta i ditt spel också.
 :::
 
-
-
-
-Ni kommer ihåg första lektionen? Där jag visade att en bil kan modelleras som att den består av olika komponenter, så som hjul, ratt, gaspedal, bromspedal, tank, bromsklossar, etc.? När vi bygger våra egna datorprogram så ska vi försöka modellera dem med komponenter som använder sig av varandra på något liknande sätt. Och varje komponent implmententerar vi som en klass.
-
-För små program är det svårt att finna så många olika komponenter. Fördelarna med objektorienterad programmering blir uppenbar först när programmen blir större, och det blir lättare att identifiera olika komponenter. Men för enkla konsollprogram så kan man alltid försöka använda följande komponenter:
-
-* En komponent som är ansvarig för programmets input.
-* En komponent som är ansvarig för programmets output.
-* En komponent som är själva huvudprogrammet, och som använder sig av output- och input-komponenterna för att kommunicera med användaren.
-
-::: exercise 4.1
-
-De här övningarna kommer vägleda dig i hur man kan implementera ett enkelt program som består av de nämnda komponenterna. Programmet går ut på att användaren ska mata in två tal, och sedan ska programmet visa summan av talen för användaren. När man kör programmet så kan det se ut såhär:
-
-```
-Det här programmet beräknar vad summan av två heltal är.
-Mata in det första heltalet: 4
-Mata in det andra heltalet: 3
-Summan av 4 och 3 är 7.
-```
-
-Börja med att skapa de tre olika klasserna:
-
-* `OutputManager`
-* `InputManager`
-* `SumProgram` (huvudprogrammet)
-
-:::
-
-::: exercise 4.2
-
-`SumProgram` kommer behöva använda sig av `OutputManager` och `InputManager` för att kommunicera med användaren. Så `SumProgram` 
-
-:::
-
-```cs
-class OutputManager{
-	
-	public void PrintInstructions(){
-		Console.WriteLine("Det här programmet beräknar vad summan av två heltal är.");
-	}
-	
-	public void PrintResult(){
-		Console.WriteLine()
-	}
-	
-}
-
-class InputManager{
-	
-	public int ReadFirstTerm(){
-		
-		
-		
-	}
-	
-	public int ReadSecondTerm(){
-		
-	}
-	
-}
-
-class ProgramLogic{
-	
-	public int Term1;
-	public int Term2;
-	
-	public int GetSum(){
-		return Term1 + Term2;
-	}
-	
-}
-```
 
 -->
