@@ -27,9 +27,9 @@ while (!Raylib.WindowShouldClose())
 {
 	
 	Raylib.BeginDrawing();
-	Raylib.ClearBackground(Color.White);
+	Raylib.ClearBackground(White);
 	
-	Raylib.DrawText("Hello, raylib-cs!", 300, 280, 20, Color.DarkGray);
+	Raylib.DrawText("Hello, raylib-cs!", 300, 280, 20, MAROON);
 	
 	Raylib.EndDrawing();
 	
