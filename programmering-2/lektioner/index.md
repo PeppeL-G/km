@@ -1228,7 +1228,7 @@ class Person
 	
 	public void WriteInfoToConsole()
 	{
-		Console.WriteLine($"{getType()} {name} är {Age} år gammal.";);
+		Console.WriteLine($"{getType()} {name} är {Age} år gammal.");
 	}
 	
 }
