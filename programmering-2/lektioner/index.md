@@ -1188,61 +1188,119 @@ Om du är klar med alla uppgifter och redovisat din lösning på den sista uppgi
 
 
 
-<!--
-
 
 ## Lektion 8. Klasser (tärningsövningar)
-Den här lektionen tillägnas åt repetition och övningar.
+* Namnkonvention och kodstil
+* Miniprojekt: tärningsspel
+
+```cs
+// Exempel på den namnkonvention
+// och kodstil som används i C#.
+class Person
+{
+	
+	public int Age;
+	private string name;
+	
+	public Person(int theAge, string theName)
+	{
+		Age = theAge;
+		name = theName;
+	}
+	
+	private string getType()
+	{
+		
+		string type;
+		
+		if(Age < 18)
+		{
+			type = "Barnet";
+		}
+		else
+		{
+			type = "Personen";
+		}
+		
+		return type;
+		
+	}
+	
+	public void WriteInfoToConsole()
+	{
+		Console.WriteLine($"{getType()} {name} är {Age} år gammal.";);
+	}
+	
+}
+```
+
+Den här lektionen introducerar vi inget nytt, utan vi övar på att använda det vi har lärt oss hittils i ett litet projekt (som kommer sträcka sig över flera lektioner) som leder oss till att bygga ett Yatzy-liknande spel (som spelas i konsollen) i slutändan. Nu får du även träna på att både designa och implementera dina klasser helt själv, men fråga gärna om hjälp när du är osäker eller feedback när du är klar.
+
+Om du vill försöka implementera ett Yatzy-liknande spel helt själv så är det OK. Annars kan du göra övningarna nedan för att bli guidad i rätt riktning.
 
 ::: exercise 8.1
-Skapa en klass som representerar en tärning. Den som skapar tärningen ska få bestämma hur många sidor den ska ha. Den behöver ha åtminstone två metoder:
+Skapa en klass som representerar en tärning. Den som skapar tärningen ska få bestämma hur många sidor den ska ha. Med en tärning ska man åtmoinstone kunna:
 
-* En metod för att kasta tärningen
-* En metod för att ta reda på hur många prickar (vilket värde) tärningen för stunden visar.
+* Kasta.
+* Ta reda på hur många prickar (vilket värde) tärningen för stunden har.
 
-Använd sedan tärningen och verifiera att den fungerar som den ska.
+Använd sedan tärningen i ditt huvudprogram och verifiera att den fungerar som den ska.
 
 Om du behöver hjälp med hur man genererar ett slumpat heltal inom ett visst intervall, se sidan [Generate a random integer in C#](https://sentry.io/answers/generate-a-random-integer-in-csharp/).
 :::
 
 ::: exercise 8.2
-Yatzy är ett roligt spel. Om man ska spela Yatzy så behöver man ha en samling tärningar. Låt oss representera en sådan samling med en klass! Den som skapar en ny instans av klassen ska kunna indikera hur många tärningar som ska finnas i klass-instansen. Man ska även kunna slå alla tärningar i klassen. Och kanske är det bra om man även kan slå några av dem? Så man kan indikera vilka tärningar man vill kunna kasta om?
+Yatzy är ett roligt spel. Om man ska spela Yatzy så behöver man ha en samling tärningar. Låt oss representera en sådan samling med en klass! Den som skapar en ny instans av klassen ska kunna indikera hur många tärningar som ska finnas i klass-instansen. Man ska även kunna kasta alla tärningar i klassen. Och kanske är det bra om man även kan kasta bara ett urval av tärningar på något vis? Så man kan indikera vilka tärningar man vill kunna kasta om?
 
-Försök att tänka igenom olika sätt man skulle kunna implementera detta på, och försök sedan implementera ett av sätten. När du är klar så bör man "enkelt" kunna skapa en ny samling tärningar och slå om dem som man vill.
+Försök att tänka igenom olika sätt man skulle kunna implementera detta på, och försök sedan implementera ett av sätten. När du är klar så bör man "enkelt" kunna skapa en ny samling tärningar och kasta om dem som man vill. Använd klassen lite i ditt huvudprogram för att verifiera att den fungerar som den ska.
 :::
 
 ::: exercise 8.3
+Den här övningen är en väldigt enkel version av ett Yatzy-spel; det är ett steg på vägen dit.
+
 Använd dina klasser för att försöka implementera ett litet spel. Spelet går ut på att användaren ska kunna kasta 5 tärningar, och spelaren ska försöka få alla sexor på så få kast som möjligt. Vid varje kast så ska spelaren själv få välja vilka tärningar den vill behålla. Det behöver även finnas en räknare som håller koll på hur många kast spelaren har gjort. Och någonstans behöver vi ha kod som kollar ifall alla tärningar har värdet 6, så vi vet när spelaren har vunnit.
 :::
 
 ::: exercise 8.4
-F
+Den här övningen är lite svårare än de föregående övningarna.
+
+Ett spel där man bara kan få alla sexor på så få kast som möjligt är lite för enkelt för att vara roligt. Låt oss därför försöka implementera ett riktigt Yatzy-spel istället (för en spelare). I alla fall första halvan av det, där man ska försöka få så många ettor, tvåor, treor, fyror, femmor och sexor som möjligt på 3 kast respektive.
+
+Nu behöver du kanske skapa en ny klass som repsenterar hela Yatzy-spelet, där du håller koll på vilka av ettorna, tvåorna, treorna, fyrorna, femmorna och sexorna spelaren har fått hittills, och hur många av varje, och hur många kast spelaren har gjort, etc.
 :::
 
-
-
-
-
-## Lektion 9. Klasser (tärningsövningar)
-Är du inte klar med övningarna från förra lektionen så fortsätt gärna med dem. Här kommer annars ett par till övningar du kan göra.
-
-::: exercise 9.1
-Den här övningen är troligtvis rätt så svår.
-
-Ett spel där man bara kan få alla sexor på så få kast som möjligt är lite för enkelt för att vara roligt. Låt oss därför försöka implementera ett riktigt Yatzy-spel istället. I alla fall första halvan av det, där man ska försöka få så många ettor, tvåor, treor, fyror, femmor och sexor som möjligt på 3 kast respektive.
-
-Nu behöver du eventuellt skapa en ny klass som repsenterar hela Yatzy-spelet, där du håller koll på vilka av ettorna, tvåorna, treorna, fyrorna, femmorna och sexorna spelaren har fått hittills, och hur många av varje, och hur många kast spelaren har gjort, etc.
-
-Försök att själv lista ut hur den här klassen ska se ut. Den kan implementeras på många olika sätt! Enda garanterade sättet att misslyckas är att inte försöka, så släng dig ut där och försök :)
-:::
-
-::: exercise 9.2
+::: exercise 8.5
 Den här övningen är troligtvis rätt så svår.
 
 Att spela Yatzy själv är OK, men det är ännu roligare att spela det ihop med någon annan! Lägg därför till stöd för att spela fler spelare. Antingen hårdkoda in ett visst antal spelare som kan spela spelet, eller var lite mer dynamiskt genom att fråga användaren i början hur många som vill spela spelet (och eventuellt deras namn också).
 
 Du kan behöva introducera en klass för att hålla koll på hur många poäng respektive spelare har. I verkligheten har man vanligtvis en poängtabell/scoreboard när man spelar Yatzy, så det kan vara bra att ha en klass som representerar detta i ditt spel också.
 :::
+
+::: exercise 8.6
+Den här övningen är troligtvis rätt så svår.
+
+Lägg till "andra halvan" av Yatzy-spelet, där man kan få par, tvåpar, triss, fyrtal, Yatzy, kåk, stege och chans. 
+:::
+
+::: exercise 8.7
+Den här övningen är mycket svår ^^'
+
+Lägg till en datorspelare som gör sina egna val. I en första implementation så kan datorn göra slumpmässiga val. Om du får det att fungera så kan du sedan försöka få datorn att göra lite smartare val, t.ex. först försöka få så många ettor som möjligt, sedan få så många tvåor som möjligt, etc.
+
+En datorpelare kan man spendera nästan oändligt med tid på att försöka få så bra som möjligt, så om du lyckas nå den här övningen innan vi går vidare i kursen, så se till att du inte lägger ner alltför mycket tid på den ^^
+:::
+
+
+<!--
+
+
+## Lektion 9. Klasser (tärningsövningar)
+Är du inte klar med övningarna från förra lektionen så fortsätt gärna med dem. Här kommer annars ett par till övningar du kan göra.
+
+
+
+
 
 
 -->

@@ -4,6 +4,7 @@
 
 ## Snabblänkar
 * [W3Schools C# Pages](https://www.w3schools.com/cs/index.php)
+* [Projekt för årskurs 2-elever](../2-elever/)
 
 
 
@@ -967,8 +968,6 @@ Skapa ett program där användaren ska mata in ett positivt heltal. Om användar
 
 
 
-<!--
-
 
 ## Lektion 8. Mer `while`!
 Att använda loopar är knepigt. Därför ska vi träna lite mer på att använda dem.
@@ -1014,9 +1013,11 @@ Körexempel:
 Mata in användarnamn: Bengt
 Mata in lösenord: lossen
 Fel användarnamn/lösenord, försök igen.
+
 Mata in användarnamn: Alice
 Mata in lösenord: pa55w0rd
 Fel användarnamn/lösenord, försök igen.
+
 Mata in användarnamn: Alice
 Mata in lösenord: abc123
 Välkommen, Alice! Här är ditt hemliga meddelande: ...
@@ -1039,7 +1040,7 @@ Mata in ett positivt heltal: 5
 *****
 ```
 
-\
+<br>
 
 ```
 Mata in ett positivt heltal: 7
@@ -1051,6 +1052,8 @@ Mata in ett positivt heltal: 7
 *******
 *******
 ```
+
+Hint: Om inte en loop räcker så kanske två gör det? ^^
 
 :::
 
@@ -1070,7 +1073,7 @@ Mata in ett positivt heltal: 5
 *****
 ```
 
-\
+<br>
 
 ```
 Mata in ett positivt heltal: 7
@@ -1084,9 +1087,6 @@ Mata in ett positivt heltal: 7
 ```
 
 :::
-
--->
-
 
 
 

@@ -85,8 +85,11 @@ Om ni vill få in lite grafiska bilder i spelet så kan ni använda Unicode-symb
 
 
 
+
 ## Lektion 5. Catch-up
 Vi fortsätter att arbeta med övningarna ifrån föregående lektion.
+
+
 
 
 ## Lektion 6. Nummer & Matematik
@@ -162,3 +165,9 @@ Användaren klickar på 2: nummer = 35*10 + 2 = 352
 ```
 
 :::
+
+
+
+
+## Lektion 7. Catch-up
+Vi fortsätter att arbeta med övningarna ifrån föregående lektion.
