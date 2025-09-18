@@ -415,7 +415,7 @@ Styrkan med Handlebars är att den enkelt kan sätta in data i HTML-koden. Så l
 	4. Testa sidan i en webbläsare och verifiera att det fungerar.
 
 ::: exercise 7.2
-Låt oss träna lite mer på att använda `model`-objektet och <code>&#123;&#123;...&#125;&#125;</code>-syntaxen i handlebars.
+Låt oss träna lite mer på att använda `model`-objektet och <code>&#123;&#123;...&#125;&#125;</code>-syntaxen i Handlebars.
 
 Skapa en ny sida som visar summan av två slumpade heltal, t.ex. `5 + 8 = 13`. Varje gång man går in på sidan så ska alltså två nya tal slumpas fram, och dem och deras summa ska visas för användaren.
 
@@ -423,12 +423,12 @@ För att slumpa fram ett heltal mellan 0 och 99 kan du använda `Math.floor(Math
 :::
 
 ::: exercise 7.3
-Det här är samma övning som den föregående, men nu ska du skapa en ny sida där tre olika slumptal visas, och deras produkt (multiplicera ihop dem).
+Det här är samma övning som den föregående, men nu ska du skapa en ny sida där tre olika slumptal visas ihop med deras produkt (multiplicera ihop dem).
 :::
 
 ---
 
-En webbapp innehåller vanligtvis data av något slag. Finns det t.ex. en blog på en hemsida så finns informationen om bloggposterna nedsparad någonstans. I en Express-app så kan man i det enklaste fallet lägga sådan information i en array i JavaScript-koden:
+En webbapp innehåller vanligtvis data av något slag. Finns det t.ex. en blog på en hemsida så finns informationen om bloggposterna nedsparad någonstans. I en Express-app så kan man i det enklaste fallet lägga sådan information i en array i JavaScript-koden (med ett objekt för varje blogpost):
 
 ```js
 const blogposts = [
@@ -439,7 +439,7 @@ const blogposts = [
 ]
 ```
 
-Ofta vill man att varje blogpost ska ha ett unikt värde man kan använda för att identifiera just den blogposten. Det är bra att ha om man t.ex. vill visa en specifik blogpost, eller ta bort ett specifikt blogpost, etc.
+Ofta vill man att varje blogpost ska ha ett unikt värde man kan använda för att identifiera just den blogposten. Det är bra att ha om man t.ex. vill visa en specifik blogpost, eller ta bort ett specifikt blogpost, etc. Ofta använder man att ett fält som heter `id` för just det.
 
 I Handlebars så kan man sedan använda <code>&#123;&#123;#each&#125;&#125;</code> för att skapa HTML-kod för varje värde i en array.
 
@@ -472,7 +472,7 @@ Så skulle följande HTML-kod genereras:
 :::
 
 ::: exercise 7.4
-I din webbapp, lägg till en array med några objekt av något slag. De kan t.ex. representera blogposter, eller nyhetsartiklar, eller produkter, etc. Skapa sedan en sida som visar namnet/titeln på dem alla i en HTML-lista.
+I din webbapp, lägg till en array med några objekt av något slag. De kan t.ex. representera blogposter, eller nyhetsartiklar, eller produkter, etc. Skapa sedan en sida som visar namnet/titeln på dem i en HTML-lista.
 :::
 
 ---
@@ -523,3 +523,8 @@ På din sida som visar alla dina data-objekt, lägg till länkar som leder till 
 ::: exercise 7.6
 På sidan som listar alla din data-objekt, använd gärna en flexbox-container, och visa varje data-objekt som ett stort klickbart element.
 :::
+
+
+
+## Lektion 8. Catch-up
+Vi fortsätter arbeta med övningarna från föregående lektioner. 
