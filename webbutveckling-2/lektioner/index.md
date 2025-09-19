@@ -301,7 +301,7 @@ Gör så långt ni hinner.
 	4. [document.querySelectorAll()](https://www.w3schools.com/jsref/met_document_queryselectorall.asp)
 	5. [document.querySelector()](https://www.w3schools.com/jsref/met_document_queryselector.asp)
 	6. [nodeList.length](https://www.w3schools.com/jsref/prop_nodelist_length.asp)
-	7. [htmlElement.innerText](https://www.w3schools.com/jsref/met_node_appendchild.asp)
+	7. [htmlElement.innerText](https://www.w3schools.com/jsref/prop_node_innertext.asp)
 	8. [htmlElement.addEventListener()](https://www.w3schools.com/jsref/met_element_addeventlistener.asp)
 	9. [htmlElement.appendChild()](https://www.w3schools.com/jsref/met_node_appendchild.asp)
 2. Gör övningarna
