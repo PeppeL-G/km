@@ -1091,37 +1091,37 @@ Mata in ett positivt heltal: 7
 
 
 
-<!--
+## Lektion 9. Multiplikationsprogram
+Först skapar vi ett litet exempelprogram tillsammans. Sedan får ni träna på att använda det vi har lärt oss hittills i kursen för att försöka bygga ett lite mer meningsfullt program.
 
-## Raylib
-1. Öppna din projektmapp i Visual Studio Code.
-2. I `EXPLORER`-panelen, högerklicka på mappen som innehåller `Program.cs`-filen, och välj `Open in Integrated Terminal`.
-3. I terminalen, skriv in följande kommando och tryck enter:
-```
-dotnet add package Raylib-cs
-```
-4. Vänta på att paketet ska laddas ner klart. Det kan ta några minuter.
-5. I `Program.cs`-filen, använd följande kod:
-```cs
-using Raylib_cs;
+::: exercise 9.1
+Programmet du ska skapa ska användaren kunna använda för att träna på multiplikation. När programmet startar ska användaren få ange vilken multiplikationstabell hen vill träna på. Ditt program ska sedan ställa 10 multiplikationsfrågor till användaren på den multiplikationstabellen i ording (t.ex. för femmans multiplikationstabell: först `5 * 1`, sedan `5 * 2`, och så vidare). För varje fråga ska användaren få skriva in ett svar, och ditt program ska skriva ut ifall svaret är rätt eller fel.
+:::
 
-Raylib.InitWindow(800, 600, "Min Raylib App!");
-Raylib.SetTargetFPS(30);
+::: exercise 9.2
+Ifall användaren skriver in fel svar på en multiplikationsfråga, visa då vad det rätta svaret är för användaren.
+:::
 
-while (!Raylib.WindowShouldClose())
-{
-	
-	Raylib.BeginDrawing();
-	Raylib.ClearBackground(Color.White);
-	
-	Raylib.DrawText("Hello, raylib-cs!", 300, 280, 20, Color.DarkGray);
-	
-	Raylib.EndDrawing();
-	
-}
+::: exercise 9.3
+När programmet är slut, visa då användaren hur många rätt respektive fel användaren hade.
+:::
 
-Raylib.CloseWindow();
-```
-6. Kör `Program.cs`-filen, och du borde se ett litet fönster med texten `Hello, raylib-cs!` utmålad.
+::: exercise 9.4
+Ändra ditt program så att användaren även kan öva på att beräkna addition och subtraktion. Användaren ska t.ex. kunna välja beräkningssätt när programmet startar genom att skriva in `+`, `-` eller `*` (välj själv hur det ska fungera, men skriv tydliga instruktioner till användaren så att hen förstår hur det fungerar).
+:::
 
--->
+::: exercise 9.5
+När du har skrivit ut användarens antal rätt/fel, fråga då om användaren vill köra en gång till. Om användaren vill det så ska användaren få mata in beräkningssätt och tabellnummer igen.
+:::
+
+::: exercise 9.6
+Det är lite tråkigt att frågorna alltid kommer i ordning, t.ex. `5 * 1`, `5 * 2`, `5 * 3`, etc. Ändra programmet så att det varje gång slumpar fram ett tal mellan 1 och 10 som används (samma tal kan alltså komma flera gånger).
+
+[Läs dig till hur man slumpar fram ett tal i C#.](https://sentry.io/answers/generate-a-random-integer-in-csharp/)
+:::
+
+::: exercise 9.7
+Den här övningen är lite överkurs.
+
+[Läs om hur Stopwatch fungerar i C#.](https://www.dotnetperls.com/stopwatch) Använd sedan den för att mäta hur lång tid det tar för användaren att besvara alla frågor. Visa sedan den tiden för användaren. Sedan är det dags att tävla! :D
+:::

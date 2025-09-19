@@ -651,13 +651,382 @@ När du fått detta att fungera, försök då att lägga till fler HTML-sidor me
 
 :::
 
-::: exercise 4.3
+::: exercise 4.4
 Läs på om olika CSS-egenskaper på [W3Schools](https://www.w3schools.com/css/).
 :::
 
 
 
-<!--
 
+## Lektion 5. CSS Grid
+* Lösning på Övning 4.3
+* CSS Grid Intro
+	* `px` VS `em` VS `rem` VS `%` VS `fr`
+* Övningar
 
--->
+::: exercise 5.1
+Läs på lite om grunderna i CSS Grid. Det finns flera olika sidor som lär ut det på olika sätt:
+
+* [grid.malven.co](https://grid.malven.co/)
+* [Grid Garden](https://cssgridgarden.com)
+* [LEARN CSS GRID](https://learncssgrid.com/)
+
+Använd den/de sidor som du föredrar.
+:::
+
+::: exercise 5.2
+Försök att återskapa följande layout i CSS Grid:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Layout</title>
+	<style>
+		
+		body{
+			height: 200px;
+		}
+		
+		.grid{
+			display: grid;
+			border: 1px solid black;
+			resize: both;
+			overflow: scroll;
+		}
+		
+		.grid > div:nth-child(1){
+			background-color: yellow;
+		}
+		
+		.grid > div:nth-child(2){
+			background-color: lime;
+		}
+		
+		.grid > div:nth-child(3){
+			background-color: pink;
+		}
+		
+		.grid > div:nth-child(4){
+			background-color: teal;
+		}
+		
+		.grid > div:nth-child(5){
+			background-color: aqua;
+		}
+		
+		.grid > div:nth-child(6){
+			background-color: orange;
+		}
+		
+		.grid > div:nth-child(7){
+			background-color: brown;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div class="grid" style="grid-template-columns: 1fr 1fr 2fr;">
+		
+		<div>
+			Jag är en fjärdedel av bredden.
+		</div>
+		
+		<div>
+			Jag är en fjärdedel av bredden.
+		</div>
+		
+		<div>
+			Jag är halva bredden.
+		</div>
+		
+	</div>
+	
+</body>
+</html>
+```
+:::
+
+::: exercise 5.3
+Försök att återskapa följande layout i CSS Grid:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Layout</title>
+	<style>
+		
+		body{
+			height: 200px;
+		}
+		
+		.grid{
+			display: grid;
+			border: 1px solid black;
+			resize: both;
+			overflow: scroll;
+		}
+		
+		.grid > div:nth-child(1){
+			background-color: yellow;
+		}
+		
+		.grid > div:nth-child(2){
+			background-color: lime;
+		}
+		
+		.grid > div:nth-child(3){
+			background-color: pink;
+		}
+		
+		.grid > div:nth-child(4){
+			background-color: teal;
+		}
+		
+		.grid > div:nth-child(5){
+			background-color: aqua;
+		}
+		
+		.grid > div:nth-child(6){
+			background-color: orange;
+		}
+		
+		.grid > div:nth-child(7){
+			background-color: brown;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div class="grid" style="grid-template-columns: 150px 1fr; grid-template-rows: auto auto auto;">
+		
+		<div style="grid-column: 1 / span 2;">
+			Jag är headern.
+		</div>
+		
+		<div>
+			Jag är nav (150px bred).
+		</div>
+		
+		<div>
+			Jag är main.
+		</div>
+		
+		<div style="grid-column: 1 / span 2;">
+			Jag är footer.
+		</div>
+		
+	</div>
+	
+</body>
+</html>
+```
+:::
+
+::: exercise 5.4
+Försök att återskapa följande layout i CSS Grid:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Layout</title>
+	<style>
+		
+		body{
+			height: 300px;
+		}
+		
+		.grid{
+			display: grid;
+			resize: both;
+			overflow: scroll;
+		}
+		
+		.grid > div:nth-child(1){
+			background-color: yellow;
+		}
+		
+		.grid div{
+			padding: 10px;
+			border-radius: 14px;
+		}
+		
+		.grid > div:nth-child(2){
+			background-color: lime;
+		}
+		
+		.grid > div:nth-child(3){
+			background-color: pink;
+		}
+		
+		.grid > div:nth-child(4){
+			background-color: teal;
+		}
+		
+		.grid > div:nth-child(5){
+			background-color: aqua;
+		}
+		
+		.grid > div:nth-child(6){
+			background-color: orange;
+		}
+		
+		.grid > div:nth-child(7){
+			background-color: brown;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div class="grid" style="grid-template-columns: 150px 1fr 150px; grid-template-rows: auto auto auto; gap: 10px; padding: 5px;">
+		
+		<div style="grid-row: 1; grid-column: 1 / span 3;">
+			Jag är headern.
+		</div>
+		
+		<div style="grid-row: 2;">
+			Jag är nav (150px bred).
+		</div>
+		
+		<div style="grid-row: 2;">
+			Jag är main.
+		</div>
+		
+		<div style="grid-row: 2 / span 2;">
+			Jag är en sidebar
+		</div>
+		
+		<div style="grid-column: 1 / span 2;">
+			Jag är footer.
+		</div>
+		
+	</div>
+	
+</body>
+</html>
+```
+:::
+
+::: exercise 5.5
+Försök att återskapa följande månadsvy i HTML och CSS Grid:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 60px);
+      grid-auto-rows: 60px;
+      gap: 5px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .calendar .day-name {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .calendar .day {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e9ecef;
+      border-radius: 5px;
+    }
+
+    .calendar .empty {
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calendar">
+    <!-- Day names -->
+    <div class="day-name">Mån</div>
+    <div class="day-name">Tis</div>
+    <div class="day-name">Ons</div>
+    <div class="day-name">Tor</div>
+    <div class="day-name">Fre</div>
+    <div class="day-name">Lör</div>
+    <div class="day-name">Sön</div>
+
+    <!-- Empty days before the start of the month -->
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+
+    <!-- Days of the month (1-30 for example) -->
+    <div class="day">1</div>
+    <div class="day">2</div>
+    <div class="day">3</div>
+    <div class="day">4</div>
+    <div class="day">5</div>
+    <div class="day">6</div>
+    <div class="day">7</div>
+    <div class="day">8</div>
+    <div class="day">9</div>
+    <div class="day">10</div>
+    <div class="day">11</div>
+    <div class="day">12</div>
+    <div class="day">13</div>
+    <div class="day">14</div>
+    <div class="day">15</div>
+    <div class="day">16</div>
+    <div class="day">17</div>
+    <div class="day">18</div>
+    <div class="day">19</div>
+    <div class="day">20</div>
+    <div class="day">21</div>
+    <div class="day">22</div>
+    <div class="day">23</div>
+    <div class="day">24</div>
+    <div class="day">25</div>
+    <div class="day">26</div>
+    <div class="day">27</div>
+    <div class="day">28</div>
+    <div class="day">29</div>
+    <div class="day">30</div>
+  </div>
+
+</body>
+</html>
+```
+:::
+
+::: exercise 5.6
+Skapa en egen sida med en layout (välj själv vilken) som du implementerar med CSS Grid. Försök att använda HTML semantiskt korrekt, och gör sidan så fin du bara kan.
+:::

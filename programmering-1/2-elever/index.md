@@ -1,4 +1,4 @@
-## Årskurs 2-elever
+# Årskurs 2-elever
 De elever som läser den här kursen och som går i årskurs 2 och som redan kan grunderna i programmering kan arbeta på ett eget (individuellt) litet programmeringsprojekt istället för att göra övningarna på lektionerna. Projektet får ni komma på själva, men det skulle t.ex. kunna vara:
 
 * Ett "hänga gubbe"-spel (konsollprogram).
@@ -27,9 +27,9 @@ while (!Raylib.WindowShouldClose())
 {
 	
 	Raylib.BeginDrawing();
-	Raylib.ClearBackground(White);
+	Raylib.ClearBackground(Color.DarkBlue);
 	
-	Raylib.DrawText("Hello, raylib-cs!", 300, 280, 20, MAROON);
+	Raylib.DrawText("Hello, raylib-cs!", 300, 280, 20, Color.White);
 	
 	Raylib.EndDrawing();
 	

@@ -1200,15 +1200,15 @@ class Person
 {
 	
 	public int Age;
-	private string name;
+	private string _name;
 	
 	public Person(int theAge, string theName)
 	{
 		Age = theAge;
-		name = theName;
+		_name = theName;
 	}
 	
-	private string getType()
+	private string GetType()
 	{
 		
 		string type;
@@ -1228,7 +1228,7 @@ class Person
 	
 	public void WriteInfoToConsole()
 	{
-		Console.WriteLine($"{getType()} {name} är {Age} år gammal.");
+		Console.WriteLine($"{GetType()} {_name} är {Age} år gammal.");
 	}
 	
 }
@@ -1239,7 +1239,7 @@ Den här lektionen introducerar vi inget nytt, utan vi övar på att använda de
 Om du vill försöka implementera ett Yatzy-liknande spel helt själv så är det OK. Annars kan du göra övningarna nedan för att bli guidad i rätt riktning.
 
 ::: exercise 8.1
-Skapa en klass som representerar en tärning. Den som skapar tärningen ska få bestämma hur många sidor den ska ha. Med en tärning ska man åtmoinstone kunna:
+Skapa en klass som representerar en tärning. Den som skapar tärningen ska få bestämma hur många sidor den ska ha. Med en tärning ska man åtminstone kunna:
 
 * Kasta.
 * Ta reda på hur många prickar (vilket värde) tärningen för stunden har.
@@ -1292,15 +1292,70 @@ En datorpelare kan man spendera nästan oändligt med tid på att försöka få 
 :::
 
 
-<!--
 
 
 ## Lektion 9. Klasser (tärningsövningar)
-Är du inte klar med övningarna från förra lektionen så fortsätt gärna med dem. Här kommer annars ett par till övningar du kan göra.
+Först en rättelse angående namnkonvention för `private`, sedan en genomgång med exempellösningar för de som vill. Efter det fortsätter vi att arbeta med övningarna från föregående lektion.
 
 
+<!--
 
 
+## Lektion X. Klasser (arv)
+Arv är ett sätt att återvinna kod på. En klass kan ärva från en annan klass, och då får den alla metoder och instansvariabler som föräldraklassen innehåller.
 
+::: example
+
+```cs
+// Klass A är en vanlig klass.
+class A
+{
+	
+	private string _name = "Alice";
+	
+	public int GetName()
+	{
+		return _name;
+	}
+	
+}
+
+// Klass B ärver från klass A.
+class B : A
+{
+	
+	// Och får automatiskt allt som ligger i Klass A.
+	// I det här fallet både _name and GetName().
+	// Dock kan den inte direkt använda de som är private.
+	
+	public void WriteNameToConsole()
+	{
+		Console.WriteLine(GetName());
+	}
+	
+}
+```
+
+<br>
+
+```cs
+B theInstance = new B();
+
+theInstance.WriteNameToConsole(); // "Alice"
+
+Console.WriteLine($"Namnet är {theInstance.GetName()}.");
+```
+:::
+
+::: example 
+Ett exempel på när arv är lämpligt att använda är t.ex. i ett 2D Mario-spel. Där skulle man typiskt använda:
+
+* En klass för att representera Mario.
+* En klass för att representera en Goomba.
+* En klass för att representera en Koopa.
+* Etc.
+
+Alla dessa behöver innehålla en X- och Y-koordinat för att hålla koll på vart dem befinner sig i 2D-världen. Men istället för att lägga till dessa i varje enskild klass så kan man skapa en generell LivingThing-klass som innehåller X- och Y-koordinaten, och sedan ärver Mario-klassen, Goomba-klassen och Koopa-klassen ifrån LivingThing-klassen, och innehåller alltså därmed automatiskt en X- och Y-koordinat!
+:::
 
 -->

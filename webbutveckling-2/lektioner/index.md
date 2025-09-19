@@ -779,3 +779,126 @@ När du är klar, försök lägg till mer funktionalitet, som t.ex.:
 
 :::
 
+
+
+## Instuderingsfrågor till prov
+Här är instuderingsfrågor till provet fredagen 26 september. Ni kommer inte skriva någon kod på provet.
+
+Kodexempel som kan vara bra att ha som referens när man pluggar in instuderingsfrågorna:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS-test</title>
+	<script>
+		
+		document.addEventListener(`DOMContentLoaded`, function(){
+			
+			const buttonElement = document.querySelector(`button`)
+			
+			buttonElement.addEventListener(`click`, function(){
+				
+				const number = parseInt(buttonElement.innerText)
+				
+				buttonElement.innerText = number + 1
+				
+			})
+			
+		})
+		
+	</script>
+</head>
+<body>
+	
+	<button>0</button>
+	
+</body>
+</html>
+```
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS-test</title>
+	<script>
+		
+		document.addEventListener(`DOMContentLoaded`, function(){
+			
+			const selectElement = document.querySelector(`select`)
+			const divElement = document.querySelector(`div`)
+			
+			selectElement.addEventListener(`input`, function(){
+				
+				divElement.innerText = selectElement.value
+				
+			})
+			
+		})
+		
+	</script>
+</head>
+<body>
+	
+	<select>
+		<option value="A">Första</option>
+		<option value="B">Andra</option>
+		<option value="C">Tredje</option>
+	</select>
+	
+	<div></div>
+	
+</body>
+</html>
+```
+
+<style>
+	
+	dd{
+		margin-bottom: 1em;
+	}
+	
+</style>
+
+<dl>
+	<dt>När körs händelsen <code>DOMContentLoaded</code>?</dt>
+	<dd>När webbläsaren har läst igenom all HTML-kod.</dd>
+	<dt>Varför behöver vi ofta lyssna på händelsen <code>DOMContentLoaded</code>?</dt>
+	<dd>För att <code>document.querySelector()</code> och <code>document.querySelectorAll()</code> inte kan skicka tillbaka rätt HTML-element förrän webbläsaren har läst igenom all HTML-kod och skapat HTML-elementen.</dd>
+	<dt>Vad för argument skickar du till <code>document.querySelector()</code>?</dt>
+	<dd>En CSS-selektor som en sträng.</dd>
+	<dt>Vad för argument skickar du till <code>document.querySelectorAll()</code>?</dt>
+	<dd>En CSS-selektor som en sträng.</dd>
+	<dt>Vad returnerar <code>document.querySelector()</code>?</dt>
+	<dd>En referens till ett HTML-element (här visas det som <code>htmlElement</code> (för ett generellt HTML-element), eller <code>inputElement</code> (för ett <code>&lt;input&gt;</code> element, etc.)).</dd>
+	<dt>Vad kan vi använda <code>htmlElement.addEventListener()</code> till?</dt>
+	<dd>För att lägga till en funktion som ska anropas när en viss händelse inträffar på <code>htmlElement</code>.</dd>
+	<dt>Vad refererar <code>htmlElement.innerText</code> till?</dt>
+	<dd>Texten som finns inuti ett HTML-element.</dd>
+	<dt>När körs händelsen <code>click</code>?</dt>
+	<dd>När man klickar på ett element.</dd>
+	<dt>Hur läser man ut värdet som användaren har skrivit in i ett <code>&lt;input&gt;</code>-element som en sträng?</dt>
+	<dd><code>inputElement.value</code></dd>
+	<dt>Hur läser man ut värdet som användaren har skrivit in i ett <code>&lt;input&gt;</code>-element som ett nummer?</dt>
+	<dd><code>inputElement.valueAsNumber</code></dd>
+	<dt>När körs händelsen <code>input</code>?</dt>
+	<dd>När användaren ändrar det värde som står i ett <code>&lt;input&gt;</code>-element eller <code>&lt;select&gt;</code>-element.</dd>
+	<dt>Vilken funktion använder man för att skapa ett nytt HTML-element?</dt>
+	<dd><code>document.createElement()</code></dd>
+	<dt>Hur får man tag i ett elements föräldraelement?</dt>
+	<dd><code>htmlElement.parentNode</code></dd>
+	<dt>Hur lägger man till ett element i ett annat element?</dt>
+	<dd><code>htmlElement.appendChild(childHtmlElement)</code></dd>
+</dl>
+
+
+
+
+## Lektion 9. Catch-up
+Vi fotsätter att arbeta på övningarna från föregående lektioner. De som vill får plugga på instuderingsfrågorna.
