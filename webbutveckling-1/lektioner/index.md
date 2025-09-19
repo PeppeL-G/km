@@ -423,8 +423,6 @@ Dagens lektion innehåller följande:
 	* Kombinera selectors:
 		* `selectorselector` (element som matchar båda)
 		* `parentSelector selector` (alla barn, barnbarn, etc. som matchar)
-		* `parentSelector > selector` (bara barnen som matchar)
-* `display` (`block` / `inline`)
 * Box-modellen:
 	* (margin (border (padding (content))))
 	* `background-color`
