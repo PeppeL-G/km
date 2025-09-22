@@ -189,15 +189,15 @@ Har du inte pennor med olika färger så kan du använda symboler istället, t.e
 :::
 
 ::: exercise 6.2
-Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 1-Nearest Neigbour-algoritmen. Dokumentera ditt resultat.
+Välj sedan ut 5 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 1-Nearest Neigbour-algoritmen. Dokumentera ditt resultat.
 :::
 
 ::: exercise 6.3
-Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 2-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
+Välj sedan ut 5 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 2-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
 :::
 
 ::: exercise 6.4
-Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 3-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
+Välj sedan ut 5 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 3-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
 :::
 
 ::: exercise 6.5
