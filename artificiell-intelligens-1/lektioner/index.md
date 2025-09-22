@@ -153,10 +153,10 @@ Att träna modeller att känna igen bilder/poser är lite kul, men finns det nå
 
 
 
-## Lektion 6. Maskinginlärning (K-nearest neighbours)
+## Lektion 6. Maskininlärning (K-nearest neighbours)
 * Classification VS Regression
 * Problem för AI respektive människor
-* Visualisera data (scatter-plot)
+* Visualisera data (scatter plot)
 * [K-Nearest Neighbours Interactive Demo](http://vision.stanford.edu/teaching/cs231n-demos/knn/)
 
 <ShowDataset
@@ -171,11 +171,11 @@ Att träna modeller att känna igen bilder/poser är lite kul, men finns det nå
 />
 
 ::: exercise 6.1
-Den här övningen går ut på att rita en scatter-plot du sedan kan använda för att klassificera okända instancer. Din scatter-plot kommer alltå fungera som din maskinlärda modell.
+Den här övningen går ut på att rita en scatter plot du sedan kan använda för att klassificera okända instanser. Din scatter plot kommer alltå fungera som din maskinlärda modell.
 
 Ladda in datasetet iris ovan. Det är ett dataset där man ska använda den tillgängliga datan för att försöka förutsäga ifall en ny instans med känd `sepalWidth`, `sepalLength`, `petalLength` och `petalWidth` är en `setosa`, `versicolor`, eller `virginica` (alltså ett klassificeringsproblem).
 
-Slumpa ordningen på instanserna genom att klicka på `Random` i tabellhuvudet några gånger. Rita sedan en scatter-plot med två av de numreriska attributen/kolumnerna instanserna har (bestäm själv vilka du vill använda). En scatter-plot är en tvådimensionell graf där instansernas ena attribut visas på en axel, och det andra attributet visas på den andra axeln. Rita ut åtminstone 10 av vardera klass (i bästa fall skulle man rita ut alla instancer, men det är för mycket arbete). Om du har pennor med olika färger, ge då gärna varje blomtyp en egen färg, t.ex.:
+Slumpa ordningen på instanserna genom att klicka på `Random` i tabellhuvudet några gånger. Rita sedan en scatter plot med två av de numreriska attributen/kolumnerna instanserna har (bestäm själv vilka du vill använda). En scatter plot är en tvådimensionell graf där instansernas ena attribut visas på en axel, och det andra attributet visas på den andra axeln. Rita ut åtminstone 10 av vardera klass (i bästa fall skulle man rita ut alla instancer, men det är för mycket arbete). Om du har pennor med olika färger, ge då gärna varje blomtyp en egen färg, t.ex.:
 
 * `setosa`: röd
 * `versicolor`: blå
@@ -189,33 +189,90 @@ Har du inte pennor med olika färger så kan du använda symboler istället, t.e
 :::
 
 ::: exercise 6.2
-Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter-plot. Klassificera dessa enligt 1-Nearest Neigbour-algoritmen. Dokumentera ditt resultat.
+Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 1-Nearest Neigbour-algoritmen. Dokumentera ditt resultat.
 :::
 
 ::: exercise 6.3
-Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter-plot. Klassificera dessa enligt 2-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
+Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 2-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
 :::
 
 ::: exercise 6.4
-Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter-plot. Klassificera dessa enligt 3-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
+Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter plot. Klassificera dessa enligt 3-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
 :::
 
 ::: exercise 6.5
-Välj sedan ut 10 instanser ur datasetet som inte är med på din scatter-plot. Klassificera dessa enligt 4-Nearest Neigbours-algoritmen. Dokumentera ditt resultat.
-:::
-
-::: exercise 6.6
 Reflektera över ditt resultat, bland annat:
 
 * Vilken K-version av K-Nearest Neighbours fungerade bäst?
 * Var någon klass lättare att identifiera än de andra?
 :::
 
-::: exercise 6.7
-Om du tittar på datasetet, kan du identifiera vilken kolumn/attribut som bäst verkar kunna skilja instanserna åt? Då är det ett bra attribut att ha i din scatter-plot. Kan du även se vilket det näst bästa attributet kan vara?
+::: exercise 6.6
+Om du tittar på datasetet, kan du identifiera vilken kolumn/attribut som bäst verkar kunna skilja instanserna åt? Då är det ett bra attribut att ha i din scatter plot. Kan du även se vilket det näst bästa attributet kan vara?
 :::
 
 
+
+
+## Lektion 7. KNIME-intro
+Först en liten repetition av de grundläggande termerna vi använder när det kommer till maskininlärning (regression VS classification, dataset, instans, attribut/feature, scatter plot). Vi fortsätter sedan att arbeta lite med övningarna från föregående lektion. Därefter börjar vi titta lite på KNIME, vilket är ett program vi kan använda för att visualisera dataset och skapa/träna maskininlärningsmodeller.
+
+::: exercise 7.1
+Ladda ner och installera [KNIME](https://www.knime.com/downloads). Notera att du inte behöver registrera dig för att ladda ner det. Du kan t.ex. använda versionen `Latest standard: 5.7` --> `KNIME Analytics Platform for Windows (installer)`.
+:::
+
+::: exercise 7.2
+Starta KNIME och skapa ett nytt *workflow* där. Dra sedan en `CSV Reader`-nod till ditt workflow och använd den för att ladda in iris-datasetet. För detta behöver du ha iris-datasetet som en CSV-fil på din dator. Ladda ner den filen med hjälp av knappen nedan.
+
+<ShowDataset
+	datasetName="iris"
+/>
+
+När du har konfigurerat `CSV Reader`-noden korrekt och exekverat den så ska du kunna se att datasetet har laddats in korrekt när du klickar på din `CSV Reader`-nod.
+:::
+
+::: exercise 7.3
+Visualisera det inladdade datasetet med `Line Plot`-noden. Studera grafen och försök upptäck ett mönster i attributen du kan använda för att klassificera instanserna. Försök sedan (med hjälp av grafen) besvara följande frågor:
+
+1. Vilken iris-typ är enklast att klassificera?
+2. Vad för attribut tittar du på för att se det?
+3. Vilket gränsvärde kan du använda för att göra en "säker" klassifisering av den iris-typen?
+:::
+
+::: exercise 7.4
+Använd `Statistics`-noden för att besvara följande frågor:
+
+* Vad är min- och max-värdena för `SepalWidthCm`?
+* Vad är medelvärde för `PetalWidthCm`?
+:::
+
+::: exercise 7.5
+Använd `Value Counter`-noden för att besvara följande frågor:
+
+* Hur många `Iris-setosa` innehåller datasetet?
+* Hur många `Iris-versicolor` innehåller datasetet?
+* Hur många `Iris-virginica` innehåller datasetet?
+:::
+
+::: exercise 7.6
+Använd 3 noder för att *filtrera* instanserna (försök själv att hitta rätt nod som löser detta åt dig), så att du får:
+
+* Ett dataset som endast innehåller `Iris-setosa`-instanser.
+* Ett dataset som endast innehåller `Iris-versicolor`-instanser.
+* Ett dataset som endast innehåller `Iris-virginica`-instanser.
+
+Använd sedan en lämplig nod för att beräkna medelvärdena för attributen för respektive iris-typ. Kan du på detta vis komma på en "säker" regel för att klassificera en iris-typ?
+:::
+
+::: exercise 7.7
+Att måla en scatter plot för hand är väldigt tidskrävande. Som tur är finns det en scatter plot-nod i KNIME vi kan använda som göra detta åt oss. Men för att den ska fungera bra så behöver du först använda en `Color Manager`-nod, så den vet vilken färg varje iris-typ ska visas med.
+
+Försök att få KNIME att måla en scatter plot åt dig.
+:::
+
+::: exercise 7.8
+Lek runt i KNIME och se vad som är möjligt att göra. 
+:::
 
 <!--
 
@@ -238,10 +295,11 @@ Måste man kunna programmering för att skapa hemsidor/appar? Nej, inte om man h
 
 
 # Lektion X. Projekt
-Under ~6 lektioner, använd en chattmodell för att skapa något program/hemsida. Använda bara kod som du får från chattmodellen (gör inga ändringar i den). Du får ställa vilka frågor du vill till chattmodellen.
+Under ~6 lektioner, använd en chattmodell för att skapa något program/hemsida. Använda bara kod som du får från chattmodellen (gör inga ändringar i den). Du får ställa vilka frågor du vill till chattmodellen. Använd även andra AI-modeller i ditt projekt, för att t.ex. generera bilder du kan använda på din hemsida, eller musik som spelas på hemsidan, etc.
 
 
 
+# Lektion X. Chattmodellers utvecklings
 
 * Skapa grafer över hur chatmodeller har utvecklats över åren:
 	1. Hitta chatmodeller som kan vara med i grafen.
@@ -252,5 +310,9 @@ Under ~6 lektioner, använd en chattmodell för att skapa något program/hemsida
 		* Antal bokstäver/ord/tokens in (kontextfönster)
 		* Antal bokstäver/ord/tokens out
 	3. Rita med papper och penna eller skapa grafer i valfritt program som visar hur utvecklingen framåt kan tänkas se ut.
-	
+	4. Reflektera över din graf. Verkar vi ha nått toppen av AI-utvecklingen för stunden? Eller verkar våra AI-modeller bara bli större och större/bättre och bättre?
+
+Lektion X. K-Nearest Neighbours
+Gå igenom mattematiken bakom hur K-Nearest Neighbours fungerar.
+
 -->

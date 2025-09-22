@@ -902,3 +902,10 @@ Kodexempel som kan vara bra att ha som referens när man pluggar in instuderings
 
 ## Lektion 9. Catch-up
 Vi fotsätter att arbeta på övningarna från föregående lektioner. De som vill får plugga på instuderingsfrågorna.
+
+
+
+
+
+## Lektion 10. Catch-up
+Vi fotsätter att arbeta på övningarna från föregående lektioner. De som vill får plugga på instuderingsfrågorna. Men först en demonstration från en student som är klar med memory-spelet, och förklaring av hur koden fungerar.

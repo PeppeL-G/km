@@ -521,10 +521,23 @@ På din sida som visar alla dina data-objekt, lägg till länkar som leder till 
 :::
 
 ::: exercise 7.6
-På sidan som listar alla din data-objekt, använd gärna en flexbox-container, och visa varje data-objekt som ett stort klickbart element.
+På sidan som listar alla dina data-objekt, använd gärna en flexbox-container och visa varje data-objekt som ett stort klickbart element.
 :::
+
 
 
 
 ## Lektion 8. Catch-up
 Vi fortsätter arbeta med övningarna från föregående lektioner. 
+
+
+
+
+## Lektion 9. Catch-up
+Vi fortsätter arbeta med övningarna från föregående lektioner.
+
+De som är klara med övningarna kan börja titta på hur man kan skapa och använda en databas av något slag för att spara ner data-objekten i en sådan istället för i en JavaScript array. På detta vis kan vår webbapplikation hantera fler data-objekt, ändringar som vi gör på data-objekten kommer överleva server-omstarter, etc.
+
+I enklaste fall så kan man använda en JSON-fil innehållandes arrayen med data-objekten, som man sedan laddar in varje gång man tar emot en request. Denna lösning är enkel, men inte särkillt bra för arrayer med många data-objekt (mycket data som laddas in i minnet samtidigt).
+
+För arrayer med många data-objekt så är det bättre att använda en riktig databas av något slag. Den enklaste lösningen som är bra är att använda en SQLite 3-implementation (t.ex. [better-sqlite3](https://github.com/WiseLibs/better-sqlite3?tab=readme-ov-file), [tutorial](https://www.w3resource.com/sqlite/snippets/better-sqlite3-library.php#google_vignette)). Men du får gärna använda vad du än föredrar/är nyfiken på att lära dig.
