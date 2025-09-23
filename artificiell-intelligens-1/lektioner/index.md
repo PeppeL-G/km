@@ -274,6 +274,22 @@ Försök att få KNIME att måla en scatter plot åt dig.
 Lek runt i KNIME och se vad som är möjligt att göra. 
 :::
 
+
+
+## Lektion 8. Catch-up
+Vi fortsätter att arbeta med KNIME-övningarna från föregående lektion. De som är klara med de övningarna kan testa att ladda in ett nytt dataset och försöka bekanta sig med det. På [kaggle.com](https://www.kaggle.com/datasets) finns många olika dataset man kan ladda ner (efter att man har skapat ett konto och loggat in).
+
+Ett förslag på ett dataset du kan undersöka är [Animal Bites](https://www.kaggle.com/datasets/rtatman/animal-bites). Det innehåller dokumenterade fall av bitattacker mot människor av olika slags djur. Frågor du kan försöka besvara är:
+
+* Verkar det vara hanar eller honor som ligger bakom de flesta bitattackerna mot människor?
+	* Stämmer det även för respektive art (så som `DOG` och `CAT`?)?
+* Vilka olika arter är det som har utfört bitattacker mot människor enligt datasetet?
+* Finns det någon period på året då attackerna verka vara mer vanligt förekommande än övrig tid på året? Om ja, har du själv någon vettig förklaring till varför?
+* Verkar antalet bitattacker ha någon koppling till djurens färg?
+* Hur många attacker finns det av respektive art?
+
+
+
 <!--
 
 

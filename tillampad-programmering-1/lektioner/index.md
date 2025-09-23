@@ -171,3 +171,56 @@ Användaren klickar på 2: nummer = 35*10 + 2 = 352
 
 ## Lektion 7. Catch-up
 Vi fortsätter att arbeta med övningarna ifrån föregående lektion.
+
+
+
+
+## Lektion 8. Inputfält
+* `EnterNumber`
+* `EnterText`
+
+:::: exercise 8.1
+Skapa en sida där användaren får mata in sin ålder i en `EnterNumber`-komponent. Om åldern är:
+
+* Mindre än 18 så ska användaren kommer till en sida där det står `Lek och skratta!`.
+* Mellan 18 och 67 så ska användaren komma till en sida där det står `Jobba mer!`
+* Över 67 så ska användaren komma till en sida där det står `Ta det lugnt!`
+
+Alla dessa tre sidor ska även ha en knapp användaren kan klicka på för att komma tillbaka till den första sidan.
+
+::: details Ledtråd
+Använd konfigurationsmetoden `PageIfLower()` tre gånger.
+:::
+::::
+
+:::: exercise 8.2
+Skapa en sida där användaren kan mata in sitt namn i en `EnterText`-komponent. Det namnet ska sparas i en App-variabel. Användaren ska sedan kunna klicka på en knapp för att komma till en annan sida med texten `Hej på dig, <NAMNET>!`, där `<NAMNET>` ska vara det namn som användaren uppgav den hade (alltså värdet i App-variabeln).
+
+På den andra sidan ska det även finnas en knapp användaren kan klicka på för att gå tillbaka till den första sidan.
+
+::: details Ledtråd
+Använd konfigurationsmetoden `store()` för att komma ihåg namnet användaren har matat in i en App-variabel.
+:::
+::::
+
+:::: exercise 8.3
+Skapa en sida där användaren kan mata in en hastighet (`m/s`) och en tidslängd (`s`). När användaren klickar på en knapp på sidan så ska sträckan man kommer med den inmatade hastigheten och tidslängden beräknas och visas på sidan.
+
+::: details Ledtrådar
+Använd två Page-variabler:
+
+* En för att komma ihåg hastigheten.
+* En för att komma ihåg tidslängden.
+
+För att spara det som användaren matar in i `EnterText`-komponenterna i dessa Page-variabler behöver du använda konfigurationsmetoden `store()` på `EnterText`-komponenterna.
+
+Sträckan beräknar du helt enkelt med formeln `hastighet * tidslängd`.
+:::
+::::
+
+::: exercise 8.4
+Skapa en sida där användaren kan mata in ett lösenord i en `EnterText`-komponent. Du får själv bestämma vad det rätta lösenordet ska vara. Om användaren matar in:
+
+* Det rätta lösenordet och klickar på en knapp så ska användaren komma till en sida där det står `Rätt lösenord!`.
+* Ett felaktigt lösenord och klickar på en knapp så ska användaren komma till sida där det står `Fel lösenord`. På denna sida ska det även finnas en knapp användaren kan klicka på för att komma tillbaka till den första sidan.
+:::
