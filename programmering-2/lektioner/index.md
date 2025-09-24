@@ -1295,7 +1295,13 @@ En datorpelare kan man spendera nästan oändligt med tid på att försöka få 
 
 
 ## Lektion 9. Klasser (tärningsövningar)
-Först en rättelse angående namnkonvention för `private`, sedan en genomgång med exempellösningar för de som vill. Efter det fortsätter vi att arbeta med övningarna från föregående lektion.
+Först en rättelse angående namnkonvention för `private`, sedan en genomgång med exempellösningar för de som vill. Efter det fortsätter vi att arbeta med övningarna från föregående lektion. De SU-elever som vill får arbeta med sina spelprojekt.
+
+
+
+
+## Lektion 10. Klasser (tärningsövningar)
+Först en genomgång med exempellösningar för de som vill. Efter det fortsätter vi att arbeta med tärningsövningarna från föregående lektion. De SU-elever som vill får arbeta med sina spelprojekt.
 
 
 <!--

@@ -1125,3 +1125,113 @@ Den här övningen är lite överkurs.
 
 [Läs om hur Stopwatch fungerar i C#.](https://www.dotnetperls.com/stopwatch) Använd sedan den för att mäta hur lång tid det tar för användaren att besvara alla frågor. Visa sedan den tiden för användaren. Sedan är det dags att tävla! :D
 :::
+
+
+
+
+## Lektion 10. Catch-up
+Vi fortsätter att arbeta med övningarna ifrån föregående lektioner. Om någon mot all förmodan lyckats göra alla övningar hittills så kommer här nedan ett par nya ^^
+
+::: info Bestämma provtillfällen
+Jag vill gärna ha ett litet prov för att se hur många elever som har lärt sig vad av grunderna i programmering hittills i kursen. Det som ni har lärt er hittills är:
+
+* Output: `Console.Write()`, `Console.WriteLine()`
+* Input: `Console.ReadLine()`
+* Variabler: `int myAge = 12;`, `myAge = 234;`
+* Datatyper: `string` (`"..."`), `int`, `long`, `double`, `floot`, `bool` (`true`/`false`)
+* Skapa sträng med värden från uttryck: `$"Jag är {myAge} år gammal."`
+* Konvertera från `string`-värde till `int`-värde: `Convert.ToInt32()`
+* Jämförelseoperatorer: `<`, `<=`, `==`, `!=`, `>`, `>=`
+* Villkorssatser:
+  ```cs
+  if(myAge < 18)
+  {
+    // ...
+  }
+  else if(myAge < 67)
+  {
+    // ...
+  }
+  else
+  {
+    // ...
+  }
+  ```
+* While-loopen:
+  ```cs
+  while(0 < myAge)
+  {
+    // ...
+    myAge = myAge - 1;
+  }
+  ```
+
+Det som återstår att lära sig av grunderna är:
+
+* `for`-loopen
+* Arrayer & Listor
+* Funktioner
+
+Så vi behöver bestämma:
+
+* Ska vi ha två små prov eller ett stort?
+* När ska provet/proven äga rum?
+
+<table style="text-align: center;">
+<thead>
+  <tr>
+    <th style="text-align: center;">Vecka</th>
+    <th style="text-align: center;">Ettor</th>
+    <th style="text-align: center;">Tvåor</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>39</td>
+    <td colspan="2">Denna veckan</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td></td>
+    <td>Eng 6 (Business Report)</td>
+  </tr>
+  <tr>
+    <td>41</td>
+    <td></td>
+    <td>Fy1: Kinematik och mekanik</td>
+  </tr>
+  <tr>
+    <td>42</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td>Prov i Sam1</td>
+    <td>Ma3c: Algebra och funktioner</td>
+  </tr>
+  <tr>
+    <td>44</td>
+    <td colspan="2">Höstlov</td>
+  </tr>
+</tbody>
+</table>
+
+:::
+
+::: exercise 10.1
+Den här övningen är kopplad till multiplikationsprogrammet i övningarna från föregående lektion.
+
+Ändra ditt multiplikationsprogram så att det fungerar lite annorlunda:
+
+* Om användaren svarar fel på en fråga så ska användaren få chans att svara på den frågan om igen, ända tills användaren lyckas svara rätt.
+* I slutet av programmet så ska du visa hur många gånger användaren svarade fel, och hur lång tid det tog för användaren att svara på alla frågor.
+:::
+
+
+
+::: exercise 10.2
+Lägg till så att ditt multiplikationsprogram kommer ihåg användarens bästa resultat. Som en första version av denna funktionalitet så kan du använda tiden det tog att besvara alla frågor, men i en lite mer avancerad version så kan du först titta på antal fel användaren har gjort (i bästa fall 0), och i andra hand hur lång tid det tog.
+
+Efter varje avslutad omgång, visa det bästa resultatet för användaren, och om användaren precis fick det bästa resultatet, skriv ett litet grattismeddelande till användaren.
+:::

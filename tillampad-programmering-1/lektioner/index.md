@@ -176,8 +176,10 @@ Vi fortsätter att arbeta med övningarna ifrån föregående lektion.
 
 
 ## Lektion 8. Inputfält
-* `EnterNumber`
 * `EnterText`
+	* `.store(...)`, `.page(...)`, `.pageIfEqual(...)`
+* `EnterNumber`
+	* `.store(...)`, `.page(...)`, `.pageIfEqual(...)`, `.pageIfLower(...)`, `.pageIfBetween(...)`, `.pageIfHigher(...)`
 
 :::: exercise 8.1
 Skapa en sida där användaren får mata in sin ålder i en `EnterNumber`-komponent. Om åldern är:
@@ -223,4 +225,30 @@ Skapa en sida där användaren kan mata in ett lösenord i en `EnterText`-kompon
 
 * Det rätta lösenordet och klickar på en knapp så ska användaren komma till en sida där det står `Rätt lösenord!`.
 * Ett felaktigt lösenord och klickar på en knapp så ska användaren komma till sida där det står `Fel lösenord`. På denna sida ska det även finnas en knapp användaren kan klicka på för att komma tillbaka till den första sidan.
+:::
+
+
+
+
+## Lektion 9. Inputfält
+Den här lektionen försöker vi bygga lite mer meningsfulla appar med den funktionalitet vi har lärt oss hittills i kursen.
+
+::: exercise 9.1
+Skapa ett multiplikationsrogram, där användaren kan träna på en multiplikationstabell.
+
+På första sidan ska användaren få välja vilken multiplikationstabell hen vill öva på. Sedan ska användaren komma till den andra sidan.
+
+På den andra sidan ska användaren få skriva in svaret på frågan `Vad är VALD_MULTIPLIKATIONSTABELL * 1?`. `VALD_MULTIPLIKATIONSTABELL` ska så klart ersättas med den tabell som användaren valde på första sidan. När användaren har skrivit in svaret på detta så ska användaren komma till den tredje sidan.
+
+På den tredje sidan ska användaren få skriva in svaret på frågan `Vad är VALD_MULTIPLIKATIONSTABELL * 2?`. Och så vidare.
+
+När användaren kommer till den sista sidan (som är en "resultatsida") så ska det finnas en knapp som leder tillbaka till den första sidan, så användaren kan välja en multiplikationstabell på nytt och träna igen.
+:::
+
+::: exercise 9.2
+Skapa ett glosprogram där användaren kan träna på att lära sig engelska ord. När appen startar ska användaren få välja vilken categori av glosor hen vill träna på, så som `Färger`, `Siffror`, etc. (du får själv bestämma vilka kategorier du vill använda).
+
+Efter detta val så ska användaren komma til en sida där hen får skriva in svaret på en glosa (du bestämmer vilka glosor du vill ha). Använd en sida per glosa, och 3 glosor per kategori. Användaren ska kunna komma vidare till nästa sida endast när hen skriver in rätt svar på glosan.
+
+Efter att användaren klarat av sista glosan så ska användaren kunna ta sig tillbaka till den första sidan igen.
 :::
