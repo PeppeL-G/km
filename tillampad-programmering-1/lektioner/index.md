@@ -230,7 +230,7 @@ Skapa en sida där användaren kan mata in ett lösenord i en `EnterText`-kompon
 
 
 
-## Lektion 9. Inputfält
+## Lektion 9. Program
 Den här lektionen försöker vi bygga lite mer meningsfulla appar med den funktionalitet vi har lärt oss hittills i kursen.
 
 ::: exercise 9.1
