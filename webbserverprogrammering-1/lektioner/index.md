@@ -541,3 +541,47 @@ De som är klara med övningarna kan börja titta på hur man kan skapa och anv�
 I enklaste fall så kan man använda en JSON-fil innehållandes arrayen med data-objekten, som man sedan laddar in varje gång man tar emot en request. Denna lösning är enkel, men inte särkillt bra för arrayer med många data-objekt (mycket data som laddas in i minnet samtidigt).
 
 För arrayer med många data-objekt så är det bättre att använda en riktig databas av något slag. Den enklaste lösningen som är bra är att använda en SQLite 3-implementation (t.ex. [better-sqlite3](https://github.com/WiseLibs/better-sqlite3?tab=readme-ov-file), [tutorial](https://www.w3resource.com/sqlite/snippets/better-sqlite3-library.php#google_vignette)). Men du får gärna använda vad du än föredrar/är nyfiken på att lära dig.
+
+
+
+
+## Lektion 10. Miniprojekt Finsko
+Den här lektionen + 3 lektioner till framöver kommer vi individuellt arbeta med ett miniprojekt som ni kommer lämna in för bedömning. Projekt går ut på att från scratch skapa en ny hemsida i Express. Hemsidan är till för ett påhittat företag som heter *Finsko*. De tillverkar skor, och de vill kunna visa information om sitt företag och sina skomodeller på hemsidan.
+
+Följande information ska finnas om varje skomodell (du får själv hitta på information om dem):
+
+* Namn
+* Pris
+* Målgrupp (`Herrar`, `Damer` eller `Unisex`)
+* Typ (`Löparsko`, `Gångsko`, etc.)
+* Kort beskrivning av skomodellen
+* Lång beskrivning av skomodellen
+* Utgivningsdatum (t.ex. `2023-04-21`)
+* En bild (sparas i static/public-mappen, det är OK att använda samma bild för alla skomodeller)
+
+Hemsidan behöver åtminstone innehålla följande sidor:
+
+* En startsida med:
+	* En kort text som lite förklarar vad företaget gör
+	* Information om en utvald skomodell (du får själv välja vilken)
+* En omsida med mer utförlig information om vad företaget gör
+* En produktlistsida som visar alla skomodeller företaget har, dock bara väldigt lite information om varje skomodell
+* En produktsida som visar all information om den skomodell som användaren har klickat på
+
+Bilden nedan visar exempel på hur det grafiskt kan se ut. Du får designa det grafiska gränssnittet hur du vill, men använd en riktig layout av något slag.
+
+![Exempel på hur GUI:t kan se ut.](./finsko-gui.jpg)
+
+Varje `⊠` visar lite information om en skomodell med tillhörande bild, och att klicka på denna tar användaren till sidan med all information om skomodellen.
+
+Det är OK att använda en [Lorem Ipsum-generator](https://sv.lipsum.com/) för texten på sidan.
+
+De instruktioner som finns nedskrivet på Express-lektionerna borde räcka för att ni ska kunna implementera den här hemsidan. Ni får jobba på projektet även utanför lektionstid, och ni får be om hjälp av läraren på lektionstid. Dock kanske läraren är lite restriktiv med vad för hjälp han ger.
+
+
+::: tip Klar?
+Om du blir klar tidigt och vill ha en lite svårare utmaning så kan du försöka lägga till följande funktionalitet:
+
+* Sortering på produktlistsidan
+* Paginering på produktliststidan (t.ex. visa 3 skomodeller per sida)
+:::
