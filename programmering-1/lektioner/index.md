@@ -1244,6 +1244,7 @@ Efter varje avslutad omgång, visa det bästa resultatet för användaren, och o
   * Ni kommer få skriva och testköra kod på [.NET Fiddle](https://dotnetfiddle.net/IrwB9w) \
   **Notera**\
   På .NET Fiddle så måste man ha raden `using System;` allra först i sitt program
+  * På Google Classroom finns det ett [Testprov](https://classroom.google.com/c/Nzk5Mjk2NzUxMjc1/a/ODA5MzY2MDQzNzAw/details) ni kan göra nu om ni vill se hur det blir på provdagen
 * Övningar
 
 
