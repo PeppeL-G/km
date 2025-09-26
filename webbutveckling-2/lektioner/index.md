@@ -909,3 +909,9 @@ Vi fotsätter att arbeta på övningarna från föregående lektioner. De som vi
 
 ## Lektion 10. Catch-up
 Vi fotsätter att arbeta på övningarna från föregående lektioner. De som vill får plugga på instuderingsfrågorna. Men först en demonstration från en student som är klar med memory-spelet, och förklaring av hur koden fungerar.
+
+
+
+
+## Lektion 11. Catch-up & Prov
+Första halvan av lektionen får man arbeta med övningar från föregående lektioner eller instuderingsfrågorna. Andra halvan skriver vi provet. Man får gå när man skrivit klart provet.

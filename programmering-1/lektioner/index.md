@@ -1235,3 +1235,104 @@ Lägg till så att ditt multiplikationsprogram kommer ihåg användarens bästa 
 
 Efter varje avslutad omgång, visa det bästa resultatet för användaren, och om användaren precis fick det bästa resultatet, skriv ett litet grattismeddelande till användaren.
 :::
+
+
+
+
+## Lektion 11. Repetition
+* Provet kommer genomföras i Safe Exam Browser
+  * Ni kommer få skriva och testköra kod på [.NET Fiddle](https://dotnetfiddle.net/IrwB9w) \
+  **Notera**\
+  På .NET Fiddle så måste man ha raden `using System;` allra först i sitt program
+* Övningar
+
+
+::: danger Notera!
+De program du skapar i övningarna nedan ska producera exakt samma output som de tillhörande körexemplen, inklusive white space-tecken som mellanslag och radbyten.
+:::
+
+:::: exercise 11.1
+Skapa ett program som ber användaren skriva in sitt namn, och som sedan skriver ut en liten hälsning till användaren som innehåller det namnet.
+
+Körexempel:
+
+```
+Mata in ditt namn: Alice
+
+Hej Alice, vilket fint namn du har!
+```
+::::
+
+:::: exercise 11.2
+Skapa ett program som ber användaren skriva in namnet på staden de bor i. Om användaren skriver in `Jönköping` så ska du visa texten `En mycket fin stad!`, annars ska du visa texten `En okänd stad.`.
+
+Körexempel:
+
+```
+Skriv namnet på staden du bor i: Jönköping
+En mycket fin stad!
+```
+
+<br>
+
+```
+Skriv namnet på staden du bor i: Borås
+En okänd stad.
+```
+::::
+
+:::: exercise 11.3
+Skapa ett program som använder en `while`-loop för att skriva ut texten `Programmering är kul!` 5 gånger.
+
+Körexempel:
+
+```
+Programmering är kul!
+Programmering är kul!
+Programmering är kul!
+Programmering är kul!
+Programmering är kul!
+```
+::::
+
+:::: exercise 11.4
+Skapa ett program som ber användaren skriva in ett positivt heltal. Ditt program ska sedan skriva ut heltalen mellan 0 och det inmatade heltalet (varje på en egen rad).
+
+Körexempel:
+
+```
+Mata in ett positivt heltal: 3
+0
+1
+2
+3
+```
+::::
+
+:::: exercise 11.5
+Skapa ett program som ber användaren skriva in ett positivt heltal. Ditt program ska sedan skriva ut heltalen mellan 0 och det inmatade heltalet, varje med ett bindesstreck (`-`) emellan.
+
+Körexempel:
+
+```
+Mata in ett positivt heltal: 4
+0-1-2-3-4
+```
+::::
+
+:::: exercise 11.6
+**Den här övningen är nog jättesvår.**
+
+Skapa ett program som ber användaren skriva in ett positivt heltal. Ditt program ska sedan skriva ut heltalen mellan 0 och det inmatade heltalet i en kvadrat likt körexemplet nedan.
+
+Körexempel:
+
+```
+Mata in ett positivt heltal: 4
+01234
+1   3
+2   2
+3   1
+43210
+```
+::::

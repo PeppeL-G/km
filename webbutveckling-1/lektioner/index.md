@@ -101,7 +101,7 @@ Klicka runt bland de olika HTML-elementen som nämns på W3Schools sida [HTML El
 
 
 ## Lektion 2. HTML-grunder
-Dagen lektion innehåller följande:
+Peter är sjuk. Dagens lektion innehåller följande:
 
 * Nästlade element
 * Block-element VS inline-element
@@ -656,13 +656,74 @@ Läs på om olika CSS-egenskaper på [W3Schools](https://www.w3schools.com/css/)
 
 
 
-## Lektion 5. CSS Grid
+## Lektion 5. Repetition
 * Lösning på Övning 4.3
+* Öva på att använda HTML och CSS
+
+
+
+
+## Lektion 6. CSS Grid
+* Repetitionsövning
 * CSS Grid Intro
 	* `px` VS `em` VS `rem` VS `%` VS `fr`
 * Övningar
 
-::: exercise 5.1
+::: exercise 6.1
+Försök skriva HTML- och CSS-kod som visar en sida som ser ut så här:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ett brev</title>
+	<style>
+		
+		section p{
+			background-color: white;
+			margin: 5px 2em;
+			padding: 1em;
+			color: black;
+		}
+		
+		.first{
+			border-top-left-radius: 1.5em;
+			border-top-right-radius: 1.5em;
+		}
+		
+		.last{
+			border-bottom-left-radius: 1.5em;
+			border-bottom-right-radius: 1.5em;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<p>Här är ett brev jag har skrivit:</p>
+	
+	<section>
+		
+		<p class="first">Kära Alice,</p>
+		
+		<p>Hoppas allt är bra med dig! Jag tänkte skriva och berätta om min senaste resa till Göteborg. Staden var fantastisk, och jag hann besöka både museer och mysiga kaféer.</p>
+		
+		<p>Jag ser fram emot att träffas snart och berätta mer. Hör av dig när du har tid!</p>
+		
+		<p class="last">Hälsningar Kurt</p>
+		
+	</section>
+	
+	<p>Fint, va?</p>
+	
+</body>
+</html>
+```
+:::
+
+::: exercise 6.2
 Läs på lite om grunderna i CSS Grid. Det finns flera olika sidor som lär ut det på olika sätt:
 
 * [grid.malven.co](https://grid.malven.co/)
@@ -672,7 +733,7 @@ Läs på lite om grunderna i CSS Grid. Det finns flera olika sidor som lär ut d
 Använd den/de sidor som du föredrar.
 :::
 
-::: exercise 5.2
+::: exercise 6.3
 Försök att återskapa följande layout i CSS Grid:
 
 ```html result no-code
@@ -748,7 +809,7 @@ Försök att återskapa följande layout i CSS Grid:
 ```
 :::
 
-::: exercise 5.3
+::: exercise 6.4
 Försök att återskapa följande layout i CSS Grid:
 
 ```html result no-code
@@ -828,7 +889,7 @@ Försök att återskapa följande layout i CSS Grid:
 ```
 :::
 
-::: exercise 5.4
+::: exercise 6.5
 Försök att återskapa följande layout i CSS Grid:
 
 ```html result no-code
@@ -916,7 +977,7 @@ Försök att återskapa följande layout i CSS Grid:
 ```
 :::
 
-::: exercise 5.5
+::: exercise 6.6
 Försök att återskapa följande månadsvy i HTML och CSS Grid:
 
 ```html result no-code
@@ -1025,6 +1086,6 @@ Försök att återskapa följande månadsvy i HTML och CSS Grid:
 ```
 :::
 
-::: exercise 5.6
+::: exercise 6.7
 Skapa en egen sida med en layout (välj själv vilken) som du implementerar med CSS Grid. Försök att använda HTML semantiskt korrekt, och gör sidan så fin du bara kan.
 :::

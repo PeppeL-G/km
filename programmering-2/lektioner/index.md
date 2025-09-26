@@ -495,10 +495,10 @@ class Person{
 En klass innerhåller bara variabelnamn och dess datatyper; den innehåller inte några värden på variablerna. Klassen är endast en beskrivning av ett objekt som kan innehålla värdena på variablerna. För att skapa sådana nya objekt (även kallade *instanser*) så används `new`-operatorn:
 
 ```cs
-Person teacher = new Person{ age=50, name="Hagrid"};
-Person student1 = new Person{ age=14, name="Harry"};
-Person student2 = new Person{ age=14, name="Ron"};
-Person student3 = new Person{ age=14, name="Hermione"};
+Person teacher = new Person{age=50, name="Hagrid"};
+Person student1 = new Person{age=14, name="Harry"};
+Person student2 = new Person{age=14, name="Ron"};
+Person student3 = new Person{age=14, name="Hermione"};
 
 // Här har vi alltså skapat 4 olika Person-objekt.
 
@@ -539,10 +539,10 @@ class Person{
 Metoderna kan sedan anropas på objekten.
 
 ```cs
-Person teacher = new Person{ age=50, name="Hagrid"};
-Person student1 = new Person{ age=14, name="Harry"};
-Person student2 = new Person{ age=14, name="Ron"};
-Person student3 = new Person{ age=14, name="Hermione"};
+Person teacher = new Person{age=50, name="Hagrid"};
+Person student1 = new Person{age=14, name="Harry"};
+Person student2 = new Person{age=14, name="Ron"};
+Person student3 = new Person{age=14, name="Hermione"};
 
 teacher.WriteToConsole();
 student2.WriteToConsole();
@@ -1302,6 +1302,58 @@ Först en rättelse angående namnkonvention för `private`, sedan en genomgång
 
 ## Lektion 10. Klasser (tärningsövningar)
 Först en genomgång med exempellösningar för de som vill. Efter det fortsätter vi att arbeta med tärningsövningarna från föregående lektion. De SU-elever som vill får arbeta med sina spelprojekt.
+
+
+
+
+## Lektion 11. Catch-up
+* Bestämma provdatum (OOP, klasser, nästa fredag?)
+* Lösa uppgifter tillsammans?
+* Övningar från föregående lektioner
+
+<table style="text-align: center;">
+<thead>
+  <tr>
+    <th style="text-align: center;">Vecka</th>
+    <th style="text-align: center;">Tvåor</th>
+    <th style="text-align: center;">Treor</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>39</td>
+    <td colspan="2">Denna veckan</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>Eng 6 (Business Report)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>41</td>
+    <td>Fy1: Kinematik och mekanik</td>
+    <td>Webb2 AW: deadline miniprojekt</td>
+  </tr>
+  <tr>
+    <td>42</td>
+    <td></td>
+    <td>MA5: Bevis och talteori</td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td>Ma3c: Algebra och funktioner</td>
+    <td>
+			Religion: Flervalstest (abrahamitiska religionerna)<br>
+			Ma4: Trigonometri (fre)
+		</td>
+  </tr>
+  <tr>
+    <td>44</td>
+    <td colspan="2">Höstlov</td>
+  </tr>
+</tbody>
+</table>
+
 
 
 <!--
