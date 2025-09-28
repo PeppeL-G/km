@@ -585,3 +585,9 @@ Om du blir klar tidigt och vill ha en lite svårare utmaning så kan du försök
 * Sortering på produktlistsidan
 * Paginering på produktliststidan (t.ex. visa 3 skomodeller per sida)
 :::
+
+
+
+
+## Lektion 11. Miniprojekt
+Vi fortsätter att arbeta på miniprojektet.

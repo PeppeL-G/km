@@ -1356,6 +1356,15 @@ Först en genomgång med exempellösningar för de som vill. Efter det fortsätt
 
 
 
+
+## Provinformation
+På fredag tredje oktober har vi ett prov som täcker in grunderna i objektorienterad programmering (det som övningarna hittills i kursen har handlat om, främst skapandet av klasser och objekt). Listor kan behöva användas för att lösa vissa uppgifter.
+
+Provet kommer ni få skriva i Safe Exam Browser. Provet kommer finnas som en Google Classroom-inlämningsuppgift med ett Google-dokument med frågor, och ni skriver era svar direkt i Google-dokumentet. Ni kommer kunna använda [dotnetfiddle.net](https://dotnetfiddle.net/) för att skriva och köra C#-kod, vilket ni sedan får kopiera till Google-dokumentet som svar.
+
+
+
+
 <!--
 
 

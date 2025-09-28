@@ -915,3 +915,73 @@ Vi fotsätter att arbeta på övningarna från föregående lektioner. De som vi
 
 ## Lektion 11. Catch-up & Prov
 Första halvan av lektionen får man arbeta med övningar från föregående lektioner eller instuderingsfrågorna. Andra halvan skriver vi provet. Man får gå när man skrivit klart provet.
+
+
+
+
+## Lektion 12. `classList`
+Först bestämmer vi ett datum för ett prov om DOM (kodskrivande frågor lik de övningar vi har haft hittills i kursen). Sedan fortsätter vi att arbeta med DOM, närmare bestämt `htmlElement.classList`.
+
+::: tip Intro to htmlElement.classList
+Ofta kan man förbättra användarupplevelsen på en hemsida genom att visa/dölja element när användaren klickar någonstans. Det åstadkommer man lättast genom att skapa en CSS-regel i stil med:
+
+```css
+.hide{
+	display: none;
+}
+```
+
+Genom att lägga till `hide`-klassen på ett element så kommer det att döljas, och genom att ta bort `hide`-klassen från elementet så kommer det att visas igen.
+
+DOM erbjuder ett enkelt sätt att arbeta med ett HTML-elements klasser via [htmlElement.classList](https://www.w3schools.com/jsref/prop_element_classlist.asp). De mest använda metoderna som den innehåller är:
+
+* ``htmlElement.classList.add(`aClass`)``
+* ``htmlElement.classList.remove(`aClass`)``
+* ``htmlElement.classList.contains(`aClass`)``
+* ``htmlElement.classList.toggle(`aClass`)``
+:::
+
+::: exercise 12.1
+Här är HTML-koden för en FAQ:
+
+```html result
+<dl>
+	
+	<dt>Vad heter du?</dt>
+	<dd>Alice</dd>
+	
+	<dt>Hur gammal är du?</dt>
+	<dd>27</dd>
+	
+	<dt>Vart bor du?</dt>
+	<dd>Aspen</dd>
+	
+	<dt>Vilken är din favoriträtt?</dt>
+	<dd>Pizza</dd>
+	
+	<dt>Vad gillar du att göra på fritiden?</dt>
+	<dd>Titta på film</dd>
+	
+</dl>
+```
+
+Skapa en ny HTML-fil med den här HTML-koden. Skriv sedan client-side JS-kod som döljer alla `<dd>`-element så snart sidan har laddats in. Använd en CSS-regel med en klass och client-side JS-kod som lägger till den klassen på alla `<dd>`-element för att uppnå detta.
+:::
+
+::: exercise 12.2
+Lägg till client-side JS-kod som lägger till ett `<button>`-element i slutet i varje `<dt>`-element med texten `Visa`. När användaren klickar på knappen så ska det nästkommande `<dd>`-elementet visas. Uppnå detta genom att ta bort klassen från `<dd>`-elementet du la till i föregående övning. Byt även ut texten i knappen från `Visa` till `Dölj`. När man klickar på knappen en andra gång så ska det nästkommande `<dd>`-elementet döljas igen, och så vidare.
+
+I denna övning har du troligtvis användning för [htmlElement.nextElementSibling](https://www.w3schools.com/jsref/prop_element_nextelementsibling.asp).
+:::
+
+::: exercise 12.3
+Lägg till knappar i början av HTML-dokumentet med texten `Visa alla svar` respektive `Dölj alla svar`. Gissa vad dem ska göra? ^^ Försök sedan implementera deras funktionalitet.
+:::
+
+::: exercise 12.4
+En HTML-sida kan faktiskt innehålla HTML-koden för flera olika sidor (startsidan, kontakt-sidan, om-sidan, etc.), och så använder man den här tekniken för att bara visa en av dem åt gången.
+
+Försök att implementera en HTML-sida som fungerar på det viset.
+
+Webbläsarens standardbeteende när man klickar på en länk är ju att ladda in sidan som länken leder till. Vill man inte ha det beteendet så kan man i sin `click`-lyssnare på länkar använda sig av [event.preventDefault()](https://www.w3schools.com/jsref/event_preventdefault.asp).
+:::

@@ -290,6 +290,68 @@ Ett förslag på ett dataset du kan undersöka är [Animal Bites](https://www.ka
 
 
 
+
+## Lektion 9. Träna & Utvärdera modeller
+Dagens lektion handlar om att träna en KNN-modell på ett klassificeringsproblem, och sedan utvärdera hur bra modellen är. Ni får lära er hur en gör detta i KNIME genom att göra övningarna nedan. Svaren på övningarna ska ni skriva ner och lämna in på Google Classroom i inlämningsuppgiften [KNN i KNIME](https://classroom.google.com/c/MjM0NTUzOTYxMTVa/a/ODA5Nzk4MDYxMjkw/details).
+
+::: exercise 9.1
+<ShowDataset
+	datasetName="iris"
+/>
+
+Skapa ett nytt workflow i KNIME där du importerar Iris-datasetet.
+
+Använd sedan noden som heter *K Nearest Neighbours*. Den har två input:
+
+* Den första inputen är en datamängd modellen ska tränas med (*training data*).
+* Den andra inputen är en datamängd modellen ska gissa på (*test data*).
+
+I denna övning, använd hela iris-datasetet som training data, och hela iris-datasetet som test data. Se sedan till att modellen:
+
+1. Predikterar attributet som heter `Species`.
+2. Använder sig av 1 Nearest Neighbour-algoritmen.
+
+Outputen från modellen kommer nu vara den test data du gav den, men instanserna i test datan kommer nu innehålla en extra kolumn som heter `Class [kNN]`. Det innehåller det som modellen klassificerade respektive instans som (predikteringen).
+
+Titta på outputen och försök avgöra ifall modellen fungerar bra. Besvara sedan följande frågor:
+
+1. Hur kan du se ifall en prediktering är korrekt?
+2. Hur många predikteringar är korrekta med K=1?
+3. Är ditt resultat ett förväntat resultat när du tränar en 1 Nearest Neighbour-modell och testar den med samma data? Tänkt igenom hur modellen faktiskt fungerar för att besvara den här frågan.
+4. Hur påverkas resultatet när du ändrar K-värdet?
+:::
+
+
+::: exercise 9.2
+Vanligtvis vill en inte använda samma instanser i träningsdatan och testdatan. Om en gör det så kommer ju varje instans som testas ha sig själv som närmsta granne i och med att den även är med i träningsdatan!
+
+Så att utvärdera hur bra modellen kommer fungera på okända instanser (på instanser när man använder den på riktigt i framtiden) borde inte göras med instanser som den har tränats på. Använd därför noden med namnet `Table Partitioner` för att dela upp Iris-datasetet i två delset:
+
+* Ett dataset som används för träning.
+* Ett dataset som används för utvärdering.
+
+Men hur många instanser borde användas för träning, och hur många instanser borde användas för utvärdering? Vi vill:
+
+1. Använda många instanser till träning, för då blir modellen bättre. MEN, då får vi få instanser kvar till utvärdering, så vi vet inte hur bra utvärderingen reflekterar ett faktiskt resultat.
+2. Använda många instanser till utvärdering, för desto fler isntanser vi utvärderar med, desto mer säkra blir vi att resultatet motsvarar modellens faktiska förmåga. MEN, då får vi får instanser kvar till träning, så modellen kommer inte att bli så bra.
+
+Så det finns inget perfekt svar, utan det är en trade-off. Låt oss testa vad för resultat vi får med lite olika inställningar på:
+
+* K-värdet i modellen.
+* `Realtive Size`-värdet i Table Partitioner.
+
+Fyll i tabellen som finns på Google-dokumentet. Besvara sedan följande frågor:
+
+1. Vad kan du säga om resultatet?
+:::
+
+::: exercise 9.3
+Ladda in ett eget dataset i KNIME, och försök lösa ett klassificeringsproblem av något slag. Du kan t.ex. använda datasetet [Animal Bites](https://www.kaggle.com/datasets/rtatman/animal-bites), och försöka skapa en modell som kan prediktera gender för ett bett (`FEMALE`/`MALE`), men du får använda vilket dataset du vill. På [kaggle.com](https://www.kaggle.com/datasets) hittar en många olika dataset man kan ladda ner efter att man har skapat och loggat in på ett konto.
+
+Redovisa sedan vilket dataset du valde, vad du försökt prediktera, och hur bra det gick i Google-dokumentet. Tänk själv igenom vad du bör skriva och hur du borde presentera det för att det ska bli lättförståeligt för läsaren.
+:::
+
+
 <!--
 
 
