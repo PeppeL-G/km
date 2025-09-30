@@ -301,6 +301,8 @@ Dagens lektion handlar om att träna en KNN-modell på ett klassificeringsproble
 
 Skapa ett nytt workflow i KNIME där du importerar Iris-datasetet.
 
+Använd sedan noden som heter *Column Filter* för att ta bort `Id`-kolumnen.
+
 Använd sedan noden som heter *K Nearest Neighbours*. Den har två input:
 
 * Den första inputen är en datamängd modellen ska tränas med (*training data*).
@@ -350,6 +352,16 @@ Ladda in ett eget dataset i KNIME, och försök lösa ett klassificeringsproblem
 
 Redovisa sedan vilket dataset du valde, vad du försökt prediktera, och hur bra det gick i Google-dokumentet. Tänk själv igenom vad du bör skriva och hur du borde presentera det för att det ska bli lättförståeligt för läsaren.
 :::
+
+
+
+## Lektion 10. Catch-up
+Vi fortsätter arbeta med övningsuppgifterna från föregående lektion. De som arbetar på Övning 9.3 kan fortsätta med det, och kan försöka förbearbeta datan så att maskininlärningsmodellen lyckats göra bättre predikteringar. Man kan t.ex. testa att:
+
+* Ta bort attribut en inte tror bidrar till en bättre lösning.
+* Ta bort rader med missing values, så modellen bara tränas på instanser där vi har all data.
+* Skapa nya kolumner utifrån existerande kolumner (om en kolumn t.ex. innehåller en människas längd, och en annan innehåller en människas vikt, så kan dessa användas för att skapa en [BMI](https://sv.wikipedia.org/wiki/BMI_(kroppsmasseindex))-kolumn, vilket modellen kanske finner mer användbart (beroende på vad en försöker prediktera)).
+* Etc.
 
 
 <!--

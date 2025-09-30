@@ -252,3 +252,72 @@ Efter detta val så ska användaren komma til en sida där hen får skriva in sv
 
 Efter att användaren klarat av sista glosan så ska användaren kunna ta sig tillbaka till den första sidan igen.
 :::
+
+
+
+
+## Lektion 10. `.keepIf()`
+* `.keepIf()`
+* Boolska värden (`true`/`false`)
+* Matematiska jämförelseoperatorer (`<`, `==`, `>`, `<=`, `>=`, `!=`)
+* Logiska operationer (`&&` (och), `||` (eller))
+* Strängjämförelser (`==`, `!=`)
+* Övningar
+
+Med konfigurationsmetoden `.keepIf()` så kan vi behålla GUI-komponenter endast när ett visst villkor stämmer. 
+
+::: example
+[Visa i editor.](https://bagawork.com/editor#eNq1U+1Kw0AQfJVzf9QWQkkjVQl+EEWkgiIqaLGFnsnGFtPLcXdBS5rH8Ul8MS9Njb3SWD/wR+CS3ZndmZukQDkHNwU/DhBc8CMqJTmfeJwTfFHIAkn0Oe2xnsofXyBVeK2oUJf0EeuNoqIEqkQwUhbyr1kByiCzIIyjAIUE9z6FUQBuywJGx/nEGQQsiMNQoroD1/44d/U561vANZ+BLMg6xYuxeDm/XD5/KbcfTzxd2ict29RzmoyWlVzFz7LpD0dRIJDVi1JP3Wja5hMi74R13pzT5XyNptKl+uCMPpIHHL69RpEcNKw1OGcljoyYwjXgvQrsGtjBH0ZuVOn8JviXC7d2Sa1GPnVv7/zeM5tMp2SBuv0NPQ0jyha8gOvYOqMTcLfsMp83OOaRTpKRUyOannzqhF6QRF/k84dpvObUR1NyocYTSCZxQmb/CVFDyrSNhwv2mMjjOErGbMWA5caeOkqUitl8zEW8QLmmt4vyi+bVZmdWYaWzZOWJvh+hr/D/jbwdUrUpcy8F0fzVFhpaW/ZCn1lpV1WcSozTrpi6ZFY/ewcDRBBU)
+
+```js
+class MyPage extends Page{
+	
+	myAge = 10
+	
+	createGui(){
+		return Rows.children(
+			Text.keepIf(p.myAge == 10).text(`Jag behålls.`),
+			Text.keepIf(p.myAge == 20).text(`Jag behålls inte`),
+			Text.keepIf(p.myAge < 20).text(`Jag behålls`),
+			Text.keepIf(p.myAge > 20).text(`Jag behålls inte`),
+			Text.keepIf(p.myAge != 10).text(`Jag behålls inte`),
+			Text.keepIf(p.myAge != 20).text(`Jag behålls`),
+			Text.keepIf(p.myAge > 18 && p.myAge < 67).text(`Jag behålls inte`),
+			Text.keepIf(p.myAge < 0 || p.myAge < 150).text(`Jag behålls inte`),
+		)
+	}
+	
+}
+```
+:::
+
+::: exercise 10.1
+Skapa en sida som visar ett nummer som finns i en Page-variabel som börjar på 0. Lägg sedan till en knapp användaren kan klicka på för att öka numret med 1.
+
+När numret är:
+
+* 1 så ska texten `Vi har börjat!` visas under numret.
+* 10 så ska texten `Det börjar bli högt!` visas under numret.
+:::
+
+::: exercise 10.2
+Den här övningen handlar om att implementera login-logiken för en liten app med ett konto. Du får själv bestämma vad det rätta användarnamnet och lösenordet för kontot är.
+
+Skapa en sida där användaren kan mata in ett användarnamn och lösenord. När användaren klickar på `Logga in`-knappen där så ska användaren komma till nästa sida. På den här nästa sidan ska du visa:
+
+* Texten `Inloggad`, ifall det inmatade användarnamnet och lösenordet är korrekta.
+* Texten `Fel användarnamn/lösenord` och en tillbaka-knapp, ifall det inmatade användarnamnet och lösenordet är fel.
+:::
+
+::: exercise 10.3
+Skapa en sida med två `EnterNumber`-komponenter. Numren som användaren matar in i dessa ska sparas i två Page-variabler. Det ska även finnas fyra knappar på sidan, en för varje matematisk operation:
+
+* \+
+* \-
+* \*
+* /
+
+Den knapp användaren klickar på ska bestämma ifall summan, differensen, produkten eller kvoten av de två inmatade numren ska visas på sidan. För detta kommer du behöva en tredje Page-variabel som håller koll på vilken matematisk operation användaren har valt.
+
+Om kvoten är vald och nämnaren är 0 så ska ett felmeddelande visas.
+:::

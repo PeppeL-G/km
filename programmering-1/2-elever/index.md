@@ -7,6 +7,7 @@ De elever som läser den här kursen och som går i årskurs 2 och som redan kan
 * Ett program som kommer ihåg och visar information om de personer man känner och ger till programmet.
 * Etc.
 
+## Raylib
 Vill ni använda er av enkel 2D-grafik så kan ni använda biblioteket som heter `raylib`. För att använda raylib i ett C#-projekt:
 
 1. Öppna din projektmapp i Visual Studio Code.
@@ -41,7 +42,7 @@ Raylib.CloseWindow();
 7. Lär dig raylib genom att läsa deras [hemsida](https://www.raylib.com/index.html). I ditt spel, försökt att främst använda cirklar (`DrawCircle()`), rektanglar `DrawRectangle()`, och sånt, så att grafikdelen inte blir för komplicerad.
 
 
-## Kom igång-övningar
+## Raylib-övningar
 ::: exercise 1
 Studera koden nedan för att lära dig grunderna i Raylib. Om du vill använda Raylib för att bygga ett spel så är det enklast att hålla sig till cirklar och rektanglar (blir enklast att implementera spellogiken då).
 
@@ -308,4 +309,60 @@ Raylib.CloseWindow();
 Skapa ett litet spel med en cirkel eller en fyrkant som studsar runt i fönstret. Spelet går ut på att användaren ska försöka klicka på figuren så många gånger som möjligt. Längst ner till höger ska det skrivas ut hur många gånger användaren har lyckats klicka på figuren hittills.
 
 För att göra det lite svårare så ska figuren få en ny slumpad position varje gång användaren har lyckats klicka på den, och figuren ska också förflytta sig lite snabbare varje gång användaren lyckats klicka på den.
+:::
+
+
+
+## JSON REST API
+Om du vill så kan ditt projekt använda sig av ett REST API på nätet som returnerar data i JSON-format. Om du vill göra detta så får själv hitta ett lämpligt REST API att använda. På detta vis kan du bygga en app som visar aktuell väderinformation, aktuella valutakurser, etc.
+
+Som exempel här används ett REST API som heter [JSONPlaceholder](https://jsonplaceholder.typicode.com/). Det är ett REST API som innehåller dummy-data och används endast till exempel/testing.
+
+1. Hitta lämplig REST API att använda. I detta exempel JSONPlaceholder.
+2. Hitta hur data-objekten REST API:t skickar tillbaka ser ut. I detta exempel kan man klicka på [Resources-länkarna](https://jsonplaceholder.typicode.com/#:~:text=Resources) för att se det.
+3. Skapa C#-klasser för respektive data-objekt. Med Post-objekt som exempel:
+	```cs
+	public class Post
+	{
+		public int UserId { get; set; }
+		public int Id { get; set; }
+		public string Title { get; set; }
+		public string Body { get; set; }
+	}
+	```
+	Lägg dessa klasser i slutet i din C#-fil, alternativt i egna filer med samma filnamn som klassen (med `.cs` i slutet).
+4. Hitta vilka requests du kan skicka tillREST API:t för att hämta data. I detta exempel alla GET requests på [Routes-länkarna](https://jsonplaceholder.typicode.com/#:~:text=Routes).
+5. I toppen av din C#-fil, importera namnrymden `System.Net.Http.Json` med `using System.Net.Http.Json;`, och använd sedan `HttpClient` för att hämta data, t.ex.:
+	```cs
+	HttpClient http = new HttpClient();
+	Post post = await http.GetFromJsonAsync<Post>("https://jsonplaceholder.typicode.com/posts/1");
+	Console.WriteLine($"{post.Id}: {post.Title}");
+	```
+
+::: example
+```cs
+using System.Net.Http.Json;
+
+HttpClient http = new HttpClient();
+
+// Hämta posten med id 1.
+Post post = await http.GetFromJsonAsync<Post>("https://jsonplaceholder.typicode.com/posts/1");
+Console.WriteLine($"{post.Id}: {post.Title}");
+
+// Hämta alla poster.
+List<Post> posts = await http.GetFromJsonAsync<List<Post>>("https://jsonplaceholder.typicode.com/posts");
+
+foreach (Post p in posts)
+{
+	Console.WriteLine($"{p.Id}: {p.Title}");
+}
+
+public class Post
+{
+	public int UserId { get; set; }
+	public int Id { get; set; }
+	public string Title { get; set; }
+	public string Body { get; set; }
+}
+```
 :::
