@@ -590,4 +590,10 @@ Om du blir klar tidigt och vill ha en lite svårare utmaning så kan du försök
 
 
 ## Lektion 11. Miniprojekt
-Vi fortsätter att arbeta på miniprojektet.
+Vi fortsätter att arbeta på miniprojektet (lektion 2 av 4).
+
+
+
+
+## Lektion 12. Miniprojekt
+Vi fortsätter att arbeta på miniprojektet (lektion 3 av 4).
