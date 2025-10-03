@@ -666,10 +666,11 @@ Läs på om olika CSS-egenskaper på [W3Schools](https://www.w3schools.com/css/)
 ## Lektion 6. CSS Grid
 * Repetitionsövning
 * CSS Grid Intro
-	* `px` VS `em` VS `rem` VS `%` VS `fr`
 * Övningar
 
 ::: exercise 6.1
+Repetitionsövning.
+
 Försök skriva HTML- och CSS-kod som visar en sida som ser ut så här:
 
 ```html result no-code
@@ -728,7 +729,7 @@ Läs på lite om grunderna i CSS Grid. Det finns flera olika sidor som lär ut d
 
 * [grid.malven.co](https://grid.malven.co/)
 * [Grid Garden](https://cssgridgarden.com)
-* [LEARN CSS GRID](https://learncssgrid.com/)
+* [Learn CSS Grid](https://learncssgrid.com/)
 
 Använd den/de sidor som du föredrar.
 :::
@@ -1088,4 +1089,147 @@ Försök att återskapa följande månadsvy i HTML och CSS Grid:
 
 ::: exercise 6.7
 Skapa en egen sida med en layout (välj själv vilken) som du implementerar med CSS Grid. Försök att använda HTML semantiskt korrekt, och gör sidan så fin du bara kan.
+:::
+
+
+
+
+## Lektion 7. CSS Grid
+* Repetitionsövning
+* CSS Grid-repetition
+* `px` VS `em` VS `rem` VS `%` VS `fr`
+* Övningar
+
+::: exercise 7.1
+Repetitionsövning.
+
+Försök skriva HTML- och CSS-kod som visar en sida som ser ut som den nedan. Du behöver inte använda CSS-grid.
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>En chatt</title>
+	<style>
+		
+		.messages{
+			border-radius: 1em;
+			background-color: pink;
+			padding: 1em;
+		}
+		
+		.message{
+			margin: 1em 0;
+			border-radius: 1em;
+			padding: 1em;
+		}
+		
+		.received{
+			background-color: gray;
+			margin-right: 10em;
+		}
+		
+		.sent{
+			background-color: aqua;
+			margin-left: 10em;
+			text-align: right;
+		}
+		
+		.name{
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		
+		.text{
+			margin: 0.5em 0;
+		}
+		
+		.time{
+			font-style: italic;
+		}
+		
+		.received .time{
+			text-align: right;
+		}
+		
+		.sent .time{
+			text-align: left;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div class="messages">
+		
+		<div class="message received">
+			<div class="name">Alice</div>
+			<div class="text">Hej, hur mår du?</div>
+			<div class="time">Mottaget 13:24</div>
+		</div>
+		
+		<div class="message sent">
+			<div class="name">Bob</div>
+			<div class="text">Hallå! Jo, tack, jag mår bra.</div>
+			<div class="time">Skickat 13:24</div>
+		</div>
+		
+		<div class="message sent">
+			<div class="name">Bob</div>
+			<div class="text">Hur mår du?</div>
+			<div class="time">Skickat 13:25</div>
+		</div>
+		
+		<div class="message received">
+			<div class="name">Alice</div>
+			<div class="text">Jo, jag mår också bra. Vill du hänga med och spela krocket sen? Vi är ett gäng som ska göra det, men vi behöver en till.</div>
+			<div class="time">Mottaget 13:25</div>
+		</div>
+		
+		<div class="message sent">
+			<div class="name">Bob</div>
+			<div class="text">När?</div>
+			<div class="time">Skickat 13:25</div>
+		</div>
+		
+		<div class="message received">
+			<div class="name">Alice</div>
+			<div class="text">Typ klockan 3.</div>
+			<div class="time">Mottaget 13:26</div>
+		</div>
+		
+		<div class="message sent">
+			<div class="name">Bob</div>
+			<div class="text">Gärna, vi ses då! Jag tar med mig korv och korvbröd, så kan vi grilla lite också.</div>
+			<div class="time">Skickat 13:26</div>
+		</div>
+		
+	</div>
+	
+</body>
+</html>
+```
+:::
+
+::: exercise 7.2
+Om du tycker det är roligt så får du gärna träna på att använda CSS Grid genom spelet [Grid Attack](https://codingfantasy.com/games/css-grid-attack).
+:::
+
+::: exercise 7.3
+Försök att skapa en webbsida som har en layout i stil med bilden nedan.
+
+![En bild på en layout.](https://miro.medium.com/0*og90_m1gsg9iOY7i.png)
+:::
+
+::: exercise 7.4
+Försök att skapa en webbsida som har en layout i stil med bilden nedan.
+
+![En bild på en layout.](https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/8d374c1e-228a-47e8-be5b-10fa1f4d40c8/mrh-css-grid-fig-01-large-opt.png)
+:::
+
+
+::: exercise 7.5
+Försök att skriva HTML och CSS som återskapar sidan [vuepress.vuejs.org](https://vuepress.vuejs.org/) (ni behöver inte bry er om skrollningseffekter och element som visas/döljs/ändras när man för musen över dem).
 :::

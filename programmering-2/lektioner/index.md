@@ -1365,6 +1365,10 @@ Provet kommer ni få skriva i Safe Exam Browser. Provet kommer finnas som en Goo
 
 
 
+# Lektion 12. Prov 1
+Prov enligt instruktionerna som finns på inlämningsuppgiften [EXAM: Prov Klasser & Objekt](https://classroom.google.com/c/Nzk5Mjk2ODczNjE2/a/MjM1NDMzNzgyOTBa/details) på Google Classroom.
+
+
 <!--
 
 

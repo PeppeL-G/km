@@ -781,7 +781,7 @@ När du är klar, försök lägg till mer funktionalitet, som t.ex.:
 
 
 
-## Instuderingsfrågor till prov
+## Instuderingsfrågor till prov 1
 Här är instuderingsfrågor till provet fredagen 26 september. Ni kommer inte skriva någon kod på provet.
 
 Kodexempel som kan vara bra att ha som referens när man pluggar in instuderingsfrågorna:
@@ -985,3 +985,57 @@ Försök att implementera en HTML-sida som fungerar på det viset.
 
 Webbläsarens standardbeteende när man klickar på en länk är ju att ladda in sidan som länken leder till. Vill man inte ha det beteendet så kan man i sin `click`-lyssnare på länkar använda sig av [event.preventDefault()](https://www.w3schools.com/jsref/event_preventdefault.asp).
 :::
+
+
+
+
+## Prov 2-information
+Prov 2 äger rum på fredag nästa vecka (vecka 41). Det kommer testa er förmåga att använda de grunder i DOM vi har gått igenom hittills i kursen. Provet kommer ni skriva i Safe Exam Browser där ni får tillgång till sidan [JSFiddle](https://jsfiddle.net/). Där får ni skriva koden lite annorlunda mot hur ni skrivit den hittills:
+
+* I HTML-delen skriver ni enast koden som kommer finnas i `<body>`-elementet.
+* I JS-delen skriver ni JS-koden.
+
+Uppgifterna på provet kommer vara lik de övningar vi har gått igenom hittills i kursen, dvs. använandet av grundläggande DOM-funktioner.
+
+
+
+## Lektion 13. Modal
+De som vill får arbeta med övningar från tidigare lektioner. Annars kommer här en lite större övning för de som vill ha en utmaning.
+
+::: exercise 13.1
+Skapa en HTML-sida där användaren kan klicka på en knapp (eller dylikt) för att visa en modal på sidan, dvs. ett större HTML-element med innehåll som visas framför allt annat på sidan. Att få ett HTML-element att visa sig framför alla andra HTML-element är troligtvis något ni lärde er i Webbutveckling 1, annars får ni gärna själva försöka söka er fram till en lösning på nätet.
+
+Den här övningen går att lösa på lite olika sätt. Tänk gärna igenom din lösning för att försöka få fram en bra en. Och styla gärna modalen så att den ser snygg ut.
+:::
+
+
+
+<!--
+## Lektion X. Dark mode & `localStorage`
+De som vill arbeta med övningar från tidigare lektioner får göra det. Annars kommer här några övningar som lär er att lägga till dark mode på en sida med client-side JS.
+
+::: exercise X.1
+Skapa en enkel HTML-sida som innehåller lite text, listor, tabeller och diverse av olika slag. Använd en ljus (t.ex. vit) bakgrund och mörk (t.ex. svart) text. Användaren kan nu se hemsidan bra i en ljus miljö, t.ex. i dagsljus. Men om användaren är i en mörk miljö, t.ex. i ett beckmörkt rum, så blir nog skärmen alldeles för ljus. Därför kan det vara bra om användaren kan få klicka på en knapp på sidan för att göra den mörkare (t.ex. ändra så att sidan har en mörk bakgrund med ljus text).
+
+Det kan enkelt göras genom att man lägger till en klass på `<body>`-elementet när man klickar på knappen, och sedan skriver en CSS-regel som stylar bakgrundsfärgen och textfärgen annorlunda om denna klass finns på `<body>`-elementet.
+
+Din uppgift är att använda detta för att göra det möjligt för användaren att växla mellan ett bright och dark mode på hemsidan.
+:::
+
+::: exercise X.2
+Den där klassen du lägger till på `<body>`-elementet försvinner dock mellan sidladdningar. Men, i cclient-side JS så kan vi komma ihåg information mellan sidladdningar genom att spara ner det i en speciellt objekt som finns i variabeln `localStorage`. Om vi t.ex. använder:
+
+```js
+localStorage.age = 20
+```
+
+Så kan vi senare använda `localStorage.age` för att läsa ut värdet 20, och detta fungerar även när användaren stänger ner sidan och kommer tillbaka en timme senare.
+
+Använd detta för att få din sida att alltid visa rätt bright/dark mode även när sidan laddas in.
+:::
+
+::: exercise X.3
+Om du inte är klar med alla övningar från föregående lektioner så får du gärna arbeta med dem.
+:::
+
+-->

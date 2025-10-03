@@ -1337,3 +1337,9 @@ Mata in ett positivt heltal: 4
 43210
 ```
 ::::
+
+
+
+
+# Lektion 12. Prov 1
+Prov enligt instruktionerna som finns på inlämningsuppgiften [EXAM: Prov Programmeringsgrunder Del 1](https://classroom.google.com/c/Nzk5Mjk2NzUxMjc1/a/MjM1NDMzNTY4ODBa/details) på Google Classroom.
