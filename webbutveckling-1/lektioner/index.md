@@ -1103,9 +1103,9 @@ Skapa en egen sida med en layout (välj själv vilken) som du implementerar med 
 ::: exercise 7.1
 Repetitionsövning.
 
-Försök skriva HTML- och CSS-kod som visar en sida som ser ut som den nedan. Du behöver inte använda CSS-grid.
+Försök skriva HTML- och CSS-kod som visar en sida som ser ut som den nedan. Du behöver inte använda CSS-grid (lösningen visas nu).
 
-```html result no-code
+```html result
 <!DOCTYPE html>
 <html lang="en">
 <head>
