@@ -990,10 +990,17 @@ Webbläsarens standardbeteende när man klickar på en länk är ju att ladda in
 
 
 ## Prov 2-information
-Prov 2 äger rum på fredag nästa vecka (vecka 41). Det kommer testa er förmåga att använda de grunder i DOM vi har gått igenom hittills i kursen. Provet kommer ni skriva i Safe Exam Browser där ni får tillgång till sidan [JSFiddle](https://jsfiddle.net/). Där får ni skriva koden lite annorlunda mot hur ni skrivit den hittills:
+Prov 2 äger rum på fredag nästa vecka (vecka 41). Det kommer testa er förmåga att använda de grunder i DOM vi har gått igenom hittills i kursen. ~~Provet kommer ni skriva i Safe Exam Browser där ni får tillgång till sidan [JSFiddle](https://jsfiddle.net/). Där får ni skriva koden lite annorlunda mot hur ni skrivit den hittills:.~~
 
-* I HTML-delen skriver ni enast koden som kommer finnas i `<body>`-elementet.
-* I JS-delen skriver ni JS-koden.
+* ~~I HTML-delen skriver ni enast koden som kommer finnas i `<body>`-elementet.~~
+* ~~I JS-delen skriver ni JS-koden.~~
+
+Ni kommer få skriva provet på samma sätt som ni gjorde i Programmering 2-kursen:
+
+1. Sätt datorn i flyplansläge.
+2. Använd OBS Studio för att spela in skärmen.
+3. Läs uppgifterna från ett Google-dokument.
+4. Skriv koden i Visual Studio Code.
 
 Uppgifterna på provet kommer vara lik de övningar vi har gått igenom hittills i kursen, dvs. använandet av grundläggande DOM-funktioner.
 
@@ -1007,6 +1014,151 @@ Skapa en HTML-sida där användaren kan klicka på en knapp (eller dylikt) för 
 
 Den här övningen går att lösa på lite olika sätt. Tänk gärna igenom din lösning för att försöka få fram en bra en. Och styla gärna modalen så att den ser snygg ut.
 :::
+
+
+
+
+## Lektion 14. Repetition
+* Idag:
+	* Repetitionsövningar
+	* Omprov (DOM-namn)
+* Fredag: Prov DOM (till och med Lektion 11)
+
+::: exercise 14.1
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 14.1</title>
+	<script>
+		
+		
+	</script>
+</head>
+<body>
+	
+	<p>
+		Det bor <span class="digit">3</span>
+		människor i huset.
+	</p>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som ändrar vädret från `3` till `tre` så snart sidan har laddats in. 
+:::
+
+::: exercise 14.2
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 14.2</title>
+	<script>
+		
+		
+	</script>
+</head>
+<body>
+	
+	<p>
+		Det bor
+		<span class="digit">3</span> människor,
+		<span class="digit">4</span> katter och
+		<span class="digit">2</span> hundar i huset.
+	</p>
+	
+</body>
+</html>
+```
+
+Skriv JS-kod som ändrar värdet:
+
+* `3` till `tre`
+* `4` till `fyra`
+* `2` till `två`
+
+Så snart sidan har laddats in.
+:::
+
+::: exercise 14.3
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 14.3</title>
+	<script>
+		
+		
+	</script>
+</head>
+<body>
+	
+	<div>
+		<button class="decButton">-</button>
+		<span id="number">0</span>
+		<button class="incButton">+</button>
+	</div>
+	
+</body>
+</html>
+```
+
+Skriv sedan JS-kod som ser till att numret s när man klickar på knappen.
+:::
+
+::: exercise 14.4
+Skapa en ny HTML-fil med följande innehåll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Övning 14.4</title>
+	<script>
+		
+		
+	</script>
+</head>
+<body>
+	
+	<div>
+		<input placeholder="Förnamn" id="firstName">
+		<input placeholder="Efternamn" id="lastName">
+		<button id="add">Lägg till</button>
+	</div>
+	
+	<ul id="names">
+	</ul>
+	
+</body>
+</html>
+```
+
+Skriv sedan JS-kod som ser till att man lägger till de inmatade namnen i listan när man klickar på knappen. Efter det så ska även `<input>`-elementen tömmas.
+:::
+
+::: exercise 14.5
+Den här övningen är en fortsättning på föregående övning.
+
+Ändra koden så att varje namn i listan även innehåller en `Ta bort`-knapp. När man klickar på den så ska namnet och knappen tas bort från listan.
+:::
+
 
 
 

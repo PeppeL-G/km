@@ -582,8 +582,8 @@ De instruktioner som finns nedskrivet på Express-lektionerna borde räcka för 
 ::: tip Klar?
 Om du blir klar tidigt och vill ha en lite svårare utmaning så kan du försöka lägga till följande funktionalitet:
 
-* Sortering på produktlistsidan
-* Paginering på produktliststidan (t.ex. visa 3 skomodeller per sida)
+* Sortering på produktlistsidan.
+* Paginering på produktliststidan (t.ex. visa 3 skomodeller per sida).
 :::
 
 
@@ -597,3 +597,132 @@ Vi fortsätter att arbeta på miniprojektet (lektion 2 av 4).
 
 ## Lektion 12. Miniprojekt
 Vi fortsätter att arbeta på miniprojektet (lektion 3 av 4).
+
+
+
+
+## Lektion 13. Miniprojekt
+Vi fortsätter att arbeta på miniprojektet (lektion 4 av 4).
+
+<!--
+
+## Lektion X. Databas
+En webbapplikation kan spara data-objekt (så som information om blogposter) i en JS-array fungerar, men det finns några nackdelar med detta:
+
+* Om det finns väldigt många data-objekt så kommer webbapplikationen att uppta mycket minne hela tiden.
+* Om man stänger av webbapplikationen så kommer alla ändrar vi gör på data-objekten (så som att uppdatera dem, eller lägga till nya) att försvinna, så inga ändringar blir permanenta.
+
+Därför är det bättre att spara ner informationen om våra data-objekt i en databas och som sparar datan på hårddisken (i en fil). Och i den här kursen kommer vi använda oss av den enklaste relationsdatabasen som finns, nämnligen SQLite 3. Låt oss öva på att använda den den här lektionen (utan att blanda in någon programmering).
+
+::: exercise X.1
+I Visual Studio Code, börja med att installera tillägget som heter `SQLite` (av `alexcvzz`). Det är tillägg vi kan använda för att arbeta med en SQLite 3-databas direkt i Visual Studio Code.
+:::
+
+::: exercise X.2
+I Visual Studio Code, skapa en ny fil med namnet `min-databas.db`. Tillägget `.db` indikerar att den här filen är en SQLite-databas. Så i Visual Studio Code kan du nu högerklicka på filen och välja alternativet `Open Database` för att se vad den innehåller. Då öppnas panelen `SQLITE EXPLORER` med din databas i sig. Dock innehåller ju databasen inget än, så det finns inget intressant att se.
+:::
+
+::: exercise X.3
+Det första vi ska göra är att skapa en tabell i databasen som vi kan spara ner information i. Alltid när vi vill arbeta med databasen så gör vi det genom att skicka SQL-frågor till den. Vi kan skicka en ny SQL-fråga till databasen genom att högerklicka på den i `SQLITE EXPLORER` i Visual Studio Code och välja alternativet `New query`. Därefter kan man skriva in en SQL-fråga i dokumentet som öppnas, och sedan högerklicka på dokumentet och välja `Run query` för att skicka den till databasen.
+
+En SQL-fråga som skapar en ny tabell i databasen kan se ut såhär:
+
+```sql
+CREATE TABLE blogposts(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	title TEXT,
+	content TEXT
+)
+```
+
+Försök att skicka en sådan fråga till databasen.
+:::
+
+::: exercise X.4
+Låt oss nu försöka bekräfta att tabellen verkligen har skapats i databasen. I `SQLITE EXPLORER`-panelen, klicka på den runda pilen (refresh-symbolen), och du borde därefter se namnet på tabellen under din databas.
+:::
+
+::: exercise X.5
+Låt oss nu försöka lägga till blogposter i tabellen. För det behöver vi skicka en fråga lik denna till databasen:
+
+```sql
+INSERT INTO blogposts (title, content) VALUES ("Första titeln", "Först innehållet.")
+```
+
+Får du inget fel när frågan skickas till databasen så betyder det att informationen om den nya blogposten har sparats.
+:::
+
+::: exercise X.6
+Låt oss nu försöka hämta alla blogposter från databasen för att bekräfta att den verkligen har sparats där. Det kan vi göra med en fråga i stil med detta:
+
+```sql
+SELECT * FROM blogposts
+```
+:::
+
+::: exercise X.7
+Lägg till två nya bloggposter i databasen, och bekräfta sen att den innehåller tre bloggposter genom att hämta dem alla.
+:::
+
+::: exercise X.8
+Ibland vill man bara hämta en rad från en database. Då kan man skriva en fråga i stil med:
+
+```sql
+SELECT * FROM blogposts WHERE title = "Första titeln"
+```
+
+Testa att göra det. Försök sedan lista ut hur du ska ändra frågan för att få tillbaka den blogpost som har id 2.
+:::
+
+::: exercise X.9
+Om man vill ta bort en specific rad i en tabell så kör man en fråga i stil med denna:
+
+```sql
+DELETE FROM blogposts WHERE id = 2
+```
+
+Testa att göra detta, och hämta sedan alla bloggposter och bekräfta att du bara får tillbaka två stycken.
+:::
+
+::: exercise X.10
+Om man vill ändra på en blogpost i databasen så kör man en fråga i stil med denna:
+
+```sql
+UPDATE blogposts SET title = "Min nya titel" WHERE id = 3
+```
+
+Testa att göra detta, och hämta sedan alla bloggposter och bekräfta att ändringen har gått igenom.
+:::
+
+Det är i princip allt ni behöver lära er om SQL i den här kursen. Den som vill kan lära sig mer om SQL på [W3Schools](https://www.w3schools.com/sql/).
+
+
+
+SQLite 3 sparar ner all information som finns i databasen i en och samma fil. 
+
+Att använda SQLite 3 i ett Node.js-projekt är ganska enkelt med npm-paketet `better-sqlite3`. Men i den här lektionen, låt o
+
+1. Börja med att köra följande kommando i ditt projekt (mapp där du har din `package.json`-fil) för att installera det: `npm install better-sqlite3`
+2. Importera och använd biblioteket i din `app.js`-fil (eller vad du nu kallade den filen):
+	```js
+	// Ha kvar dina andra imports som vanligt.
+	import { Database } from 'better-sqlite3'
+	
+	const db = new Database('min-databas.db')
+	
+	// Ha kvar din andra kod som vanligt.
+	```
+
+Om du kör den här koden så kommer en tom databas att skapas och sparas i filen `min-databas.db` (du får kalla filen vad du vill). Om du Visual Studio Code installerar det extension som heter `SQLite` (av `alexcvzz`) så kan du högerklicka på `min-databas.db`-filen i Visual Studio Code och öppna den där. Dock är ju databasen tom, så du lär inte kunna se så mycket än.
+
+3. Lägg till följande kod i `app.js`-filen för att skicka en fråga till databasen som ber den att skapa en tabell vi kan använda för spara ner informationen om våra blogpost-objekt (eller vad vi nu vill spara ner):
+	```js
+	db.prepare(`
+		CREATE TABLE IF NOT EXISTS blogposts(
+			id INT PRIMARY KEY
+		)
+	`)
+	```
+
+
+-->

@@ -364,6 +364,70 @@ Vi fortsätter arbeta med övningsuppgifterna från föregående lektion. De som
 * Etc.
 
 
+
+
+## Instuderingsfrågor till prov Termer + KNN
+Här är instuderingsfrågor till provet på onsdag vecka 42.
+
+1. Definiera vad följande maskininlärningstermer betyder (sök på webben, eller fråga läraren om hjälp):
+	* Dataset
+	* Instans
+	* Attribut
+	* Maskininlärd modell
+	* KNN-modell
+	* Träningsset
+	* Testset
+	* Klassificeringsproblem
+	* Regressionsproblem
+	* Prediktering
+2. När man tränar upp en maskininlärningsmodell, förklara varför man delar upp ett dataset i ett träningsset och ett testset istället för att testa hur bra modellen fungerar på hela datasetet.
+3. Givet följande scatter-plot:
+	![Scatter plot](https://i.sstatic.net/rk8k8.png)
+	Klassificera instancerna (blå, grön eller röd) nedan enligt KNN-algoritmen med de givna inställningarna.
+	
+	<table>
+		<tr><th>X</th><th>Y</th><th>K=1</th><th>K=3</th></tr>
+		<tr><td>5</td><td>3</td><td></td><td></td></tr>
+		<tr><td>6</td><td>2.2</td><td></td><td></td></tr>
+		<tr><td>7</td><td>3.2</td><td></td><td></td></tr>
+	</table>
+	
+	Förklara även hur du tänker.
+
+
+
+
+## Lektion 11. Instuderingsfrågor
+* Onsdag nästa vecka (vecka 42): Prov onsdag.
+* Idag:
+	* Besvara instuderingsfrågorna ovan.
+	* Börja undersöka ett nytt dataset.
+
+::: exercise 11.1
+Besvara instuderingsfrågorna ovan.
+:::
+
+::: exercise 11.2
+Börja undersök datasetet [London bike sharing](https://www.kaggle.com/datasets/hmavrodiev/london-bike-sharing-dataset) i KNIME. Försök besvara följande frågor genom att använda olika noder i KNIME:
+
+1. Vilken timme på dygnet har flest cyklar hyrts ut totalt?
+2. Vilken månad på året har flest cyklar hyrts ut totalt?
+3. Vilken årstid har flest cyklar hyrts ut totalt?
+4. Verkar flest cyklar hyras ut en helgdag eller en vardag?
+5. Påverkar vädret mycket hur många cyklar som hyrs ut?
+6. Påverkar temperaturen mycket hur många cyklar som hyrs ut?
+7. Påverkar vindhastigheten mycket hur många cyklar som hyrs ut?
+
+Du kan ha nytta av följande noder:
+
+* `String to Date&Time`
+* `Date&Time Part Extractor`
+* `GroupBy`
+* `Math Formula`
+
+Verkar dina svar rimliga?
+:::
+
 <!--
 
 
