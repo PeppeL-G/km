@@ -382,7 +382,7 @@ Här är instuderingsfrågor till provet på tisdag vecka 42.
 	* Prediktering
 2. När man tränar upp en maskininlärningsmodell, förklara varför man delar upp ett dataset i ett träningsset och ett testset istället för att testa hur bra modellen fungerar på hela datasetet.
 3. Givet följande scatter-plot:
-	![Scatter plot](/km/scatter-plot.png)
+	![Scatter plot](/scatter-plot.png)
 	Klassificera instanserna (blå, grön eller röd) nedan enligt KNN-algoritmen med de givna inställningarna.
 	
 	<table>
