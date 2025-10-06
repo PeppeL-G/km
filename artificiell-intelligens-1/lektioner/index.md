@@ -367,7 +367,7 @@ Vi fortsätter arbeta med övningsuppgifterna från föregående lektion. De som
 
 
 ## Instuderingsfrågor till prov Termer + KNN
-Här är instuderingsfrågor till provet på onsdag vecka 42.
+Här är instuderingsfrågor till provet på tisdag vecka 42.
 
 1. Definiera vad följande maskininlärningstermer betyder (sök på webben, eller fråga läraren om hjälp):
 	* Dataset
@@ -398,7 +398,7 @@ Här är instuderingsfrågor till provet på onsdag vecka 42.
 
 
 ## Lektion 11. Instuderingsfrågor
-* Onsdag nästa vecka (vecka 42): Prov onsdag.
+* Tisdag nästa vecka (vecka 42): Prov tisdag.
 * Idag:
 	* Besvara instuderingsfrågorna ovan.
 	* Börja undersöka ett nytt dataset.
