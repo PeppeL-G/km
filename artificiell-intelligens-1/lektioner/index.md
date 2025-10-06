@@ -386,10 +386,14 @@ Här är instuderingsfrågor till provet på tisdag vecka 42.
 	Klassificera instancerna (blå, grön eller röd) nedan enligt KNN-algoritmen med de givna inställningarna.
 	
 	<table>
-		<tr><th>X</th><th>Y</th><th>K=1</th><th>K=3</th></tr>
-		<tr><td>5</td><td>3</td><td></td><td></td></tr>
-		<tr><td>6</td><td>2.2</td><td></td><td></td></tr>
-		<tr><td>7</td><td>3.2</td><td></td><td></td></tr>
+		<thead>
+			<tr><th>X</th><th>Y</th><th>K=1</th><th>K=3</th></tr>
+		</thead>
+		<tbody>
+			<tr><td>5</td><td>3</td><td></td><td></td></tr>
+			<tr><td>6</td><td>2.2</td><td></td><td></td></tr>
+			<tr><td>7</td><td>3.2</td><td></td><td></td></tr>
+		</tbody>
 	</table>
 	
 	Förklara även hur du tänker.
