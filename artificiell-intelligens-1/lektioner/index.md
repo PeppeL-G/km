@@ -372,7 +372,7 @@ Här är instuderingsfrågor till provet på tisdag vecka 42.
 1. Definiera vad följande maskininlärningstermer betyder (sök på webben, eller fråga läraren om hjälp):
 	* Dataset
 	* Instans
-	* Attribut
+	* Attribut/Feature
 	* Maskininlärd modell
 	* KNN-modell
 	* Träningsset
@@ -382,8 +382,8 @@ Här är instuderingsfrågor till provet på tisdag vecka 42.
 	* Prediktering
 2. När man tränar upp en maskininlärningsmodell, förklara varför man delar upp ett dataset i ett träningsset och ett testset istället för att testa hur bra modellen fungerar på hela datasetet.
 3. Givet följande scatter-plot:
-	![Scatter plot](https://i.sstatic.net/rk8k8.png)
-	Klassificera instancerna (blå, grön eller röd) nedan enligt KNN-algoritmen med de givna inställningarna.
+	![Scatter plot](/km/scatter-plot.png)
+	Klassificera instanserna (blå, grön eller röd) nedan enligt KNN-algoritmen med de givna inställningarna.
 	
 	<table>
 		<thead>
