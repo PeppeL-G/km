@@ -439,9 +439,16 @@ De som inte är klara med Övning 11.2 fortsätter arbeta med den innan de forts
 
 Datasetet [London bike sharing](https://www.kaggle.com/datasets/hmavrodiev/london-bike-sharing-dataset) innehåller information om hur många cyklar ett företag hyr ut varje timme i London. Det optimala vore att försöka prediktera hur många cyklar de kommer hyra ut en specific timme i framtiden (så de vet hur många de behöver ha), men K Nearest-Neighbours-noden i KNIME fungerar tyvärr bara på klassificeringsproblem. Därför går tävlingen ut på att försöka skapa en KNN-model som är så bra som möjlig på att försöka prediktera vilken årstid det är (`season`-attributet).
 
+Vi kommer arbeta med detta på:
+
+* Dagens lektion.
+* Nästa lektion (måndag vecka 42).
+
+På lektionen därefter (tisdag vecka 42) är provet på ena halvan av lektionen, och på den andra halvan kommer vi jämföra era modeller.
+
 Regler:
 
-* `season`-attributet måste omvanldas till en sträng (annars kan klassificering inte ske, använd t.ex. noden `Number to string`).
+* `season`-attributet måste omvandlas till en sträng (annars kan klassificering inte ske, använd t.ex. noden `Number to string`).
 * Man får bara använda KNN-modellen i KNIME.
 * Man får inte använda datumdelen av `timestamp`-attributet.
 * I `Table Partitioner`-noden måste följande användas (så att alla utvärderar sin modell på samma sätt):
