@@ -321,3 +321,52 @@ Den knapp användaren klickar på ska bestämma ifall summan, differensen, produ
 
 Om kvoten är vald och nämnaren är 0 så ska ett felmeddelande visas.
 :::
+
+
+
+
+## Lektion 11. Kassaskåp
+Den här lektionen fortsätter vi att använda `.keepIf()`.
+
+::: exercise 11.1
+Den här övningen går ut på att skapa en sida som fungerar som dörren på ett kassaskåp. Börja med att lägga till knappar för siffrorna 0-9. Om du kan, positionera gärna knapparna så att det grafiska gränssnittet ser ut så här:
+
+```
+[1] [2] [3]
+[4] [5] [6]
+[7] [8] [9]
+    [0]
+```
+
+När användaren klickar på knapparna så ska den intryckta sekvensen visas i en `Text`-komponent ovanför knapparna. Har man t.ex. tryckt på `[3]`, `[5]` och `[2]` så ska det se ut så här:
+
+```
+    352
+
+[1] [2] [3]
+[4] [5] [6]
+[7] [8] [9]
+    [0]
+```
+
+Du kan använda en Page-variabel som startar på nummer 0 för att hålla koll på vilka knappar användaren har tryckt på. Varje gång användaren trycker på en knapp så multiplicerar du Page-variabeln med 10 och lägger sedan till numret på knappen som användaren klickade på. Exempel:
+
+```
+nummer = 0
+Användaren klickar på 3: nummer = 0*10 + 3 = 3
+Användaren klickar på 5: nummer = 3*10 + 5 = 35
+Användaren klickar på 2: nummer = 35*10 + 2 = 352
+```
+
+Det ska även finnas en knapp användaren kan klicka på för att ta bort den inmatade kombinationen.
+
+När användaren har matat in den rätta kombinationen till kassaskåpet (du får själv välja vad den rätta kombinationen är) så ska du visa en knapp användaren kan klicka på för att komma till nästa sida, och där ska användaren kunna läsa ett hemligt meddelande.
+
+:::
+
+::: exercise 11.2
+Ändra den andra sidan så att det där även finns:
+
+* En knapp användaren kan klicka på för att stänga kassaskåpet (ta sig tillbaka till den första sidan).
+* En knapp användaren kan klicka på för att komma till en tredje sida där användaren kan byta kombinationslås på kassaskåpet. Efter det ska användaren komma tillbaka till den andra sidan. 
+:::

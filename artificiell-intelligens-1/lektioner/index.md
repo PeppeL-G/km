@@ -432,6 +432,44 @@ Du kan ha nytta av följande noder:
 Verkar dina svar rimliga?
 :::
 
+## Lektion 12. Tävlingsinformation
+De som inte är klara med Övning 11.2 fortsätter arbeta med den innan de fortsätter med dagens övning/tävling.
+
+::: tip Tävlingsinformation
+
+Datasetet [London bike sharing](https://www.kaggle.com/datasets/hmavrodiev/london-bike-sharing-dataset) innehåller information om hur många cyklar ett företag hyr ut varje timme i London. Det optimala vore att försöka prediktera hur många cyklar de kommer hyra ut en specific timme i framtiden (så de vet hur många de behöver ha), men K Nearest-Neighbours-noden i KNIME fungerar tyvärr bara på klassificeringsproblem. Därför går tävlingen ut på att försöka skapa en KNN-model som är så bra som möjlig på att försöka prediktera vilken årstid det är (`season`-attributet).
+
+Regler:
+
+* `season`-attributet måste omvanldas till en sträng (annars kan klassificering inte ske, använd t.ex. noden `Number to string`).
+* Man får bara använda KNN-modellen i KNIME.
+* Man får inte använda datumdelen av `timestamp`-attributet.
+* I `Table Partitioner`-noden måste följande användas (så att alla utvärderar sin modell på samma sätt):
+	*	`Relative size` vara `70`.
+	* `Fixed random seed` vara `12345`.
+
+:::
+
+::: tip Tips
+Det finns flera olika sätt du kan försöka få din modell att bli bättre:
+
+* Ändra K-värde i KNN-noden.
+* Ta bort attribut som du inte tror är relevant/så viktigt för att prediktera `season`.
+* Skapa nya attribut utifrån existerande attribut som bättre kan användas för att klassificera `season`.
+:::
+
+::: tip Tips
+Måla scatter-plots för att försöka hitta attribut som är bra att använda för att prediktera `season`.
+:::
+
+::: tip Tips
+Har du svårt att komma igång? Försök då de här lite lättare uppgifterna först (använd noder för att beräkna svaret eller visualisera svaret):
+
+* Om du får använda dig av datum-delen i `timestamp`-attributet, kan du skapa en KNN-modell som alltid predikterar `season` rätt?
+* Vilken årstid verkar vara varmast överlag?
+* Vilken årstid verkar ha timmar med de flesta uthyrningarna?
+:::
+
 <!--
 
 
