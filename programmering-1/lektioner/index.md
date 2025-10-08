@@ -1341,5 +1341,284 @@ Mata in ett positivt heltal: 4
 
 
 
-# Lektion 12. Prov 1
-Prov enligt instruktionerna som finns på inlämningsuppgiften [EXAM: Prov Programmeringsgrunder Del 1](https://classroom.google.com/c/Nzk5Mjk2NzUxMjc1/a/MjM1NDMzNTY4ODBa/details) på Google Classroom.
+## Lektion 12. Prov 1
+Prov enligt instruktionerna som finns på inlämningsuppgiften [EXAM: Prov Programmeringsgrunder Del 1](https://classroom.google.com/c/Nzk5Mjk2NzUxMjc1/a/MjM1NjA0MjY5Nzla/details) på Google Classroom.
+
+
+
+
+## Lektion 13. Prov 1 genomgång, For-loopen
+* Genomgång av rätt svar på provet.
+  * Vad som testades:
+    * Output: `Console.Write()`, `Console.WriteLine()`
+    * Input: `Console.ReadLine()`
+    * Variabler
+    * Strängkonkatenering (`"..." + "..."`, `$"...{}..."`)
+    * `Convert.ToInt32()`
+    * Villkorssatser
+    * While-loopar
+  * Att ta med oss:
+    * 7 av 19 ettor kan inte använda `Convert.ToInt32()`.
+    * 5 av 19 ettor kan inte använda villkorssatser.
+    * 8 av 19 ettor kan inte använda while-loopar.
+* `for()`-loopen
+
+::: tip Prov 1 Uppgift 1
+
+Skapa ett program som skriver ut följande på skärmen när en kör det:
+
+```
+Hej!
+
+Jag heter Alice.
+
+Vad heter du?
+```
+
+Kopiera och klistra in din kod här nedanför som svar:
+
+```cs
+Console.WriteLine("Hej!");
+Console.WriteLine();
+Console.WriteLine("Jag heter Alice.");
+Console.WriteLine();
+Console.WriteLine("Vad heter du?");
+```
+:::
+
+::: tip Prov 1 Uppgift 2
+
+Skapa ett program som ber användaren skriva in sitt namn. Programmet ska sedan skriva ut en hälsning till användaren.
+
+Körexempel (fet text är input från användaren):
+
+```
+Skriv in ditt namn: Bob
+Hej Bob, trevligt att träffas!
+```
+
+Kopiera och klistra in din kod här nedanför som svar:
+
+```cs
+Console.Write("Skriv in ditt namn: ");
+string name = Console.ReadLine();
+Console.WriteLine($"Hej {name}, trevligt att träffas!");
+```
+:::
+
+::: tip Prov 1 Uppgift 3
+
+Skapa ett program som ber användaren mata in ett heltal. Om heltalet är negativt (mindre än 0) så ska texten `Det är negativt!` visas. Annars ska texten `Det är inte negativt!` visas.
+
+Körexempel 1 (fet text är input från användaren):
+
+```
+Skriv in ett heltal: -5
+Det är negativt!
+```
+
+Körexempel 2 (fet text är input från användaren):
+
+```
+Skriv in ett heltal: 7
+Det är inte negativt!
+```
+
+Kopiera och klistra in din kod här nedanför som svar:
+
+```cs
+Console.Write("Skriv in ett heltal: ");
+int integer = Convert.ToInt32(Console.ReadLine());
+
+if(integer < 0)
+{
+  Console.WriteLine("Det är negativt!");
+}
+else
+{
+  Console.WriteLine("Det är inte negativt!");
+}
+```
+:::
+
+::: tip Prov 1 Uppgift 4
+
+Skapa ett program som ber användaren mata in två heltal. Programmet ska sedan skriva ut det tal som är störst.
+
+Körexempel 1 (fet text är input från användaren):
+
+```
+Skriv in ett heltal: 3
+Skriv in ett heltal: 12
+12 är det största talet.
+```
+
+Körexempel 2 (fet text är input från användaren):
+
+```
+Skriv in ett heltal: 3
+Skriv in ett heltal: -6
+3 är det största talet.
+```
+
+Kopiera och klistra in din kod här nedanför som svar:
+
+```cs
+Console.Write("Skriv in ett heltal: ");
+int integer1 = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Skriv in ett heltal: ");
+int integer2 = Convert.ToInt32(Console.ReadLine());
+
+int biggest = integer1;
+
+if(biggest < integer2)
+{
+  biggest = integer2;
+}
+
+Console.WriteLine($"{biggest} är det största talet.");
+```
+:::
+
+::: tip Prov 1 Uppgift 5
+
+Skapa ett program som ber användaren mata in ett positivt heltal. Ditt program ska sedan skriva ut det numret och numren ner till 1, och sedan texten `Go!`
+
+Körexempel 1 (fet text är input från användaren):
+
+```
+Skriv in ett positivt heltal: 3
+3
+2
+1
+Go!
+```
+
+Körexempel 2 (fet text är input från användaren):
+
+```
+Skriv in ett positivt heltal: 5
+5
+4
+3
+2
+1
+Go!
+```
+
+Kopiera och klistra in din kod här nedanför som svar:
+
+```cs
+Console.Write("Skriv in ett heltal: ");
+int integer = Convert.ToInt32(Console.ReadLine());
+
+int i = integer;
+
+while(0 < i)
+{
+  Console.WriteLine($"{i}");
+  i = i - 1;
+}
+
+Console.WriteLine("Go!");
+```
+:::
+
+::: tip Prov 1 Uppgift 6
+
+Skapa ett program som ber användaren mata in ett positivt heltal. Du ska sedan be användaren att mata in lika många nya positiva heltal som det första. Ditt program ska sedan skriva ut vilket det lägsta respektive högsta inmatade heltalet var.
+
+Körexempel (fet text är input från användaren):
+
+Skriv in ett positivt heltal: 3
+Mata in ett positivt heltal: 5
+Mata in ett positivt heltal: 10
+Mata in ett positivt heltal: 7
+
+Det lägsta talet är 5.
+Det högsta talet är 10.
+
+
+```cs
+Console.Write("Skriv in ett positivt heltal: ");
+int numberOfIntegers = Convert.ToInt32(Console.ReadLine());
+
+int smallest = 999999999;
+int biggest = 0;
+
+int i = 1;
+
+while(i <= numberOfIntegers)
+{
+  
+  Console.Write("Mata in ett positivt heltal: ");
+  int number = Convert.ToInt32(Console.ReadLine());
+  
+  if(number < smallest)
+  {
+    smallest = number;
+  }
+  
+  if(biggest < number)
+  {
+    biggest = number;
+  }
+  
+  i = i + 1;
+  
+}
+
+Console.WriteLine();
+Console.WriteLine($"Det lägsta talet är {smallest}.");
+Console.WriteLine($"Det högsta talet är {biggest}.");
+```
+:::
+
+::: example
+```cs
+int i = 0;
+
+while(i < 10)
+{
+  Console.WriteLine($"i = {i}");
+  i = i + 1;
+}
+
+// Det ovan är samma som det nedan.
+
+for(int i=0; i<10; i++)
+{
+  Console.WriteLine($"i = {i}");
+}
+```
+:::
+
+När ska man använda vilken av looparna?
+
+> Om du kan räkna ut hur många iterationer loopen ska göra innan den börjar, använd `for()`-loopen, annars `while()`-loopen.
+
+::: exercise 13.1
+För vart och ett av följande program, tänk igenom om du bör använda en `while()`-loop eller en `for()`-loop. Om du är osäker, testa ifall du kan implementera programmet med en `for()`-loop. Går inte det så ska du använda en `while()`-loop istället.
+
+* Ett program som skriver ut heltalen mellan 1 och 10.
+* Ett program som ber användaren skriva in ett namn om och om igen ända tills användaren skriver in namnet `Claire`.
+* Ett program som ber användaren skriva in ett positivt heltal, och som sedan skriver ut heltalen mellan 0 och det som användaren skrev in.
+* Ett program som ber användaren skriva in ett positivt heltal, och så länge användaren skriver in ett negativt heltal så ska detta upprepas (ända tills ett positivt heltal skrivs in).
+:::
+
+::: exercise 13.1
+Skapa ett program som ber användaren mata in ett heltal. Ditt program ska sedan visa multiplikationstabellen för det heltalet. Använd en `for()`-loop i din lösning.
+:::
+
+::: exercise 13.2
+Skapa ett program som ber användaren mata in ett lösenord. Så länge fel lösenord matas in så ska du fortsätta att be användaren mata in lösenordet. Du får själv välja vad det rätta lösenordet ska vara. När rätt lösenord har matats in så ska du visa ett hemligt meddelande för användaren.
+:::
+
+::: exercise 13.3
+Det här är en fortsättning på föregående övning.
+
+Ändra koden så att användaren kan skriva in fel lösenord max 3 gånger. Om användaren skriver in fel lösenord 3 gånger så ska ett felmeddelande visas, och sedan ska programmet avslutas.
+
+Tänk noga igenom vad för loop du borde använda.
+:::

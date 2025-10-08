@@ -370,3 +370,23 @@ När användaren har matat in den rätta kombinationen till kassaskåpet (du få
 * En knapp användaren kan klicka på för att stänga kassaskåpet (ta sig tillbaka till den första sidan).
 * En knapp användaren kan klicka på för att komma till en tredje sida där användaren kan byta kombinationslås på kassaskåpet. Efter det ska användaren komma tillbaka till den andra sidan. 
 :::
+
+
+
+
+## Lektion 12. Appar
+::: info Provinformation
+På onsdag nästa vecka kör vi ett litet prov i form av en app ni ska skapa. Ni har lektionen på er att skapa appen/göra så långt ni kommer, och sedan får ni lämna in ert arbete på en Google Classroom-inlämning. Ni får reda på hur appen ska fungera i början av den lektionen.
+:::
+
+::: exercise 12.1
+Skapa en app som användaren kan använda som en enkel miniräknare. [Exempel](https://bagawork.com/run/#eNq1lWFr2zAQhv+KEIPZresmGYVhKCPrxuiHlXYtbGUpWJXPiYktCenEGoL/++S4ce0sbjzYPgSkk/Tc3Zu785oypWi0plwmQCPKc2YM+bqaKkXgCUEkhrj1eiZmWP24BoZwi0zjNZuD59cnqAGtFqQ5qKxl/aikZUBTmSegDY1+rmmW0GgcUMGKyuPmCQ2oTFMD+INGo+363q3Lh4Aqx+u8rGGX9aYTeOO/Cb7aNNGnmTZ4ZYtH0OScjCqTAS5F0rVpMDbH7e4l7S822034m/xlwkfGl3MtrUguZC61F/MVE7Ef8kWWJxqEVz+Z4a1iHILt7rNA0LXn0KDU4KmAxK0YHUJsFp4KW2Y/+BteO8E2sG3vI7p0bCHMn4nsXpzhR4soRYhOdy8+do6kuMgzvnSeuCyUdUVjCz8YCDjZB/iUpSm4KDgM5hzt41xrmViOgyGn+yA3VmIG4hVKn6h3DvpMPo8HXHqzVmFdkWXPdb/Vba5WG7mbYt0CXEl3Kokck24h7AO9yH6YdzKA9yz/YdjRANj2bzhMO+2nlW78PNFoMnKjZ0Wjd6Nm7NxBoXLX+Z3x05k4U7O8TKeJ89g/dl6fHgemRKsSphrISlqyGX8EF0yQ8fsP8b/u3isZD+6NezDx4Rbwdz4HtZSTHSk382s6h/8v5PcFw7em0lITx++XsJPreNS61z056zuZ9L6ZnA3oZifWQ/kbuCnP6Q==).
+:::
+
+::: exercise 12.2
+(ett fiktionellt problem)
+
+Jordbruksverket ska ut och inventera en skog. De ska helt enkelt gå runt i skogen och räkna hur många träd det finns av varje slag (gran, tall, björk, ek, och bok). För detta vill dem ha en app där de kan klicka på en knapp för respektive trädslag så snart de går förbi ett sådant träd för att räkna det. När de är klara med inventeringen så ska appen visa hur många av respektive trädslag som fanns, och hur stor andel av alla träd dem utgjorde.
+
+Tänk igenom en design för detta (rita gärna upp den med papper och penna), och implementera sedan appen åt dem.
+:::

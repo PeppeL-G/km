@@ -1365,43 +1365,311 @@ Provet kommer ni få skriva i Safe Exam Browser. Provet kommer finnas som en Goo
 
 
 
-# Lektion 12. Prov 1
-Prov enligt instruktionerna som finns på inlämningsuppgiften [EXAM: Prov Klasser & Objekt](https://classroom.google.com/c/Nzk5Mjk2ODczNjE2/a/MjM1NDMzNzgyOTBa/details) på Google Classroom.
+## Lektion 12. Prov 1
+Prov enligt instruktionerna som finns på inlämningsuppgiften [EXAM: Prov Klasser & Objekt](https://classroom.google.com/c/Nzk5Mjk2ODczNjE2/a/MjM1NTk2MDU5Njha/details) på Google Classroom.
 
+
+
+
+## Lektion 13. Prov 1 genomgång
+* Genomgång av provet.
+	* Vad som testades:
+		* Skapa klass med namn.
+		* Lägga till instansvariabler i klass.
+		* Lägga till och använda konstruktör i klass.
+		* Lägga till och använda metoder i klass.
+		* Använda synlighet (`public`/`private`) rätt.
+		* Använda komposition.
+	* Att med oss:
+		* 7 av 18 elever kan inte använda konstruktör.
+		* 9 av 18 elever använder inte synlighet korrekt.
+		* 9 av 18 elever kunde inte lösa uppgift 2.
+		* 9 av 18 elever kunde inte lösa uppgift 3.
+
+::: tip Prov 1 Uppgift 1
+
+Skapa en klass som representerar en bok. Klassen ska ha namnet `Book` och ska innehålla följande information:
+
+* Bokens titel
+* Bokens utgivningsår
+* Bokens författarnamn
+
+Det ska även finnas en metod i klassen en kan anropa för att skriva ut all information om boken. Den metoden ska heta `WriteToConsole()`.
+
+När du skapat klassen så borde den kunna användas på följande vis:
+
+```cs
+Book hp1 = new Book(
+   "Harry Potter och de vises sten",
+   1997,
+   "J.K. Rowling"
+);
+hp1.WriteToConsole();
+```
+
+Och den ska producera följande output:
+
+```
+Harry Potter och de vises sten skrevs av J.K. Rowling och gavs ut år 1997.
+```
+Kopiera och klistra in din kod här nedanför som svar:
+
+```cs
+class Book
+{
+	
+	private string title;
+	private int yearPublished;
+	private string authorName;
+	
+	public Book(string theTitle, int theYearPublished, string theAuthorName)
+	{
+		title = theTitle;
+		yearPublished = theYearPublished;
+		authorName = theAuthorName;
+	}
+	
+	public void WriteToConsole()
+	{
+		Console.WriteLine($"{title} skrevs av {authorName} och gavs ut år {yearPublished}.");
+	}
+	
+}
+```
+:::
+
+::: tip Prov 1 Uppgift 2
+
+Skapa en klass som representerar en hink med vatten. När man skapar en ny instans av klassen så ska man få bestämma hur många liter vatten hink-instansen ska kunna innehålla som mest. Initialt ska hinken vara tom.
+
+Man ska sedan kunna anropa:
+
+* En metod i klassen för att fylla på hinken med mer vatten. Antal liter man fyller på med ska skickas med som argument. Om hinken skulle bli överfull så ska du inte fylla på med något, utan bara returnera `false`. Annars ska hinken fyllas på med det angivna antalet liter vatten, och metoden ska sedan returnera `true`.
+* En metod i klassen för att ta vatten ur hinken. Antal liter man vill ta ur skickar man med som argument. Om hinken inte innehåller så många liter vatten för stunden så tar man ur den mängd vatten som finns kvar, annars tar man ut den mängd vatten som skickas med som argument. Metoden ska returnera den mängd vatten som togs ur hinken.
+
+Kopiera och klistra in din kod här nedanför som svar:
+
+```cs
+class Bucket
+{
+	
+	private int maxLitres;
+	private int currentLitres;
+	
+	public Bucket(int theMaxLitres)
+	{
+		maxLitres = theMaxLitres;
+		currentLitres = 0;
+	}
+	
+	public bool Refill(int litresToRefill)
+	{
+		
+		int newCurrentLitres = currentLitres + litresToRefill;
+		
+		if(maxLitres < newCurrentLitres)
+		{
+			return false;
+		}
+		
+		currentLitres = newCurrentLitres;
+		return true;
+		
+	}
+	
+	public int Tap(int litresToTap)
+	{
+		
+		if(currentLitres < litresToTap)
+		{
+			litresToTap = currentLitres;
+		}
+		
+		currentLitres -= litresToTap;
+		return litresToTap;
+		
+	}
+	
+}
+```
+:::
+
+::: tip Prov 1 Uppgift 3
+
+Skapa en klass som representerar en rektangel. Den som skapar en ny instans av klassen ska få bestämma vad bredden och höjden på rektangeln är. Klassen ska även ha en metod man kan anropa för att få tillbaka rektangelns area (produkten av dess bredd och höjd).
+
+Skapa sedan en klass som representerar en samling rektanglar. När man skapar en ny instans av klassen så ska samlingen vara tom. I klassen ska det finnas:
+
+* En metod man kan anropa för att lägga till en rektangelinstans i klassen.
+* En metod man kan anropa för att få tillbaka den rektangel som har den största arean i samlingen.
+
+När du skapat klasserna så borde man kunna använda dem på följande vis:
+
+```cs
+RectangleCollection collection = new RectangleCollection();
+collection.Add(new Rectangle(2, 3));
+collection.Add(new Rectangle(5, 2));
+collection.Add(new Rectangle(1, 7));
+
+Rectangle biggest = collection.GetBiggest();
+```
+
+Hint: `List`-klassen finns i namnrymden `System.Collections.Generic`.
+
+Kopiera och klistra in din kod här nedanför som svar:
+
+```cs
+class Rectangle
+{
+	
+	private int width;
+	private int height;
+	
+	public Rectangle(int theWidth, int theHeight)
+	{
+		width = theWidth;
+		height = theHeight;
+	}
+	
+	public int GetArea()
+	{
+		return width * height;
+	}
+	
+}
+
+class RectangleCollection
+{
+	
+	private List<Rectangle> rectangles;
+	
+	public RectangleCollection()
+	{
+		rectangles = new List<Rectangle>();
+	}
+	
+	public void Add(Rectangle rectangle)
+	{
+		rectangles.Add(rectangle);
+	}
+	
+	public Rectangle GetBiggest()
+	{
+		
+		// Let us assume there's always atlest one rectangle.
+		Rectangle biggest = rectangles[0];
+		
+		foreach(var rectangle in rectangles)
+		{
+			if(biggest.GetArea() < renctangle.GetArea())
+			{
+				biggest = rectangle;
+			}
+		}
+		
+		return biggest;
+		
+	}
+	
+}
+```
+:::
+
+::: exercise 13.1
+Skapa en klass som representerar ett kassaskåp. Den som skapar en ny instans av klassen ska få bestämma vad den rätta koden till kassaskåpet ska vara (ett heltal), och vad för hemligt meddelande den ska innehålla (en sträng). Klassen ska även hålla koll på ifall skåpet är upplåst eller ej, och initialt ska skåpet vara låst.
+
+Det ska finnas:
+
+* En metod man kan anropa för att kolla om kassaskåpet är upplåst eller ej.
+* En metod man kan anropa för att hämta ut det hemliga meddelande från kassaskåpet, men om kassaskåpet är stängt så ska den här metoden bara returnera en tom sträng istället för det hemliga meddelandet.
+* En metod man kan anropa för att stänga kassaskåpet.
+* En metod man kan anropa för att byta kod på kassaskåpet, men det ska bara bytas om kassaskåpet är öppet.
+
+Exempelanvänding:
+
+```cs
+Safe mySafe = new Safe(1234, "Mina hemligheter.");
+
+Console.WriteLine(mySafe.GetMessage()); // ""
+
+mySafe.TryToOpen(3333);
+
+if(mySafe.IsOpen())
+{
+	Console.WriteLine("Det är öppet!");
+}
+else
+{
+	Console.WriteLine("3333 är fel kod.");
+}
+
+mySafe.TryToOpen(1234);
+
+Console.WriteLine($"Det hemliga meddelandet är ${mySafe.GetMessage()}.");
+
+mySafe.Close();
+
+if(mySafe.IsOpen())
+{
+	Console.WriteLine("Det är öppet!");
+}
+else
+{
+	Console.WriteLine("Det är stängt.");
+}
+
+mySafe.TryToOpen(1234);
+
+mySafe.SetCode(789);
+mySafe.Close();
+
+mySafe.TryToOpen(1234);
+
+if(mySafe.IsOpen())
+{
+	Console.WriteLine("Det är öppet!");
+}
+else
+{
+	Console.WriteLine("1234 är fel kod.");
+}
+```
+
+:::
 
 <!--
 
 
-## Lektion X. Klasser (arv)
+
 Arv är ett sätt att återvinna kod på. En klass kan ärva från en annan klass, och då får den alla metoder och instansvariabler som föräldraklassen innehåller.
 
 ::: example
 
 ```cs
-// Klass A är en vanlig klass.
-class A
+EnglishPerson alice = new EnglishPerson("Alice");
+SwedishPerson bob = new SwedishPerson("Bob");
+
+alice.SayHello(); // Hello, my name is Alice, nice to meet you!
+bob.SayHello(); // Hej, mitt namn är Bob, trevligt att träffas!
+```
+
+<br>
+
+```cs
+// Klass Person är en vanlig klass.
+class Person
 {
 	
-	private string _name = "Alice";
+	private string _name;
 	
-	public int GetName()
+	public Person(string name)
 	{
-		return _name;
+		_name = name;
 	}
 	
-}
-
-// Klass B ärver från klass A.
-class B : A
-{
-	
-	// Och får automatiskt allt som ligger i Klass A.
-	// I det här fallet både _name and GetName().
-	// Dock kan den inte direkt använda de som är private.
-	
-	public void WriteNameToConsole()
+	public string GetName()
 	{
-		Console.WriteLine(GetName());
+		return _name;
 	}
 	
 }
@@ -1410,11 +1678,47 @@ class B : A
 <br>
 
 ```cs
-B theInstance = new B();
+// Klass EnglishPerson ärver från klass Person.
+class EnglishPerson : Person
+{
+	
+	// Och får automatiskt allt som ligger i Person-klassen.
+	// I det här fallet både _name and GetName().
+	// Dock kan den inte direkt använda de som är private.
+	
+	// : base() är syntaxen för att anropa konstruktören
+	// i klassen som man ärver ifrån (Person i det här fallet).
+	public EnglishPerson(string name) : base(name)
+	{
+		
+	}
+	
+	// Och här lägger vi till en metod.
+	public void SayHello()
+	{
+		Console.WriteLine($"Hello, my name is {GetName()}, nice to meet you!");
+	}
+	
+}
+```
 
-theInstance.WriteNameToConsole(); // "Alice"
+<br>
 
-Console.WriteLine($"Namnet är {theInstance.GetName()}.");
+```cs
+class SwedishPerson : Person
+{
+	
+	public SwedishPerson(string name) : base(name)
+	{
+		
+	}
+	
+	public void SayHello()
+	{
+		Console.WriteLine($"Hej, mitt namn är {GetName()}, trevligt att träffas!");
+	}
+	
+}
 ```
 :::
 
@@ -1426,7 +1730,11 @@ Ett exempel på när arv är lämpligt att använda är t.ex. i ett 2D Mario-spe
 * En klass för att representera en Koopa.
 * Etc.
 
-Alla dessa behöver innehålla en X- och Y-koordinat för att hålla koll på vart dem befinner sig i 2D-världen. Men istället för att lägga till dessa i varje enskild klass så kan man skapa en generell LivingThing-klass som innehåller X- och Y-koordinaten, och sedan ärver Mario-klassen, Goomba-klassen och Koopa-klassen ifrån LivingThing-klassen, och innehåller alltså därmed automatiskt en X- och Y-koordinat!
+Alla dessa behöver innehålla en X- och Y-koordinat för att hålla koll på vart dem befinner sig i 2D-världen. Men istället för att lägga till dessa i varje enskild klass så kan man skapa en generell `Thing`-klass som innehåller X- och Y-koordinaten, och sedan ärver Mario-klassen, Goomba-klassen och Koopa-klassen ifrån `Thing`-klassen, och innehåller alltså därmed automatiskt en X- och Y-koordinat!
+
+![Super Mario Bros.](/super-mario-bros.avif)
+
+![UML-diagram](https://mermaid.ink/img/pako:eNqVU12L2zAQ_Cti4SDHxcGOVTsRfeqlHP0IvbaBg8MvaryxRW3JyPIlqS__vfJH3YSkhPpB7MyuZkZGqmGtYgQGjuNE0giTISORbFEk1xkvy4XgieZ5g29uyJILSe4bvm-TVSpkQupIEvs5QhqyO6r3R_VWxCY9wimKJDUdcfeh_PKCOuNFYeWehElHnbBp1ttIHpoAHfX21XFsEC0UYQR3BmU8pOnoPs3dxyovRrc9WKoX_NY4njCfcXNKLNRWDsRC8-3ogvujKPDcvGX_eK80l-UG9aBlTyhXqhh1EfNmvWbzoFT-g58b9Xx9FPtq5AeNKD8pVVzS-9v7L813mVr_PJfr6PrK5q8VlkYo-Q-R0_YFMRhDjjrnIrb3t-1HYFLMMQJ7hyHGDa8yE4EdtqNVEXOD72NhlAa24VmJY-CVUd_3cj0Q3VR_5QdWqypJB1Rw-Wz_PzCjKwsT3QToam0PgPpeVdIA80IattPAatgB84OJS0PXnb3xKHWpP4Y9sBmdhH4Q-lM6m8491wsOY_jVqruT-dT1qefPg7lHp0FgN2Abf9k92fblHn4DiUM2Mw)
 :::
 
 -->
