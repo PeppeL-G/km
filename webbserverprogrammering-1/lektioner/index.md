@@ -604,6 +604,137 @@ Vi fortsätter att arbeta på miniprojektet (lektion 3 av 4).
 ## Lektion 13. Miniprojekt
 Vi fortsätter att arbeta på miniprojektet (lektion 4 av 4).
 
+
+
+
+## Lektion 14. Redovisning av miniprojekt & Formulärhantering
+Eleverna får en och en förklara hur sin kod fungerar, och får några kontrollfrågor. Övriga elever får börja titta på formulärhantering i en Express-applikation.
+
+---
+
+En HTML-sida kan innehålla ett formulär (`<form>`-elementet) med olika inputfält (`<input>`-element) där användaren kan mata in olika värden. När användaren klickar på skicka-knappen så skickas de inmatade värdena i en HTTP-request till servern antingen:
+
+* I querystringen (del av URL:en), ifall man använder `<form>` eller `<form method="GET">` (då skickas en `GET` request).
+* I bodyn av requesten, ifall man använder `<form method="POST">` (då skickas en `POST` request).
+
+GET request används när man vill hämta data, t.ex. göra en sökning och få tillbaka den data som matchar sökningen. POST request används när man vill att någon data ska ändras på servern (skapas, uppdateras eller ändras), och används t.ex. när man vill skapa ett konto, ändra användarnamn eller ta bort sitt konto.
+
+::: exercise 13.1
+Läs på om vilka `<form>`-relaterade element som finns i HTML på [W3Schools](https://www.w3schools.com/html/html_forms.asp). På exemplen där kan du även se hur `name`-attributet på `<input>`-element och det värde användaren skriver in i `<input>`-elementet påverkar den querystring som skickas till servern.
+
+Man kan även använda [`<textarea>`](https://www.w3schools.com/tags/tag_textarea.asp) och [`<select>`](https://www.w3schools.com/tags/tag_select.asp) i ett formulär. Läs även på om hur de fungerar.
+:::
+
+::: example
+Om följande formulär skulle skickas (med `method="GET"`):
+
+```html
+<form method="GET" action="/login">
+	Username: <input type="text" name="un" value="James Bond"><br>
+	Password: <input type="password" name="pw" value="missMP"><br>
+	<input type="submit" value="Login!">
+</form>
+```
+
+Så skulle webbläsaren skicka följande HTTP request till servern:
+
+```http
+GET /login?un=JamesBond&pw=missMP HTTP/1.1
+... (många olika headers)
+```
+
+I vår Express-applikation kan vi läsa ut de inmatade värdena på följande vis:
+
+```js
+// ...
+app.get(`/login`, function(request, response){
+	
+	// Vi använder request.query för att läsa ut information
+	// från querystring i URL:n.
+	const enteredUsername = request.query.un // "James Bond"
+	const enteredPassword = request.query.pw // "missMP"
+	
+	// ...
+	
+})
+// ...
+```
+:::
+
+::: exercise 13.2
+I en Express-applikation, skapa en sida som skickar tillbaka ett formulär där användaren kan mata in sitt namn. Formuläret ska skickas som en GET request. När servern tar emot formuläret så ska det skicka tillbaka en sida som visar texten:
+
+* `Vilket fint namn!`, om det inmatade namnet var `Alice`.
+* `Vilket roligt namn!`, om det inmatade namnet var `Bob`.
+* `Vilket vanligt namn!` i alla andra fall.
+:::
+
+::: exercise 13.3
+I en Express-applikation, skapa en sida som skickar tillbaka ett formulär där användaren kan mata in ett användarnamn och lösenord. Formuläret ska skickas som en GET request. När servern tar emot formuläret så ska det skicka tillbaka en sida som visar texten:
+
+* `Du är ju Alice!`, om man skrev in användarnamnet `Alice` och lösenordet `123abc`.
+* `Du är ju Bob!`, om man skrev in användarnamnet `Bob` och lösenordet `pa55w0rd`.
+* `Fel inloggningsuppgifter.` i alla övriga fall.
+:::
+
+::: example
+Om följande formulär skulle skickas (med `method="POST"`):
+
+```html
+<form method="POST" action="/login">
+	Username: <input type="text" name="un" value="James Bond"><br>
+	Password: <input type="password" name="pw" value="missMP"><br>
+	<input type="submit" value="Login!">
+</form>
+```
+
+Så skulle webbläsaren skicka följande HTTP request till servern:
+
+```http
+POST /login HTTP/1.1
+... (många olika headers)
+
+un=JamesBond&pw=missMP
+```
+
+I vår Express-applikation kan vi läsa ut de inmatade värdena på följande vis:
+
+```js
+// ...
+
+// Den här kodraden behöver vi lägga till på ett ställe
+// för att Express ska kunna läsa ut bodyn i HTTP
+// POST requests.
+app.use(express.urlencoded())
+
+// Vi använder app.get() för att lyssna på GET reqquests.
+// Vi använder app.post() för att lyssna på POST reqquests.
+app.post(`/login`, function(request, response){
+	
+	// Vi använder request.body för att läsa ut information
+	// från querystring i body i POST requests.
+	const enteredUsername = request.body.un // "James Bond"
+	const enteredPassword = request.body.pw // "missMP"
+	
+	// ...
+	
+})
+// ...
+```
+:::
+
+::: exercise 13.4
+I en Express-applikation, skapa en sida som skickar tillbaka ett formulär där användaren kan mata in sitt namn, ålder och bostadsort. Formuläret ska skickas som en POST request. När servern tar emot formuläret så ska det skicka tillbaka en sida som visar texten `Hej INMATAT_NAMN, du är alltså INMATAT_ÅLDER år gammal och bor i INMATAD_BOSTATSORT. Trevligt att träffas!`
+:::
+
+::: exercise 13.5
+I en Express-applikation, skapa en sida som skickar tillbaka ett formulär där användaren kan mata in ett nummer. Express-applikationen ska innehålle en nummervariabel som börjar på 0, och varje gång den tar emot forumläret så ska den öka variabeln med det inmatade numret och skicka tillbaka en sida som visar det nuvarande värdet i variabeln.
+
+**Notera:** Formulärdata läses alltid ut som strängar på serversidan. I JavaScript kan du använda [parseInt()](https://www.w3schools.com/jsref/jsref_parseint.asp) för att konvertera en sträng till ett heltal.
+:::
+
+
+
 <!--
 
 ## Lektion X. Databas
