@@ -1781,7 +1781,7 @@ För att implementera denna klass korrekt så behöver ni även hålla koll på 
 :::
 
 
-::: Exercise 14.2
+::: exercise 14.2
 Det här är en enklare övning med arv för de som tycker att föregående övning är för svår.
 
 Skapa en klass som representerar en fil. Det ska innehålla namnet på filen. Skapa sedan klasser som ärver ifrån denna och som representerar olika typer av filer. Använd t.ex.:
