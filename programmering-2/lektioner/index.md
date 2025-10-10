@@ -1779,3 +1779,17 @@ else
 För att implementera denna klass korrekt så behöver ni även hålla koll på hur lång tid det tar mellan anropen. Ni kan använda `Thread.sleep(numberOfMilliseconds)` för att vänta ett visst antal millisekunder mellan anropen till `.TryToOpen()`, och ni kan använda `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` för att få antal sekunder som gått sedan `970-01-01 00:00:00 UTC` när anropet till `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` sker.
 
 :::
+
+
+::: Exercise 14.2
+Det här är en enklare övning med arv för de som tycker att föregående övning är för svår.
+
+Skapa en klass som representerar en fil. Det ska innehålla namnet på filen. Skapa sedan klasser som ärver ifrån denna och som representerar olika typer av filer. Använd t.ex.:
+
+* En klass för en musikfil, som även innehåller låtens längd, artistnamn, etc.
+* En klass som representerar en videofil, som även innehåller videons längd, inspelningsdatum, namn på skapare, etc.
+* En klass som representerar en textfil, som även innehåller texten i filen, när den senast ändrades, etc.
+* Etc.
+
+Skapa sedan några nya instanser av de här klasserna i ditt huvudprogram och testa att anropa några metoder på dem (som du även lagt till i fil-klassen eller de andra klasserna).
+:::
