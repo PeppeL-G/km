@@ -1695,7 +1695,7 @@ class EnglishPerson : Person
 	// Och här lägger vi till en metod.
 	public void SayHello()
 	{
-		Console.WriteLine($"Hello, my name is {GetName()}, nice to meet you!");
+		Console.WriteLine($"Hello, my name is {base.GetName()}, nice to meet you!");
 	}
 	
 }
@@ -1735,8 +1735,6 @@ Alla dessa behöver innehålla en X- och Y-koordinat för att hålla koll på va
 
 ![UML-diagram](https://mermaid.ink/img/pako:eNqVU12L2zAQ_Cti4SDHxcGOVTsRfeqlHP0IvbaBg8MvaryxRW3JyPIlqS__vfJH3YSkhPpB7MyuZkZGqmGtYgQGjuNE0giTISORbFEk1xkvy4XgieZ5g29uyJILSe4bvm-TVSpkQupIEvs5QhqyO6r3R_VWxCY9wimKJDUdcfeh_PKCOuNFYeWehElHnbBp1ttIHpoAHfX21XFsEC0UYQR3BmU8pOnoPs3dxyovRrc9WKoX_NY4njCfcXNKLNRWDsRC8-3ogvujKPDcvGX_eK80l-UG9aBlTyhXqhh1EfNmvWbzoFT-g58b9Xx9FPtq5AeNKD8pVVzS-9v7L813mVr_PJfr6PrK5q8VlkYo-Q-R0_YFMRhDjjrnIrb3t-1HYFLMMQJ7hyHGDa8yE4EdtqNVEXOD72NhlAa24VmJY-CVUd_3cj0Q3VR_5QdWqypJB1Rw-Wz_PzCjKwsT3QToam0PgPpeVdIA80IattPAatgB84OJS0PXnb3xKHWpP4Y9sBmdhH4Q-lM6m8491wsOY_jVqruT-dT1qefPg7lHp0FgN2Abf9k92fblHn4DiUM2Mw)
 :::
-
-I en klass som ärver ifrån en annan klass kan du använd nyckelordet `base` för att anropa en metod i klassen du ärver ifrån, t.ex. `base.MetodIFöräldraKlassen()`.
 
 ::: exercise 14.1
 Den här övningen är en fortsättning på Övning 13.1. Gör klart den innan du börjar arbeta med denna.
