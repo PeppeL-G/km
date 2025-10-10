@@ -1097,7 +1097,6 @@ Skapa en egen sida med en layout (välj själv vilken) som du implementerar med 
 ## Lektion 7. CSS Grid
 * Repetitionsövning
 * CSS Grid-repetition
-* `px` VS `em` VS `rem` VS `%` VS `fr`
 * Övningar
 
 ::: exercise 7.1
@@ -1232,4 +1231,279 @@ Försök att skapa en webbsida som har en layout i stil med bilden nedan.
 
 ::: exercise 7.5
 Försök att skriva HTML och CSS som återskapar sidan [vuepress.vuejs.org](https://vuepress.vuejs.org/) (ni behöver inte bry er om skrollningseffekter och element som visas/döljs/ändras när man för musen över dem).
+:::
+
+
+
+
+## Lektion 8. CSS Grid
+* Repetitionsövning
+* `px` VS `em` VS `rem` VS `%` VS `fr`
+* Övningar
+
+::: exercise 8.1
+Repetitionsövning.
+
+Vi går klassen runt och försöker komma på så många HTML-element som vi kan skriva på en sida som möjligt.
+
+Sedan gör vi det samma med CSS-properties.
+:::
+
+::: exercise 8.2
+Skapa en hemsida som visar följande på skärmen:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tic-tac-toe</title>
+	<style>
+		
+		.container{
+			display: grid;
+			grid-template-columns: repeat(3, 100px);
+			grid-template-rows: repeat(3, 100px);
+			font-size: 90px;
+			gap: 10px;
+			text-align: center;
+		}
+		
+		.container div{
+			background-color: yellow;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		
+		<div>X</div>
+		<div>O</div>
+		<div></div>
+		
+		<div>O</div>
+		<div>X</div>
+		<div></div>
+		
+		<div></div>
+		<div>X</div>
+		<div></div>
+		
+	</div>
+	
+</body>
+</html>
+```
+:::
+
+::: exercise 8.3
+Skapa en hemsida som visar följande på skärmen:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>En smiley</title>
+	<style>
+		
+		.container{
+			display: grid;
+			grid-template-columns: repeat(7, 50px);
+			grid-template-rows: repeat(7, 50px);
+		}
+		
+		.background{
+			grid-column: 1 / 8;
+			grid-row: 1 / 8;
+			background-color: black;
+		}
+		
+		.face{
+			grid-column: 2 / 7;
+			grid-row: 2 / 7;
+			background-color: orange;
+		}
+		
+		.leftEye{
+			grid-column: 3 / 4;
+			grid-row: 3 / 4;
+			background-color: white;
+		}
+		
+		.rightEye{
+			grid-column: 5 / 6;
+			grid-row: 3 / 4;
+			background-color: white;
+		}
+		
+		.mouth{
+			grid-column: 3 / 6;
+			grid-row: 5 / 6;
+			background-color: red;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		
+		<div class="background"></div>
+		
+		<div class="face"></div>
+		
+		<div class="leftEye"></div>
+		
+		<div class="rightEye"></div>
+		
+		<div class="mouth"></div>
+		
+	</div>
+	
+</body>
+</html>
+```
+:::
+
+::: exercise 8.4
+Skapa en hemsida som visar följande på navigationsdel på skärmen:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>En smiley</title>
+	<style>
+		
+		nav{
+			display: grid;
+			grid-template-columns: 100px 100px 100px 100px 100px;
+			background-color: grey;
+			text-align: center;
+		}
+		
+		a{
+			padding: 10px;
+			border: 1px solid silver;
+			border-top: 5px solid grey;
+			color: black;
+			text-decoration: none;
+		}
+		
+		.current{
+			font-weight: bold;
+			border-top-color: blue;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<nav>
+		<a href="">Länk 1</a>
+		<a href="" class="current">Länk 2</a>
+		<a href="">Länk 3</a>
+		<a href="">Länk 4</a>
+	</nav>
+	
+</body>
+</html>
+```
+:::
+
+::: exercise 8.5
+Skapa en hemsida som visar följande på skärmen:
+
+```html result no-code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>En smiley</title>
+	<style>
+		
+		body #result{
+			display: grid;
+			grid-template-columns: 150px 1fr;
+			grid-template-rows: auto auto auto;
+		}
+		
+		header{
+			text-align: center;
+			font-size: 40px;
+			font-style: italic;
+			grid-column: 1 / 3;
+			padding: 3px;
+		}
+		
+		nav{
+			display: grid;
+			grid-template-rows: auto auto auto auto;
+			text-align: center;
+			grid-column: 1;
+			gap: 10px;
+		}
+		
+		nav a{
+			padding: 10px;
+			border: 1px solid silver;
+			border-top: 5px solid grey;
+			color: black;
+			text-decoration: none;
+			background-color: grey;
+		}
+		
+		main{
+			grid-column: 2;
+			padding: 10px;
+			padding-left: 15px;
+		}
+		
+		main h1{
+			margin-top: 0;
+		}
+		
+		footer{
+			grid-column: 1 / 3;
+			padding: 10px;
+			text-align: center;
+			padding-bottom: 0;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<header>
+		Min Hemsida
+	</header>
+	
+	<nav>
+		<a href="">Länk 1</a>
+		<a href="">Länk 2</a>
+		<a href="">Länk 3</a>
+		<a href="">Länk 4</a>
+	</nav>
+	
+	<main>
+		<h1>Startsidan</h1>
+		<p>Välkommen till min startsida!</p>
+	</main>
+	
+	<footer>
+		Copyright 2025 Mr. Me
+	</footer>
+	
+</body>
+</html>
+```
 :::

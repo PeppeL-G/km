@@ -1637,11 +1637,10 @@ else
 
 :::
 
-<!--
 
 
-
-Arv är ett sätt att återvinna kod på. En klass kan ärva från en annan klass, och då får den alla metoder och instansvariabler som föräldraklassen innehåller.
+## Lektion 14. Arv
+Arv är ett sätt att återanvända kod på. En klass kan ärva från en annan klass, och då får den alla metoder och instansvariabler som föräldraklassen innehåller.
 
 ::: example
 
@@ -1737,4 +1736,48 @@ Alla dessa behöver innehålla en X- och Y-koordinat för att hålla koll på va
 ![UML-diagram](https://mermaid.ink/img/pako:eNqVU12L2zAQ_Cti4SDHxcGOVTsRfeqlHP0IvbaBg8MvaryxRW3JyPIlqS__vfJH3YSkhPpB7MyuZkZGqmGtYgQGjuNE0giTISORbFEk1xkvy4XgieZ5g29uyJILSe4bvm-TVSpkQupIEvs5QhqyO6r3R_VWxCY9wimKJDUdcfeh_PKCOuNFYeWehElHnbBp1ttIHpoAHfX21XFsEC0UYQR3BmU8pOnoPs3dxyovRrc9WKoX_NY4njCfcXNKLNRWDsRC8-3ogvujKPDcvGX_eK80l-UG9aBlTyhXqhh1EfNmvWbzoFT-g58b9Xx9FPtq5AeNKD8pVVzS-9v7L813mVr_PJfr6PrK5q8VlkYo-Q-R0_YFMRhDjjrnIrb3t-1HYFLMMQJ7hyHGDa8yE4EdtqNVEXOD72NhlAa24VmJY-CVUd_3cj0Q3VR_5QdWqypJB1Rw-Wz_PzCjKwsT3QToam0PgPpeVdIA80IattPAatgB84OJS0PXnb3xKHWpP4Y9sBmdhH4Q-lM6m8491wsOY_jVqruT-dT1qefPg7lHp0FgN2Abf9k92fblHn4DiUM2Mw)
 :::
 
--->
+I en klass som ärver ifrån en annan klass kan du använd nyckelordet `base` för att anropa en metod i klassen du ärver ifrån, t.ex. `base.MetodIFöräldraKlassen()`.
+
+::: exercise 14.1
+Den här övningen är en fortsättning på Övning 13.1. Gör klart den innan du börjar arbeta med denna.
+
+I Övning 13.1 så skapade du en klass som representerar ett kassaskåp med ett lösenord. I den här klassen ska vi skapa en lite lyxigare version som har samma grundfunktionalitet, men som även innehåller en ytterliggare funktion, mer bestämt:
+
+* Om man försökt öppna kassaskåpet med fel kod X gånger i rad så ska man inte kunna öppna kassaskåpet igen på Y minuter.
+
+Vilket värde X och Y har ska inte hårdkodas, utan den som skapar en ny instans av den lyxigare kassaskåpsklassen ska få bestämma det.
+
+Skapa den nya klassen genom att ärva från klassen du skapade i Övning 13.1. Se även till att ytterliggare lämplig logik implementeras, så som:
+
+* Varje gång man stänger kassaskåpet så ska antal misslyckade öppningsförsök nollställas.
+
+Exempelanvänding:
+
+```cs
+int correctCode = 1234;
+int maxNumberOfTries = 3;
+int lockedOutSeconds = 120;
+
+SecuredSafe mySafe = new SecuredSafe(correctCode, maxNumberOfTries, lockedOutSeconds, "Mina hemligheter.");
+
+mySafe.TryToOpen(3333); // Misslyckas.
+mySafe.TryToOpen(3334); // Misslyckas.
+mySafe.TryToOpen(3332); // Misslyckas, nu ska man inte kunna öppna på 2 minuter.
+mySafe.TryToOpen(1234); // Misslyckas trots rätt kod.
+
+// Om man kör koden nedan 121 sekunder senare så ska man kunna öppna med rätt kod igen.
+mySafe.TryToOpen(1234); // Lyckas.
+
+if(mySafe.IsOpen())
+{
+	Console.WriteLine("Det är öppet!");
+}
+else
+{
+	Console.WriteLine("Det är stängt.");
+}
+```
+
+För att implementera denna klass korrekt så behöver ni även hålla koll på hur lång tid det tar mellan anropen. Ni kan använda `Thread.sleep(numberOfMilliseconds)` för att vänta ett visst antal millisekunder mellan anropen till `.TryToOpen()`, och ni kan använda `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` för att få antal sekunder som gått sedan `970-01-01 00:00:00 UTC` när anropet till `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` sker.
+
+:::

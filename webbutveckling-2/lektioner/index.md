@@ -1162,6 +1162,9 @@ Den här övningen är en fortsättning på föregående övning.
 
 
 
+## Lektion 15
+Prov 2: DOM. Se inlämningsuppgiften på Google Classroom.
+
 <!--
 ## Lektion X. Dark mode & `localStorage`
 De som vill arbeta med övningar från tidigare lektioner får göra det. Annars kommer här några övningar som lär er att lägga till dark mode på en sida med client-side JS.

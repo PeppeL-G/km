@@ -1622,3 +1622,222 @@ Det här är en fortsättning på föregående övning.
 
 Tänk noga igenom vad för loop du borde använda.
 :::
+
+
+
+
+## Lektion 14. Arrayer
+En array är ett värde som kan spara ner flera andra värden av samma typ. Vi kan t.ex. skapa en array som innehåller 3 heltal, eller en array som innehåller 10 strängar, etc.
+
+::: example
+Olika sätt att skapa nya arrayer.
+
+```cs
+// Skapa en ny array med 3 specifika heltal.
+int[] myNumbers = {4, 2, 7};
+
+// Skapa en ny array med 4 specifika strängar.
+string[] names = {"Alice", "Bob", "Claire", "David"};
+
+// Skapa en ny array med 8 tal, alla sätts till 0 i början.
+int[] scores = new int[8];
+
+// Skapa en ny array som kan innehålla 5 strängar,
+// men alla sätts till null i början.
+string[] titles = new string[5];
+```
+:::
+
+Arrayer kan t.ex. användas till att:
+
+* Spara de 10 högsta poängen (highscores) i ett spel.
+* Spara 3 "sparfiler" i ett spel.
+* Ha 20 fiender inladdade och synliga på skärmen samtidigt.
+* Etc.
+
+Varje värde i arrayen får ett eget index:
+
+* Det första värdet får index 0.
+* Det andra värdet får index 1.
+* Etc.
+
+Med `variabelNamn[INDEX]`-syntaxen så kan vi ta fram värdet för ett visst index i arrayen.
+
+::: example
+Ta fram värde vid ett visst index i arrayen.
+
+```cs
+//       Index:      0       1       2         3
+string[] names = {"Alice", "Bob", "Claire", "David"};
+
+Console.WriteLine($"Värdet på index 1 är {names[1]}."); // Bob
+Console.WriteLine($"Värdet på index 2 är {names[2]}."); // Claire"
+```
+:::
+
+`variabelNamn[INDEX]`-syntaxen kan också användas för att spara ner ett nytt värde på ett visst index i arrayen.
+
+::: example
+Spara ner nya värden i en array.
+
+```cs
+string[] names = {"Alice", "Bob", "Claire", "David"};
+
+Console.WriteLine($"Värdet på index 0 är {names[0]}."); // Alice
+
+names[0] = "Abba";
+
+Console.WriteLine($"Värdet på index 0 är {names[0]}."); // Abba
+```
+:::
+
+Man kan använda `namnetPåArrayen.Length` för att få tillbaka ett heltal som indikerar hur många värden arrayen innehåller.
+
+::: example
+Ta reda på hur många värden en array innehåller.
+
+```cs
+string[] names = {"Alice", "Bob", "Claire", "David"};
+
+Console.WriteLine($"Det finns {names.Length} namn totalt."); // 4
+```
+:::
+
+::: exercise 14.1
+Skapa ett program som innehåller en array med några olika värden. Ta sedan och skriv ut hur många värden arrayen innehåller (använd `.Length`).
+:::
+
+::: exercise 14.2
+Skapa ett program som innehåller en array med namnet på alla veckodagar. Be sedan användaren att mata in ett nummer för en veckodag (1-7) för vars namn sedan ska skrivas ut. Om användaren matar in ett nummer som inte motsvarar en veckodag så ska ett felmeddelande skrivas ut.
+
+Körexempel:
+
+```
+Mata in numret för en veckodag (1-7): 1
+Måndag
+```
+
+<br>
+
+```
+Mata in numret för en veckodag (1-7): 3
+Onsdag
+```
+
+<br>
+
+```
+Mata in numret för en veckodag (1-7): 9
+Ogiltigt veckodagsnummer.
+```
+:::
+
+::: exercise 14.3
+Skapa ett program som innehåller en array med namnet på alla veckodagar. Använd sedan en `for()`-loop för att iterera över indexena i arrayen, och för varje index skriv ut namnet på veckodagen med det indexet.
+
+Körexempel:
+
+```
+Veckans alla dagar är:
+ - Måndag
+ - Tisdag
+ - Onsdag
+ - Torsdag
+ - Fredag
+ - Lördag
+ - Söndag
+```
+:::
+
+::: exercise 14.4
+Skapa ett program som innehåller en array med namnet på årets alla månader. Be sedan användaren att skriva in numret på en första månad (mellan 1 och 12), och sedan numret på en andra månad (mellan 1 och 12). Ditt program ska sedan skriva ut namnen på månaderna där emellan.
+
+Körexempel:
+
+```
+Skriv in första månadsnumret: 3
+Skriv in sista månadsnumret: 6
+
+ - 3: Mars
+ - 4: April
+ - 5: Maj
+ - 6: Juni
+```
+:::
+
+::: exercise 14.5
+Skapa ett program som innehåller två arrayer:
+
+* En med namnet på årets alla månader.
+* En med antal dagar i årets alla månader (använd 28 för februari).
+
+Be sedan användaren mata in numret för en månad (1-12), och visa sedan namnet på månaden och antal dagar i den.
+
+Körexempel:
+
+```
+Skriv in ett månadsnumret: 3
+Mars har 31 dagar.
+```
+:::
+
+::: exercise 14.6
+Skapa ett program som innehåller två arrayer:
+
+* En med namnet på årets alla månader.
+* En med antal dagar i årets alla månader (använd 28 för februari).
+
+Be sedan användaren mata in namnet på en månad, och ditt program ska sedan visa hur många dagar det finns i den månaden.
+
+Tips: Loopa igenom alla index och leta efter månaden med det givna namnet.
+
+Körexempel:
+
+```
+Skriv in namnet på en månad: April
+April har 30 dagar.
+```
+:::
+
+::: exercise 14.7
+Skapa ett program som innehåller en array med 5 namn som du gillar. Använd sedan en loop för att om och om igen be användaren mata in ett kommando. Ditt program ska stödja följande kommandon:
+
+* `Räkna`: Ska visa hur många namn du gillar.
+* `Avsluta`: Ska avsluta loopen och programmet.
+* `Visa alla`: Ska visa namnet på alla som du gillar.
+* `Visa en`: Ska be användaren att mata in ett nummer mellan 1 och 5, och sedan ska namnet för det numret visas.
+* `Ändra`: Ska be användaren att mata in numret på den som ska ändras, och sedan be användaren att mata in det nya namnet som ska sparas istället.
+
+Om användaren skriver in ett kommando som inte finns så ska du visa ett felmeddelande.
+
+Körexempel:
+
+```
+Skriv kommando: Räkna
+Det finns 5 namn du gillar.
+
+Skriv kommando: Visa alla
+ - Alice
+ - Bob
+ - Claire
+ - David
+ - Elif
+
+Skriv kommando: Visa en
+Skriv nummer (1-5): 2
+Bob
+
+Skriv kommando: Ändra
+Skriv nummer (1-5): 3
+Skriv namn: Ceasar
+
+Skriv kommando: Visa alla
+ - Alice
+ - Bob
+ - Ceasar
+ - David
+ - Elif
+
+Skriv kommando: Avsluta
+```
+:::
