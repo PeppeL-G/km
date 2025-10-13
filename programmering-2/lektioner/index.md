@@ -1605,7 +1605,7 @@ else
 
 mySafe.TryToOpen(1234);
 
-Console.WriteLine($"Det hemliga meddelandet är ${mySafe.GetMessage()}.");
+Console.WriteLine($"Det hemliga meddelandet är {mySafe.GetMessage()}.");
 
 mySafe.Close();
 

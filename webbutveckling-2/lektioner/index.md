@@ -1162,8 +1162,102 @@ Den här övningen är en fortsättning på föregående övning.
 
 
 
-## Lektion 15
-Prov 2: DOM. Se inlämningsuppgiften på Google Classroom.
+## Lektion 15. Prov 2: DOM
+Se inlämningsuppgiften [Prov 2: DOM](https://classroom.google.com/c/Nzk5Mjk2MjE3NzM2/a/ODEyMTg1MDgyNTY3/details) på Google Classroom.
+
+
+
+
+## Lektion 16. Tabbar
+Den här lektionen ägnar vi åt ett litet miniprojekt där ni ska skapa en sida som innehåller tabbar användaren kan klicka på för att byta ut innehållet som visas. Ett exempel på detta är nedan.
+
+::: code-group
+
+```js [JavaScript]
+// Såhär skriver man ett program som visar texten "Hello, World!" i JavaScript.
+console.log(`Hello, World!`)
+```
+
+```py [Python 3]
+# Såhär skriver man ett program som visar texten "Hello, World!" i Python 3.
+print("Hello, World!")
+```
+
+```cs [C#]
+// Såhär skriver man ett program som visar texten "Hello, World!" i C#.
+Console.WriteLine("Hello, World!");
+```
+
+:::
+
+Om du vill, försök gärna att komma på hur man kan implementera det här i HTML, CSS och JS helt själv (ni har lärt er allt ni behöver veta för att kunna göra det). Övningarna nedan är för dem som vill ha hjälp att komma igång.
+
+:::: exercise 16.1
+
+Skapa en ny HTML-fil och skriv HTML-koden som ska användas för tabbarna. Försök att själv komma på hur den koden ska se ut. Om du behöver hjälp så kan du se ett tips nedan.
+
+::: details Tips
+HTML-koden kan implementeras på olika sätt, men här är nog det enklaste sättet:
+
+```html result
+<div class="tab-titles">
+	<button>Tab 1</button>
+	<button>Tab 2</button>
+	<button>Tab 3</button>
+</div>
+
+<div class="tab-contents">
+	<div>
+		Här är innehållet på Tab 1.
+	</div>
+	<div>
+		Här är innehållet på Tab 2.
+	</div>
+	<div>
+		Här är innehållet på Tab 3.
+	</div>
+</div>
+```
+:::
+
+Skriv även CSS-kod som gör att det ser mer ut som en tabbar-komponent, så det blir mer uppenbart för användaren att det här är tabbar. För stunden ska innehållet i alla tre tabbar visas, men senare kommer vi så klart ändra så att bara en tabbs innehåll visas åt gången.
+
+::::
+
+::: exercise 16.2
+Det enklaste sättet att dynamiskt visa/dölja element är genom att skapa en CSS regel i stil med:
+
+```css
+.hide{
+	display: none;
+}
+```
+
+Använd detta för att dölja innehållet i alla tabbar förutom den första så snart sidan har laddats in (använd client-side JS).
+
+Lyssna sedan på när användaren klickar på knapparna, och lägg till/ta bort `hide`-klassen från HTML-element.
+:::
+
+::: exercise 16.3
+Din lösningen går att göra lite "lyxigare" på olika sätt. T.ex. kan man göra att knappen för den för stunden valda tabben ser lite annorlunda ut. T.ex. kan man lägga attributet `disabled` på det genom att anropa ``setAttribute(`disabled`, true)`` på knappen. Och man kan även style den annorlunda med CSS. Gör det.
+:::
+
+::: exercise 16.4
+Kanske vore det bra om samma tabb är vald mellan sidladdningar? Då kan använda `localStorage` för att komma ihåg vilken tabb som är vald. `localStorage` är en variabel som innehåller ett objekt, och allt som vi sparar ner i det överlever mellan sidladdningar på samma sida (samma domän).
+
+För att spara ner ett värde (t.ex. strängen `` `hej` ``) så använder man (med `minNyckel` som exempel, använd vad du vill):
+
+```js
+localStorage.minNyckel = `hej`
+```
+
+Och för att läsa ut ett värde så använder man:
+
+```js
+console.log(localStorage.minNyckel)
+```
+:::
+
 
 <!--
 ## Lektion X. Dark mode & `localStorage`

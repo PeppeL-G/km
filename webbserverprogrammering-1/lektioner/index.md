@@ -735,6 +735,22 @@ I en Express-applikation, skapa en sida som skickar tillbaka ett formulär där 
 
 
 
+
+## Lektion 15. Catch-up
+* Repetition av placeholder i Express-URL:er.
+* Repetition av formulärhantering.
+
+Om du inte är klar med övningarna från föregående lektion, så fortsätt med dem. Sedan finns det en extraövning du kan göra nedan om du hinner.
+
+::: exercise 15.1
+I en Express-applikation, skapa en sida som skickar tillbaka ett formulär där användaren kan mata in två tal (använd två `<input>`-element). När detta formuläret skickats till servern så ska du beräkna summan av talen. Sedan ska du skicka till en sida som innehåller:
+
+* Summan av numren.
+* Formuläret igen, nu med de två mottagna numren förifyllda i `<input>`-elementen.
+:::
+
+
+
 <!--
 
 ## Lektion X. Databas

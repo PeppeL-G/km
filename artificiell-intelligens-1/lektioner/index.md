@@ -432,6 +432,9 @@ Du kan ha nytta av följande noder:
 Verkar dina svar rimliga?
 :::
 
+
+
+
 ## Lektion 12. Tävlingsinformation
 De som inte är klara med Övning 11.2 fortsätter arbeta med den innan de fortsätter med dagens övning/tävling.
 
@@ -476,6 +479,12 @@ Har du svårt att komma igång? Försök då de här lite lättare uppgifterna f
 * Vilken årstid verkar vara varmast överlag?
 * Vilken årstid verkar ha timmar med de flesta uthyrningarna?
 :::
+
+
+
+## Lektion 13. Tävling
+* De som inte är klara med övningarna från lektion 11 gör dem.
+* Försök att skapa en bättre modell för tävlingen (för tips, se föregående lektion).
 
 <!--
 
