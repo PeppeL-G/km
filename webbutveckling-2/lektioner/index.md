@@ -1199,7 +1199,7 @@ Skapa en ny HTML-fil och skriv HTML-koden som ska användas för tabbarna. Förs
 ::: details Tips
 HTML-koden kan implementeras på olika sätt, men här är nog det enklaste sättet:
 
-```html result
+```html
 <div class="tab-titles">
 	<button>Tab 1</button>
 	<button>Tab 2</button>
