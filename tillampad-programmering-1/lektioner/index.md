@@ -390,3 +390,44 @@ Jordbruksverket ska ut och inventera en skog. De ska helt enkelt gå runt i skog
 
 Tänk igenom en design för detta (rita gärna upp den med papper och penna), och implementera sedan appen åt dem.
 :::
+
+
+
+
+## Lektion 13. App icons
+I en BagaWork app kan du skapa en ikon för appen genom att lägga till metoden `App.createIcon()`, t.ex.:
+
+```js
+class MyApp extends App{
+	
+	createStartPage(){
+		return StartPage
+	}
+	
+	createIcon(){
+		return PaperGroup.backgroundColor(`red`).children(
+			PaperLine.start(2, 2).end(8, 8).thickness(0.5).backgroundColor(`black`),
+			PaperLine.start(2, 8).end(8, 2).thickness(0.5).backgroundColor(`black`),
+		)
+	}
+	
+}
+```
+
+`App.createIcon()` måste returnera en `PaperGroup`-komponent, och i den kan du använda andra komponenter vars namn börjar på `Paper`, så som `PaperLine`, `PaperCircle` och `PaperRectangle`. Koordinatsystemet här är som standard 10*10, med origo nere i det vänstra hörnet.
+
+Ikonen som skapas kan du förhandsgrandska i editorn genom att klicka på `Icon`-knappen.
+
+::: exercise 13.1
+Träna på att skapa några olika app-ikoner. Du får skapa vilka du vill, men om du föredrar att ha några att efterlikna så kommer här några exempel nedan.
+
+![Face](face.png)
+
+![Dart Board](dart-board.png)
+
+![House](house.png)
+
+![Deathly Hallows](deathly-hallows.png)
+
+![Åtta](eight.png)
+:::

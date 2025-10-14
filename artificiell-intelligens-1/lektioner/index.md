@@ -482,9 +482,21 @@ Har du svårt att komma igång? Försök då de här lite lättare uppgifterna f
 
 
 
-## Lektion 13. Tävling
+## Lektion 13. Catch-up
 * De som inte är klara med övningarna från lektion 11 gör dem.
 * Försök att skapa en bättre modell för tävlingen (för tips, se föregående lektion).
+
+
+
+
+## Lektion 14. Tävling & Prov
+* 30 minuter för att förbättra ens modell.
+* 10 minuter för tävlingsresultat.
+* 10 minuter rast.
+* 30 minuter för prov.
+
+
+
 
 <!--
 
