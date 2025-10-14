@@ -490,10 +490,10 @@ Har du svårt att komma igång? Försök då de här lite lättare uppgifterna f
 
 
 ## Lektion 14. Tävling & Prov
-* 30 minuter för att förbättra ens modell.
+* 20 minuter för att förbättra ens modell.
 * 10 minuter för tävlingsresultat.
 * 10 minuter rast.
-* 30 minuter för prov.
+* 40 minuter för prov.
 
 
 

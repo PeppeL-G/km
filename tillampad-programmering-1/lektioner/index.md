@@ -394,7 +394,13 @@ Tänk igenom en design för detta (rita gärna upp den med papper och penna), oc
 
 
 
-## Lektion 13. App icons
+## Lektion 13. Catch-up
+Vi fortsätter att arbeta med övningar ifrån tidigare lektioner.
+
+
+<!--
+
+## Lektion 14. App-ikoner
 I en BagaWork app kan du skapa en ikon för appen genom att lägga till metoden `App.createIcon()`, t.ex.:
 
 ```js
@@ -431,3 +437,5 @@ Träna på att skapa några olika app-ikoner. Du får skapa vilka du vill, men o
 
 ![Åtta](eight.png)
 :::
+
+-->
