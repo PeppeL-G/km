@@ -1671,7 +1671,7 @@ Ta fram värde vid ett visst index i arrayen.
 string[] names = {"Alice", "Bob", "Claire", "David"};
 
 Console.WriteLine($"Värdet på index 1 är {names[1]}."); // Bob
-Console.WriteLine($"Värdet på index 2 är {names[2]}."); // Claire"
+Console.WriteLine($"Värdet på index 2 är {names[2]}."); // Claire
 ```
 :::
 
@@ -1782,6 +1782,8 @@ Mars har 31 dagar.
 :::
 
 ::: exercise 14.6
+Den här övningen är lite svårare.
+
 Skapa ett program som innehåller två arrayer:
 
 * En med namnet på årets alla månader.
@@ -1800,6 +1802,8 @@ April har 30 dagar.
 :::
 
 ::: exercise 14.7
+Den här övningen är lite svårare.
+
 Skapa ett program som innehåller en array med 5 namn som du gillar. Använd sedan en loop för att om och om igen be användaren mata in ett kommando. Ditt program ska stödja följande kommandon:
 
 * `Räkna`: Ska visa hur många namn du gillar.
@@ -1839,5 +1843,102 @@ Skriv kommando: Visa alla
  - Elif
 
 Skriv kommando: Avsluta
+```
+:::
+
+
+
+
+## Lektion 15. Arrayer
+Först en snabb repetition av arrayer. Sedan fortsätter vi att träna på att använda arrayer, så här kommer några fler övningar. Är du inte klar med övningarna från förra lektionen får du gärna fortsätta med dem. De två sista övningarna från förra lektionen är lite svårare, så de kan du hoppa över om du inte har gjort dem.
+
+::: exercise 15.1
+Skapa ett program som innehåller numren `2`, `8`, `-3`, `5`, `-7` i en array. Använd sedan en loop för att skriva ut alla nummer på var sin rad.
+
+Körexempel:
+
+```
+1
+8
+-3
+5
+-7
+```
+:::
+
+::: exercise 15.2
+Ändra ditt program från föregående övning så att det bara skriver ut numren i arrayen som är större än eller lika med 0.
+
+Körexempel:
+
+```
+1
+8
+5
+```
+:::
+
+::: exercise 15.3
+Skapa ett nytt program som innehåller en array med namnen `Alice`, `Bob`, `Abba`, `Claire` och `Anita`. Ditt program ska sedan skriva ut alla namn i arrayen, varje på en egen rad.
+
+Körexempel:
+
+```
+Alice
+Bob
+Abba
+Claire
+Anita
+```
+:::
+
+::: exercise 15.4
+Ändra ditt program från föregående övning så att det bara skriver ut de namn i arrayen som börjar på `A`. För att testa ifall en sträng börjar med `A` så kan du anropa `.StartsWith("A")` på strängen. Exempel:
+
+```c#
+string name = "Bosse";
+
+if(name.StartsWith("B"))
+{
+  Console.WriteLine("Bosse börjar på B.");
+}
+else
+{
+  Console.WriteLine("Bosse börjar inte på B.");
+}
+```
+
+Körexempel:
+
+```
+Alice
+Abba
+Anita
+```
+:::
+
+::: exercise 15.5
+Skapa ett program som innehåller 2 arrayer, vardera med 5 heltal. Den första kan t.ex. innehålla `5`, `4`, `3`, `2` och `1`, medan den andra innehåller `10`, `20`, `30`, `40` och `50`. Använd sedan en loop som visar vilka nummer arrayen innehåller, och vad deras parvisa summor är.
+
+Körexempel:
+
+```
+5 + 10 = 15
+4 + 20 = 24
+3 + 30 = 33
+2 + 40 = 42
+1 + 50 = 51
+```
+:::
+
+::: exercise 15.6
+Ändra ditt program från föregående övning så att den bara skriver ut de rader vars parvisa summa är mellan `20` och `50`.
+
+Körexempel:
+
+```
+4 + 20 = 24
+3 + 30 = 33
+2 + 40 = 42
 ```
 :::

@@ -398,6 +398,12 @@ Tänk igenom en design för detta (rita gärna upp den med papper och penna), oc
 Vi fortsätter att arbeta med övningar ifrån tidigare lektioner.
 
 
+
+
+## Lektion 14. Prov
+Hela lektionen spenderas åt att skriva ett prov där ni får i uppgift att skapa några små olika BagaWork-appar.
+
+
 <!--
 
 ## Lektion 14. App-ikoner

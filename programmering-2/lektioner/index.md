@@ -1776,7 +1776,7 @@ else
 }
 ```
 
-För att implementera denna klass korrekt så behöver ni även hålla koll på hur lång tid det tar mellan anropen. Ni kan använda `Thread.sleep(numberOfMilliseconds)` för att vänta ett visst antal millisekunder mellan anropen till `.TryToOpen()`, och ni kan använda `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` för att få antal sekunder som gått sedan `970-01-01 00:00:00 UTC` när anropet till `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` sker.
+För att implementera denna klass korrekt så behöver ni även hålla koll på hur lång tid det tar mellan anropen. Ni kan använda `Thread.sleep(numberOfMilliseconds)` för att vänta ett visst antal millisekunder mellan anropen till `.TryToOpen()`, och ni kan använda `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` för att få antal sekunder som gått sedan `1970-01-01 00:00:00 UTC` när anropet till `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` sker. Alternativt så kan man använda [StopWatch](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=net-9.0)-klassen.
 
 :::
 
@@ -1792,4 +1792,92 @@ Skapa en klass som representerar en fil. Det ska innehålla namnet på filen. Sk
 * Etc.
 
 Skapa sedan några nya instanser av de här klasserna i ditt huvudprogram och testa att anropa några metoder på dem (som du även lagt till i fil-klassen eller de andra klasserna).
+:::
+
+
+
+
+## Lektion 15. Arv
+Vi fortsätter att arbeta med arv. De som klarade av Övning 14.1 får arbeta på sitt spelprojekt om de vill.
+
+::: exercise 15.1
+Den här övningen handlar inte om arv, utan om att skapa en klass som vi sedan kan använda i nästa övning (som kommer handla om arv).
+
+Skapa en klass som representerar en klocka. Den som skapar en ny instans av klockan ska få bestämma vad startiden är, och det ska finnas:
+
+* En metod man kan anropa för att öka tiden i klockan med en sekund.
+* En metod man kan anropa för att skriva ut vad klockans nuvarande tid är i formatet `hh:mm:ss`.
+
+Exempelanvändning:
+
+```cs
+Clock myClock = new Clock(12, 59, 55);
+
+while(true)
+{
+	
+	myClock.Tick();
+	myClock.WriteTimeToConsole();
+	
+	Thread.sleep(1000); // Vänta en sekund (för att simulera att det går tid).
+	
+}
+```
+
+Exempeloutput:
+
+```
+12:59:56
+12:59:57
+12:59:58
+12:59:59
+13:00:00
+13:00:01
+13:00:02
+...
+```
+:::
+
+::: exercise 15.2
+I Övning 15.1 så skapade du en klass som representerade en klocka som bara kan visa tiden. I den här övningen ska vi nyttja arv för att skapa en mer avancerad klocka: en alarmklocka! Utöver att ticka och kunna visa tiden så ska en alarmklocka även kunna innehåller en tid då ett alarm ska starta. När alarmtiden inträffar så ska klockan skriva ut texten `ALARM!!!` till konsollen.
+
+Exempelanvändning:
+
+```cs
+AlarmClock myClock = new AlarmClock(13, 5, 55);
+
+myClock.SetAlarm(13, 6); // Alarmet ska starta 13:06:00.
+
+while(true)
+{
+	
+	myClock.Tick();
+	myClock.WriteTimeToConsole();
+	
+}
+```
+
+Exempeloutput:
+
+```
+13:05:56
+13:05:57
+13:05:58
+13:05:59
+13:06:00
+ALARM!!!
+13:06:01
+13:06:02
+...
+```
+
+En alarmklocka måste ju inte ha ett alarmt inställt, och när man skapar en ny instans av klassen så ska inget alarm vara inställt, utan man måste anropa metoden `SetAlarm()` för att ett alarm ska finnas. Därför är det lämpligt att även lägga till följande två metoder:
+
+* `HasAlarm()`, som returnerar `true` om ett alarm är inställt, annars `false`.
+* `CancelAlarm()`, som tar bort ett inställt alarm.
+
+:::
+
+::: exercise 15.3
+Om du inte är klar med Övning 14.1, så arbeta med den. När du är klar med den så får du arbeta på ditt spelprojekt om du vill.
 :::
