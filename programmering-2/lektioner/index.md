@@ -1776,7 +1776,7 @@ else
 }
 ```
 
-För att implementera denna klass korrekt så behöver ni även hålla koll på hur lång tid det tar mellan anropen. Ni kan använda `Thread.sleep(numberOfMilliseconds)` för att vänta ett visst antal millisekunder mellan anropen till `.TryToOpen()`, och ni kan använda `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` för att få antal sekunder som gått sedan `1970-01-01 00:00:00 UTC` när anropet till `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` sker. Alternativt så kan man använda [StopWatch](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=net-9.0)-klassen.
+För att implementera denna klass korrekt så behöver ni även hålla koll på hur lång tid det tar mellan anropen. Ni kan använda `Thread.Sleep(numberOfMilliseconds)` för att vänta ett visst antal millisekunder mellan anropen till `.TryToOpen()`, och ni kan använda `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` för att få antal sekunder som gått sedan `1970-01-01 00:00:00 UTC` när anropet till `DateTimeOffset.UtcNow.ToUnixTimeSeconds()` sker. Alternativt så kan man använda [StopWatch](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=net-9.0)-klassen.
 
 :::
 
@@ -1819,7 +1819,7 @@ while(true)
 	myClock.Tick();
 	myClock.WriteTimeToConsole();
 	
-	Thread.sleep(1000); // Vänta en sekund (för att simulera att det går tid).
+	Thread.Sleep(1000); // Vänta en sekund (för att simulera att det går tid).
 	
 }
 ```
@@ -1853,6 +1853,8 @@ while(true)
 	
 	myClock.Tick();
 	myClock.WriteTimeToConsole();
+	
+	Thread.Sleep(1000);
 	
 }
 ```
